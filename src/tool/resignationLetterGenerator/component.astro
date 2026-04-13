@@ -1,0 +1,566 @@
+---
+import type { ResignationLetterGeneratorUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const t = ui as ResignationLetterGeneratorUI;
+---
+
+<div
+  id="rl-root"
+  class="rl-root"
+  data-date-locale={t.dateLocale}
+  data-date-prefix={t.datePrefix}
+  data-manager-prefix={t.managerPrefix}
+  data-manager-fallback={t.managerFallback}
+  data-company-fallback={t.companyFallback}
+  data-sal-neutral={t.salutationNeutral}
+  data-sal-m={t.salutationM}
+  data-sal-f={t.salutationF}
+  data-salutation-fallback={t.salutationFallback}
+  data-signature-fallback={t.signatureFallback}
+  data-default-user-name={t.defaultUserName}
+  data-default-manager-name={t.defaultManagerName}
+  data-default-company-name={t.defaultCompanyName}
+  data-default-city={t.defaultCity}
+  data-copy-feedback={t.copyFeedback}
+  data-reason-standard={t.reasonStandard}
+  data-reason-opportunity={t.reasonOpportunity}
+  data-reason-personal={t.reasonPersonal}
+  data-reason-education={t.reasonEducation}
+  data-reason-growth={t.reasonGrowth}
+  data-reason-direct={t.reasonDirect}
+>
+  <div class="rl-tool-content">
+    <div class="rl-form-container">
+      <div class="rl-form-group">
+        <label for="rl-user">{t.labelUserName}</label>
+        <input type="text" id="rl-user" />
+      </div>
+
+      <div class="rl-form-group">
+        <label for="rl-manager">{t.labelManagerName}</label>
+        <input type="text" id="rl-manager" />
+      </div>
+
+      <div class="rl-form-group">
+        <label for="rl-gender">{t.labelManagerGender}</label>
+        <select id="rl-gender">
+          <option value="gender-neutral">{t.optGenderNeutral}</option>
+          <option value="gender-m">{t.optGenderM}</option>
+          <option value="gender-f">{t.optGenderF}</option>
+        </select>
+      </div>
+
+      <div class="rl-form-group">
+        <label for="rl-company">{t.labelCompanyName}</label>
+        <input type="text" id="rl-company" />
+      </div>
+
+      <div class="rl-form-group">
+        <label for="rl-last-day">{t.labelLastDay}</label>
+        <input type="date" id="rl-last-day" />
+      </div>
+
+      <div class="rl-form-group">
+        <label for="rl-reason">{t.labelReasonType}</label>
+        <select id="rl-reason">
+          <option value="standard">{t.optReasonStandard}</option>
+          <option value="opportunity">{t.optReasonOpportunity}</option>
+          <option value="personal">{t.optReasonPersonal}</option>
+          <option value="education">{t.optReasonEducation}</option>
+          <option value="growth">{t.optReasonGrowth}</option>
+          <option value="direct">{t.optReasonDirect}</option>
+        </select>
+      </div>
+
+      <div class="rl-form-group">
+        <label for="rl-city">{t.labelCity}</label>
+        <input type="text" id="rl-city" />
+      </div>
+
+      <div class="rl-actions">
+        <button id="rl-copy-btn" class="rl-btn rl-btn-primary">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          {t.btnCopy}
+        </button>
+        <button id="rl-download-btn" class="rl-btn rl-btn-secondary">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          {t.btnDownload}
+        </button>
+      </div>
+    </div>
+
+    <div class="rl-preview-container">
+      <div id="rl-copy-feedback" class="rl-copy-feedback">{t.copyFeedback}</div>
+      <div id="rl-letter-preview" class="rl-letter-content">
+        <div class="rl-letter-header">
+          <p id="rl-preview-date" class="rl-date-line"></p>
+          <div class="rl-to-block">
+            <p id="rl-preview-manager"></p>
+            <p id="rl-preview-company" class="rl-company-name"></p>
+          </div>
+        </div>
+
+        <div class="rl-letter-body-section">
+          <p class="rl-salutation-line">
+            <span id="rl-sal-prefix">{t.salutationNeutral}</span>
+            <span id="rl-sal-name">{t.salutationFallback}</span>:
+          </p>
+          <p id="rl-preview-body" class="rl-para"></p>
+          <p class="rl-para">{t.thanksParagraph}</p>
+          <p class="rl-para">{t.transitionParagraph}</p>
+        </div>
+
+        <div class="rl-letter-footer">
+          <p>{t.closingWord}</p>
+          <p id="rl-preview-signature" class="rl-signature"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import {
+    buildDateLine,
+    buildManagerLine,
+    getFirstName,
+    buildSalutation,
+    buildMainBody,
+  } from './logic';
+
+  type FormInputs = {
+    user: HTMLInputElement;
+    manager: HTMLInputElement;
+    company: HTMLInputElement;
+    lastDay: HTMLInputElement;
+    reason: HTMLSelectElement;
+    city: HTMLInputElement;
+    gender: HTMLSelectElement;
+  };
+
+  function getEl(id: string): HTMLElement | null {
+    return document.getElementById(id);
+  }
+
+  function setText(id: string, text: string) {
+    const el = getEl(id);
+    if (el) el.textContent = text;
+  }
+
+  function getFormInputs(): FormInputs | null {
+    const user = getEl('rl-user') as HTMLInputElement | null;
+    const manager = getEl('rl-manager') as HTMLInputElement | null;
+    const company = getEl('rl-company') as HTMLInputElement | null;
+    const lastDay = getEl('rl-last-day') as HTMLInputElement | null;
+    if (!user || !manager || !company || !lastDay) return null;
+    const reason = getEl('rl-reason') as HTMLSelectElement | null;
+    const city = getEl('rl-city') as HTMLInputElement | null;
+    const gender = getEl('rl-gender') as HTMLSelectElement | null;
+    if (!reason || !city || !gender) return null;
+    return { user, manager, company, lastDay, reason, city, gender };
+  }
+
+  function ds(root: HTMLElement, key: string): string {
+    return root.dataset[key] || '';
+  }
+
+  function setIfEmpty(input: HTMLInputElement, val: string) {
+    if (!input.value) input.value = val;
+  }
+
+  function getReasonsFromRoot(root: HTMLElement): Record<string, string> {
+    const g = (k: string) => ds(root, k);
+    return {
+      standard: g('reasonStandard'),
+      opportunity: g('reasonOpportunity'),
+      personal: g('reasonPersonal'),
+      education: g('reasonEducation'),
+      growth: g('reasonGrowth'),
+      direct: g('reasonDirect'),
+    };
+  }
+
+  function updateLetterHeader(inputs: FormInputs, root: HTMLElement) {
+    const city = inputs.city.value || ds(root, 'defaultCity');
+    const locale = ds(root, 'dateLocale') || 'es-ES';
+    setText('rl-preview-date', buildDateLine(city, locale, ds(root, 'datePrefix')));
+    setText('rl-preview-manager', buildManagerLine(inputs.manager.value, ds(root, 'managerPrefix'), ds(root, 'managerFallback')));
+    setText('rl-preview-company', inputs.company.value || ds(root, 'companyFallback'));
+  }
+
+  function updateLetterSalutation(inputs: FormInputs, root: HTMLElement) {
+    const pfx = buildSalutation(inputs.gender.value, ds(root, 'salNeutral'), ds(root, 'salM'), ds(root, 'salF'));
+    const name = getFirstName(inputs.manager.value) || ds(root, 'salutationFallback');
+    setText('rl-sal-prefix', pfx);
+    setText('rl-sal-name', name);
+  }
+
+  function updateLetterBody(inputs: FormInputs, root: HTMLElement) {
+    const reasons = getReasonsFromRoot(root);
+    const locale = ds(root, 'dateLocale') || 'es-ES';
+    setText('rl-preview-body', buildMainBody(inputs.reason.value, inputs.lastDay.value, reasons, locale));
+    setText('rl-preview-signature', inputs.user.value || ds(root, 'signatureFallback'));
+  }
+
+  function updatePreview() {
+    const root = getEl('rl-root') as HTMLElement | null;
+    const inputs = getFormInputs();
+    if (!root || !inputs) return;
+    updateLetterHeader(inputs, root);
+    updateLetterSalutation(inputs, root);
+    updateLetterBody(inputs, root);
+  }
+
+  function setInitialValues(inputs: FormInputs, root: HTMLElement) {
+    const future = new Date(Date.now() + 15 * 24 * 60 * 60 * 1000);
+    setIfEmpty(inputs.user, ds(root, 'defaultUserName'));
+    setIfEmpty(inputs.manager, ds(root, 'defaultManagerName'));
+    setIfEmpty(inputs.company, ds(root, 'defaultCompanyName'));
+    setIfEmpty(inputs.city, ds(root, 'defaultCity'));
+    setIfEmpty(inputs.lastDay, future.toISOString().split('T')[0] || '');
+  }
+
+  function setupListeners() {
+    const inputs = getFormInputs();
+    if (!inputs) return;
+    const elems = [inputs.user, inputs.manager, inputs.company, inputs.lastDay, inputs.reason, inputs.city, inputs.gender];
+    elems.forEach((el) => el.addEventListener('input', updatePreview));
+  }
+
+  async function handleCopy() {
+    const el = getEl('rl-letter-preview') as HTMLElement | null;
+    if (!el) return;
+    await navigator.clipboard.writeText(el.innerText);
+    const fb = getEl('rl-copy-feedback');
+    if (!fb) return;
+    fb.classList.add('rl-show');
+    setTimeout(() => fb.classList.remove('rl-show'), 2000);
+  }
+
+  async function handleDownload() {
+    const el = getEl('rl-letter-preview');
+    if (!el) return;
+    const html2pdf = (await import('html2pdf.js')).default;
+    await html2pdf()
+      .set({
+        margin: 0,
+        filename: 'resignation-letter.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: 'px', format: [794, 1123], orientation: 'portrait' },
+      })
+      .from(el)
+      .save();
+  }
+
+  function setupButtons() {
+    const copyBtn = getEl('rl-copy-btn');
+    const downloadBtn = getEl('rl-download-btn');
+    copyBtn?.addEventListener('click', () => { void handleCopy(); });
+    downloadBtn?.addEventListener('click', () => { void handleDownload(); });
+  }
+
+  function init() {
+    const root = getEl('rl-root') as HTMLElement | null;
+    const inputs = getFormInputs();
+    if (!root || !inputs) return;
+    setInitialValues(inputs, root);
+    setupListeners();
+    setupButtons();
+    updatePreview();
+  }
+
+  init();
+</script>
+
+<style>
+  .rl-root {
+    margin-top: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .rl-tool-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    .rl-tool-content {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .rl-form-container {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  :global(.theme-dark) .rl-form-container {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  }
+
+  .rl-form-container:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .rl-form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .rl-form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #64748b;
+  }
+
+  :global(.theme-dark) .rl-form-group label {
+    color: #94a3b8;
+  }
+
+  .rl-form-container input,
+  .rl-form-container select {
+    width: 100%;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.875rem;
+    padding: 0.875rem 1.125rem;
+    font-size: 1rem;
+    color: #0f172a;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    cursor: text;
+    appearance: none;
+  }
+
+  .rl-form-container select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.25rem;
+    padding-right: 2.75rem;
+  }
+
+  :global(.theme-dark) .rl-form-container input,
+  :global(.theme-dark) .rl-form-container select {
+    background: #0f172a;
+    border-color: #334155;
+    color: #f8fafc;
+  }
+
+  .rl-form-container input:hover,
+  .rl-form-container select:hover {
+    border-color: #cbd5e1;
+  }
+
+  :global(.theme-dark) .rl-form-container input:hover,
+  :global(.theme-dark) .rl-form-container select:hover {
+    border-color: #475569;
+  }
+
+  .rl-form-container input:focus,
+  .rl-form-container select:focus {
+    border-color: #6366f1;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+  }
+
+  :global(.theme-dark) .rl-form-container input:focus,
+  :global(.theme-dark) .rl-form-container select:focus {
+    background: #020617;
+    border-color: #818cf8;
+  }
+
+  .rl-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .rl-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+  }
+
+  .rl-btn svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .rl-btn-primary {
+    background: #6366f1;
+    color: #fff;
+  }
+
+  .rl-btn-primary:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  }
+
+  .rl-btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .rl-btn-secondary {
+    background: #f1f5f9;
+    color: #475569;
+  }
+
+  :global(.theme-dark) .rl-btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f1f5f9;
+  }
+
+  .rl-btn-secondary:hover {
+    background: #e2e8f0;
+  }
+
+  :global(.theme-dark) .rl-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .rl-preview-container {
+    position: relative;
+    background: #f1f5f9;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    color: #1e293b;
+    min-height: 50rem;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #e2e8f0;
+  }
+
+  :global(.theme-dark) .rl-preview-container {
+    background: #0f172a;
+    border-color: #1e293b;
+  }
+
+  .rl-copy-feedback {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #10b981;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  .rl-copy-feedback.rl-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .rl-letter-content {
+    background: #fff;
+    width: 100%;
+    max-width: 50rem;
+    padding: 4rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    line-height: 1.8;
+    color: #334155;
+    font-size: 1.1rem;
+    height: fit-content;
+  }
+
+  .rl-letter-header {
+    margin-bottom: 3rem;
+  }
+
+  .rl-date-line {
+    font-weight: 700;
+  }
+
+  .rl-to-block {
+    margin-top: 2rem;
+  }
+
+  .rl-company-name {
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  .rl-letter-body-section {
+    margin-bottom: 3rem;
+  }
+
+  .rl-salutation-line {
+    font-weight: 600;
+  }
+
+  .rl-para {
+    margin-top: 1.5rem;
+  }
+
+  .rl-letter-footer {
+    margin-top: 4rem;
+  }
+
+  .rl-signature {
+    margin-top: 2.5rem;
+    font-weight: 700;
+    border-top: 2px solid #e2e8f0;
+    padding-top: 0.5rem;
+    display: inline-block;
+    min-width: 12rem;
+  }
+</style>
