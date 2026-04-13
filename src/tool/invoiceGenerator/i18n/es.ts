@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
 
-const slug = 'generador-facturas-gratis';
+const slug = 'generador-facturas-pdf';
 const title = 'Generador de Facturas Gratis para Freelancers';
 const description =
   'Crea facturas profesionales online sin registrarte. Rellena tus datos, añade servicios, ajusta los impuestos y genera un PDF listo para imprimir en segundos.';
