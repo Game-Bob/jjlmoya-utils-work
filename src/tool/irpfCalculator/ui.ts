@@ -1,0 +1,35 @@
+export interface IrpfCalculatorUI extends Record<string, string> {
+  titleVariables: string;
+  titleCalculo: string;
+  labelBruto: string;
+  labelPagas: string;
+  labelComunidad: string;
+  labelHijos: string;
+  labelDiscapacidad: string;
+  labelUnidad: string;
+  opt12pagas: string;
+  opt14pagas: string;
+  optGen: string;
+  optMad: string;
+  optCat: string;
+  optAnd: string;
+  optVal: string;
+  optPV: string;
+  optNav: string;
+  optNinguna: string;
+  opt33: string;
+  opt65: string;
+  optSoltero: string;
+  optCasadoLow: string;
+  optCasadoHigh: string;
+  labelSalarioBruto: string;
+  labelSS: string;
+  labelGastos: string;
+  labelNetoAnual: string;
+  labelRetencionIRPF: string;
+  labelNetoMensual: string;
+  labelMarginal: string;
+  resultRetention: string;
+  resultAnual: string;
+  infoText: string;
+}

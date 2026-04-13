@@ -1,0 +1,15 @@
+---
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import type { ToolLocaleContent } from '../../types';
+import type { InvoiceGeneratorUI } from './ui';
+
+interface Props {
+  content: ToolLocaleContent<InvoiceGeneratorUI>;
+}
+
+const { content } = Astro.props;
+---
+
+{content.bibliography && content.bibliography.length > 0 && (
+  <SharedBibliography links={content.bibliography} />
+)}

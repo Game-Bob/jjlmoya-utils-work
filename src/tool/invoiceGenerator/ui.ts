@@ -1,0 +1,29 @@
+export interface InvoiceGeneratorUI extends Record<string, string> {
+  labelEditor: string;
+  labelEditHint: string;
+  btnGenerate: string;
+  labelFrom: string;
+  labelTo: string;
+  labelDesc: string;
+  labelQty: string;
+  labelPrice: string;
+  labelAmount: string;
+  btnAddRow: string;
+  labelSubtotal: string;
+  labelTax: string;
+  labelWithholding: string;
+  labelTotal: string;
+  defaultInvoiceTitle: string;
+  defaultInvoiceNum: string;
+  defaultCompanyName: string;
+  defaultCompanyId: string;
+  defaultAddress: string;
+  defaultCity: string;
+  defaultEmail: string;
+  placeholderDesc: string;
+  placeholderNotes: string;
+  labelNotes: string;
+  currencySymbol: string;
+  defaultTaxRate: string;
+  defaultRetRate: string;
+}

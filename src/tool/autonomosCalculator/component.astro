@@ -1,0 +1,493 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { KnownLocale } from '../../types';
+import type { AutonomosCalculatorUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as AutonomosCalculatorUI;
+---
+
+<div class="ac-container">
+  <div class="ac-card">
+    <div class="ac-input-grid">
+      <div class="ac-input-group">
+        <label for="monthly-income">{t.labelIncome}</label>
+        <div class="ac-input-wrapper">
+          <input
+            type="number"
+            id="monthly-income"
+            placeholder="3000"
+            min="0"
+            value="3000"
+          />
+          <span class="ac-input-unit">€</span>
+        </div>
+      </div>
+
+      <div class="ac-input-group">
+        <label for="monthly-expenses">{t.labelExpenses}</label>
+        <div class="ac-input-wrapper">
+          <input
+            type="number"
+            id="monthly-expenses"
+            placeholder="500"
+            min="0"
+            value="500"
+          />
+          <span class="ac-input-unit">€</span>
+        </div>
+      </div>
+
+      <div class="ac-input-group">
+        <label for="autonomo-type">{t.labelType}</label>
+        <div class="ac-input-wrapper">
+          <select id="autonomo-type">
+            <option value="standard">{t.optStandard}</option>
+            <option value="societario">{t.optSocietario}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="ac-input-group">
+        <label for="flat-rate">{t.labelFlatRate}</label>
+        <div class="ac-input-wrapper">
+          <select id="flat-rate">
+            <option value="no">{t.optNoFlatRate}</option>
+            <option value="yes">{t.optFlatRate}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="ac-bracket-info" id="bracket-info">
+      <div class="ac-bracket-title">
+        <span>{t.labelBracket}</span>
+        <span class="ac-bracket-pill" id="bracket-label">Tramo 3 (Reducido)</span>
+      </div>
+      <div class="ac-slider-group">
+        <input
+          type="range"
+          id="income-slider"
+          min="0"
+          max="8000"
+          step="50"
+          value="3000"
+        />
+        <p class="ac-net-display-text">
+          {t.labelNetDisplay}: <strong id="net-display">0 €</strong>
+        </p>
+      </div>
+    </div>
+
+    <div class="ac-results-grid">
+      <div class="ac-result-card ac-highlight">
+        <span class="ac-result-label">{t.labelCuota}</span>
+        <span class="ac-result-value ac-primary" id="val-cuota">0,00 €</span>
+        <span class="ac-projection-label">{t.labelProjection}</span>
+      </div>
+      <div class="ac-result-card">
+        <span class="ac-result-label">{t.labelBase}</span>
+        <span class="ac-result-value" id="val-base">0,00 €</span>
+      </div>
+      <div class="ac-result-card">
+        <span class="ac-result-label">{t.labelNetAfter}</span>
+        <span class="ac-result-value" id="val-net-after">0,00 €</span>
+      </div>
+    </div>
+
+    <div class="ac-info-alert">
+      <Icon name="mdi:information-outline" class="ac-info-icon" />
+      <p>{t.infoText}</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { AutonomosCalculator } from './logic';
+
+  const incomeInput = document.getElementById('monthly-income') as HTMLInputElement | null;
+  const expenseInput = document.getElementById('monthly-expenses') as HTMLInputElement | null;
+  const typeSelect = document.getElementById('autonomo-type') as HTMLSelectElement | null;
+  const flatRateSelect = document.getElementById('flat-rate') as HTMLSelectElement | null;
+  const incomeSlider = document.getElementById('income-slider') as HTMLInputElement | null;
+
+  const cuotaDisplay = document.getElementById('val-cuota');
+  const baseDisplay = document.getElementById('val-base');
+  const netAfterDisplay = document.getElementById('val-net-after');
+  const netDisplay = document.getElementById('net-display');
+  const bracketLabel = document.getElementById('bracket-label');
+
+  function formatCurrency(val: number): string {
+    return new Intl.NumberFormat('es-ES', {
+      style: 'currency',
+      currency: 'EUR',
+    }).format(val);
+  }
+
+  function getNumericValue(el: HTMLInputElement | null): number {
+    return parseFloat(el?.value ?? '0') || 0;
+  }
+
+  function getSelectValue(el: HTMLSelectElement | null): string {
+    return el?.value ?? '';
+  }
+
+  function getParams() {
+    return {
+      income: getNumericValue(incomeInput),
+      expenses: getNumericValue(expenseInput),
+      isSocietario: getSelectValue(typeSelect) === 'societario',
+      isFlatRate: getSelectValue(flatRateSelect) === 'yes',
+    };
+  }
+
+  function updateUI(results: ReturnType<typeof AutonomosCalculator.calculate>) {
+    if (netDisplay) netDisplay.textContent = formatCurrency(results.rendimientoNeto);
+    if (cuotaDisplay) cuotaDisplay.textContent = formatCurrency(results.cuota);
+    if (baseDisplay) baseDisplay.textContent = formatCurrency(results.baseCotizacion);
+    if (netAfterDisplay) netAfterDisplay.textContent = formatCurrency(results.netAfter);
+    if (bracketLabel) bracketLabel.textContent = results.bracketLabel;
+  }
+
+  function calculate() {
+    if (!incomeInput || !expenseInput || !typeSelect || !flatRateSelect) return;
+    const params = getParams();
+    if (incomeSlider) {
+      incomeSlider.value = Math.min(params.income, 8000).toString();
+    }
+    updateUI(AutonomosCalculator.calculate(params));
+  }
+
+  function handleSlider() {
+    if (incomeInput && incomeSlider) {
+      incomeInput.value = incomeSlider.value;
+      calculate();
+    }
+  }
+
+  [incomeInput, expenseInput, typeSelect, flatRateSelect].forEach((el) => {
+    el?.addEventListener('input', calculate);
+  });
+  incomeSlider?.addEventListener('input', handleSlider);
+
+  calculate();
+</script>
+
+<style>
+  .ac-container {
+    --ac-primary: #10b981;
+    --ac-primary-dark: #059669;
+    --ac-accent: #3b82f6;
+    --ac-bg-card: rgba(255, 255, 255, 0.7);
+    --ac-border-card: rgba(255, 255, 255, 0.4);
+    --ac-shadow-card: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  :global(.theme-dark) .ac-container {
+    --ac-bg-card: rgba(15, 23, 42, 0.6);
+    --ac-border-card: rgba(255, 255, 255, 0.1);
+    --ac-shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .ac-card {
+    background: var(--ac-bg-card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--ac-border-card);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: var(--ac-shadow-card);
+    animation: ac-fade-in 0.5s ease-out forwards;
+  }
+
+  .ac-input-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .ac-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .ac-input-group label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  :global(.theme-dark) .ac-input-group label {
+    color: #94a3b8;
+  }
+
+  .ac-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .ac-input-wrapper input,
+  .ac-input-wrapper select {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    border-radius: 0.75rem;
+    border: 2px solid #e2e8f0;
+    background: white;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    transition: all 0.2s ease;
+    outline: none;
+    appearance: none;
+  }
+
+  :global(.theme-dark) .ac-input-wrapper input,
+  :global(.theme-dark) .ac-input-wrapper select {
+    background: #1e293b;
+    border-color: #334155;
+    color: #f1f5f9;
+  }
+
+  .ac-input-wrapper input:focus,
+  .ac-input-wrapper select:focus {
+    border-color: var(--ac-primary);
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+  }
+
+  .ac-input-unit {
+    position: absolute;
+    right: 1.25rem;
+    font-weight: 700;
+    color: #94a3b8;
+    pointer-events: none;
+  }
+
+  .ac-input-wrapper select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.25rem;
+    padding-right: 2.75rem;
+  }
+
+  .ac-bracket-info {
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 1.25rem;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 2rem;
+  }
+
+  :global(.theme-dark) .ac-bracket-info {
+    background: #0f172a;
+    border-color: #1e293b;
+  }
+
+  .ac-bracket-title {
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  :global(.theme-dark) .ac-bracket-title {
+    color: #f1f5f9;
+  }
+
+  .ac-bracket-pill {
+    background: var(--ac-primary);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .ac-slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .ac-net-display-text {
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+  }
+
+  input[type='range'] {
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 99px;
+    appearance: none;
+    outline: none;
+  }
+
+  :global(.theme-dark) input[type='range'] {
+    background: #334155;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: var(--ac-primary);
+    border: 4px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  :global(.theme-dark) input[type='range']::-webkit-slider-thumb {
+    border-color: #1e293b;
+  }
+
+  .ac-results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .ac-result-card {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+  }
+
+  :global(.theme-dark) .ac-result-card {
+    background: rgba(30, 41, 59, 0.4);
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .ac-highlight {
+    background: #ecfdf5;
+    border-color: var(--ac-primary);
+  }
+
+  :global(.theme-dark) .ac-highlight {
+    background: rgba(16, 185, 129, 0.1);
+  }
+
+  .ac-result-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+  }
+
+  .ac-result-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1e293b;
+  }
+
+  :global(.theme-dark) .ac-result-value {
+    color: #f1f5f9;
+  }
+
+  .ac-primary {
+    color: var(--ac-primary-dark);
+  }
+
+  :global(.theme-dark) .ac-primary {
+    color: var(--ac-primary);
+  }
+
+  .ac-projection-label {
+    font-size: 0.65rem;
+    color: var(--ac-primary-dark);
+    font-weight: 700;
+  }
+
+  :global(.theme-dark) .ac-projection-label {
+    color: var(--ac-primary);
+  }
+
+  .ac-info-alert {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  :global(.theme-dark) .ac-info-alert {
+    background: rgba(30, 58, 138, 0.1);
+    border-color: rgba(30, 58, 138, 0.3);
+  }
+
+  .ac-info-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    color: var(--ac-accent);
+  }
+
+  .ac-info-alert p {
+    font-size: 0.875rem;
+    color: #1e40af;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  :global(.theme-dark) .ac-info-alert p {
+    color: #93c5fd;
+  }
+
+  @media (max-width: 48rem) {
+    .ac-input-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 40rem) {
+    .ac-results-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ac-card {
+      padding: 1.5rem;
+    }
+  }
+
+  @keyframes ac-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

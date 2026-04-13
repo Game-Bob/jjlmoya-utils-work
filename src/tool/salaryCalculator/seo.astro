@@ -1,0 +1,14 @@
+---
+import { SEORenderer } from '@jjlmoya/utils-shared';
+import type { ToolLocaleContent } from '../../types';
+import type { SalaryCalculatorUI } from './ui';
+
+interface Props {
+  content: ToolLocaleContent<SalaryCalculatorUI>;
+  locale?: string;
+}
+
+const { content, locale = 'es' } = Astro.props;
+---
+
+<SEORenderer content={{ locale, sections: content.seo }} />

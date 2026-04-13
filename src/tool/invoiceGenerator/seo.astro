@@ -1,0 +1,14 @@
+---
+import { SEORenderer } from '@jjlmoya/utils-shared';
+import type { ToolLocaleContent } from '../../types';
+import type { InvoiceGeneratorUI } from './ui';
+
+interface Props {
+  content: ToolLocaleContent<InvoiceGeneratorUI>;
+  locale?: string;
+}
+
+const { content, locale = 'en' } = Astro.props;
+---
+
+<SEORenderer content={{ locale, sections: content.seo }} />

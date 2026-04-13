@@ -1,0 +1,303 @@
+---
+import type { KnownLocale } from '../../types';
+import type { ReverseVatCalculatorUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as ReverseVatCalculatorUI;
+---
+
+<div class="rv-wrapper">
+  <div class="rv-card">
+    <div class="rv-bg-icon" aria-hidden="true">
+      <svg fill="currentColor" viewBox="0 0 24 24">
+        <path d="M3 6h18v12H3V6m2 2v8h14V8H5m4 2h6v4H9v-4z"></path>
+      </svg>
+    </div>
+
+    <div class="rv-content">
+      <div class="rv-field">
+        <label class="rv-label">{t.labelTotal}</label>
+        <div class="rv-input-wrapper">
+          <span class="rv-currency">€</span>
+          <input
+            type="number"
+            id="total-amount"
+            placeholder="121.00"
+            class="rv-input"
+          />
+        </div>
+      </div>
+
+      <div class="rv-field">
+        <label class="rv-label">{t.labelVatType}</label>
+        <div class="rv-btn-group">
+          <button class="rv-btn rv-active" data-val="21">{t.btn21}</button>
+          <button class="rv-btn" data-val="10">{t.btn10}</button>
+          <button class="rv-btn" data-val="4">{t.btn4}</button>
+          <button class="rv-btn" data-val="0">{t.btn0}</button>
+        </div>
+      </div>
+
+      <div class="rv-results">
+        <div class="rv-result-row rv-result-base">
+          <span class="rv-result-label">{t.labelBase}</span>
+          <span id="base-amount" class="rv-result-value">0.00 €</span>
+        </div>
+        <div class="rv-result-row">
+          <span class="rv-result-label">
+            {t.labelVat} (<span id="vat-rate-display">21</span> %)
+          </span>
+          <span id="vat-amount" class="rv-result-value rv-vat-value">0.00 €</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { ReverseVatCalculator } from './logic';
+
+  const totalInput = document.getElementById('total-amount') as HTMLInputElement;
+  const baseOutput = document.getElementById('base-amount');
+  const vatOutput = document.getElementById('vat-amount');
+  const vatRateDisplay = document.getElementById('vat-rate-display');
+  const vatBtns = document.querySelectorAll('.rv-btn');
+
+  let currentRate = 21;
+
+  const fmt = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
+
+  function formatAmount(val: number): string {
+    return fmt.format(val).replace(/\u00A0/g, ' ');
+  }
+
+  function calculate() {
+    const total = parseFloat(totalInput.value);
+    const { base, vat } = ReverseVatCalculator.calculate(total, currentRate);
+    if (baseOutput) baseOutput.textContent = formatAmount(base);
+    if (vatOutput) vatOutput.textContent = formatAmount(vat);
+  }
+
+  function handleVatBtn(e: Event) {
+    const target = e.target as HTMLElement;
+    vatBtns.forEach((b) => b.classList.remove('rv-active'));
+    target.classList.add('rv-active');
+    currentRate = parseFloat(target.getAttribute('data-val') ?? '21');
+    if (vatRateDisplay) vatRateDisplay.textContent = currentRate.toString();
+    calculate();
+  }
+
+  totalInput.addEventListener('input', calculate);
+  vatBtns.forEach((btn) => btn.addEventListener('click', handleVatBtn));
+</script>
+
+<style>
+  .rv-wrapper {
+    width: 100%;
+    max-width: 32rem;
+    margin: 2rem auto;
+  }
+
+  .rv-card {
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  :global(.theme-dark) .rv-card {
+    background: #0f172a;
+    border-color: #1e293b;
+  }
+
+  .rv-bg-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    opacity: 0.05;
+    color: currentcolor;
+  }
+
+  .rv-bg-icon svg {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .rv-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .rv-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .rv-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  :global(.theme-dark) .rv-label {
+    color: #94a3b8;
+  }
+
+  .rv-input-wrapper {
+    position: relative;
+  }
+
+  .rv-currency {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 1.25rem;
+    pointer-events: none;
+  }
+
+  .rv-input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: #f8fafc;
+    border: 2px solid transparent;
+    border-radius: 0.75rem;
+    outline: none;
+    transition: border-color 0.2s;
+    color: #1e293b;
+  }
+
+  :global(.theme-dark) .rv-input {
+    background: #1e293b;
+    color: white;
+  }
+
+  .rv-input:focus {
+    border-color: #3b82f6;
+  }
+
+  .rv-input::-webkit-inner-spin-button,
+  .rv-input::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  .rv-btn-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  .rv-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    border: 2px solid #e2e8f0;
+    background: transparent;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  :global(.theme-dark) .rv-btn {
+    border-color: #334155;
+    color: #94a3b8;
+  }
+
+  .rv-btn:hover {
+    border-color: #93c5fd;
+  }
+
+  .rv-btn.rv-active {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: white;
+  }
+
+  .rv-results {
+    background: #f8fafc;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  :global(.theme-dark) .rv-results {
+    background: rgba(30, 41, 59, 0.5);
+    border-color: #334155;
+  }
+
+  .rv-result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .rv-result-base {
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #e2e8f0;
+  }
+
+  :global(.theme-dark) .rv-result-base {
+    border-bottom-color: #334155;
+  }
+
+  .rv-result-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #64748b;
+  }
+
+  :global(.theme-dark) .rv-result-label {
+    color: #94a3b8;
+  }
+
+  .rv-result-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+
+  :global(.theme-dark) .rv-result-value {
+    color: white;
+  }
+
+  .rv-vat-value {
+    font-size: 1.5rem;
+    color: #3b82f6;
+  }
+
+  :global(.theme-dark) .rv-vat-value {
+    color: #93c5fd;
+  }
+
+  @media (max-width: 40rem) {
+    .rv-content {
+      padding: 1.5rem;
+    }
+
+    .rv-result-value {
+      font-size: 1.5rem;
+    }
+  }
+</style>
