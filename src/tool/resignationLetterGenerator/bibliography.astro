@@ -11,4 +11,4 @@ const { locale = 'es' } = Astro.props;
 const content = await resignationLetterGenerator.i18n[locale]?.();
 ---
 
-{content && <SharedBibliography links={content.bibliography} />}
+{content && content.bibliography.length > 0 && <SharedBibliography links={content.bibliography} />}

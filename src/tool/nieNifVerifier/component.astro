@@ -1,0 +1,240 @@
+---
+import type { NieNifVerifierUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const t = ui as NieNifVerifierUI;
+---
+
+<div
+  class="nv-container"
+  id="nv-root"
+  data-type-nif={t.typeNIF}
+  data-type-nie={t.typeNIE}
+  data-type-cif={t.typeCIF}
+  data-msg-valid={t.msgValidSuffix}
+  data-msg-invalid-control={t.msgInvalidControl}
+  data-msg-invalid-nie={t.msgInvalidNIEControl}
+  data-msg-invalid-cif={t.msgInvalidCIF}
+  data-msg-incomplete={t.msgIncomplete}
+>
+  <div class="nv-card">
+    <div class="nv-wrapper" id="nv-wrapper">
+      <label for="nv-input" class="nv-label">{t.labelInput}</label>
+      <input
+        type="text"
+        id="nv-input"
+        class="nv-input"
+        placeholder={t.placeholder}
+        maxlength="11"
+        autocomplete="off"
+      />
+      <div id="nv-status" class="nv-status">
+        <span id="nv-title" class="nv-status-title"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { checkIdentifier } from './logic';
+  import type { CheckMessages } from './logic';
+
+  function getEl(id: string): HTMLElement | null {
+    return document.getElementById(id);
+  }
+
+  function ds(root: HTMLElement, key: string): string {
+    return root.dataset[key] || '';
+  }
+
+  function getMessages(root: HTMLElement): CheckMessages {
+    return {
+      typeNIF: ds(root, 'typeNif'),
+      typeNIE: ds(root, 'typeNie'),
+      typeCIF: ds(root, 'typeCif'),
+      msgValidSuffix: ds(root, 'msgValid'),
+      msgInvalidControl: ds(root, 'msgInvalidControl'),
+      msgInvalidNIEControl: ds(root, 'msgInvalidNie'),
+      msgInvalidCIF: ds(root, 'msgInvalidCif'),
+      msgIncomplete: ds(root, 'msgIncomplete'),
+    };
+  }
+
+  function handleInput(val: string, root: HTMLElement) {
+    const wrapper = getEl('nv-wrapper');
+    const status = getEl('nv-status');
+    const titleEl = getEl('nv-title');
+    if (!wrapper || !status || !titleEl) return;
+    if (val.length < 3) {
+      status.classList.remove('nv-visible');
+      wrapper.classList.remove('nv-valid', 'nv-invalid');
+      return;
+    }
+    const res = checkIdentifier(val, getMessages(root));
+    status.classList.add('nv-visible');
+    wrapper.classList.toggle('nv-valid', res.valid);
+    wrapper.classList.toggle('nv-invalid', !res.valid);
+    titleEl.textContent = res.display;
+  }
+
+  function init() {
+    const root = getEl('nv-root') as HTMLElement | null;
+    const input = getEl('nv-input') as HTMLInputElement | null;
+    if (!root || !input) return;
+    input.addEventListener('input', (e) => {
+      handleInput((e.target as HTMLInputElement).value, root);
+    });
+  }
+
+  init();
+</script>
+
+<style>
+  .nv-container {
+    --nv-blue: #3b82f6;
+    --nv-green: #10b981;
+    --nv-red: #ef4444;
+    --nv-surface: #fff;
+    --nv-bg-input: #f8fafc;
+    --nv-border: #e2e8f0;
+    --nv-text: #0f172a;
+    --nv-muted: #64748b;
+
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+  }
+
+  :global(.theme-dark) .nv-container {
+    --nv-surface: #1e293b;
+    --nv-bg-input: #0f172a;
+    --nv-border: #334155;
+    --nv-text: #f8fafc;
+  }
+
+  .nv-card {
+    width: 100%;
+    max-width: 440px;
+    background: var(--nv-surface);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--nv-border);
+    transition: all 0.3s ease;
+  }
+
+  :global(.theme-dark) .nv-card {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .nv-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .nv-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--nv-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+
+  .nv-input {
+    width: 100%;
+    background: var(--nv-bg-input);
+    border: 2px solid var(--nv-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-align: center;
+    color: var(--nv-text);
+    text-transform: uppercase;
+    outline: none;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+  }
+
+  .nv-input::placeholder {
+    color: #cbd5e1;
+    font-size: 1.2rem;
+    letter-spacing: normal;
+  }
+
+  :global(.theme-dark) .nv-input::placeholder {
+    color: #334155;
+  }
+
+  .nv-input:focus {
+    border-color: var(--nv-blue);
+    background: var(--nv-surface);
+  }
+
+  .nv-wrapper.nv-valid .nv-input {
+    border-color: var(--nv-green);
+    color: var(--nv-green);
+    background: #f0fdf4;
+  }
+
+  :global(.theme-dark) .nv-wrapper.nv-valid .nv-input {
+    background: rgba(6, 78, 59, 0.13);
+  }
+
+  .nv-wrapper.nv-invalid .nv-input {
+    border-color: var(--nv-red);
+    color: var(--nv-red);
+    background: #fef2f2;
+  }
+
+  :global(.theme-dark) .nv-wrapper.nv-invalid .nv-input {
+    background: rgba(127, 29, 29, 0.13);
+  }
+
+  .nv-status {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+  }
+
+  .nv-status.nv-visible {
+    max-height: 2.5rem;
+    opacity: 1;
+    margin-top: 0.5rem;
+  }
+
+  .nv-status-title {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--nv-muted);
+  }
+
+  .nv-wrapper.nv-valid .nv-status-title {
+    color: var(--nv-green);
+  }
+
+  .nv-wrapper.nv-invalid .nv-status-title {
+    color: var(--nv-red);
+  }
+
+  @media (max-width: 480px) {
+    .nv-card {
+      padding: 1.5rem;
+    }
+
+    .nv-input {
+      font-size: 1.4rem;
+      padding: 1rem;
+    }
+  }
+</style>

@@ -1,6 +1,6 @@
 ---
 import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
-import { invoiceGenerator } from './index';
+import { nieNifVerifier } from './index';
 import type { KnownLocale } from '../../types';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { locale = 'es' } = Astro.props;
-const content = await invoiceGenerator.i18n[locale]?.();
+const content = await nieNifVerifier.i18n[locale]?.();
 ---
 
 {content && content.bibliography.length > 0 && <SharedBibliography links={content.bibliography} />}

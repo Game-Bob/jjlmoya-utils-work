@@ -1,0 +1,533 @@
+---
+import type { EarlyRetirementSimulatorUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const t = ui as EarlyRetirementSimulatorUI;
+---
+
+<div
+  class="er-desk"
+  id="er-root"
+  data-label-years={t.labelYears}
+  data-advice-delay={t.adviceDelay}
+  data-advice-bonus={t.adviceBonus}
+  data-advice-optimal={t.adviceOptimal}
+>
+  <header class="er-header">
+    <div class="er-pill">
+      <span class="er-pill-label">{t.labelBirthYear}</span>
+      <input
+        type="number"
+        id="er-birth"
+        class="er-pill-input"
+        value={t.defaultBirthYear}
+        min="1950"
+        max="2010"
+      />
+    </div>
+    <div class="er-pill">
+      <span class="er-pill-label">{t.labelContributions}</span>
+      <input
+        type="number"
+        id="er-contributions"
+        class="er-pill-input"
+        value={t.defaultContributions}
+        min="0"
+        max="50"
+      />
+    </div>
+    <div class="er-pill er-pill-right">
+      <span class="er-pill-label">{t.labelBasePension}</span>
+      <div class="er-pill-row">
+        <input
+          type="number"
+          id="er-base"
+          class="er-pill-input er-pill-input-narrow"
+          value={t.defaultBasePension}
+        />
+        <span class="er-currency">€</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="er-body">
+    <nav class="er-sidebar">
+      <button class="er-nav-btn" data-mode="legal">
+        <span class="er-btn-title">{t.btnLegalTitle}</span>
+        <span class="er-btn-desc">{t.btnLegalDesc}</span>
+      </button>
+      <button class="er-nav-btn er-active" data-mode="voluntaria">
+        <span class="er-btn-title">{t.btnVoluntaryTitle}</span>
+        <span class="er-btn-desc">{t.btnVoluntaryDesc}</span>
+      </button>
+      <button class="er-nav-btn" data-mode="involuntaria">
+        <span class="er-btn-title">{t.btnInvoluntaryTitle}</span>
+        <span class="er-btn-desc">{t.btnInvoluntaryDesc}</span>
+      </button>
+    </nav>
+
+    <main class="er-main">
+      <div class="er-result-hero">
+        <div class="er-metric-group">
+          <span class="er-pill-label">{t.labelRetirementAge}</span>
+          <div class="er-metric-large" id="er-val-age">65<span>{t.labelYears}</span></div>
+        </div>
+        <div class="er-metric-group er-metric-group-right">
+          <span class="er-pill-label">{t.labelExpectedDate}</span>
+          <div class="er-stat-val" id="er-val-date">2040</div>
+        </div>
+      </div>
+
+      <div class="er-slider-unit">
+        <input
+          type="range"
+          id="er-slider"
+          class="er-range"
+          min="61"
+          max="70"
+          step="1"
+          value="65"
+        />
+        <div class="er-node-grid">
+          <span class="er-node-year">61</span>
+          <span class="er-node-year">63</span>
+          <span class="er-node-year">65</span>
+          <span class="er-node-year">67</span>
+          <span class="er-node-year">70</span>
+        </div>
+      </div>
+
+      <div class="er-stats-footer">
+        <div class="er-stat-box">
+          <span class="er-pill-label">{t.labelEstimatedPension}</span>
+          <div class="er-stat-val" id="er-val-pension">1.975,00 €</div>
+        </div>
+        <div class="er-stat-box er-stat-box-right">
+          <span class="er-pill-label">{t.labelPermanentReduction}</span>
+          <div class="er-stat-val er-stat-accent" id="er-val-penalty">-21.0%</div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="er-advice-bar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="er-advice-icon">
+      <path d="M12 2a7 7 0 0 1 5.292 11.595l-.292.352V17a1 1 0 0 1-.883.993L16 18h-1v2a1 1 0 0 1-.883.993L14 21h-4a1 1 0 0 1-.993-.883L9 20v-2H8a1 1 0 0 1-.993-.883L7 17v-3.053l-.292-.352A7 7 0 0 1 12 2zm0 2a5 5 0 0 0-3.772 8.302l.353.423.419.504V17h6v-3.771l.419-.504.353-.423A5 5 0 0 0 12 4zm1 13h-2v1h2v-1z"/>
+    </svg>
+    <span id="er-val-advice">{t.adviceDefault}</span>
+  </footer>
+</div>
+
+<script>
+  import {
+    calcTotalContributed,
+    getLegalAge,
+    calcPenalty,
+  } from './logic';
+
+  let currentMode = 'voluntaria';
+
+  function getEl(id: string): HTMLElement | null {
+    return document.getElementById(id);
+  }
+
+  function ds(root: HTMLElement, key: string): string {
+    return root.dataset[key] || '';
+  }
+
+  function formatCurrency(val: number): string {
+    return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(val);
+  }
+
+  function parseNum(s: string, fallback: number): number {
+    const n = Number(s);
+    return Number.isNaN(n) ? fallback : n;
+  }
+
+  function getPenaltyText(penalty: number): string {
+    if (penalty > 0) return `-${penalty.toFixed(1)}%`;
+    if (penalty < 0) return `+${Math.abs(penalty).toFixed(1)}%`;
+    return '0.0%';
+  }
+
+  function getPenaltyColor(penalty: number): string {
+    if (penalty > 0) return 'var(--er-gold)';
+    if (penalty < 0) return 'var(--er-emerald)';
+    return 'var(--er-deep)';
+  }
+
+  function getInputValues() {
+    const root = getEl('er-root') as HTMLElement | null;
+    const ageSlider = getEl('er-slider') as HTMLInputElement | null;
+    const birthIn = getEl('er-birth') as HTMLInputElement | null;
+    const curContIn = getEl('er-contributions') as HTMLInputElement | null;
+    const baseIn = getEl('er-base') as HTMLInputElement | null;
+    if (!root || !ageSlider || !birthIn || !curContIn || !baseIn) return null;
+    return {
+      root,
+      birthYear: parseNum(birthIn.value, 1975),
+      curCont: parseNum(curContIn.value, 0),
+      base: parseNum(baseIn.value, 0),
+      selectedAge: parseNum(ageSlider.value, 65),
+    };
+  }
+
+  interface DisplayValues {
+    selectedAge: number;
+    birthYear: number;
+    penalty: number;
+    finalPension: number;
+  }
+
+  function updateDisplay(vals: DisplayValues, root: HTMLElement) {
+    const { selectedAge, birthYear, penalty, finalPension } = vals;
+    const ageOut = getEl('er-val-age');
+    const penaltyOut = getEl('er-val-penalty');
+    const dateOut = getEl('er-val-date');
+    const pensionOut = getEl('er-val-pension');
+    if (ageOut) ageOut.innerHTML = `${selectedAge}<span>${ds(root, 'labelYears')}</span>`;
+    if (penaltyOut) {
+      penaltyOut.textContent = getPenaltyText(penalty);
+      penaltyOut.style.color = getPenaltyColor(penalty);
+    }
+    if (dateOut) dateOut.textContent = String(birthYear + selectedAge);
+    if (pensionOut) pensionOut.textContent = formatCurrency(finalPension);
+  }
+
+  function updateAdvice(penalty: number, base: number, selectedAge: number, root: HTMLElement) {
+    const adviceOut = getEl('er-val-advice');
+    if (!adviceOut) return;
+    if (penalty > 0) {
+      const gain = Math.round(base * 0.05);
+      const template = ds(root, 'adviceDelay');
+      adviceOut.innerHTML = template
+        .replace('[AGE]', String(selectedAge + 1))
+        .replace('[GAIN]', String(gain));
+      return;
+    }
+    if (penalty < 0) {
+      adviceOut.textContent = ds(root, 'adviceBonus');
+      return;
+    }
+    adviceOut.textContent = ds(root, 'adviceOptimal');
+  }
+
+  function updateDesk() {
+    const v = getInputValues();
+    if (!v) return;
+    const totalContributed = calcTotalContributed(v.curCont, v.birthYear, v.selectedAge);
+    const legalAge = getLegalAge(totalContributed);
+    const penalty = calcPenalty(currentMode, v.selectedAge, legalAge, totalContributed);
+    const finalPension = v.base * (1 - penalty / 100);
+    updateDisplay({ selectedAge: v.selectedAge, birthYear: v.birthYear, penalty, finalPension }, v.root);
+    updateAdvice(penalty, v.base, v.selectedAge, v.root);
+  }
+
+  function handleNavClick(btn: Element, navBtns: NodeListOf<Element>) {
+    const slider = getEl('er-slider') as HTMLInputElement | null;
+    navBtns.forEach((b) => b.classList.remove('er-active'));
+    btn.classList.add('er-active');
+    const mode = btn.getAttribute('data-mode') || 'voluntaria';
+    currentMode = mode;
+    const defaults: Record<string, string> = { legal: '67', involuntaria: '63', voluntaria: '65' };
+    if (slider) slider.value = defaults[mode] || '65';
+    updateDesk();
+  }
+
+  function setupListeners() {
+    const navBtns = document.querySelectorAll('.er-nav-btn');
+    [getEl('er-birth'), getEl('er-contributions'), getEl('er-base'), getEl('er-slider')].forEach(
+      (el) => {
+        if (el) el.addEventListener('input', updateDesk);
+      }
+    );
+    navBtns.forEach((btn) => {
+      btn.addEventListener('click', () => handleNavClick(btn, navBtns));
+    });
+  }
+
+  setupListeners();
+  updateDesk();
+</script>
+
+<style>
+  .er-desk {
+    --er-deep: #064e3b;
+    --er-emerald: #10b981;
+    --er-gold: #d97706;
+    --er-surface: #fff;
+    --er-border: #e2e8f0;
+    --er-bg-mute: #f8fafc;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    background: var(--er-surface);
+    border: 1px solid var(--er-border);
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px -12px rgba(6, 78, 59, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  :global(.theme-dark) .er-desk {
+    --er-surface: #0f172a;
+    --er-border: #1e293b;
+    --er-bg-mute: #1e293b;
+    --er-deep: #34d399;
+  }
+
+  .er-header {
+    padding: 2rem 3rem;
+    background: var(--er-bg-mute);
+    border-bottom: 1px solid var(--er-border);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .er-pill {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .er-pill-right {
+    text-align: right;
+  }
+
+  .er-pill-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 4px;
+  }
+
+  .er-pill-label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    opacity: 0.5;
+    letter-spacing: 0.05em;
+    color: var(--er-deep);
+  }
+
+  .er-pill-input {
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--er-deep);
+    padding: 0;
+    width: 100%;
+    outline: none;
+  }
+
+  .er-pill-input-narrow {
+    width: 100px;
+    text-align: right;
+  }
+
+  .er-currency {
+    font-weight: 900;
+    color: var(--er-deep);
+    opacity: 0.5;
+  }
+
+  .er-body {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 450px;
+  }
+
+  .er-sidebar {
+    padding: 2.5rem;
+    border-right: 1px solid var(--er-border);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .er-nav-btn {
+    width: 100%;
+    text-align: left;
+    padding: 1.25rem;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .er-nav-btn:hover {
+    background: var(--er-bg-mute);
+  }
+
+  .er-nav-btn.er-active {
+    background: rgba(16, 185, 129, 0.08);
+    border-color: var(--er-emerald);
+  }
+
+  .er-btn-title {
+    font-weight: 900;
+    font-size: 0.95rem;
+    color: var(--er-deep);
+  }
+
+  .er-btn-desc {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    line-height: 1.3;
+    color: var(--er-deep);
+  }
+
+  .er-main {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .er-result-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2rem;
+  }
+
+  .er-metric-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .er-metric-group-right {
+    text-align: right;
+  }
+
+  .er-metric-large {
+    font-size: 5rem;
+    font-weight: 950;
+    line-height: 1;
+    color: var(--er-deep);
+    letter-spacing: -3px;
+  }
+
+  .er-metric-large span {
+    font-size: 1.25rem;
+    letter-spacing: 0;
+    opacity: 0.3;
+  }
+
+  .er-slider-unit {
+    margin: 2.5rem 0;
+  }
+
+  .er-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: var(--er-border);
+    border-radius: 10px;
+    outline: none;
+  }
+
+  .er-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: var(--er-deep);
+    border: 4px solid var(--er-surface);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .er-node-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+  .er-node-year {
+    font-size: 0.7rem;
+    font-weight: 800;
+    opacity: 0.3;
+    color: var(--er-deep);
+  }
+
+  .er-stats-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--er-border);
+  }
+
+  .er-stat-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .er-stat-box-right {
+    text-align: right;
+  }
+
+  .er-stat-val {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--er-deep);
+  }
+
+  .er-stat-accent {
+    color: var(--er-gold);
+  }
+
+  .er-advice-bar {
+    padding: 1.25rem 3rem;
+    background: var(--er-deep);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .er-advice-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 900px) {
+    .er-body {
+      grid-template-columns: 1fr;
+    }
+
+    .er-header {
+      grid-template-columns: 1fr;
+      padding: 2rem;
+    }
+
+    .er-sidebar {
+      border-right: none;
+      border-bottom: 1px solid var(--er-border);
+      flex-direction: row;
+      overflow-x: auto;
+    }
+
+    .er-nav-btn {
+      min-width: 200px;
+    }
+  }
+</style>

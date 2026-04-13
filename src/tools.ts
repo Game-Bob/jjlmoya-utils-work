@@ -7,6 +7,8 @@ import { INVOICE_GENERATOR_TOOL } from './tool/invoiceGenerator/index';
 import { MEETING_COST_CALCULATOR_TOOL } from './tool/meetingCostCalculator/index';
 import { SETTLEMENT_CALCULATOR_TOOL } from './tool/settlementCalculator/index';
 import { RESIGNATION_LETTER_GENERATOR_TOOL } from './tool/resignationLetterGenerator/index';
+import { EARLY_RETIREMENT_SIMULATOR_TOOL } from './tool/earlyRetirementSimulator/index';
+import { NIE_NIF_VERIFIER_TOOL } from './tool/nieNifVerifier/index';
 
 export const ALL_TOOLS: ToolDefinition[] = [
   IRPF_CALCULATOR_TOOL,
@@ -17,5 +19,7 @@ export const ALL_TOOLS: ToolDefinition[] = [
   MEETING_COST_CALCULATOR_TOOL,
   SETTLEMENT_CALCULATOR_TOOL,
   RESIGNATION_LETTER_GENERATOR_TOOL,
+  EARLY_RETIREMENT_SIMULATOR_TOOL,
+  NIE_NIF_VERIFIER_TOOL,
 ];
 
