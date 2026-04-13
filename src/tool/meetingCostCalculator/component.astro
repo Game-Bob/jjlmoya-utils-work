@@ -1,0 +1,391 @@
+---
+import type { KnownLocale } from '../../types';
+import type { MeetingCostCalculatorUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as MeetingCostCalculatorUI;
+---
+
+<div class="mc-wrapper">
+  <div class="mc-card">
+    <div class="mc-display">
+      <p class="mc-display-label">{t.labelAccumulated}</p>
+      <div class="mc-display-row">
+        <span
+          class="mc-cost"
+          id="mc-cost-display"
+          data-number-locale={t.numberLocale}
+        >0.00</span>
+        <span class="mc-currency">{t.currencySymbol}</span>
+      </div>
+    </div>
+
+    <div class="mc-divider"></div>
+
+    <div class="mc-fields">
+      <div class="mc-field">
+        <label class="mc-label" for="mc-attendees">{t.labelAttendees}</label>
+        <input
+          type="number"
+          id="mc-attendees"
+          value="4"
+          min="1"
+          class="mc-input"
+        />
+      </div>
+      <div class="mc-field">
+        <div class="mc-label-row">
+          <label class="mc-label" for="mc-salary">{t.labelSalary}</label>
+          <select id="mc-salary-type" class="mc-type-select">
+            <option value="annual">{t.optAnnual}</option>
+            <option value="hourly">{t.optHourly}</option>
+          </select>
+        </div>
+        <input
+          type="number"
+          id="mc-salary"
+          value={t.defaultSalary}
+          min="0"
+          class="mc-input"
+        />
+      </div>
+    </div>
+
+    <div class="mc-actions">
+      <button
+        id="mc-btn-toggle"
+        class="mc-btn-primary"
+        data-start={t.btnStart}
+        data-pause={t.btnPause}
+        data-resume={t.btnResume}
+      >
+        {t.btnStart}
+      </button>
+      <button id="mc-btn-reset" class="mc-btn-secondary" disabled>
+        {t.btnReset}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { MeetingCostService } from './logic';
+  import type { MeetingConfig } from './logic';
+
+  class MeetingTickerApp {
+    private isRunning = false;
+    private startTime = 0;
+    private accumulatedCost = 0;
+    private animationFrameId: number | null = null;
+    private locale: string;
+
+    private displayEl: HTMLElement;
+    private attendeesInput: HTMLInputElement;
+    private salaryInput: HTMLInputElement;
+    private salaryTypeSelect: HTMLSelectElement;
+    private btnToggle: HTMLButtonElement;
+    private btnReset: HTMLButtonElement;
+
+    constructor() {
+      this.displayEl = document.getElementById('mc-cost-display')!;
+      this.attendeesInput = document.getElementById('mc-attendees') as HTMLInputElement;
+      this.salaryInput = document.getElementById('mc-salary') as HTMLInputElement;
+      this.salaryTypeSelect = document.getElementById('mc-salary-type') as HTMLSelectElement;
+      this.btnToggle = document.getElementById('mc-btn-toggle') as HTMLButtonElement;
+      this.btnReset = document.getElementById('mc-btn-reset') as HTMLButtonElement;
+      this.locale = this.displayEl.dataset.numberLocale ?? 'en-US';
+      this.bindEvents();
+    }
+
+    private bindEvents(): void {
+      this.btnToggle.addEventListener('click', () => this.toggle());
+      this.btnReset.addEventListener('click', () => this.reset());
+      [this.attendeesInput, this.salaryInput, this.salaryTypeSelect].forEach((el) => {
+        el.addEventListener('input', () => this.handleConfigChange());
+      });
+    }
+
+    private getConfig(): MeetingConfig {
+      return {
+        attendees: parseInt(this.attendeesInput.value) || 1,
+        salary: parseFloat(this.salaryInput.value) || 0,
+        salaryType: this.salaryTypeSelect.value as 'annual' | 'hourly',
+      };
+    }
+
+    private toggle(): void {
+      if (this.isRunning) this.pause();
+      else this.start();
+    }
+
+    private start(): void {
+      this.isRunning = true;
+      this.startTime = performance.now();
+      this.setRunningState(true);
+      this.tick();
+    }
+
+    private pause(): void {
+      this.isRunning = false;
+      if (this.animationFrameId) cancelAnimationFrame(this.animationFrameId);
+      this.accumulatedCost = this.getCurrentTotalCost();
+      this.setRunningState(false);
+    }
+
+    private reset(): void {
+      this.pause();
+      this.accumulatedCost = 0;
+      this.startTime = 0;
+      this.displayEl.textContent = MeetingCostService.formatCurrency(0, this.locale);
+      this.setResetState();
+    }
+
+    private handleConfigChange(): void {
+      if (!this.isRunning) return;
+      this.accumulatedCost = this.getCurrentTotalCost();
+      this.startTime = performance.now();
+    }
+
+    private getCurrentTotalCost(): number {
+      if (!this.isRunning) return this.accumulatedCost;
+      const elapsed = (performance.now() - this.startTime) / 1000;
+      const burnRate = MeetingCostService.calculateBurnRatePerSecond(this.getConfig());
+      return this.accumulatedCost + elapsed * burnRate;
+    }
+
+    private tick(): void {
+      if (!this.isRunning) return;
+      const total = this.getCurrentTotalCost();
+      this.displayEl.textContent = MeetingCostService.formatCurrency(total, this.locale);
+      this.animationFrameId = requestAnimationFrame(() => this.tick());
+    }
+
+    private setRunningState(running: boolean): void {
+      this.btnToggle.classList.toggle('mc-running', running);
+      this.btnReset.disabled = false;
+      const label = running
+        ? this.btnToggle.dataset.pause
+        : this.btnToggle.dataset.resume;
+      this.btnToggle.textContent = label ?? '';
+    }
+
+    private setResetState(): void {
+      this.btnToggle.classList.remove('mc-running');
+      this.btnReset.disabled = true;
+      this.btnToggle.textContent = this.btnToggle.dataset.start ?? '';
+    }
+  }
+
+  new MeetingTickerApp();
+</script>
+
+<style>
+  .mc-wrapper {
+    width: 100%;
+    max-width: 28rem;
+    margin: 2rem auto;
+  }
+
+  .mc-card {
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+  }
+
+  :global(.theme-dark) .mc-card {
+    background: #0f172a;
+    border-color: #1e293b;
+  }
+
+  .mc-display {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .mc-display-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0 0 0.75rem;
+  }
+
+  .mc-display-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .mc-cost {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .mc-currency {
+    font-size: 2rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .mc-divider {
+    height: 1px;
+    background: #e2e8f0;
+  }
+
+  :global(.theme-dark) .mc-divider {
+    background: #1e293b;
+  }
+
+  .mc-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  .mc-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mc-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mc-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+  }
+
+  :global(.theme-dark) .mc-label {
+    color: #94a3b8;
+  }
+
+  .mc-input {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.625rem;
+    outline: none;
+    color: #1e293b;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+  }
+
+  :global(.theme-dark) .mc-input {
+    background: #1e293b;
+    border-color: #334155;
+    color: #fff;
+  }
+
+  .mc-input:focus {
+    border-color: #10b981;
+  }
+
+  .mc-input::-webkit-inner-spin-button,
+  .mc-input::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  .mc-type-select {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: #f1f5f9;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.5rem;
+    color: #475569;
+    cursor: pointer;
+    outline: none;
+  }
+
+  :global(.theme-dark) .mc-type-select {
+    background: #334155;
+    color: #94a3b8;
+  }
+
+  .mc-actions {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem;
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .mc-btn-primary {
+    background: #10b981;
+    color: #fff;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .mc-btn-primary:hover {
+    background: #059669;
+  }
+
+  .mc-btn-primary.mc-running {
+    background: #ef4444;
+  }
+
+  .mc-btn-primary.mc-running:hover {
+    background: #dc2626;
+  }
+
+  .mc-btn-secondary {
+    background: #f1f5f9;
+    color: #64748b;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  :global(.theme-dark) .mc-btn-secondary {
+    background: #1e293b;
+    color: #94a3b8;
+  }
+
+  .mc-btn-secondary:hover:not(:disabled) {
+    background: #e2e8f0;
+  }
+
+  :global(.theme-dark) .mc-btn-secondary:hover:not(:disabled) {
+    background: #334155;
+  }
+
+  .mc-btn-secondary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+</style>

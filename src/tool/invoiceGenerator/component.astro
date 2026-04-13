@@ -138,7 +138,7 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
 
   .ig-header {
     width: 100%;
-    background: #ffffff;
+    background: #fff;
     border: 1px solid #e2e8f0;
     border-radius: 1rem;
     padding: 1.5rem 2rem;
@@ -235,10 +235,10 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
   }
 
   .invoice-document {
-    background: #ffffff;
-    width: 210mm;
-    min-height: 297mm;
-    padding: 20mm;
+    background: #fff;
+    width: 794px;
+    min-height: 1123px;
+    padding: 76px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     color: #1e293b;
@@ -249,21 +249,21 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
   @media (max-width: 900px) {
     .invoice-document {
       transform: scale(0.8);
-      margin-bottom: -60mm;
+      margin-bottom: -227px;
     }
   }
 
   @media (max-width: 600px) {
     .invoice-document {
       transform: scale(0.6);
-      margin-bottom: -110mm;
+      margin-bottom: -416px;
     }
   }
 
   @media (max-width: 450px) {
     .invoice-document {
       transform: scale(0.45);
-      margin: -40mm -40mm -160mm -60mm;
+      margin: -151px -151px -605px -227px;
     }
   }
 
@@ -363,7 +363,7 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
     font-weight: 800;
     color: #0f172a;
     letter-spacing: 0.1em;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
   }
 
   .inv-meta p {
@@ -388,7 +388,7 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
   .inv-from p,
   .inv-to p {
     max-width: 100%;
-    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .inv-parties h3 {
@@ -396,7 +396,7 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
     font-weight: 700;
     color: #64748b;
     text-transform: uppercase;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.5rem;
     border-bottom: 1px solid #f1f5f9;
     padding-bottom: 0.5rem;
   }
@@ -407,13 +407,40 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
     color: #334155;
   }
 
-  .ig-bold { font-weight: 700; }
-  .ig-accent { color: #4f46e5; font-weight: 500; margin-top: 0.5rem; }
-  .ig-muted { color: #64748b; }
-  .ig-negative { color: #ef4444; }
-  .ig-total-color { color: #4f46e5; }
-  .ig-pre { font-size: 0.9rem; white-space: pre-wrap; min-height: 6rem; word-break: break-word; }
-  .ig-row-flex { display: flex; align-items: center; gap: 0.25rem; }
+  .ig-bold {
+    font-weight: 700;
+  }
+
+  .ig-accent {
+    color: #4f46e5;
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+
+  .ig-muted {
+    color: #64748b;
+  }
+
+  .ig-negative {
+    color: #ef4444;
+  }
+
+  .ig-total-color {
+    color: #4f46e5;
+  }
+
+  .ig-pre {
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    min-height: 6rem;
+    overflow-wrap: break-word;
+  }
+
+  .ig-row-flex {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
 
   .inv-table {
     width: 100%;
@@ -471,7 +498,10 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
     white-space: nowrap;
   }
 
-  .ig-td-total { font-weight: 500; color: #1e293b; }
+  .ig-td-total {
+    font-weight: 500;
+    color: #1e293b;
+  }
 
   .ig-td-del {
     padding: 0.75rem 0 0.75rem 1rem;
@@ -491,8 +521,13 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
   }
 
   .ig-item-row:hover .ig-del-btn,
-  .ig-del-btn:focus { opacity: 1; }
-  .ig-del-btn:hover { color: #ef4444; }
+  .ig-del-btn:focus {
+    opacity: 1;
+  }
+
+  .ig-del-btn:hover {
+    color: #ef4444;
+  }
 
   .inv-footer {
     display: flex;
@@ -501,7 +536,10 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
     margin-top: auto;
   }
 
-  .inv-notes { flex: 1; min-width: 0; }
+  .inv-notes {
+    flex: 1;
+    min-width: 0;
+  }
 
   .inv-notes h3 {
     font-size: 0.95rem;
@@ -543,7 +581,7 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 10mm;
+    height: 38px;
     width: 100%;
     background: linear-gradient(90deg, #4f46e5 0%, #3b82f6 100%);
     opacity: 0.8;

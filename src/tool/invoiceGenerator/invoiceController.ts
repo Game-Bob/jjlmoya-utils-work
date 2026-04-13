@@ -2,6 +2,22 @@ import { loadInvoiceState, saveInvoiceState, addInvoiceItem, invoiceItems } from
 import { calculateTotalsUI } from './invoiceMath';
 import { renderInvoiceRows } from './invoiceRenderer';
 
+async function generatePDF() {
+  const element = document.getElementById('invoice-document');
+  if (!element) return;
+  const noPrintEls = element.querySelectorAll<HTMLElement>('.no-print');
+  noPrintEls.forEach((el) => { el.style.display = 'none'; });
+  const html2pdf = (await import('html2pdf.js')).default;
+  await html2pdf().set({
+    margin: 0,
+    filename: 'invoice.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true },
+    jsPDF: { unit: 'px', format: [794, 1123], orientation: 'portrait' },
+  }).from(element).save();
+  noPrintEls.forEach((el) => { el.style.removeProperty('display'); });
+}
+
 type InvoiceEls = {
   tbody: HTMLElement;
   btnAddRow: HTMLElement;
@@ -88,7 +104,7 @@ export function initInvoiceGenerator() {
   setupAddRow(els.tbody, els.btnAddRow);
   setupTaxControls(els.taxInput, els.retInput);
   setupCurrencyControl(els.currSelect);
-  els.printBtn?.addEventListener('click', () => window.print());
+  els.printBtn?.addEventListener('click', () => { void generatePDF(); });
   loadInvoiceState();
   initDocument();
   renderInvoiceRows();

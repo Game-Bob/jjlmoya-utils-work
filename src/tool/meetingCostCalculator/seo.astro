@@ -1,0 +1,14 @@
+---
+import { SEORenderer } from '@jjlmoya/utils-shared';
+import type { ToolLocaleContent } from '../../types';
+import type { MeetingCostCalculatorUI } from './ui';
+
+interface Props {
+  content: ToolLocaleContent<MeetingCostCalculatorUI>;
+  locale?: string;
+}
+
+const { content, locale = 'en' } = Astro.props;
+---
+
+<SEORenderer content={{ locale, sections: content.seo }} />

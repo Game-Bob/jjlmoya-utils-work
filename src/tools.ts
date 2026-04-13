@@ -4,6 +4,8 @@ import { SALARY_CALCULATOR_TOOL } from './tool/salaryCalculator/index';
 import { AUTONOMOS_CALCULATOR_TOOL } from './tool/autonomosCalculator/index';
 import { REVERSE_VAT_CALCULATOR_TOOL } from './tool/reverseVatCalculator/index';
 import { INVOICE_GENERATOR_TOOL } from './tool/invoiceGenerator/index';
+import { MEETING_COST_CALCULATOR_TOOL } from './tool/meetingCostCalculator/index';
+import { SETTLEMENT_CALCULATOR_TOOL } from './tool/settlementCalculator/index';
 
 export const ALL_TOOLS: ToolDefinition[] = [
   IRPF_CALCULATOR_TOOL,
@@ -11,5 +13,7 @@ export const ALL_TOOLS: ToolDefinition[] = [
   AUTONOMOS_CALCULATOR_TOOL,
   REVERSE_VAT_CALCULATOR_TOOL,
   INVOICE_GENERATOR_TOOL,
+  MEETING_COST_CALCULATOR_TOOL,
+  SETTLEMENT_CALCULATOR_TOOL,
 ];
 
