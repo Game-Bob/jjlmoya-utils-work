@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import * as DATA from '../data';
 
 const ENTRIES = [
-  { id: 'workCategory', i18n: DATA.workCategory.i18n },
+  { id: 'audiovisualCategory', i18n: DATA.audiovisualCategory.i18n },
 ];
 
 describe('SEO Content Length Validation', () => {
@@ -10,8 +10,7 @@ describe('SEO Content Length Validation', () => {
     describe(`Tool: ${entry.id}`, () => {
       Object.keys(entry.i18n).forEach((locale) => {
         it(`${locale}: SEO section should exist`, async () => {
-          const loader = (entry.i18n as Record<string, (() => Promise<{ seo?: unknown[] }>) | undefined>)[locale];
-          if (!loader) return;
+          const loader = (entry.i18n as Record<string, () => Promise<{ seo?: unknown[] }>>)[locale];
           const content = await loader();
           if (!content.seo) return;
           expect(Array.isArray(content.seo)).toBe(true);
