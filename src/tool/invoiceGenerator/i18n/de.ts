@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
 
 const slug = 'rechnung-generator';
-const title = 'Kostenloser Rechnung-Generator für Freiberufler und Kleinunternehmen';
+const title = 'Kostenloser Rechnung Generator für Freiberufler und Kleinunternehmen';
 const description =
   'Erstellen Sie professionelle Rechnungen kostenlos online. Geben Sie Ihre Daten ein, fügen Sie Leistungen hinzu, legen Sie Umsatzsteuer und Einbehalt fest und erstellen Sie ein druckfertiges PDF. Kein Konto erforderlich.';
 

@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
 
 const slug = 'gehaltsrechner-spanien';
-const title = 'Gehaltsrechner Spanien: Nettolohn-Simulator IRPF und Sozialversicherung';
+const title = 'Gehaltsrechner Spanien: Nettolohn Simulator IRPF und Sozialversicherung';
 const description =
   'Finden Sie heraus, wie viel Sie tatsächlich jeden Monat verdienen werden. Genaue Berechnung von Einbehalten, Steuerbemessungsgrundlage und Nettoeinkommen nach spanischen Vorschriften.';
 

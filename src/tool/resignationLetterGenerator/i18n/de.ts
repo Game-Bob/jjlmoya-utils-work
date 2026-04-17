@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
 
 const slug = 'kundigungsschreiben-generator';
-const title = 'Professioneller Kündigungsschreiben-Generator';
+const title = 'Professioneller Kündigungsschreiben Generator';
 const description =
   'Erstellen Sie in Sekundenschnelle Ihr personalisiertes Kündigungsschreiben. Professionelle Vorlagen, die sofort kopiert oder als PDF heruntergeladen werden können.';
 

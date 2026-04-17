@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
 
 const slug = 'irpf-calculator-spanje';
-const title = 'IRPF-calculator 2026: Netto Salaris Simulator Spanje';
+const title = 'IRPF calculator 2026: Netto Salaris Simulator Spanje';
 const description =
   'Bereken uw netto maandsalaris en jaarsalaris voor 2026 in Spanje. Bijgewerkte simulator met staats- en regionale schalen, MEI en gezinssituatie.';
 

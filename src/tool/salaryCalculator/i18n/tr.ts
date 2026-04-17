@@ -5,13 +5,13 @@ import type { SalaryCalculatorUI } from '../ui';
 const slug = 'maas-hesaplama-ispanya';
 const title = 'Maaş Hesaplayıcı İspanya: Net Maaş Simülatörü IRPF ve Sosyal Güvenlik';
 const description =
-  'Her ay gerçekte ne kadar kazanacağınızı görün. İspanyol mevzuatına göre stopajların, vergi matrahının ve net gelirin doğru hesaplanması.';
+  "Her ay gerçekte ne kadar kazanacağınızı görün. İspanyol mevzuatına göre stopajların, vergi matrahının ve net gelirin doğru hesaplanması.";
 
 const faqData = [
   {
-    question: 'İspanya'da net maaş nasıl hesaplanır?',
+    question: "İspanya'da net maaş nasıl hesaplanır?",
     answer:
-      'Net maaş, brüt tutardan IRPF stopajları (dilimlere göre) ve Sosyal Güvenlik katkı paylarının (brüt tutarın yaklaşık %6,35'i) çıkarılmasıyla hesaplanır. IRPF yüzdesi kişisel durumunuza ve maaş seviyenize göre değişir.',
+      "Net maaş, brüt tutardan IRPF stopajları (dilimlere göre) ve Sosyal Güvenlik katkı paylarının (brüt tutarın yaklaşık %6,35'i) çıkarılmasıyla hesaplanır. IRPF yüzdesi kişisel durumunuza ve maaş seviyenize göre değişir.",
   },
   {
     question: '12 ve 14 ödeme dönemi arasındaki fark nedir?',
@@ -21,17 +21,17 @@ const faqData = [
   {
     question: 'Maaş bordrom neden hesaplayıcıyla tam olarak uyuşmuyor?',
     answer:
-      'Bu hesaplayıcı standart yaklaşık değerleri kullanır. Gerçek maaş bordronuz şunlara bağlı olarak değişebilir: şirkete özel kesintiler, yan haklar, bakmakla yükümlü olunan çocuklar, engellilik veya IRPF'yi etkileyen kişisel durumlar.',
+      "Bu hesaplayıcı standart yaklaşık değerleri kullanır. Gerçek maaş bordronuz şunlara bağlı olarak değişebilir: şirkete özel kesintiler, yan haklar, bakmakla yükümlü olunan çocuklar, engellilik veya IRPF'yi etkileyen kişisel durumlar.",
   },
   {
     question: 'Maaşımın yüzde kaçını Maliye alıyor?',
     answer:
-      'Bu maaşınıza bağlıdır. Genel olarak, IRPF ve Sosyal Güvenlik arasında brüt maaşın %25 ila %45'i kesilir. Maaş ne kadar yüksek olursa, IRPF'nin artan oranlı sistemi nedeniyle stopaj yüzdesi o kadar yüksek olur.',
+      "Bu maaşınıza bağlıdır. Genel olarak, IRPF ve Sosyal Güvenlik arasında brüt maaşın %25 ila %45'i kesilir. Maaş ne kadar yüksek olursa, IRPF'nin artan oranlı sistemi nedeniyle stopaj yüzdesi o kadar yüksek olur.",
   },
   {
     question: 'IRPF nedir?',
     answer:
-      'Kişisel Gelir Vergisi. Artan oranlı bir vergidir: Daha fazla kazananlar, maaşlarının daha yüksek dilimleri üzerinden daha yüksek bir yüzde öderler.',
+      "Kişisel Gelir Vergisi. Artan oranlı bir vergidir: Daha fazla kazananlar, maaşlarının daha yüksek dilimleri üzerinden daha yüksek bir yüzde öderler.",
   },
 ];
 
@@ -50,7 +50,7 @@ const howToData = [
   },
   {
     name: 'Aylık detayları inceleyin',
-    text: 'Sosyal Güvenliğe ve IRPF'ye ne kadar gittiğini ve banka hesabınıza yatacak tam net gelirin ne olduğunu kontrol edin.',
+    text: "Sosyal Güvenliğe ve IRPF'ye ne kadar gittiğini ve banka hesabınıza yatacak tam net gelirin ne olduğunu kontrol edin.",
   },
 ];
 
@@ -125,11 +125,11 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'İlk işe girişte en yaygın sürprizdir: Yılda 24.000 € tutarında bir sözleşme imzalarsınız, ayda 2.000 € bekleyerek 12'ye bölersiniz ve hesabınızda 1.600 € bulursunuz. Diğer 400 € nerede?',
+      html: "İlk işe girişte en yaygın sürprizdir: Yılda 24.000 € tutarında bir sözleşme imzalarsınız, ayda 2.000 € bekleyerek 12'ye bölersiniz ve hesabınızda 1.600 € bulursunuz. Diğer 400 € nerede?",
     },
     {
       type: 'paragraph',
-      html: 'İspanya'da, <strong>Brüt</strong> (şirketin ödediği) ile <strong>Net</strong> (sizin aldığınız) arasındaki fark iki ana kalem arasında bölünmüştür: IRPF ve Sosyal Güvenlik. Bunları anlamak, maaş artışlarını müzakere etmenin anahtarıdır.',
+      html: "İspanya'da, <strong>Brüt</strong> (şirketin ödediği) ile <strong>Net</strong> (sizin aldığınız) arasındaki fark iki ana kalem arasında bölünmüştür: IRPF ve Sosyal Güvenlik. Bunları anlamak, maaş artışlarını müzakere etmenin anahtarıdır.",
     },
     {
       type: 'title',
@@ -155,11 +155,11 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Artan oranlıdır ve maaşınıza ve kişisel durumunuza bağlı olarak %2 ile %47 arasında değişebilir. Sabit bir vergi değil, Maliye'ye yapılan bir ön ödemedir. Şirket, gelecek yıl ne kadar vergi ödemeniz gerektiğini hesaplar ve bunu ay ay keser.',
+      html: "Artan oranlıdır ve maaşınıza ve kişisel durumunuza bağlı olarak %2 ile %47 arasında değişebilir. Sabit bir vergi değil, Maliye'ye yapılan bir ön ödemedir. Şirket, gelecek yıl ne kadar vergi ödemeniz gerektiğini hesaplar ve bunu ay ay keser.",
     },
     {
       type: 'title',
-      text: 'IRPF'nizi düşüren faktörler',
+      text: "IRPF'nizi düşüren faktörler",
       level: 3,
     },
     {
@@ -192,13 +192,13 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Birçok çalışan, yaz ve Noel'deki ek ödemeler için 14 ödeme dönemini tercih eder. Diğerleri ise maaşın 12 aya yayılmasını tercih eder (veya şirket bunu zorunlu kılar). Matematiksel olarak yılda tam olarak aynı kazancı elde edersiniz.',
+      html: "Birçok çalışan, yaz ve Noel'deki ek ödemeler için 14 ödeme dönemini tercih eder. Diğerleri ise maaşın 12 aya yayılmasını tercih eder (veya şirket bunu zorunlu kılar). Matematiksel olarak yılda tam olarak aynı kazancı elde edersiniz.",
     },
     {
       type: 'list',
       items: [
         '<strong>12 ÖDEME DÖNEMİ</strong>: Her ay daha fazla kazanırsınız ancak ikramiyeniz olmaz. Sabit bir aylık nakit akışı için daha iyidir.',
-        '<strong>14 ÖDEME DÖNEMİ</strong>: Her ay biraz daha az kazanırsınız ancak yılda iki kez çift ödeme alırsınız. "Zorunlu tasarruf" gibi çalışır.',
+        "<strong>14 ÖDEME DÖNEMİ</strong>: Her ay biraz daha az kazanırsınız ancak yılda iki kez çift ödeme alırsınız. \"Zorunlu tasarruf\" gibi çalışır.",
       ],
     },
   ],

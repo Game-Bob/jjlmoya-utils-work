@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
 
 const slug = 'salary-calculator-autonomos-spain-sv';
-const title = 'Avgiftskalkylator för Egenföretagare 2026: Spaniens RETA-system för verklig inkomst';
+const title = 'Avgiftskalkylator för Egenföretagare 2026: Spaniens RETA system för verklig inkomst';
 const description =
   'Gratis simulator för egenavgifter (autónomo) i Spanien 2026. Beräkna din verkliga nettoinkomst, avgiftstrappa och månadsavgift med den nya MEI-nivån på 0,9 %.';
 

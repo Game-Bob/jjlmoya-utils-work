@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
 
 const slug = 'freiberufler-quotenrechner-spanien';
-const title = 'Freiberufler-Quotenrechner 2026: Spanien RETA Realsystem';
+const title = 'Freiberufler Quotenrechner 2026: Spanien RETA Realsystem';
 const description =
   'Kostenloser Simulator für Selbstständigenbeiträge in Spanien 2026. Berechnen Sie Ihr Realeinkommen, Beitragsstufen und monatliche Quote mit dem neuen MEI von 0,9 %.';
 

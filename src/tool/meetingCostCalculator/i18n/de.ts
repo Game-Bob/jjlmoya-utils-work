@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { MeetingCostCalculatorUI } from '../ui';
 
 const slug = 'besprechungskosten-rechner';
-const title = 'Besprechungskosten-Rechner Echtzeit-Ticker';
+const title = 'Besprechungskosten Rechner Echtzeit Ticker';
 const description =
   'Sehen Sie in Echtzeit, wie viel Ihre Besprechung kostet. Geben Sie die Anzahl der Teilnehmer und das Durchschnittsgehalt ein, um zuzusehen, wie der Betrag jede Sekunde steigt.';
 

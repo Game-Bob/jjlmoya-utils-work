@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { ReverseVatCalculatorUI } from '../ui';
 
 const slug = 'netto-rechner-umsatzsteuer-spanien';
-const title = 'Netto-Rechner Umsatzsteuer: MwSt. aus Brutto herausrechnen';
+const title = 'Netto Rechner Umsatzsteuer: MwSt. aus Brutto herausrechnen';
 const description =
   'Online-Rechner zur Ermittlung des Nettobetrags aus dem Bruttobetrag. Rechnen Sie die spanische MwSt. (IVA) aus jedem Gesamtbetrag heraus. Unverzichtbar für Freelancer.';
 

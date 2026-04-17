@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
 
 const slug = 'uppsagningsbrev-generator';
-const title = 'Professionell Uppsägningsbrev-Generator';
+const title = 'Professionell Uppsägningsbrev Generator';
 const description =
   'Skapa ditt personliga uppsägningsbrev på några sekunder. Professionella mallar redo att kopiera eller ladda ner som PDF direkt.';
 

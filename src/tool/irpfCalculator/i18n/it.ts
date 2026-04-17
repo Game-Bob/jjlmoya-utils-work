@@ -38,19 +38,19 @@ const faqData = [
 const howToData = [
   {
     name: 'Inserisci il tuo stipendio lordo',
-    text: 'Digita l'importo totale annuo indicato nel tuo contratto prima di eventuali detrazioni o ritenute.',
+    text: "Digita l'importo totale annuo indicato nel tuo contratto prima di eventuali detrazioni o ritenute.",
   },
   {
     name: 'Definisci la tua situazione personale',
-    text: 'Indica il numero di figli, eventuali disabilità riconosciute e lo stato civile per applicare le esenzioni fiscali previste dalla legge.',
+    text: "Indica il numero di figli, eventuali disabilità riconosciute e lo stato civile per applicare le esenzioni fiscali previste dalla legge.",
   },
   {
     name: 'Scegli la tua Comunità Autonoma',
-    text: 'La tua residenza fiscale determina l'aliquota fiscale regionale applicata, influenzando il tuo reddito netto finale.',
+    text: "La tua residenza fiscale determina l'aliquota fiscale regionale applicata, influenzando il tuo reddito netto finale.",
   },
   {
     name: 'Esamina il dettaglio',
-    text: 'Scopri quanto viene destinato all'IRPF, alla Previdenza Sociale e qual è il tuo stipendio netto reale mensile e annuale.',
+    text: "Scopri quanto viene destinato all'IRPF, alla Previdenza Sociale e qual è il tuo stipendio netto reale mensile e annuale.",
   },
 ];
 
@@ -160,7 +160,7 @@ export const content: ToolLocaleContent<IrpfCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Per comprendere i risultati della tua simulazione, è essenziale conoscere i pilastri dei calcoli delle ritenute di quest'anno:',
+      html: "Per comprendere i risultati della tua simulazione, è essenziale conoscere i pilastri dei calcoli delle ritenute di quest'anno:",
     },
     {
       type: 'list',

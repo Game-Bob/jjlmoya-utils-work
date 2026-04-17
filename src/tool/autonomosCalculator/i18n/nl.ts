@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
 
 const slug = 'zzp-premie-calculator-spanje';
-const title = 'ZZP-premie Calculator 2026: Spanje RETA Systeem op basis van Werkelijk Inkomen';
+const title = 'ZZP premie Calculator 2026: Spanje RETA Systeem op basis van Werkelijk Inkomen';
 const description =
   'Gratis simulator voor bijdragen van zelfstandigen in Spanje 2026. Bereken uw werkelijke netto-inkomen, contributieschijven en maandelijkse premie met de nieuwe MEI van 0,9%.';
 

@@ -5,7 +5,7 @@ import type { SalaryCalculatorUI } from '../ui';
 const slug = 'calcolatore-stipendio-spagna';
 const title = 'Calcolatore Stipendio Spagna: Simulatore Stipendio Netto IRPF e Previdenza Sociale';
 const description =
-  'Scopri quanto guadagnerai effettivamente ogni mese. Calcolo accurato di ritenute, base imponibile e reddito netto secondo le normative spagnole.';
+  "Scopri quanto guadagnerai effettivamente ogni mese. Calcolo accurato di ritenute, base imponibile e reddito netto secondo le normative spagnole.";
 
 const faqData = [
   {
@@ -21,7 +21,7 @@ const faqData = [
   {
     question: 'Perché la mia busta paga non corrisponde esattamente al calcolatore?',
     answer:
-      'Questo calcolatore utilizza valori approssimativi standard. La busta paga effettiva può variare a causa di: detrazioni specifiche dell'azienda, benefit, figli a carico, disabilità o situazioni personali che influiscono sull'IRPF.',
+      "Questo calcolatore utilizza valori approssimativi standard. La busta paga effettiva può variare a causa di: detrazioni specifiche dell'azienda, benefit, figli a carico, disabilità o situazioni personali che influiscono sull'IRPF.",
   },
   {
     question: 'Quale percentuale del mio stipendio trattiene il Fisco?',
@@ -38,7 +38,7 @@ const faqData = [
 const howToData = [
   {
     name: 'Inserisci lo stipendio lordo annuo',
-    text: 'Digita l'importo totale concordato nel tuo contratto prima delle tasse e delle ritenute.',
+    text: "Digita l'importo totale concordato nel tuo contratto prima delle tasse e delle ritenute.",
   },
   {
     name: 'Imposta la situazione familiare',
@@ -46,11 +46,11 @@ const howToData = [
   },
   {
     name: 'Numero di mensilità',
-    text: 'Scegli se ricevere lo stipendio in 12 mensilità (extra ripartite) o in 14 mensilità.',
+    text: "Scegli se ricevere lo stipendio in 12 mensilità (extra ripartite) o in 14 mensilità.",
   },
   {
     name: 'Esamina il dettaglio mensile',
-    text: 'Controlla quanto viene destinato alla Previdenza Sociale, all'IRPF e qual è l'esatto reddito netto che arriverà sul tuo conto bancario.',
+    text: "Controlla quanto viene destinato alla Previdenza Sociale, all'IRPF e qual è l'esatto reddito netto che arriverà sul tuo conto bancario.",
   },
 ];
 
@@ -120,7 +120,7 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Dove sparisce il mio stipendio lordo?',
+      text: "Dove sparisce il mio stipendio lordo?",
       level: 2,
     },
     {
@@ -133,7 +133,7 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     },
     {
       type: 'title',
-      text: 'Previdenza Sociale: Il ~6,35% che finanzia il tuo futuro',
+      text: "Previdenza Sociale: Il ~6,35% che finanzia il tuo futuro",
       level: 2,
     },
     {
@@ -144,13 +144,13 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
       type: 'list',
       items: [
         '<strong>Contingenza Comune (4,70%)</strong>: Copre le assenze per malattia comune, infortuni non lavorativi, pensione e maternità.',
-        '<strong>Disoccupazione (1,55% o 1,60%)</strong>: Il tuo contributo per richiedere l'indennità di disoccupazione se perdi il lavoro. Varia leggermente se il contratto è temporaneo.',
+        "<strong>Disoccupazione (1,55% o 1,60%)</strong>: Il tuo contributo per richiedere l'indennità di disoccupazione se perdi il lavoro. Varia leggermente se il contratto è temporaneo.",
         '<strong>Formazione Professionale (0,10%)</strong>: Per corsi di formazione sovvenzionati e riqualificazione.',
       ],
     },
     {
       type: 'title',
-      text: 'IRPF: L'imposta che fa più male',
+      text: "IRPF: L'imposta che fa più male",
       level: 2,
     },
     {
@@ -159,7 +159,7 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     },
     {
       type: 'title',
-      text: 'Fattori che abbassano l'IRPF',
+      text: "Fattori che abbassano l'IRPF",
       level: 3,
     },
     {
@@ -172,7 +172,7 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     },
     {
       type: 'title',
-      text: 'Scaglioni IRPF Statali (Appross. 2026)',
+      text: "Scaglioni IRPF Statali (Appross. 2026)",
       level: 3,
     },
     {
@@ -187,7 +187,7 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     },
     {
       type: 'title',
-      text: 'L'eterna domanda: 12 o 14 mensilità?',
+      text: "L'eterna domanda: 12 o 14 mensilità?",
       level: 2,
     },
     {
@@ -198,7 +198,7 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
       type: 'list',
       items: [
         '<strong>12 MENSILITÀ</strong>: Guadagni di più ogni mese, ma non hai mensilità extra. Meglio per un flusso di cassa mensile costante.',
-        '<strong>14 MENSILITÀ</strong>: Guadagni un po' meno ogni mese, ma ricevi due pagamenti doppi all'anno. Funziona come un "risparmio forzato".',
+        "<strong>14 MENSILITÀ</strong>: Guadagni un po' meno ogni mese, ma ricevi due pagamenti doppi all'anno. Funziona come un \"risparmio forzato\".",
       ],
     },
   ],

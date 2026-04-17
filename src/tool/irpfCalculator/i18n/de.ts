@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
 
 const slug = 'irpf-rechner-spanien';
-const title = 'IRPF-Rechner 2026: Nettolohn-Simulator Spanien';
+const title = 'IRPF Rechner 2026: Nettolohn Simulator Spanien';
 const description =
   'Berechnen Sie Ihr monatliches und jährliches Nettogehalt für 2026 in Spanien. Aktualisierter Simulator mit staatlichen und regionalen Tarifen, MEI und familiärer Situation.';
 

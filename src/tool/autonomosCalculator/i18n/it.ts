@@ -14,14 +14,14 @@ const faqData = [
       'Il sistema si basa su 15 scaglioni di reddito netto reale. È necessario dichiarare una previsione dei propri profitti (entrate meno spese) e pagare il contributo associato allo scaglione mensile corrispondente.',
   },
   {
-    question: 'Cos'è l'MEI e come influisce sulla mia quota di lavoratore autonomo?',
+    question: "Cos'è l'MEI e come influisce sulla mia quota di lavoratore autonomo?",
     answer:
       "Il Meccanismo di Equità Intergenerazionale (MEI) è una tassa finalizzata alle pensioni. Nel 2026 sale allo 0,9%, aumentando leggermente il contributo rispetto al 2025 per tutti i lavoratori autonomi.",
   },
   {
     question: 'Quante volte posso cambiare la mia base contributiva?',
     answer:
-      'Puoi modificare la tua base contributiva, e quindi la tua quota di lavoratore autonomo, fino a 6 volte all'anno per adattarla alla realtà dei tuoi profitti mensili.',
+      "Puoi modificare la tua base contributiva, e quindi la tua quota di lavoratore autonomo, fino a 6 volte all'anno per adattarla alla realtà dei tuoi profitti mensili.",
   },
   {
     question: 'Cosa succede se il mio reddito effettivo differisce dalla mia previsione?',
@@ -38,7 +38,7 @@ const faqData = [
 const howToData = [
   {
     name: 'Inserisci entrate e spese',
-    text: 'Inserisci il fatturato mensile previsto e le spese deducibili della tua attività professionale.',
+    text: "Inserisci il fatturato mensile previsto e le spese deducibili della tua attività professionale.",
   },
   {
     name: 'Definisci il tuo profilo lavorativo',
@@ -46,7 +46,7 @@ const howToData = [
   },
   {
     name: 'Visualizza il tuo scaglione effettivo',
-    text: 'Il simulatore calcolerà il tuo reddito netto e ti mostrerà lo scaglione contributivo applicabile per il 2026.',
+    text: "Il simulatore calcolerà il tuo reddito netto e ti mostrerà lo scaglione contributivo applicabile per il 2026.",
   },
   {
     name: 'Verifica l'impatto MEI',

@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
 
 const slug = 'irpf-kalkylator-spanien';
-const title = 'IRPF-kalkylator 2026: Simulator för nettolön i Spanien';
+const title = 'IRPF kalkylator 2026: Simulator för nettolön i Spanien';
 const description =
   'Beräkna din netto månadslön och årslön för 2026 i Spanien. Uppdaterad simulator med statliga och regionala skalor, MEI och familjesituation.';
 
