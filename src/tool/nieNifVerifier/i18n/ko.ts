@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { NieNifVerifierUI } from '../ui';
 
-const slug = 'nie-nif-verifier-spain-ko';
+const slug = 'nie-nif-verifier-spain';
 const title = '스페인 NIE/NIF/CIF 검증기: 스페인 납세자 번호 판별기';
 const description =
   '스페인의 NIF(DNI), NIE(외국인), CIF(법인) 번호의 유효성을 무료로 확인하세요. 체크 디지트와 공식 규격을 즉시 검증합니다.';

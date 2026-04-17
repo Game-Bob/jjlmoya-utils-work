@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { MeetingCostCalculatorUI } from '../ui';
 
-const slug = 'meeting-cost-calculator-ru';
+const slug = 'kalkulyator-stoimosti-soveschaniya';
 const title = 'Калькулятор стоимости совещания в реальном времени';
 const description =
   'Узнайте в реальном времени, сколько стоит ваше совещание. Введите количество участников и среднюю зарплату, чтобы увидеть, как сумма растет каждую секунду.';

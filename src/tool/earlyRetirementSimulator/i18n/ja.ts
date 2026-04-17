@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
 
-const slug = 'early-retirement-simulator-spain-ja';
+const slug = 'early-retirement-simulator-spain';
 const title = 'スペイン早期退職シミュレーター: あなたの年金を計算しましょう';
 const description =
   '退職年齢、削減係数、および予測される年金額を無料で計算します。スペインの自発的および非自発的早期退職に対応した最新のシミュレーター。';

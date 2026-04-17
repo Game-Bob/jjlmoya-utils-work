@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
 
-const slug = 'severance-pay-calculator-spain-ko';
+const slug = 'severance-pay-calculator-spain';
 const title = '스페인 퇴직금 및 정산금 계산기 2026';
 const description =
   '스페인 노동법에 따른 미사용 연차 수당, 상여금 안분액, 퇴직 위로금 등을 포함한 최종 정산금(Finiquito)을 단계별로 계산해보세요.';

@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
 
-const slug = 'salary-calculator-spain-zh';
+const slug = 'salary-calculator-spain';
 const title = '西班牙薪资计算器：IRPF 与社会保障净薪资模拟器';
 const description =
   '了解您每月实际能拿到多少收入。根据西班牙法规精确计算税款代扣、课税基础及净收入。';

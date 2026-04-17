@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { NieNifVerifierUI } from '../ui';
 
-const slug = 'nie-nif-verifier-spain-ja';
+const slug = 'nie-nif-verifier-spain';
 const title = 'スペインNIE/NIF/CIF検証：納税者番号バリデーター';
 const description =
   'スペインのNIF（DNI）、NIE（外国人）、CIF（企業）の有効性を無料で検証。チェックディジットと公式フォーマットを確認します。';

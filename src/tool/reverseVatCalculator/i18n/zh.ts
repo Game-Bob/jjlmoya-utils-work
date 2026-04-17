@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ReverseVatCalculatorUI } from '../ui';
 
-const slug = 'reverse-vat-calculator-spain-zh';
+const slug = 'reverse-vat-calculator-spain';
 const title = '增值税逆算计算器：计算西班牙税前金额';
 const description =
   '在线增值税（IVA）逆算工具。从任何含税总额中拆分出增值税，以获取税前计税基数。西班牙自由职业者开具发票的必备工具。';

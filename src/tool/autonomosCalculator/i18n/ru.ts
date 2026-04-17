@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
 
-const slug = 'salary-calculator-autonomos-spain-ru';
+const slug = 'kalkulyator-vznosov-samozanyatyh-ispaniya';
 const title = 'Калькулятор взносов самозанятых 2026: Реальная система RETA в Испании';
 const description =
   'Бесплатный симулятор взносов самозанятых (autónomos) в Испании на 2026 год. Рассчитайте свой реальный чистый доход, уровни взносов и ежемесячную квоту с учетом нового MEI 0,9%.';

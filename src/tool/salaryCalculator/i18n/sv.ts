@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
 
-const slug = 'salary-calculator-spain-sv';
+const slug = 'lonekalkylator-spanien';
 const title = 'Lönekalkylator Spanien: Simulator för nettolön, IRPF och socialförsäkring';
 const description =
   'Ta reda på hur mycket du faktiskt kommer att tjäna varje månad. Exakt beräkning av skatteavdrag, beskattningsbar bas och nettoinkomst enligt spanska regler.';

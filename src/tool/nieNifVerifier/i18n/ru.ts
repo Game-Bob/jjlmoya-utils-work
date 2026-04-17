@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { NieNifVerifierUI } from '../ui';
 
-const slug = 'nie-nif-verifier-ru';
+const slug = 'proverka-nie-nif-ispaniya';
 const title = 'Проверка NIE/NIF/CIF Испании: Валидатор налоговых номеров';
 const description =
   'Бесплатный инструмент для проверки валидности NIF (DNI Испании), NIE (иностранцы) и CIF (компании) в Испании. Проверяет контрольную цифру и официальный формат.';

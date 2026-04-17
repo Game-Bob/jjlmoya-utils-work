@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
 
-const slug = 'early-retirement-simulator-spain-ru';
+const slug = 'simulyator-dosrochnogo-vyhoda-na-pensiyu-ispaniya';
 const title = 'Симулятор досрочного выхода на пенсию в Испании: Рассчитайте свою пенсию';
 const description =
   'Бесплатно рассчитайте пенсионный возраст, понижающие коэффициенты и ориентировочный размер пенсии. Обновленный симулятор добровольного и принудительного досрочного выхода на пенсию в Испании.';

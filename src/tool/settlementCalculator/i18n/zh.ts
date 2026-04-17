@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
 
-const slug = 'severance-pay-calculator-spain-zh';
+const slug = 'severance-pay-calculator-spain';
 const title = '2026 西班牙遣散费与离职金计算器';
 const description =
   '分步计算您的西班牙离职金（Finiquito）：包括未休年假、按比例计算的奖金以及根据西班牙劳动法应得的遣散补偿。';

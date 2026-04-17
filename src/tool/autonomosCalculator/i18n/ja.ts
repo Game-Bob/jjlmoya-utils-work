@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
 
-const slug = 'freelance-quota-calculator-spain-ja';
+const slug = 'freelancer-quota-calculator-spain';
 const title = '2026年個人事業主（Autónomos）費用計算機: スペイン RETA 実績ベースシステム';
 const description =
   '2026年スペイン個人事業主拠出金の無料シミュレーター。新しい0.9%のMEI（世代間公平メカニズム）を反映し、実質的な純所得、拠出金ランク、および月額費用を計算します。';

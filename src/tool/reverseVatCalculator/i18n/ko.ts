@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ReverseVatCalculatorUI } from '../ui';
 
-const slug = 'reverse-vat-calculator-spain-ko';
+const slug = 'reverse-vat-calculator-spain';
 const title = '인보이스 부가세 역산기: 세전 금액 계산';
 const description =
   '온라인 부가세(IVA) 역산 도구입니다. 부가세가 포함된 총액에서 세전 금액(과세 표준)을 분리하여 계산합니다. 스페인 프리랜서 및 사업자 인보이스 발행 필수 도구입니다.';

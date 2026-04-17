@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { MeetingCostCalculatorUI } from '../ui';
 
-const slug = 'meeting-cost-calculator-zh';
+const slug = 'meeting-cost-calculator';
 const title = '会议成本实时计时器';
 const description =
   '实时查看您的会议成本。输入参会人数和平均薪资，观察金额每秒钟跳动增加。';

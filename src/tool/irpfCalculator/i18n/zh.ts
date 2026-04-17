@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
 
-const slug = 'irpf-calculator-spain-zh';
+const slug = 'irpf-calculator-spain';
 const title = 'IRPF 计算器 2026：西班牙净工资模拟器';
 const description =
   '计算您 2026 年在西班牙的月度及年度税后净工资。模拟器已根据国家、大区阶梯、MEI 及家庭状况进行更新。';

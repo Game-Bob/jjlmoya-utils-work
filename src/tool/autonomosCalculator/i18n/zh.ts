@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
 
-const slug = 'salary-calculator-autonomos-spain-zh';
+const slug = 'freelancer-quota-calculator-spain';
 const title = '2026 年西班牙自雇人士（Autónomo）缴费计算器：RETA 实际收入系统';
 const description =
   '2026 年西班牙自雇人士缴费免费模拟器。根据新的 0.9% MEI（代际公平机制）计算您的实际净收入、缴费档次和每月费用。';

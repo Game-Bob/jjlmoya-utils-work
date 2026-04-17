@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
 
-const slug = 'early-retirement-simulator-spain-zh';
+const slug = 'early-retirement-simulator-spain';
 const title = '西班牙提前退休模拟器：计算您的养老金';
 const description =
   '免费计算您的退休年龄、削减系数和预计养老金。适用于西班牙自愿和非自愿提前退休的更新模拟器。';

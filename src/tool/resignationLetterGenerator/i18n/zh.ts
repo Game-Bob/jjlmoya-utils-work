@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
 
-const slug = 'resignation-letter-generator-zh';
+const slug = 'resignation-letter-generator';
 const title = '专业辞职信在线生成器';
 const description =
   '在几秒钟内创建您的个性化辞职信。提供专业的模板，可直接复制或立即下载为 PDF 格式。';

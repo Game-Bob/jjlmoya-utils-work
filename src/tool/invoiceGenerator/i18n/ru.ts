@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
 
-const slug = 'invoice-generator-ru';
+const slug = 'generator-schetov-na-oplatu';
 const title = 'Бесплатный генератор счетов (инвойсов) для фрилансеров и бизнеса';
 const description =
   'Создавайте профессиональные счета онлайн бесплатно. Введите данные, добавьте услуги, настройте налоги и создайте PDF для печати. Регистрация не требуется.';

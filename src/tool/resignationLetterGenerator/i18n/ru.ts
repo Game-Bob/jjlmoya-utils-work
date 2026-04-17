@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
 
-const slug = 'resignation-letter-generator-ru';
+const slug = 'generator-zayavleniya-ob-uvolnenii';
 const title = 'Генератор профессионального заявления об увольнении';
 const description =
   'Создайте персональное заявление об увольнении за считанные секунды. Профессиональные шаблоны готовы к копированию или загрузке в PDF.';

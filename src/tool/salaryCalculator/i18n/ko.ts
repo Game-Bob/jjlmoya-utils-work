@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
 
-const slug = 'salary-calculator-spain-ko';
+const slug = 'salary-calculator-spain';
 const title = '스페인 급여 계산기: IRPF 및 사회 보장 순급여 시뮬레이터';
 const description =
   '매달 실제로 얼마를 받게 될지 확인해 보세요. 스페인 규정에 따른 원천징수, 과세 표준 및 순소득의 정확한 계산.';

@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
 
-const slug = 'resignation-letter-generator-ja';
+const slug = 'resignation-letter-generator';
 const title = '退職願・退職届作成ジェネレーター';
 const description =
   '数秒でパーソナライズされた退職願を作成。コピーやPDFダウンロードが可能なプロフェッショナルなテンプレートを即座に生成します。';

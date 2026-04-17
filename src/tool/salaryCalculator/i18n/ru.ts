@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
 
-const slug = 'salary-calculator-spain-ru';
+const slug = 'kalkulyator-zarplaty-ispaniya';
 const title = 'Калькулятор зарплаты в Испании: Симулятор чистой зарплаты, IRPF и социального страхования';
 const description =
   'Узнайте, сколько вы на самом деле будете зарабатывать каждый месяц. Точный расчет удержаний, налогооблагаемой базы и чистого дохода в соответствии с испанским законодательством.';

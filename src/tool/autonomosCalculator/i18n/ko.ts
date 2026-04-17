@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
 
-const slug = 'freelance-quota-calculator-spain-ko';
+const slug = 'freelancer-quota-calculator-spain';
 const title = '2026년 자영업자(Autónomos) 분담금 계산기: 스페인 RETA 실질 소득 시스템';
 const description =
   '2026년 스페인 자영업자 기여금 무료 시뮬레이터. 새로운 0.9% MEI(세대 간 공평성 매커니즘)를 반영하여 실질 순소득, 기여금 등급 및 월별 분담금을 계산합니다.';

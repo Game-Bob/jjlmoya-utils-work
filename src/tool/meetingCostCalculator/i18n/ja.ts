@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { MeetingCostCalculatorUI } from '../ui';
 
-const slug = 'meeting-cost-calculator-ja';
+const slug = 'meeting-cost-calculator';
 const title = '会議コスト計算リアルタイムカウンター';
 const description =
   '会議にどれだけの費用がかかっているかをリアルタイムで確認。参加人数と平均給与を入力するだけで、1秒ごとに金額が増えていく様子を可視化します。';

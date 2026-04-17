@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ReverseVatCalculatorUI } from '../ui';
 
-const slug = 'reverse-vat-calculator-ru';
+const slug = 'kalkulyator-nds-obratno-ispaniya';
 const title = 'Калькулятор НДС от обратного: Рассчитать базу (Испания)';
 const description =
   'Онлайн-калькулятор обратного НДС (IVA). Выделите НДС из любой общей суммы, чтобы получить налогооблагаемую базу. Незаменимый инструмент для фрилансеров в Испании.';

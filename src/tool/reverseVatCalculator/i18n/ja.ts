@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ReverseVatCalculatorUI } from '../ui';
 
-const slug = 'reverse-vat-calculator-spain-ja';
+const slug = 'reverse-vat-calculator-spain';
 const title = '内税逆算シミュレーター：スペインのIVAを差し引く';
 const description =
   'オンラインの内税（IVA）逆算ツールです。税込総額から税抜価格（課税標準額）を算出します。スペインでのインボイス作成やフリーランスの業務に不可欠なツールです。';

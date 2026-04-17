@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
 
-const slug = 'early-retirement-simulator-spain-ko';
+const slug = 'early-retirement-simulator-spain';
 const title = '스페인 조기 은퇴 시뮬레이터: 당신의 연금을 계산해 보세요';
 const description =
   '은퇴 연령, 감액 계수 및 예상 연금액을 무료로 계산해 보세요. 스페인의 자발적 및 비자발적 조기 은퇴에 대응하는 최신 시뮬레이터입니다.';

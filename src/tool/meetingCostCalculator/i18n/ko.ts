@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { MeetingCostCalculatorUI } from '../ui';
 
-const slug = 'meeting-cost-calculator-ko';
+const slug = 'meeting-cost-calculator';
 const title = '회의 비용 계산기 실시간 티커';
 const description =
   '현재 회의에 소요되고 있는 비용을 실시간으로 확인하세요. 참석 인원과 평균 급여를 입력하면 1초마다 늘어나는 금액을 시각화하여 보여줍니다.';

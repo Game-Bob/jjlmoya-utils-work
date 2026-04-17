@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
 
-const slug = 'salary-calculator-spain-ja';
+const slug = 'salary-calculator-spain';
 const title = 'スペイン給与計算機: IRPFおよび社会保障純給与シミュレーター';
 const description =
   '毎月実際にいくら稼げるかを確認しましょう。スペインの規制に基づいた源泉徴収、課税標準、および純収入の正確な計算。';

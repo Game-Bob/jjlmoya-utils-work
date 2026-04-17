@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
 
-const slug = 'invoice-generator-ko';
+const slug = 'invoice-generator';
 const title = '프리랜서 및 소규모 비즈니스를 위한 무료 인보이스 생성기';
 const description =
   '전문적인 인보이스를 온라인에서 무료로 만드세요. 정보를 입력하고 서비스를 추가하고 세율을 설정한 후 인쇄 가능한 PDF를 생성하세요. 계정이 필요 없습니다.';

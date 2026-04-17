@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
 
-const slug = 'irpf-calculator-spain-ko';
+const slug = 'irpf-calculator-spain';
 const title = 'IRPF 계산기 2026: 스페인 순급여 시뮬레이터';
 const description =
   '2026년 스페인의 월별 및 연간 실수령액을 계산해 보세요. 주 정부, 지방 자치 단체, MEI 요율 및 가족 상황이 반영된 최신 시뮬레이터입니다.';

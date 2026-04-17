@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
 
-const slug = 'irpf-calculator-spain-ja';
+const slug = 'irpf-calculator-spain';
 const title = 'IRPF計算機 2026: スペイン純給与シミュレーター';
 const description =
   '2026年のスペインにおける月間および年間の手取り給与を計算します。州、地方自治体、MEIのスケール、および家族状況を反映した最新のシミュレーターです。';

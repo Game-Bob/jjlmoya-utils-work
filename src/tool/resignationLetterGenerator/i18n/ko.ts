@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
 
-const slug = 'resignation-letter-generator-ko';
+const slug = 'resignation-letter-generator';
 const title = '전문 사직서 자동 생성기';
 const description =
   '몇 초 만에 나만의 맞춤 사직서를 작성하세요. 복사하거나 PDF로 즉시 다운로드할 수 있는 전문 템플릿을 제공합니다.';

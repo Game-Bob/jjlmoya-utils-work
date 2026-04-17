@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
 
-const slug = 'severance-pay-calculator-spain-ru';
+const slug = 'raschet-pri-uvolnenii-ispaniya';
 const title = 'Калькулятор расчета при увольнении в Испании 2026';
 const description =
   'Рассчитайте итоговый расчет (finiquito) пошагово: неиспользованный отпуск, пропорциональные премии и компенсация за увольнение согласно испанскому законодательству.';

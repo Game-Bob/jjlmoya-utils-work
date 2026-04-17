@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
 
-const slug = 'severance-pay-calculator-spain-ja';
+const slug = 'severance-pay-calculator-spain';
 const title = 'スペイン退職金・清算額計算シミュレーター 2026';
 const description =
   '未使用の有給休暇、賞与の按分額、およびスペインの労働法に基づく退職慰労金をステップバイステップで計算します。';

@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
 
-const slug = 'invoice-generator-zh';
+const slug = 'invoice-generator';
 const title = '面向自由职业者和小微企业的免费在线发票生成器';
 const description =
   '免费在线创建专业的发票。填写您的详细信息，添加服务，设置税率和预扣税，然后生成可直接打印的 PDF。无需注册账户。';

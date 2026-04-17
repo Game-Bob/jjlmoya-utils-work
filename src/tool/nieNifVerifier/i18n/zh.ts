@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { NieNifVerifierUI } from '../ui';
 
-const slug = 'nie-nif-verifier-spain-zh';
+const slug = 'nie-nif-verifier-spain';
 const title = '西班牙 NIE/NIF/CIF 验证器：西班牙税务 ID 校验工具';
 const description =
   '免费验证西班牙 NIF（公民身份证）、NIE（外国人身份号）和 CIF（公司税号）的有效性。校验控制位和官方格式。';

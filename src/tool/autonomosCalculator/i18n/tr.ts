@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
 
-const slug = 'salary-calculator-autonomos-spain-tr';
+const slug = 'bagimsiz-calisan-aidat-hesaplama-ispanya';
 const title = 'Bağkur (Autónomo) Prim Hesaplama 2026: İspanya RETA Gerçek Gelir Sistemi';
 const description =
   '2026 İspanya serbest çalışan (autónomo) primleri için ücretsiz simülatör. Yeni %0,9 MEI ile gerçek net gelirinizi, prim dilimlerinizi ve aylık ödemenizi hesaplayın.';

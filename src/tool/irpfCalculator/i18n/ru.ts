@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
 
-const slug = 'irpf-calculator-spain-ru';
+const slug = 'kalkulyator-irpf-ispaniya';
 const title = 'Калькулятор IRPF 2026: Симулятор чистого дохода в Испании';
 const description =
   'Рассчитайте свою чистую месячную и годовую зарплату на 2026 год в Испании. Обновленный симулятор с учетом государственных, региональных ставок, MEI и семейного положения.';

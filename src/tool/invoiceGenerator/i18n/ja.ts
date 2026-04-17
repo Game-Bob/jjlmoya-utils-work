@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
 
-const slug = 'invoice-generator-ja';
+const slug = 'invoice-generator';
 const title = 'フリーランス・小規模ビジネス向け無料請求書作成ツール';
 const description =
   'プロフェッショナルな請求書をオンラインで無料作成。詳細入力、品目追加、税金設定を行うだけで、印刷可能なPDFを生成。アカウント登録不要。';
