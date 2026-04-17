@@ -16,7 +16,7 @@ const faqData = [
   {
     question: 'Freelancerların hizmetleri için KDV hesaplaması gerekir mi?',
     answer:
-      'Bu durum ülkenize ve hizmet türüne bağlıdır. Türkiye'de bir işletmeniz varsa (şahıs şirketi vb.), faturanızda KDV hesaplamanız ve bunu beyan etmeniz gerekir. Muafiyet durumları için bir mali müşavire danışmanız önerilir.',
+      "Bu durum ülkenize ve hizmet türüne bağlıdır. Türkiye'de bir işletmeniz varsa (şahıs şirketi vb.), faturanızda KDV hesaplamanız ve bunu beyan etmeniz gerekir. Muafiyet durumları için bir mali müşavire danışmanız önerilir.",
   },
   {
     question: 'Stopaj nedir ve ne zaman uygulanır?',
@@ -164,7 +164,7 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
     },
     {
       type: 'tip',
-      html: '<strong>Her faturayı PDF olarak kaydedin:</strong> Vergi kanunları işletme kayıtlarının belirli bir süre (Türkiye'de genellikle 5 yıl) saklanmasını gerektirir. Her faturadan sonra PDF Oluştur butonunu kullanın ve yıl ve müşteri bazında düzenlenmiş bir klasöre kaydedin.',
+      html: "<strong>Her faturayı PDF olarak kaydedin:</strong> Vergi kanunları işletme kayıtlarının belirli bir süre (Türkiye'de genellikle 5 yıl) saklanmasını gerektirir. Her faturadan sonra PDF Oluştur butonunu kullanın ve yıl ve müşteri bazında düzenlenmiş bir klasöre kaydedin.",
     },
   ],
 };

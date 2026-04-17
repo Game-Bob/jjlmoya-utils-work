@@ -16,7 +16,7 @@ const faqData = [
   {
     question: 'MEI nedir ve serbest çalışan primimi nasıl etkiler?',
     answer:
-      'Nesiller Arası Hakkaniyet Mekanizması (MEI), emeklilik için ayrılmış bir vergidir. 2026'da %0,9'a yükselerek tüm serbest çalışanlar için 2025'e kıyasla primi biraz artıracaktır.',
+      "Nesiller Arası Hakkaniyet Mekanizması (MEI), emeklilik için ayrılmış bir vergidir. 2026'da %0,9'a yükselerek tüm serbest çalışanlar için 2025'e kıyasla primi biraz artıracaktır.",
   },
   {
     question: 'Prim esas matrahımı yılda kaç kez değiştirebilirim?',
@@ -29,9 +29,9 @@ const faqData = [
       'Sosyal Güvenlik kurumu, Vergi Dairesi ile veri paylaşımı yaparak yıllık bir uzlaştırma gerçekleştirecektir. Eksik ödeme yaptıysanız fark talep edilecek; fazla ödeme yaptıysanız fazlalık otomatik olarak iade edilecektir.',
   },
   {
-    question: '80 Euro'luk sabit tarife (Tarifa Plana) hala var mı?',
+    question: "80 Euro'luk sabit tarife (Tarifa Plana) hala var mı?",
     answer:
-      'Evet, faaliyetin ilk 12 ayı boyunca yeni serbest çalışanlar için 80 €'luk indirimli prim korunmaktadır; gelir asgari ücretin altındaysa 12 ay daha uzatılabilir.',
+      "Evet, faaliyetin ilk 12 ayı boyunca yeni serbest çalışanlar için 80 €'luk indirimli prim korunmaktadır; gelir asgari ücretin altındaysa 12 ay daha uzatılabilir.",
   },
 ];
 
@@ -108,7 +108,7 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     labelNetAfter: 'Gerçek Net (Ödeme sonrası)',
     labelProjection: '2026 PROJEKSİYONU (MEI %0,9)',
     infoText:
-      'RETA 2026 Sistemi: Hesaplama, genel gider indirimi (%7 veya %3) ile aylık net geliri içerir. Gösterilen prim; genel durumlar, mesleki durumlar, faaliyetin durdurulması, eğitim ve 2026 için %0,9'a güncellenen Nesiller Arası Hakkaniyet Mekanizmasını (MEI) kapsar.',
+      "RETA 2026 Sistemi: Hesaplama, genel gider indirimi (%7 veya %3) ile aylık net geliri içerir. Gösterilen prim; genel durumlar, mesleki durumlar, faaliyetin durdurulması, eğitim ve 2026 için %0,9'a güncellenen Nesiller Arası Hakkaniyet Mekanizmasını (MEI) kapsar.",
   },
   faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
@@ -137,7 +137,7 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'İspanya'da serbest çalışan (autónomo) olmak, en dinamik ve bazen kafa karıştırıcı görevlerden biriyle yüzleşmek demektir: <strong>Sosyal Güvenlik primleri</strong>. <strong>Gerçek net gelir</strong> bazlı yeni sistem yürürlüğe girdiğinden beri, "sabit ödeme" kavramı ortadan kalkmış, yerini artan oranlı bir modele bırakmıştır.',
+      html: "İspanya'da serbest çalışan (autónomo) olmak, en dinamik ve bazen kafa karıştırıcı görevlerden biriyle yüzleşmek demektir: <strong>Sosyal Güvenlik primleri</strong>. <strong>Gerçek net gelir</strong> bazlı yeni sistem yürürlüğe girdiğinden beri, \"sabit ödeme\" kavramı ortadan kalkmış, yerini artan oranlı bir modele bırakmıştır.",
     },
     {
       type: 'title',
@@ -164,9 +164,9 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     {
       type: 'list',
       items: [
-        '<strong>MEI Artışı:</strong> 2026 yılı için MEI %0,9'a yükselerek tüm dilimler için 2025'e kıyasla primde hafif bir artışı temsil etmektedir.',
-        '<strong>Dilimlerin Gözden Geçirilmesi:</strong> Net gelir dilimleri korunur, ancak her aralığın minimum ve maksimum primleri gerçek gelirli prim sistemine yaklaşmak için ayarlanır.',
-        '<strong>Yıllık Uzlaştırma:</strong> Yıl sonunda Sosyal Güvenlik kurumu, Vergi Dairesi ile verileri çapraz kontrol edecektir. Gerçek kâra göre fazla veya eksik ödeme yaptıysanız bir iade veya ödeme talebi oluşturulacaktır.',
+        "<strong>MEI Artışı:</strong> 2026 yılı için MEI %0,9'a yükselerek tüm dilimler için 2025'e kıyasla primde hafif bir artışı temsil etmektedir.",
+        "<strong>Dilimlerin Gözden Geçirilmesi:</strong> Net gelir dilimleri korunur, ancak her aralığın minimum ve maksimum primleri gerçek gelirli prim sistemine yaklaşmak için ayarlanır.",
+        "<strong>Yıllık Uzlaştırma:</strong> Yıl sonunda Sosyal Güvenlik kurumu, Vergi Dairesi ile verileri çapraz kontrol edecektir. Gerçek kâra göre fazla veya eksik ödeme yaptıysanız bir iade veya ödeme talebi oluşturulacaktır.",
       ],
     },
     {
@@ -184,7 +184,7 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Genel Gider İndirimi</strong> bireysel serbest çalışanlar için <strong>%7</strong>, şirket yöneticileri için <strong>%3</strong>'tür.',
+      html: "<strong>Genel Gider İndirimi</strong> bireysel serbest çalışanlar için <strong>%7</strong>, şirket yöneticileri için <strong>%3</strong>'tür.",
     },
     {
       type: 'card',
@@ -215,7 +215,7 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     },
     {
       type: 'tip',
-      html: '<strong>Uzman İpucu:</strong> Net geliriniz aydan aya çok değişiyorsa, kendinizi ihtiyatlı bir orta dilimde konumlandırmaya çalışın. Daha sonraki uzlaştırma kaçınılmazdır, ancak bu şekilde yıl sonunda Sosyal Güvenliğin "faturası" geldiğinde binlerce Euro'luk beklenmedik ödemelerden kaçınmış olursunuz.',
+      html: "<strong>Uzman İpucu:</strong> Net geliriniz aydan aya çok değişiyorsa, kendinizi ihtiyatlı bir orta dilimde konumlandırmaya çalışın. Daha sonraki uzlaştırma kaçınılmazdır, ancak bu şekilde yıl sonunda Sosyal Güvenliğin \"faturası\" geldiğinde binlerce Euro'luk beklenmedik ödemelerden kaçınmış olursunuz.",
     },
     {
       type: 'title',
@@ -225,11 +225,11 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     {
       type: 'list',
       items: [
-        '<strong>Genel Durumlar (%28,30):</strong> Genel hastalık veya iş dışı kazalardan kaynaklanan devamsızlıkları kapsar.',
-        '<strong>Mesleki Durumlar (%1,30):</strong> İş kazaları ve meslek hastalıkları.',
-        '<strong>Faaliyetin Durdurulması (%0,90):</strong> Serbest çalışanların "işsizlik" ödeneği.',
-        '<strong>Mesleki Eğitim (%0,10):</strong> Kurslara ve eğitime erişim.',
-        '<strong>MEI (2026'da %0,90):</strong> Emekli maaşlarının sürdürülebilirliğini garanti altına alma fonu.',
+        "<strong>Genel Durumlar (%28,30):</strong> Genel hastalık veya iş dışı kazalardan kaynaklanan devamsızlıkları kapsar.",
+        "<strong>Mesleki Durumlar (%1,30):</strong> İş kazaları ve meslek hastalıkları.",
+        "<strong>Faaliyetin Durdurulması (%0,90):</strong> Serbest çalışanların \"işsizlik\" ödeneği.",
+        "<strong>Mesleki Eğitim (%0,10):</strong> Kurslara ve eğitime erişim.",
+        "<strong>MEI (2026'da %0,90):</strong> Emekli maaşlarının sürdürülebilirliğini garanti altına alma fonu.",
       ],
     },
     {

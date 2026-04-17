@@ -5,11 +5,11 @@ import type { EarlyRetirementSimulatorUI } from '../ui';
 const slug = 'erken-emeklilik-simulatoru-ispanya';
 const title = 'İspanya Erken Emeklilik Simülatörü: Emekli Maaşınızı Hesaplayın';
 const description =
-  'Emeklilik yaşınızı, indirim katsayılarını ve tahmini emekli maaşınızı ücretsiz hesaplayın. İspanya'daki gönüllü ve gönülsüz erken emeklilik için güncellenmiş simülatör.';
+  "Emeklilik yaşınızı, indirim katsayılarını ve tahmini emekli maaşınızı ücretsiz hesaplayın. İspanya'daki gönüllü ve gönülsüz erken emeklilik için güncellenmiş simülatör.";
 
 const faqData = [
   {
-    question: 'İspanya'da erken emeklilik için minimum yaş kaçtır?',
+    question: "İspanya'da erken emeklilik için minimum yaş kaçtır?",
     answer:
       'Gönüllü erken emeklilik için minimum yaş, yasal yaştan 2 yıl öncedir (katkı paylarına bağlı olarak genellikle 63 veya 65 yaş). Gönülsüz emeklilik için bu süre 4 yıla kadardır (61 veya 63 yaş).',
   },
@@ -21,7 +21,7 @@ const faqData = [
   {
     question: 'Erken emekli olarak ne kadar kaybederim?',
     answer:
-      'İndirim, emekliliğin ne kadar öne çekildiğine ve toplam prim yılına bağlıdır. Kesintiler, bir ay için %2,81'den, gönüllü erken emeklilikte tam 2 yıllık süre için maksimum yaklaşık %21'e kadar değişmektedir.',
+      "İndirim, emekliliğin ne kadar öne çekildiğine ve toplam prim yılına bağlıdır. Kesintiler, bir ay için %2,81'den, gönüllü erken emeklilikte tam 2 yıllık süre için maksimum yaklaşık %21'e kadar değişmektedir.",
   },
   {
     question: 'İşsizlik süresi emeklilik için sayılır mı?',
@@ -33,7 +33,7 @@ const faqData = [
 const howToData = [
   {
     name: 'Doğum yılınızı girin',
-    text: 'Bu, 2026'da yürürlükte olan düzenlemelere göre yasal normal emeklilik yaşınızı belirler.',
+    text: "Bu, 2026'da yürürlükte olan düzenlemelere göre yasal normal emeklilik yaşınızı belirler.",
   },
   {
     name: 'Prim yıllarınızı tahmin edin',
@@ -112,7 +112,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     labelPermanentReduction: 'Kalıcı İndirim',
     labelYears: 'YIL',
     btnLegalTitle: 'Standart',
-    btnLegalDesc: 'Yasal emeklilik yaşı. İndirim yok. Matrahın %100'ü.',
+    btnLegalDesc: "Yasal emeklilik yaşı. İndirim yok. Matrahın %100'ü.",
     btnVoluntaryTitle: 'Gönüllü Erken',
     btnVoluntaryDesc: 'Kişisel tercihle emeklilik. Aylık indirim uygulanır.',
     btnInvoluntaryTitle: 'Gönülsüz / ERE',
@@ -124,8 +124,8 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     adviceDefaultWithParams: 'Emeklilik planınızı yansıtmak için kaydırıcıyı hareket ettirin.',
     adviceDelay:
       'Emekliliğinizi <strong>[AGE]</strong> yaşına kadar ertelerseniz, ayda yaklaşık <strong>[GAIN] € fazladan</strong> kazanırsınız.',
-    adviceBonus: 'Erteleme bonusu biriktiriyorsunuz. Emekli maaşınız matrahın %100'ünü aşacak.',
-    adviceOptimal: 'Haklarınızın %100'ü ile optimal standart yaşa ulaştınız.',
+    adviceBonus: "Erteleme bonusu biriktiriyorsunuz. Emekli maaşınız matrahın %100'ünü aşacak.",
+    adviceOptimal: "Haklarınızın %100'ü ile optimal standart yaşa ulaştınız.",
   },
   faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Erken emeklilik</strong>, İspanya'daki çalışanlar için en büyük finansal endişelerden biridir. Ne zaman işi bırakabileceğinizi ve her şeyden önemlisi, indirim katsayıları aracılığıyla ne kadar para kaybedeceğinizi anlamak, sağlıklı bir yaşam planlaması için hayati önem taşır.',
+      html: "<strong>Erken emeklilik</strong>, İspanya'daki çalışanlar için en büyük finansal endişelerden biridir. Ne zaman işi bırakabileceğinizi ve her şeyden önemlisi, indirim katsayıları aracılığıyla ne kadar para kaybedeceğinizi anlamak, sağlıklı bir yaşam planlaması için hayati önem taşır.",
     },
     {
       type: 'list',
@@ -155,15 +155,15 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     },
     {
       type: 'title',
-      text: 'İspanya'da yasal olarak hangi yaşta emekli olabilirim?',
+      text: "İspanya'da yasal olarak hangi yaşta emekli olabilirim?",
       level: 2,
     },
     {
       type: 'list',
       items: [
-        '<strong>65 yaş rotası:</strong> 38 yıl 6 aydan fazla prim ödediyseniz, 65 yaşında matrahınızın %100'ü ile emekli olabilirsiniz.',
-        '<strong>67 yaş rotası:</strong> Prim ödemeleriniz bu eşiğin altındaysa, standart yaşınız 67'dir.',
-        '<strong>Askerlik hizmeti:</strong> Zorunlu askerlik hizmeti veya sosyal hizmet, 1 yıla kadar prim gününe eklenebilir.',
+        "<strong>65 yaş rotası:</strong> 38 yıl 6 aydan fazla prim ödediyseniz, 65 yaşında matrahınızın %100'ü ile emekli olabilirsiniz.",
+        "<strong>67 yaş rotası:</strong> Prim ödemeleriniz bu eşiğin altındaysa, standart yaşınız 67'dir.",
+        "<strong>Askerlik hizmeti:</strong> Zorunlu askerlik hizmeti veya sosyal hizmet, 1 yıla kadar prim gününe eklenebilir.",
       ],
     },
     {

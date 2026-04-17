@@ -21,7 +21,7 @@ const faqData = [
   {
     question: 'Quanto perderò andando in pensione anticipata?',
     answer:
-      'La riduzione dipende dai mesi di anticipo e dagli anni totali versati. I tagli vanno dal 2,81% per un singolo mese fino a un massimo di circa il 21% per l'anticipo volontario completo di 2 anni.',
+      "La riduzione dipende dai mesi di anticipo e dagli anni totali versati. I tagli vanno dal 2,81% per un singolo mese fino a un massimo di circa il 21% per l'anticipo volontario completo di 2 anni.",
   },
   {
     question: "Il periodo di disoccupazione conta ai fini della pensione?",
@@ -55,7 +55,7 @@ const bibliography = [
     url: 'https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10963',
   },
   {
-    name: 'Legge 21/2021 sulla garanzia del potere d'acquisto delle pensioni',
+    name: "Legge 21/2021 sulla garanzia del potere d'acquisto delle pensioni",
     url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2021-21652',
   },
   {
@@ -174,7 +174,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     {
       type: 'card',
       title: 'Requisiti per il Pensionamento Anticipato Volontario',
-      html: '<ul><li>Avere un'età inferiore di due anni rispetto all'età legale standard.</li><li>Avere un periodo di contribuzione effettiva minimo di 35 anni.</li><li>La pensione da percepire deve superare la pensione minima.</li></ul>',
+      html: "<ul><li>Avere un'età inferiore di due anni rispetto all'età legale standard.</li><li>Avere un periodo di contribuzione effettiva minimo di 35 anni.</li><li>La pensione da percepire deve superare la pensione minima.</li></ul>",
     },
     {
       type: 'title',
@@ -202,10 +202,10 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     {
       type: 'list',
       items: [
-        '<strong>Anticipo massimo:</strong> 4 anni (48 mesi) prima dell'età standard.',
-        '<strong>Contributi richiesti:</strong> 33 anni.',
-        '<strong>Condizione:</strong> Devi essere iscritto come in cerca di occupazione da almeno 6 mesi prima.',
-        '<strong>Coefficienti:</strong> Più favorevoli rispetto a quelli volontari, ma l'impatto di 4 anni è comunque severo.',
+        "<strong>Anticipo massimo:</strong> 4 anni (48 mesi) prima dell'età standard.",
+        "<strong>Contributi richiesti:</strong> 33 anni.",
+        "<strong>Condizione:</strong> Devi essere iscritto come in cerca di occupazione da almeno 6 mesi prima.",
+        "<strong>Coefficienti:</strong> Più favorevoli rispetto a quelli volontari, ma l'impatto di 4 anni è comunque severo.",
       ],
     },
     {

@@ -5,7 +5,7 @@ import type { NieNifVerifierUI } from '../ui';
 const slug = 'ispanya-nie-nif-dogrulayici';
 const title = 'İspanya NIE/NIF/CIF Doğrulayıcı: İspanyol Vergi Kimlik Kartı Doğrulama';
 const description =
-  'İspanya'daki NIF (İspanyol DNI), NIE (yabancılar) ve CIF (şirketler) numaralarının geçerliliğini doğrulamak için ücretsiz araç. Kontrol basamağını ve resmi formatı kontrol eder.';
+  "İspanya'daki NIF (İspanyol DNI), NIE (yabancılar) ve CIF (şirketler) numaralarının geçerliliğini doğrulamak için ücretsiz araç. Kontrol basamağını ve resmi formatı kontrol eder.";
 
 const faqData = [
   {
@@ -16,12 +16,12 @@ const faqData = [
   {
     question: 'NIF ve CIF arasındaki fark nedir?',
     answer:
-      'NIF (Número de Identificación Fiscal), tüm vergi kimlikleri için kullanılan güncel terimdir. Ancak CIF (Código de Identificación Fiscal), tüzel kişilerin (şirketler ve kuruluşlar) NIF'ini ifade etmek için hala yaygın olarak kullanılmaktadır.',
+      "NIF (Número de Identificación Fiscal), tüm vergi kimlikleri için kullanılan güncel terimdir. Ancak CIF (Código de Identificación Fiscal), tüzel kişilerin (şirketler ve kuruluşlar) NIF'ini ifade etmek için hala yaygın olarak kullanılmaktadır.",
   },
   {
     question: 'Harfi bilmiyorsam bir NIF numarasının geçerli olup olmadığını nasıl anlarım?',
     answer:
-      'Doğrulayıcımıza 8 haneyi girin ve harfin eşleşip eşleşmediğini kontrol edin. Algoritma, sayıyı 23'e bölerek tam harfi hesaplar.',
+      "Doğrulayıcımıza 8 haneyi girin ve harfin eşleşip eşleşmediğini kontrol edin. Algoritma, sayıyı 23'e bölerek tam harfi hesaplar.",
   },
   {
     question: 'Bu araç Y veya Z ile başlayan NIE numaraları için çalışır mı?',
@@ -31,7 +31,7 @@ const faqData = [
   {
     question: 'Numaranın vergi dairesinde gerçekten kayıtlı olup olmadığını doğrular mı?',
     answer:
-      'Hayır. Bu araç algoritmik ve matematiksel doğrulama yapar. Numaranın yasal bir yapıya ve doğru kontrol basamağına sahip olduğunu onaylar, ancak Agencia Tributaria'nın gerçek nüfus kayıtlarını sorgulamaz.',
+      "Hayır. Bu araç algoritmik ve matematiksel doğrulama yapar. Numaranın yasal bir yapıya ve doğru kontrol basamağına sahip olduğunu onaylar, ancak Agencia Tributaria'nın gerçek nüfus kayıtlarını sorgulamaz.",
   },
 ];
 
@@ -128,12 +128,12 @@ export const content: ToolLocaleContent<NieNifVerifierUI> = {
   seo: [
     {
       type: 'title',
-      text: 'İspanya'da NIF, NIE ve CIF Doğrulamanın Önemi',
+      text: "İspanya'da NIF, NIE ve CIF Doğrulamanın Önemi",
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'İspanya'nın idari ve iş ekosisteminde, vergi kimlik tespiti tüm işlemlerin, sözleşmelerin ve kamu işlerinin temel taşıdır. Fatura kesen bir freelancer, tedarikçileri yöneten bir şirket veya satın alma yapan bir birey olun, güvenilir bir <strong>NIF, NIE ve CIF doğrulayıcı</strong> idari hataları ve olası dolandırıcılığı önlemek için vazgeçilmez bir araçtır.',
+      html: "İspanya'nın idari ve iş ekosisteminde, vergi kimlik tespiti tüm işlemlerin, sözleşmelerin ve kamu işlerinin temel taşıdır. Fatura kesen bir freelancer, tedarikçileri yöneten bir şirket veya satın alma yapan bir birey olun, güvenilir bir <strong>NIF, NIE ve CIF doğrulayıcı</strong> idari hataları ve olası dolandırıcılığı önlemek için vazgeçilmez bir araçtır.",
     },
     {
       type: 'title',
@@ -143,9 +143,9 @@ export const content: ToolLocaleContent<NieNifVerifierUI> = {
     {
       type: 'list',
       items: [
-        '<strong>NIF (Número de Identificación Fiscal):</strong> İspanya'daki vergi kimliği için genel terim. İspanyol vatandaşları için NIF, DNI numarasını ve ardından bir kontrol harfini (8 rakam + 1 harf) eşleştirir.',
-        '<strong>NIE (Número de Identidad de Extranjero):</strong> İspanya'da vergi faaliyeti olan İspanyol olmayan bireyler için kimlik kodu. X, Y veya Z ile başlar, ardından 7 rakam ve bir kontrol harfi gelir.',
-        '<strong>CIF (Código de Identificación Fiscal):</strong> Tüzel kişilerin (şirketler, dernekler) NIF'inin popüler adıdır.',
+        "<strong>NIF (Número de Identificación Fiscal):</strong> İspanya'daki vergi kimliği için genel terim. İspanyol vatandaşları için NIF, DNI numarasını ve ardından bir kontrol harfini (8 rakam + 1 harf) eşleştirir.",
+        "<strong>NIE (Número de Identidad de Extranjero):</strong> İspanya'da vergi faaliyeti olan İspanyol olmayan bireyler için kimlik kodu. X, Y veya Z ile başlar, ardından 7 rakam ve bir kontrol harfi gelir.",
+        "<strong>CIF (Código de Identificación Fiscal):</strong> Tüzel kişilerin (şirketler, dernekler) NIF'inin popüler adıdır.",
       ],
     },
     {

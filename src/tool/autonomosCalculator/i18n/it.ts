@@ -49,7 +49,7 @@ const howToData = [
     text: "Il simulatore calcolerà il tuo reddito netto e ti mostrerà lo scaglione contributivo applicabile per il 2026.",
   },
   {
-    name: 'Verifica l'impatto MEI',
+    name: "Verifica l'impatto MEI",
     text: "Vedrai il dettaglio della quota finale, incluse le contingenze e il nuovo fattore di equità intergenerazionale.",
   },
 ];
@@ -199,9 +199,9 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     {
       type: 'list',
       items: [
-        '<strong>Migliore protezione sociale:</strong> Contribuendo su basi più realistiche, le prestazioni per indennità di malattia, maternità, paternità e soprattutto pensione saranno significativamente più elevate.',
-        '<strong>Piena flessibilità:</strong> Puoi cambiare la tua base contributiva fino a 6 volte all'anno. Se prevedi un drastico calo del reddito, puoi passare a uno scaglione inferiore per evitare tensioni finanziarie.',
-        '<strong>Tariffa Piatta €80:</strong> Mantenuta per i nuovi imprenditori nel primo anno, consentendo un inizio con costi fissi controllati.',
+        "<strong>Migliore protezione sociale:</strong> Contribuendo su basi più realistiche, le prestazioni per indennità di malattia, maternità, paternità e soprattutto pensione saranno significativamente più elevate.",
+        "<strong>Piena flessibilità:</strong> Puoi cambiare la tua base contributiva fino a 6 volte all'anno. Se prevedi un drastico calo del reddito, puoi passare a uno scaglione inferiore per evitare tensioni finanziarie.",
+        "<strong>Tariffa Piatta €80:</strong> Mantenuta per i nuovi imprenditori nel primo anno, consentendo un inizio con costi fissi controllati.",
       ],
     },
     {
@@ -225,11 +225,11 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     {
       type: 'list',
       items: [
-        '<strong>Contingenze Comuni (28,30%):</strong> Copre le assenze per malattia comune o infortuni non lavorativi.',
-        '<strong>Contingenze Professionali (1,30%):</strong> Infortuni sul lavoro e malattie professionali.',
-        '<strong>Cessazione di Attività (0,90%):</strong> L'indennità di "disoccupazione" degli autonomi.',
-        '<strong>Formazione Professionale (0,10%):</strong> Accesso a corsi e formazione.',
-        '<strong>MEI (0,90% nel 2026):</strong> Fondo per garantire la sostenibilità delle pensioni.',
+        "<strong>Contingenze Comuni (28,30%):</strong> Copre le assenze per malattia comune o infortuni non lavorativi.",
+        "<strong>Contingenze Professionali (1,30%):</strong> Infortuni sul lavoro e malattie professionali.",
+        "<strong>Cessazione di Attività (0,90%):</strong> L'indennità di \"disoccupazione\" degli autonomi.",
+        "<strong>Formazione Professionale (0,10%):</strong> Accesso a corsi e formazione.",
+        "<strong>MEI (0,90% nel 2026):</strong> Fondo per garantire la sostenibilità delle pensioni.",
       ],
     },
     {

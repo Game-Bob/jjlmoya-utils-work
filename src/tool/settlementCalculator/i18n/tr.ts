@@ -5,28 +5,28 @@ import type { SettlementCalculatorUI } from '../ui';
 const slug = 'ispanya-tazminat-ve-is-sonu-hesaplama';
 const title = 'İspanya İş Sonu Tazminatı Hesaplama 2026: Finiquito Hesapla';
 const description =
-  'İspanya'daki iş sonu alacaklarınızı (finiquito) adım adım hesaplayın: kullanılmayan izin günleri, ikramiye payları ve işten çıkarma tazminatı.';
+  "İspanya'daki iş sonu alacaklarınızı (finiquito) adım adım hesaplayın: kullanılmayan izin günleri, ikramiye payları ve işten çıkarma tazminatı.";
 
 const faqData = [
   {
-    question: 'Kendi isteğimle istifa edersem tazminat veya alacak alabilir miyim?',
+    question: "Kendi isteğimle istifa edersem tazminat veya alacak alabilir miyim?",
     answer:
-      'Evet, kesinlikle. İş sonu alacağı (finiquito); çalışılan ayın günleri, kullanılmayan izinler ve ikramiyelerin (bonus) o yıla düşen payını kapsar. Ancak ihbar/kıdem tazminatı (indemnización) veya işsizlik maaşı alamazsınız.',
+      "Evet, kesinlikle. İş sonu alacağı (finiquito); çalışılan ayın günleri, kullanılmayan izinler ve ikramiyelerin (bonus) o yıla düşen payını kapsar. Ancak ihbar/kıdem tazminatı (indemnización) veya işsizlik maaşı alamazsınız.",
   },
   {
     question: 'Haksız işten çıkarma durumunda tazminat ne kadardır?',
     answer:
-      '12 Şubat 2012'den sonra imzalanan sözleşmeler için, çalışılan her yıl için 33 günlük maaş tutarındadır (maksimum 24 aylık maaş sınırıyla).',
+      "12 Şubat 2012'den sonra imzalanan sözleşmeler için, çalışılan her yıl için 33 günlük maaş tutarındadır (maksimum 24 aylık maaş sınırıyla).",
   },
   {
-    question: 'İhbar süresine uymazsam işveren finiquito'dan kesinti yapabilir mi?',
+    question: "İhbar süresine uymazsam işveren finiquito'dan kesinti yapabilir mi?",
     answer:
-      'Evet. Sözleşmenizde bir ihbar süresi (genellikle 15 gün) varsa ve buna uymazsanız, şirket eksik günlere karşılık gelen maaşı alacağınızdan düşme hakkına sahiptir.',
+      "Evet. Sözleşmenizde bir ihbar süresi (genellikle 15 gün) varsa ve buna uymazsanız, şirket eksik günlere karşılık gelen maaşı alacağınızdan düşme hakkına sahiptir.",
   },
   {
-    question: 'Kullanılmayan izinlerin ödenmesi durumunda sigorta süreci nasıl işler?',
+    question: "Kullanılmayan izinlerin ödenmesi durumunda sigorta süreci nasıl işler?",
     answer:
-      'Kullanılmayan izinler ödendiğinde, şirket o günler için sizin adınıza Sosyal Güvenlik primlerini ödemeye devam etmelidir. Bu süre bitmeden işsizlik maaşına başvuramazsınız.',
+      "Kullanılmayan izinler ödendiğinde, şirket o günler için sizin adınıza Sosyal Güvenlik primlerini ödemeye devam etmelidir. Bu süre bitmeden işsizlik maaşına başvuramazsınız.",
   },
 ];
 
@@ -121,12 +121,12 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'İspanya'da İşten Ayrılma ve Finiquito Rehberi',
+      text: "İspanya'da İşten Ayrılma ve Finiquito Rehberi",
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'İspanya'da iş sözleşmesi sona erdiğinde haklarınızı bilmek önemlidir. İster <strong>istifa</strong> ister <strong>işten çıkarılma</strong> olsun.',
+      html: "İspanya'da iş sözleşmesi sona erdiğinde haklarınızı bilmek önemlidir. İster <strong>istifa</strong> ister <strong>işten çıkarılma</strong> olsun.",
     },
   ],
 };

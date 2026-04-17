@@ -5,28 +5,28 @@ import type { ReverseVatCalculatorUI } from '../ui';
 const slug = 'kdv-ayristirma-hesaplama-ispanya';
 const title = 'KDV Ayrıştırma: İspanya Vergi Matrahı Hesaplama';
 const description =
-  'Çevrimiçi KDV ayrıştırma (içten dışa) hesaplayıcı. Vergi matrahını elde etmek için herhangi bir toplam tutardan KDV'yi ayırın. İspanya'daki serbest çalışanlar için temel araç.';
+  "Çevrimiçi KDV ayrıştırma (içten dışa) hesaplayıcı. Vergi matrahını elde etmek için herhangi bir toplam tutardan KDV'yi ayırın. İspanya'daki serbest çalışanlar için temel araç.";
 
 const faqData = [
   {
-    question: 'KDV ayrıştırma veya KDV'yi dışarıda bırakmak nedir?',
+    question: "KDV ayrıştırma veya KDV'yi dışarıda bırakmak nedir?",
     answer:
-      'Zaten vergi dahil olan toplam fiyattan vergi matrahını (KDV hariç tutarı) hesaplama işlemidir. Belirlenmiş bir son fiyat üzerinden fatura kesmesi gereken serbest çalışanlar için gereklidir.',
+      "Zaten vergi dahil olan toplam fiyattan vergi matrahını (KDV hariç tutarı) hesaplama işlemidir. Belirlenmiş bir son fiyat üzerinden fatura kesmesi gereken serbest çalışanlar için gereklidir.",
   },
   {
     question: 'KDV ayrıştırma manuel olarak nasıl hesaplanır?',
     answer:
-      '%21 KDV oranı için toplam tutarı 1,21'e bölün. Sonuç vergi matrahıdır. Toplam ile matrah arasındaki fark KDV tutarıdır.',
+      "%21 KDV oranı için toplam tutarı 1,21'e bölün. Sonuç vergi matrahıdır. Toplam ile matrah arasındaki fark KDV tutarıdır.",
   },
   {
-    question: 'İspanya'da hangi KDV türleri vardır?',
+    question: "İspanya'da hangi KDV türleri vardır?",
     answer:
-      'Üç tür vardır: Genel (%21), İndirimli (%10: gıda, sağlık, konut) ve Süper İndirimli (%4: ekmek, süt gibi temel gıdalar, kitaplar).',
+      "Üç tür vardır: Genel (%21), İndirimli (%10: gıda, sağlık, konut) ve Süper İndirimli (%4: ekmek, süt gibi temel gıdalar, kitaplar).",
   },
   {
-    question: 'KDV'yi ayrıştırmak ne zaman zorunludur?',
+    question: "KDV'yi ayrıştırmak ne zaman zorunludur?",
     answer:
-      'Profesyonel veya basitleştirilmiş bir fatura kestiğiniz her zaman. Vergi matrahını, uygulanan vergi oranını ve toplam KDV tutarını ayrı ayrı belirtmelisiniz.',
+      "Profesyonel veya basitleştirilmiş bir fatura kestiğiniz her zaman. Vergi matrahını, uygulanan vergi oranını ve toplam KDV tutarını ayrı ayrı belirtmelisiniz.",
   },
 ];
 
@@ -111,7 +111,7 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'En yaygın hata, %21 KDV'yi çıkarmak için toplam tutardan doğrudan %21'i düşeceğinizi düşünmektir. <strong>Bu yanlıştır!</strong> Bunu yapmak her dönem para kaybetmenize neden olur.',
+      html: "En yaygın hata, %21 KDV'yi çıkarmak için toplam tutardan doğrudan %21'i düşeceğinizi düşünmektir. <strong>Bu yanlıştır!</strong> Bunu yapmak her dönem para kaybetmenize neden olur.",
     },
     {
       type: 'title',
@@ -120,7 +120,7 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'KDV, matrahın <strong>üzerine</strong> eklenir. Dolayısıyla son fiyat, matrahın %121'idir (%21 KDV için). Geriye dönmek için çıkarma yapmayız, <strong>böleriz</strong>. <code>Matrah = Toplam / 1,21</code>.',
+      html: "KDV, matrahın <strong>üzerine</strong> eklenir. Dolayısıyla son fiyat, matrahın %121'idir (%21 KDV için). Geriye dönmek için çıkarma yapmayız, <strong>böleriz</strong>. <code>Matrah = Toplam / 1,21</code>.",
     },
     {
       type: 'code',

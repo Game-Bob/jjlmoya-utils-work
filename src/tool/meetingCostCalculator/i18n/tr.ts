@@ -105,7 +105,7 @@ export const content: ToolLocaleContent<MeetingCostCalculatorUI> = {
   faq: faqData,
   bibliographyTitle: 'Kaynaklar',
   bibliography: [
-    { name: 'Meeting Madness'ı Durdurun (HBR)', url: 'https://hbr.org/2017/07/stop-the-meeting-madness' },
+    { name: "Meeting Madness'ı Durdurun (HBR)", url: 'https://hbr.org/2017/07/stop-the-meeting-madness' },
     { name: 'İş Yerinde Zaman Kaybı (Atlassian)', url: 'https://www.atlassian.com/time-wasting-at-work-infographic' },
   ],
   howTo: howToData,

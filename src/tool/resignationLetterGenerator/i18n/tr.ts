@@ -11,22 +11,22 @@ const faqData = [
   {
     question: 'İstifa etmeden kaç gün önce haber vermeliyim?',
     answer:
-      'Türkiye'de İş Kanunu'na göre ihbar süresi çalışma sürenize bağlıdır: 6 aya kadar 2 hafta, 6 aydan 1.5 yıla kadar 4 hafta, 1.5 yıldan 3 yıla kadar 6 hafta, 3 yıldan fazla ise 8 haftadır.',
+      "Türkiye'de İş Kanunu'na göre ihbar süresi çalışma sürenize bağlıdır: 6 aya kadar 2 hafta, 6 aydan 1.5 yıla kadar 4 hafta, 1.5 yıldan 3 yıla kadar 6 hafta, 3 yıldan fazla ise 8 haftadır.",
   },
   {
     question: 'İstifa edersem kıdem tazminatı alabilir miyim?',
     answer:
-      'Normal şartlarda istifa eden çalışan kıdem tazminatına hak kazanamaz. Ancak "haklı nedenle fesih" (maaşın ödenmemesi, mobbing vb.) veya askerlik, emeklilik, evlilik (kadın çalışanlar için 1 yıl içinde) gibi özel durumlar istisnadır.',
+      "Normal şartlarda istifa eden çalışan kıdem tazminatına hak kazanamaz. Ancak \"haklı nedenle fesih\" (maaşın ödenmemesi, mobbing vb.) veya askerlik, emeklilik, evlilik (kadın çalışanlar için 1 yıl içinde) gibi özel durumlar istisnadır.",
   },
   {
     question: 'İstifa ettikten sonra işsizlik maaşı alabilir miyim?',
     answer:
-      'Kendi isteğiyle (haklı bir neden olmaksızın) istifa eden çalışanlar İŞKUR'dan işsizlik maaşı alamazlar.',
+      "Kendi isteğiyle (haklı bir neden olmaksızın) istifa eden çalışanlar İŞKUR'dan işsizlik maaşı alamazlar.",
   },
   {
     question: 'İhbar süresine uymazsam ne olur?',
     answer:
-      'İhbar süresine uymadan işten ayrılan taraf (işçi veya işveren), karşı tarafa ihbar tazminatı ödemekle yükümlü olur.',
+      "İhbar süresine uymadan işten ayrılan taraf (işçi veya işveren), karşı tarafa ihbar tazminatı ödemekle yükümlü olur.",
   },
 ];
 
@@ -125,7 +125,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
     dateLocale: 'tr-TR',
     datePrefix: '',
     managerPrefix: 'Sayın',
-    managerFallback: 'İnsan Kaynakları Müdürlüğü'ne',
+    managerFallback: "İnsan Kaynakları Müdürlüğü'ne",
     companyFallback: 'Şirket Adı',
     salutationNeutral: 'Sayın',
     salutationM: 'Sayın',

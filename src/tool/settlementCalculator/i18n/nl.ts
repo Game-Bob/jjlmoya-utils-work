@@ -1,6 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
-import type { ReverseVatCalculatorUI } from '../ui';
+import type { SettlementCalculatorUI } from '../ui';
 
 const slug = 'transitievergoeding-berekenen-spanje';
 const title = 'Ontslagvergoeding Calculator Spanje 2026: Finiquito berekenen';
@@ -83,7 +83,7 @@ const appSchema: WithContext<SoftwareApplication> = {
   inLanguage: 'nl',
 };
 
-export const content: ToolLocaleContent<any> = {
+export const content: ToolLocaleContent<SettlementCalculatorUI> = {
   slug,
   title,
   description,

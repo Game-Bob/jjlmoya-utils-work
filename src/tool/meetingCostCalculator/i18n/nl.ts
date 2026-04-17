@@ -137,7 +137,7 @@ export const content: ToolLocaleContent<MeetingCostCalculatorUI> = {
     {
       type: 'list',
       items: [
-        '<strong>De 2-Pizza Regel:</strong> Gepopulariseerd door Jeff Bezos — als twee pizza's niet genoeg zijn om iedereen in de vergadering te voeden, zijn er te veel mensen in de kamer.',
+        "<strong>De 2-Pizza Regel:</strong> Gepopulariseerd door Jeff Bezos — als twee pizza's niet genoeg zijn om iedereen in de vergadering te voeden, zijn er te veel mensen in de kamer.",
         '<strong>Geen agenda, geen vergadering:</strong> Accepteer nooit een vergadering zonder duidelijke agenda en gedefinieerde doelstellingen.',
         '<strong>Stand-up vergaderingen:</strong> Houd dagelijkse syncs staand. Fysiek ongemak bevordert bondigheid en houdt discussies relevant.',
         '<strong>De wet van Parkinson:</strong> Werk expandeert om de beschikbare tijd te vullen. Stel een vast blok van 25 of 50 minuten in in plaats van de standaard een uur.',
