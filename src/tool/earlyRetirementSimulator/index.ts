@@ -1,3 +1,4 @@
+import { earlyRetirementSimulator } from './entry';
 export * from './entry';
 export const EARLY_RETIREMENT_SIMULATOR_TOOL: ToolDefinition = {
   entry: earlyRetirementSimulator,

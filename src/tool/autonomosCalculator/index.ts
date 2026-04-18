@@ -1,3 +1,4 @@
+import { autonomosCalculator } from './entry';
 export * from './entry';
 export const AUTONOMOS_CALCULATOR_TOOL: ToolDefinition = {
   entry: autonomosCalculator,

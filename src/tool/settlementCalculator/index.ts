@@ -1,3 +1,4 @@
+import { settlementCalculator } from './entry';
 export * from './entry';
 export const SETTLEMENT_CALCULATOR_TOOL: ToolDefinition = {
   entry: settlementCalculator,

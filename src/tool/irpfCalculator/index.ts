@@ -1,3 +1,4 @@
+import { irpfCalculator } from './entry';
 export * from './entry';
 export const IRPF_CALCULATOR_TOOL: ToolDefinition = {
   entry: irpfCalculator,

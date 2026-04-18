@@ -1,3 +1,4 @@
+import { reverseVatCalculator } from './entry';
 export * from './entry';
 export const REVERSE_VAT_CALCULATOR_TOOL: ToolDefinition = {
   entry: reverseVatCalculator,
