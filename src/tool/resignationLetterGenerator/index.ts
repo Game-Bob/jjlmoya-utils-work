@@ -1,7 +1,4 @@
 import type { WorkToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import ResignationLetterGeneratorComponent from './component.astro';
-import ResignationLetterGeneratorSEO from './seo.astro';
-import ResignationLetterGeneratorBibliography from './bibliography.astro';
 import type { ResignationLetterGeneratorUI } from './ui';
 
 export type ResignationLetterGeneratorLocaleContent = ToolLocaleContent<ResignationLetterGeneratorUI>;
@@ -47,15 +44,10 @@ export const resignationLetterGenerator: WorkToolEntry<ResignationLetterGenerato
   },
 };
 
-export {
-  ResignationLetterGeneratorComponent,
-  ResignationLetterGeneratorSEO,
-  ResignationLetterGeneratorBibliography,
-};
 
 export const RESIGNATION_LETTER_GENERATOR_TOOL: ToolDefinition = {
   entry: resignationLetterGenerator,
-  Component: ResignationLetterGeneratorComponent,
-  SEOComponent: ResignationLetterGeneratorSEO,
-  BibliographyComponent: ResignationLetterGeneratorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

@@ -1,7 +1,4 @@
 import type { WorkToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import InvoiceGeneratorComponent from './component.astro';
-import InvoiceGeneratorSEO from './seo.astro';
-import InvoiceGeneratorBibliography from './bibliography.astro';
 import type { InvoiceGeneratorUI } from './ui';
 
 export type InvoiceGeneratorLocaleContent = ToolLocaleContent<InvoiceGeneratorUI>;
@@ -47,15 +44,10 @@ export const invoiceGenerator: WorkToolEntry<InvoiceGeneratorUI> = {
   },
 };
 
-export {
-  InvoiceGeneratorComponent,
-  InvoiceGeneratorSEO,
-  InvoiceGeneratorBibliography,
-};
 
 export const INVOICE_GENERATOR_TOOL: ToolDefinition = {
   entry: invoiceGenerator,
-  Component: InvoiceGeneratorComponent,
-  SEOComponent: InvoiceGeneratorSEO,
-  BibliographyComponent: InvoiceGeneratorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

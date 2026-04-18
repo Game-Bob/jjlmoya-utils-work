@@ -1,7 +1,4 @@
 import type { WorkToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import MeetingCostCalculatorComponent from './component.astro';
-import MeetingCostCalculatorSEO from './seo.astro';
-import MeetingCostCalculatorBibliography from './bibliography.astro';
 import type { MeetingCostCalculatorUI } from './ui';
 
 export type MeetingCostCalculatorLocaleContent = ToolLocaleContent<MeetingCostCalculatorUI>;
@@ -47,15 +44,10 @@ export const meetingCostCalculator: WorkToolEntry<MeetingCostCalculatorUI> = {
   },
 };
 
-export {
-  MeetingCostCalculatorComponent,
-  MeetingCostCalculatorSEO,
-  MeetingCostCalculatorBibliography,
-};
 
 export const MEETING_COST_CALCULATOR_TOOL: ToolDefinition = {
   entry: meetingCostCalculator,
-  Component: MeetingCostCalculatorComponent,
-  SEOComponent: MeetingCostCalculatorSEO,
-  BibliographyComponent: MeetingCostCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

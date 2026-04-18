@@ -1,7 +1,4 @@
 import type { WorkToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import AutonomosCalculatorComponent from './component.astro';
-import AutonomosCalculatorSEO from './seo.astro';
-import AutonomosCalculatorBibliography from './bibliography.astro';
 import type { AutonomosCalculatorUI } from './ui';
 
 export type AutonomosCalculatorLocaleContent = ToolLocaleContent<AutonomosCalculatorUI>;
@@ -47,15 +44,10 @@ export const autonomosCalculator: WorkToolEntry<AutonomosCalculatorUI> = {
   },
 };
 
-export {
-  AutonomosCalculatorComponent,
-  AutonomosCalculatorSEO,
-  AutonomosCalculatorBibliography,
-};
 
 export const AUTONOMOS_CALCULATOR_TOOL: ToolDefinition = {
   entry: autonomosCalculator,
-  Component: AutonomosCalculatorComponent,
-  SEOComponent: AutonomosCalculatorSEO,
-  BibliographyComponent: AutonomosCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

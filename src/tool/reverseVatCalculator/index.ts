@@ -1,7 +1,4 @@
 import type { WorkToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import ReverseVatCalculatorComponent from './component.astro';
-import ReverseVatCalculatorSEO from './seo.astro';
-import ReverseVatCalculatorBibliography from './bibliography.astro';
 import type { ReverseVatCalculatorUI } from './ui';
 
 export type ReverseVatCalculatorLocaleContent = ToolLocaleContent<ReverseVatCalculatorUI>;
@@ -47,15 +44,10 @@ export const reverseVatCalculator: WorkToolEntry<ReverseVatCalculatorUI> = {
   },
 };
 
-export {
-  ReverseVatCalculatorComponent,
-  ReverseVatCalculatorSEO,
-  ReverseVatCalculatorBibliography,
-};
 
 export const REVERSE_VAT_CALCULATOR_TOOL: ToolDefinition = {
   entry: reverseVatCalculator,
-  Component: ReverseVatCalculatorComponent,
-  SEOComponent: ReverseVatCalculatorSEO,
-  BibliographyComponent: ReverseVatCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

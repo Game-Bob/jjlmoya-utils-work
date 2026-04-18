@@ -1,7 +1,4 @@
 import type { WorkToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import SettlementCalculatorComponent from './component.astro';
-import SettlementCalculatorSEO from './seo.astro';
-import SettlementCalculatorBibliography from './bibliography.astro';
 import type { SettlementCalculatorUI } from './ui';
 
 export type SettlementCalculatorLocaleContent = ToolLocaleContent<SettlementCalculatorUI>;
@@ -47,15 +44,10 @@ export const settlementCalculator: WorkToolEntry<SettlementCalculatorUI> = {
   },
 };
 
-export {
-  SettlementCalculatorComponent,
-  SettlementCalculatorSEO,
-  SettlementCalculatorBibliography,
-};
 
 export const SETTLEMENT_CALCULATOR_TOOL: ToolDefinition = {
   entry: settlementCalculator,
-  Component: SettlementCalculatorComponent,
-  SEOComponent: SettlementCalculatorSEO,
-  BibliographyComponent: SettlementCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

@@ -1,7 +1,4 @@
 import type { WorkToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import SalaryCalculatorComponent from './component.astro';
-import SalaryCalculatorSEO from './seo.astro';
-import SalaryCalculatorBibliography from './bibliography.astro';
 import type { SalaryCalculatorUI } from './ui';
 
 export type SalaryCalculatorLocaleContent = ToolLocaleContent<SalaryCalculatorUI>;
@@ -47,11 +44,10 @@ export const salaryCalculator: WorkToolEntry<SalaryCalculatorUI> = {
   },
 };
 
-export { SalaryCalculatorComponent, SalaryCalculatorSEO, SalaryCalculatorBibliography };
 
 export const SALARY_CALCULATOR_TOOL: ToolDefinition = {
   entry: salaryCalculator,
-  Component: SalaryCalculatorComponent,
-  SEOComponent: SalaryCalculatorSEO,
-  BibliographyComponent: SalaryCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

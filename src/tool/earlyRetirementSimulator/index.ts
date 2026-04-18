@@ -1,7 +1,4 @@
 import type { WorkToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import EarlyRetirementSimulatorComponent from './component.astro';
-import EarlyRetirementSimulatorSEO from './seo.astro';
-import EarlyRetirementSimulatorBibliography from './bibliography.astro';
 import type { EarlyRetirementSimulatorUI } from './ui';
 
 export type EarlyRetirementSimulatorLocaleContent = ToolLocaleContent<EarlyRetirementSimulatorUI>;
@@ -47,15 +44,10 @@ export const earlyRetirementSimulator: WorkToolEntry<EarlyRetirementSimulatorUI>
   },
 };
 
-export {
-  EarlyRetirementSimulatorComponent,
-  EarlyRetirementSimulatorSEO,
-  EarlyRetirementSimulatorBibliography,
-};
 
 export const EARLY_RETIREMENT_SIMULATOR_TOOL: ToolDefinition = {
   entry: earlyRetirementSimulator,
-  Component: EarlyRetirementSimulatorComponent,
-  SEOComponent: EarlyRetirementSimulatorSEO,
-  BibliographyComponent: EarlyRetirementSimulatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

@@ -1,7 +1,4 @@
 import type { WorkToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import IrpfCalculatorComponent from './component.astro';
-import IrpfCalculatorSEO from './seo.astro';
-import IrpfCalculatorBibliography from './bibliography.astro';
 import type { IrpfCalculatorUI } from './ui';
 
 export type IrpfCalculatorLocaleContent = ToolLocaleContent<IrpfCalculatorUI>;
@@ -47,11 +44,10 @@ export const irpfCalculator: WorkToolEntry<IrpfCalculatorUI> = {
   },
 };
 
-export { IrpfCalculatorComponent, IrpfCalculatorSEO, IrpfCalculatorBibliography };
 
 export const IRPF_CALCULATOR_TOOL: ToolDefinition = {
   entry: irpfCalculator,
-  Component: IrpfCalculatorComponent,
-  SEOComponent: IrpfCalculatorSEO,
-  BibliographyComponent: IrpfCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };
