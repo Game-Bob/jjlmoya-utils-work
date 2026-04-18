@@ -15,7 +15,7 @@ export type {
   ToolDefinition,
 } from './types';
 
-export { ALL_TOOLS } from './tools';
+export { ALL_ENTRIES, ALL_TOOLS } from './tools';
 
 export { IRPF_CALCULATOR_TOOL } from './tool/irpfCalculator/index';
 export { SALARY_CALCULATOR_TOOL } from './tool/salaryCalculator/index';
