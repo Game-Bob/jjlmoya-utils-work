@@ -13,7 +13,7 @@
     padding: 3rem 1rem;
   }
 
-  :global(.theme-dark) .nv-container {
+  .theme-dark .nv-container {
     --nv-surface: #1e293b;
     --nv-bg-input: #0f172a;
     --nv-border: #334155;
@@ -31,7 +31,7 @@
     transition: all 0.3s ease;
   }
 
-  :global(.theme-dark) .nv-card {
+  .theme-dark .nv-card {
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
   }
 
@@ -73,7 +73,7 @@
     letter-spacing: normal;
   }
 
-  :global(.theme-dark) .nv-input::placeholder {
+  .theme-dark .nv-input::placeholder {
     color: #334155;
   }
 
@@ -88,7 +88,7 @@
     background: #f0fdf4;
   }
 
-  :global(.theme-dark) .nv-wrapper.nv-valid .nv-input {
+  .theme-dark .nv-wrapper.nv-valid .nv-input {
     background: rgba(6, 78, 59, 0.13);
   }
 
@@ -98,7 +98,7 @@
     background: #fef2f2;
   }
 
-  :global(.theme-dark) .nv-wrapper.nv-invalid .nv-input {
+  .theme-dark .nv-wrapper.nv-invalid .nv-input {
     background: rgba(127, 29, 29, 0.13);
   }
 

@@ -29,7 +29,7 @@
     overflow: hidden;
   }
 
-  :global(.theme-dark) .sn-main-grid {
+  .theme-dark .sn-main-grid {
     background: #1e293b;
     border-color: var(--sn-border-dark);
   }
@@ -39,7 +39,7 @@
     border-right: 1px solid var(--sn-border-light);
   }
 
-  :global(.theme-dark) .sn-form-card {
+  .theme-dark .sn-form-card {
     border-right-color: var(--sn-border-dark);
   }
 
@@ -67,7 +67,7 @@
     letter-spacing: 0.05em;
   }
 
-  :global(.theme-dark) .sn-label {
+  .theme-dark .sn-label {
     color: var(--sn-text-light);
   }
 
@@ -97,7 +97,7 @@
     color: var(--sn-text-dark);
   }
 
-  :global(.theme-dark) .sn-input {
+  .theme-dark .sn-input {
     background: #1e293b;
     color: var(--sn-text-light);
   }
@@ -114,7 +114,7 @@
     padding: 0.25rem;
   }
 
-  :global(.theme-dark) .sn-pay-toggle {
+  .theme-dark .sn-pay-toggle {
     background: #1e293b;
   }
 
@@ -137,7 +137,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  :global(.theme-dark) .sn-pay-btn.sn-active {
+  .theme-dark .sn-pay-btn.sn-active {
     background: #334155;
     color: var(--sn-text-light);
   }
@@ -150,7 +150,7 @@
     border-top: 1px solid var(--sn-border-light);
   }
 
-  :global(.theme-dark) .sn-secondary-inputs {
+  .theme-dark .sn-secondary-inputs {
     border-top-color: var(--sn-border-dark);
   }
 
@@ -166,7 +166,7 @@
     color: #475569;
   }
 
-  :global(.theme-dark) .sn-label-inline {
+  .theme-dark .sn-label-inline {
     color: #cbd5e1;
   }
 
@@ -182,8 +182,8 @@
     text-align: center;
   }
 
-  :global(.theme-dark) .sn-input-small,
-  :global(.theme-dark) .sn-select-small {
+  .theme-dark .sn-input-small,
+  .theme-dark .sn-select-small {
     background: #1e293b;
     color: var(--sn-text-light);
   }
@@ -222,7 +222,7 @@
     gap: 1.5rem;
   }
 
-  :global(.theme-dark) .sn-results-column {
+  .theme-dark .sn-results-column {
     background: var(--sn-bg-dark);
   }
 
@@ -275,7 +275,7 @@
     padding: 1.5rem;
   }
 
-  :global(.theme-dark) .sn-breakdown-card {
+  .theme-dark .sn-breakdown-card {
     background: #1e293b;
     border-color: var(--sn-border-dark);
   }
@@ -286,7 +286,7 @@
     margin-bottom: 1rem;
   }
 
-  :global(.theme-dark) .sn-breakdown-title {
+  .theme-dark .sn-breakdown-title {
     color: var(--sn-text-light);
   }
 
@@ -308,7 +308,7 @@
     color: #64748b;
   }
 
-  :global(.theme-dark) .sn-breakdown-label {
+  .theme-dark .sn-breakdown-label {
     color: #cbd5e1;
   }
 
@@ -327,7 +327,7 @@
     text-align: center;
   }
 
-  :global(.theme-dark) .sn-disclaimer {
+  .theme-dark .sn-disclaimer {
     border-top-color: var(--sn-border-dark);
   }
 
@@ -338,7 +338,7 @@
     transition: color 0.2s;
   }
 
-  :global(.theme-dark) .sn-disclaimer a {
+  .theme-dark .sn-disclaimer a {
     color: #64748b;
   }
 
@@ -356,7 +356,7 @@
       border-bottom: 1px solid var(--sn-border-light);
     }
 
-    :global(.theme-dark) .sn-form-card {
+    .theme-dark .sn-form-card {
       border-bottom-color: var(--sn-border-dark);
     }
   }

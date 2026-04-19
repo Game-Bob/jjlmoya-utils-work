@@ -12,7 +12,7 @@
     overflow: hidden;
   }
 
-  :global(.theme-dark) .mc-card {
+  .theme-dark .mc-card {
     background: #0f172a;
     border-color: #1e293b;
   }
@@ -59,7 +59,7 @@
     background: #e2e8f0;
   }
 
-  :global(.theme-dark) .mc-divider {
+  .theme-dark .mc-divider {
     background: #1e293b;
   }
 
@@ -90,7 +90,7 @@
     color: #64748b;
   }
 
-  :global(.theme-dark) .mc-label {
+  .theme-dark .mc-label {
     color: #94a3b8;
   }
 
@@ -108,7 +108,7 @@
     box-sizing: border-box;
   }
 
-  :global(.theme-dark) .mc-input {
+  .theme-dark .mc-input {
     background: #1e293b;
     border-color: #334155;
     color: #fff;
@@ -136,7 +136,7 @@
     outline: none;
   }
 
-  :global(.theme-dark) .mc-type-select {
+  .theme-dark .mc-type-select {
     background: #334155;
     color: #94a3b8;
   }
@@ -184,7 +184,7 @@
     transition: background 0.15s;
   }
 
-  :global(.theme-dark) .mc-btn-secondary {
+  .theme-dark .mc-btn-secondary {
     background: #1e293b;
     color: #94a3b8;
   }
@@ -193,7 +193,7 @@
     background: #e2e8f0;
   }
 
-  :global(.theme-dark) .mc-btn-secondary:hover:not(:disabled) {
+  .theme-dark .mc-btn-secondary:hover:not(:disabled) {
     background: #334155;
   }
 
