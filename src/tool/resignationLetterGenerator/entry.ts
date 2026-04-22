@@ -43,3 +43,5 @@ export const resignationLetterGenerator: WorkToolEntry<ResignationLetterGenerato
     zh: async () => zh,
   },
 };
+
+export { bibliography } from './bibliography';

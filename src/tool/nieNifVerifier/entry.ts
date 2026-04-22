@@ -43,3 +43,5 @@ export const nieNifVerifier: WorkToolEntry<NieNifVerifierUI> = {
     zh: async () => zh,
   },
 };
+
+export { bibliography } from './bibliography';

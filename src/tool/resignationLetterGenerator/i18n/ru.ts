@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
@@ -46,17 +47,6 @@ const howToData = [
   {
     name: 'Скопируйте или скачайте',
     text: 'Нажмите кнопку, чтобы скопировать текст в буфер обмена или сохранить как PDF.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Трудовой кодекс РФ - Глава 13',
-    url: 'https://www.consultant.ru',
-  },
-  {
-    name: 'Роструд - Разъяснения по увольнению',
-    url: 'https://rostrud.gov.ru',
   },
 ];
 
@@ -151,8 +141,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
       'Уведомляю вас об окончании моей трудовой деятельности в компании. Последний рабочий день — [DATE].',
   },
   faqTitle: 'Часто задаваемые вопросы',
-  faq: faqData,
-  bibliographyTitle: 'Источники',
+  faq: faqData: 'Источники',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

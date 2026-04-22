@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
@@ -46,21 +47,6 @@ const howToData = [
   {
     name: '예상 연금액 확인',
     text: '적용된 감액률과 일을 그만둘 수 있는 구체적인 날짜를 확인하세요.',
-  },
-];
-
-const bibliography = [
-  {
-    name: '스페인 사회 보장국: 통상 은퇴 및 조기 은퇴',
-    url: 'https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10963',
-  },
-  {
-    name: '연금 구매력 보장에 관한 법률 21/2021',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2021-21652',
-  },
-  {
-    name: '공식 시뮬레이터 - Tu Seguridad Social',
-    url: 'https://prestaciones.seg-social.es/simulador-servicio/simulador-pension-jubilacion.html',
   },
 ];
 
@@ -128,8 +114,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     adviceOptimal: '당신은 100% 자격을 갖춘 최적의 표준 연령에 도달했습니다.',
   },
   faqTitle: '자주 묻는 질문',
-  faq: faqData,
-  bibliographyTitle: '출처',
+  faq: faqData: '출처',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

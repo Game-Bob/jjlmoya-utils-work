@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
@@ -56,17 +57,6 @@ const howToData = [
   {
     name: 'Kopieren oder herunterladen',
     text: 'Klicken Sie auf die Schaltfläche, um den Text in die Zwischenablage zu kopieren oder direkt als PDF zu speichern.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Bundesministerium für Arbeit und Soziales - Kündigungsschutz',
-    url: 'https://www.bmas.de',
-  },
-  {
-    name: 'Bürgerliches Gesetzbuch (BGB) - § 623 Schriftform',
-    url: 'https://www.gesetze-im-internet.de/bgb/__623.html',
   },
 ];
 
@@ -161,8 +151,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
       'hiermit kündige ich meinen Arbeitsvertrag fristgerecht zum [DATE].',
   },
   faqTitle: 'Häufig gestellte Fragen',
-  faq: faqData,
-  bibliographyTitle: 'Quellen',
+  faq: faqData: 'Quellen',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

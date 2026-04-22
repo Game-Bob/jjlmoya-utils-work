@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
@@ -56,21 +57,6 @@ const howToData = [
   {
     name: 'Copiez ou telechargez la lettre',
     text: 'Cliquez sur le bouton pour copier le texte dans votre presse-papiers ou le telecharger directement en PDF.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Ministere du Travail espagnol - Information Sociale',
-    url: 'https://www.mites.gob.es/es',
-  },
-  {
-    name: 'Statut des Travailleurs espagnol (BOE)',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430',
-  },
-  {
-    name: 'Guide des droits et obligations du travail',
-    url: 'https://www.mites.gob.es/es/sec_leyes/trabajo/index.htm',
   },
 ];
 
@@ -165,8 +151,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
       "Par la presente, je vous communique ma decision de mettre fin a ma relation de travail avec l'entreprise. Mon dernier jour d'activite professionnelle sera le [DATE].",
   },
   faqTitle: 'Questions Frequemment Posees',
-  faq: faqData,
-  bibliographyTitle: 'Sources',
+  faq: faqData: 'Sources',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
@@ -46,21 +47,6 @@ const howToData = [
   {
     name: 'Sprawdź swoją szacowaną emeryturę',
     text: 'Zobacz zastosowaną redukcję i dokładną datę, kiedy możesz przestać pracować.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Seguridad Social Hiszpania: Emerytura zwykła i wcześniejsza',
-    url: 'https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10963',
-  },
-  {
-    name: 'Ustawa 21/2021 o gwarantowaniu siły nabywczej emerytur',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2021-21652',
-  },
-  {
-    name: 'Oficjalny symulator - Tu Seguridad Social',
-    url: 'https://prestaciones.seg-social.es/simulador-servicio/simulador-pension-jubilacion.html',
   },
 ];
 
@@ -128,8 +114,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     adviceOptimal: 'Osiągnąłeś optymalny standardowy wiek z 100% Twoich uprawnień.',
   },
   faqTitle: 'Często Zadawane Pytania',
-  faq: faqData,
-  bibliographyTitle: 'Źródła',
+  faq: faqData: 'Źródła',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

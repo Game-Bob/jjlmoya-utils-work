@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
@@ -46,17 +47,6 @@ const howToData = [
   {
     name: 'コピーまたはPDF出力',
     text: '作成された文章をコピーするか、そのままPDF形式でダウンロードして印刷します。',
-  },
-];
-
-const bibliography = [
-  {
-    name: '厚生労働省 - 労働基準法について',
-    url: 'https://www.mhlw.go.jp',
-  },
-  {
-    name: '電子政府の総合窓口 e-Gov - 民法（第627条）',
-    url: 'https://www.e-gov.go.jp',
   },
 ];
 
@@ -151,8 +141,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
       '[DATE]をもちまして、本件職務を辞任させていただきます。',
   },
   faqTitle: 'よくある質問',
-  faq: faqData,
-  bibliographyTitle: '出典・参考資料',
+  faq: faqData: '出典・参考資料',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

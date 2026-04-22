@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
@@ -46,21 +47,6 @@ const howToData = [
   {
     name: 'Esamina la tua pensione stimata',
     text: "Visualizza la riduzione applicata e la data esatta in cui potresti smettere di lavorare.",
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Previdenza Sociale Spagna: Pensionamento Ordinario e Anticipato',
-    url: 'https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10963',
-  },
-  {
-    name: "Legge 21/2021 sulla garanzia del potere d'acquisto delle pensioni",
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2021-21652',
-  },
-  {
-    name: 'Simulatore Ufficiale - Tu Seguridad Social',
-    url: 'https://prestaciones.seg-social.es/simulador-servicio/simulador-pension-jubilacion.html',
   },
 ];
 
@@ -128,8 +114,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     adviceOptimal: "Hai raggiunto l'età standard ottimale con il 100% dei tuoi diritti.",
   },
   faqTitle: 'Domande Frequenti',
-  faq: faqData,
-  bibliographyTitle: 'Fonti',
+  faq: faqData: 'Fonti',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

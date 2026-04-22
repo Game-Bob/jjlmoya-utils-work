@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
@@ -46,17 +47,6 @@ const howToData = [
   {
     name: '复制或下载',
     text: '点击按钮将文本复制到剪贴板，或直接下载为 PDF 文件。',
-  },
-];
-
-const bibliography = [
-  {
-    name: '中华人民共和国劳动合同法',
-    url: 'https://www.gov.cn',
-  },
-  {
-    name: '人社部 - 离职管理相关规定',
-    url: 'https://www.mohrss.gov.cn',
   },
 ];
 
@@ -151,8 +141,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
       '本人现决定终止劳动合同关系，离职日期定于 [DATE]。',
   },
   faqTitle: '常见问题',
-  faq: faqData,
-  bibliographyTitle: '参考资料',
+  faq: faqData: '参考资料',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
@@ -46,21 +47,6 @@ const howToData = [
   {
     name: 'Vérifiez votre pension estimée',
     text: "Visualisez la réduction appliquée et la date exacte à laquelle vous pourriez arrêter de travailler.",
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Sécurité Sociale Espagne : Retraite Ordinaire et Anticipée',
-    url: 'https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10963',
-  },
-  {
-    name: "Loi 21/2021 de garantie du pouvoir d'achat des retraites",
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2021-21652',
-  },
-  {
-    name: 'Simulateur Officiel - Tu Seguridad Social',
-    url: 'https://prestaciones.seg-social.es/simulador-servicio/simulador-pension-jubilacion.html',
   },
 ];
 
@@ -127,8 +113,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     adviceOptimal: "Vous avez atteint l'âge ordinaire optimal avec 100 % de votre prestation.",
   },
   faqTitle: 'Questions Fréquentes',
-  faq: faqData,
-  bibliographyTitle: 'Sources',
+  faq: faqData: 'Sources',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

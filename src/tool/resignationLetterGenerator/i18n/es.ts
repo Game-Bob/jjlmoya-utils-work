@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
@@ -56,21 +57,6 @@ const howToData = [
   {
     name: 'Copia o descarga la carta',
     text: 'Pulsa el botón para copiar el texto al portapapeles o descárgalo directamente en PDF.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Ministerio de Trabajo - Información Laboral',
-    url: 'https://www.mites.gob.es/es',
-  },
-  {
-    name: 'Estatuto de los Trabajadores (BOE)',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430',
-  },
-  {
-    name: 'Guía de derechos y obligaciones laborales',
-    url: 'https://www.mites.gob.es/es/sec_leyes/trabajo/index.htm',
   },
 ];
 
@@ -165,8 +151,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
       'Por la presente, le comunico mi decisión de extinguir mi relación laboral con la empresa. Mi último día de actividad profesional en el centro de trabajo será el [DATE].',
   },
   faqTitle: 'Preguntas Frecuentes',
-  faq: faqData,
-  bibliographyTitle: 'Fuentes',
+  faq: faqData: 'Fuentes',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

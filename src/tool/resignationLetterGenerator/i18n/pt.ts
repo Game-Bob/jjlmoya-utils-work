@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
@@ -56,17 +57,6 @@ const howToData = [
   {
     name: 'Copie ou descarregue a carta',
     text: 'Clique no botão para copiar o texto para a área de transferência ou descarregue diretamente em formato PDF.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Autoridade para as Condições do Trabalho (ACT)',
-    url: 'https://bit.ly/act-cessacao',
-  },
-  {
-    name: 'Código do Trabalho - Diário da República',
-    url: 'https://dre.pt/dre/legislacao-consolidada/lei/2009-34546475',
   },
 ];
 
@@ -161,8 +151,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
       'Venho por este meio informar a minha vontade de cessar o meu contrato de trabalho. O meu último dia será [DATE].',
   },
   faqTitle: 'Perguntas Frequentes',
-  faq: faqData,
-  bibliographyTitle: 'Fontes',
+  faq: faqData: 'Fontes',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

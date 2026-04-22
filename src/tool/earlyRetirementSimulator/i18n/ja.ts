@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
@@ -46,21 +47,6 @@ const howToData = [
   {
     name: '推定年金額を確認する',
     text: '適用された削減額と、仕事を辞めることができる正確な日付を確認します。',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'スペイン社会保障局：通常退職および早期退職',
-    url: 'https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10963',
-  },
-  {
-    name: '年金の購買力維持を保証する法律 21/2021',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2021-21652',
-  },
-  {
-    name: '公式シミュレーター - Tu Seguridad Social',
-    url: 'https://prestaciones.seg-social.es/simulador-servicio/simulador-pension-jubilacion.html',
   },
 ];
 
@@ -128,8 +114,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     adviceOptimal: '100%の権利を持つ、最適な標準年齢に達しました。',
   },
   faqTitle: 'よくある質問',
-  faq: faqData,
-  bibliographyTitle: '出典',
+  faq: faqData: '出典',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

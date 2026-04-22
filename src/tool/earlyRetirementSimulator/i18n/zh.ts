@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
@@ -46,21 +47,6 @@ const howToData = [
   {
     name: '查看您的预计养老金',
     text: '查看应用的削减比例以及您可以停止工作的确切日期。',
-  },
-];
-
-const bibliography = [
-  {
-    name: '西班牙社会保障局：普通和提前退休',
-    url: 'https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10963',
-  },
-  {
-    name: '关于保证养老金购买力的第 21/2021 号法律',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2021-21652',
-  },
-  {
-    name: '官方模拟器 - Tu Seguridad Social',
-    url: 'https://prestaciones.seg-social.es/simulador-servicio/simulador-pension-jubilacion.html',
   },
 ];
 
@@ -128,8 +114,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     adviceOptimal: '您已达到最佳标准年龄，享有 100% 的权益。',
   },
   faqTitle: '常见问题',
-  faq: faqData,
-  bibliographyTitle: '来源',
+  faq: faqData: '来源',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

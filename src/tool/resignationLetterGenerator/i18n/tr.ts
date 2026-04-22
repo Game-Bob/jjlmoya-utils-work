@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
@@ -46,17 +47,6 @@ const howToData = [
   {
     name: 'Kopyalayın veya indirin',
     text: 'Metni kopyalamak veya doğrudan PDF olarak indirmek için ilgili butona tıklayın.',
-  },
-];
-
-const bibliography = [
-  {
-    name: '4857 Sayılı İş Kanunu - Mevzuat',
-    url: 'https://www.mevzuat.gov.tr',
-  },
-  {
-    name: 'İŞKUR - İşten Ayrılma Süreçleri',
-    url: 'https://www.iskur.gov.tr',
   },
 ];
 
@@ -151,8 +141,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
       'Şirketteki görevimi sonlandırma kararımı bilgilerinize sunarım. Son iş günüm [DATE] olacaktır.',
   },
   faqTitle: 'Sıkça Sorulan Sorular',
-  faq: faqData,
-  bibliographyTitle: 'Kaynaklar',
+  faq: faqData: 'Kaynaklar',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

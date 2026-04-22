@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
@@ -46,21 +47,6 @@ const howToData = [
   {
     name: 'Tinjau perkiraan pensiun Anda',
     text: 'Lihat pengurangan yang diterapkan dan tanggal pasti kapan Anda bisa berhenti bekerja.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Jaminan Sosial Spanyol: Pensiun Biasa dan Dini',
-    url: 'https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10963',
-  },
-  {
-    name: 'UU 21/2021 tentang penjaminan daya beli pensiun',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2021-21652',
-  },
-  {
-    name: 'Simulator Resmi - Tu Seguridad Social',
-    url: 'https://prestaciones.seg-social.es/simulador-servicio/simulador-pension-jubilacion.html',
   },
 ];
 
@@ -128,8 +114,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     adviceOptimal: 'Anda telah mencapai usia standar optimal dengan 100% hak Anda.',
   },
   faqTitle: 'Pertanyaan yang Sering Diajukan',
-  faq: faqData,
-  bibliographyTitle: 'Sumber',
+  faq: faqData: 'Sumber',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

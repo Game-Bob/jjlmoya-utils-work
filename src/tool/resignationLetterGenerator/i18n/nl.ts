@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
@@ -51,17 +52,6 @@ const howToData = [
   {
     name: 'Kopieer of download de brief',
     text: 'Klik op de knop om de tekst naar uw klembord te kopiëren of direct als PDF te downloaden.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Rijksoverheid - Ontslag nemen',
-    url: 'https://www.rijksoverheid.nl',
-  },
-  {
-    name: 'Juridisch Loket - Opzegtermijn',
-    url: 'https://www.juridischloket.nl',
   },
 ];
 
@@ -156,8 +146,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
       'Hierbij informeer ik u over mijn besluit om mijn dienstverband te beëindigen. Mijn laatste werkdag is [DATE].',
   },
   faqTitle: 'Veelgestelde Vragen',
-  faq: faqData,
-  bibliographyTitle: 'Bronnen',
+  faq: faqData: 'Bronnen',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

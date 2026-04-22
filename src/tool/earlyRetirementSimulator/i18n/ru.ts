@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
@@ -46,21 +47,6 @@ const howToData = [
   {
     name: 'Проверьте расчетную пенсию',
     text: 'Посмотрите примененное снижение и точную дату, когда вы сможете прекратить работу.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Соцстрах Испании: Обычный и досрочный выход на пенсию',
-    url: 'https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10963',
-  },
-  {
-    name: 'Закон 21/2021 о гарантии покупательной способности пенсий',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2021-21652',
-  },
-  {
-    name: 'Официальный симулятор - Tu Seguridad Social',
-    url: 'https://prestaciones.seg-social.es/simulador-servicio/simulador-pension-jubilacion.html',
   },
 ];
 
@@ -128,8 +114,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     adviceOptimal: 'Вы достигли оптимального стандартного возраста со 100% выплат.',
   },
   faqTitle: 'Часто задаваемые вопросы',
-  faq: faqData,
-  bibliographyTitle: 'Источники',
+  faq: faqData: 'Источники',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
@@ -46,17 +47,6 @@ const howToData = [
   {
     name: 'Salin atau unduh surat',
     text: 'Klik tombol untuk menyalin teks ke clipboard atau unduh langsung dalam format PDF.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Kementerian Ketenagakerjaan Republik Indonesia',
-    url: 'https://kemnaker.go.id',
-  },
-  {
-    name: 'Undang-Undang Ketenagakerjaan (UU No. 13 Tahun 2003)',
-    url: 'https://jdih.kemnaker.go.id',
   },
 ];
 
@@ -151,8 +141,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
       'Melalui surat ini saya informasikan keputusan saya untuk mengakhiri hubungan kerja dengan perusahaan. Hari terakhir kerja saya adalah [DATE].',
   },
   faqTitle: 'Pertanyaan yang Sering Diajukan',
-  faq: faqData,
-  bibliographyTitle: 'Sumber',
+  faq: faqData: 'Sumber',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

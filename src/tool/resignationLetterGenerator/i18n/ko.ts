@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
@@ -46,17 +47,6 @@ const howToData = [
   {
     name: '복사 또는 PDF 다운로드',
     text: '작성된 사직서를 복사하여 이메일에 붙여넣거나 PDF로 다운로드하여 출력합니다.',
-  },
-];
-
-const bibliography = [
-  {
-    name: '고용노동부 - 근로기준법 안내',
-    url: 'https://www.moel.go.kr',
-  },
-  {
-    name: '국가법령정보센터 - 민법 제627조',
-    url: 'https://www.law.go.kr',
   },
 ];
 
@@ -151,8 +141,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
       '본인은 [DATE]자를 기해 현 회사와의 근로 관계를 종료하고자 사직서를 제출합니다.',
   },
   faqTitle: '자주 묻는 질문',
-  faq: faqData,
-  bibliographyTitle: '출처 및 참고',
+  faq: faqData: '출처 및 참고',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

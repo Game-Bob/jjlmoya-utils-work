@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
@@ -46,21 +47,6 @@ const howToData = [
   {
     name: 'Bekijk uw geschatte pensioen',
     text: 'Zie de toegepaste korting en de exacte datum waarop u zou kunnen stoppen met werken.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Sociale Zekerheid Spanje: Gewoon en Vervroegd Pensioen',
-    url: 'https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10963',
-  },
-  {
-    name: 'Wet 21/2021 over het garanderen van de koopkracht van pensioenen',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2021-21652',
-  },
-  {
-    name: 'Officiële Simulator - Tu Seguridad Social',
-    url: 'https://prestaciones.seg-social.es/simulador-servicio/simulador-pension-jubilacion.html',
   },
 ];
 
@@ -128,8 +114,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     adviceOptimal: 'U heeft de optimale standaardleeftijd bereikt met 100% van uw rechten.',
   },
   faqTitle: 'Veelgestelde Vragen',
-  faq: faqData,
-  bibliographyTitle: 'Bronnen',
+  faq: faqData: 'Bronnen',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
@@ -46,21 +47,6 @@ const howToData = [
   {
     name: 'Überprüfen Sie Ihre geschätzte Rente',
     text: 'Sehen Sie die angewandte Kürzung und das genaue Datum, an dem Sie aufhören könnten zu arbeiten.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Sozialversicherung Spanien: Ordentlicher Ruhestand und Vorruhestand',
-    url: 'https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10963',
-  },
-  {
-    name: 'Gesetz 21/2021 zur Gewährleistung der Kaufkraft von Renten',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2021-21652',
-  },
-  {
-    name: 'Offizieller Simulator - Tu Seguridad Social',
-    url: 'https://prestaciones.seg-social.es/simulador-servicio/simulador-pension-jubilacion.html',
   },
 ];
 
@@ -128,8 +114,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     adviceOptimal: 'Sie haben das optimale Standardalter mit 100 % Ihres Anspruchs erreicht.',
   },
   faqTitle: 'Häufig gestellte Fragen',
-  faq: faqData,
-  bibliographyTitle: 'Quellen',
+  faq: faqData: 'Quellen',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

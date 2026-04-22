@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { NieNifVerifierUI } from '../ui';
@@ -54,21 +55,6 @@ const howToData = [
   },
 ];
 
-const bibliography = [
-  {
-    name: 'Agencia Tributaria: 개인 및 법인용 NIF 안내',
-    url: 'https://sede.agenciatributaria.gob.es/Sede/procedimiento-recaudatorio-gestor/nif.html',
-  },
-  {
-    name: '내무부: DNI 및 NIE 구조 설명',
-    url: 'https://www.dnielectronico.es/PortalDNIe/PRF1_9._2.html?punto=5.2',
-  },
-  {
-    name: 'BOE: 일반 세무 관리 규정',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2007-14406',
-  },
-];
-
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -120,8 +106,7 @@ export const content: ToolLocaleContent<NieNifVerifierUI> = {
     msgIncomplete: '불완전함',
   },
   faqTitle: '자주 묻는 질문',
-  faq: faqData,
-  bibliographyTitle: '출처',
+  faq: faqData: '출처',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

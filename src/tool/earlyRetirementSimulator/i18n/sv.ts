@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { EarlyRetirementSimulatorUI } from '../ui';
@@ -46,21 +47,6 @@ const howToData = [
   {
     name: 'Granska din beräknade pension',
     text: 'Se den tillämpade reduktionen och det exakta datumet då du kan sluta arbeta.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Socialförsäkringen Spanien: Ordinarie pension och Förtidspension',
-    url: 'https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10963',
-  },
-  {
-    name: 'Lag 21/2021 om att garantera pensionernas köpkraft',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2021-21652',
-  },
-  {
-    name: 'Officiell simulator - Tu Seguridad Social',
-    url: 'https://prestaciones.seg-social.es/simulador-servicio/simulador-pension-jubilacion.html',
   },
 ];
 
@@ -128,8 +114,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     adviceOptimal: 'Du har nått den optimala standardåldern med 100 % av dina rättigheter.',
   },
   faqTitle: 'Vanliga frågor',
-  faq: faqData,
-  bibliographyTitle: 'Källor',
+  faq: faqData: 'Källor',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

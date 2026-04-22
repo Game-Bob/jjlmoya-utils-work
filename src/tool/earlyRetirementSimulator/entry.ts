@@ -43,3 +43,5 @@ export const earlyRetirementSimulator: WorkToolEntry<EarlyRetirementSimulatorUI>
     zh: async () => zh,
   },
 };
+
+export { bibliography } from './bibliography';

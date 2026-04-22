@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
@@ -46,17 +47,6 @@ const howToData = [
   {
     name: 'Kopiera eller ladda ner',
     text: 'Klicka på knappen för att kopiera texten eller ladda ner den direkt som en PDF-fil.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Sveriges Riksdag - Lag (1982:80) om anställningsskydd',
-    url: 'https://www.riksdagen.se',
-  },
-  {
-    name: 'Verksamt - Att säga upp personal eller sluta själv',
-    url: 'https://www.verksamt.se',
   },
 ];
 
@@ -151,8 +141,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
       'Härmed meddelar jag mitt beslut att avsluta min anställning. Min sista arbetsdag är [DATE].',
   },
   faqTitle: 'Vanliga frågor',
-  faq: faqData,
-  bibliographyTitle: 'Källor',
+  faq: faqData: 'Källor',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

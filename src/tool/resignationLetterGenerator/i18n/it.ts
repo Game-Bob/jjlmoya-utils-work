@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
@@ -46,17 +47,6 @@ const howToData = [
   {
     name: 'Copia o scarica la lettera',
     text: 'Clicca sul pulsante per copiare il testo negli appunti o scaricarlo direttamente come PDF.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Ministero del Lavoro e delle Politiche Sociali',
-    url: 'https://www.lavoro.gov.it',
-  },
-  {
-    name: 'INPS - Dimissioni Volontarie',
-    url: 'https://www.inps.it',
   },
 ];
 
@@ -151,8 +141,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
       'Le comunico la mia decisione di recedere dal rapporto di lavoro. Il mio ultimo giorno di lavoro sarà il [DATE].',
   },
   faqTitle: 'Domande Frequenti',
-  faq: faqData,
-  bibliographyTitle: 'Fonti',
+  faq: faqData: 'Fonti',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

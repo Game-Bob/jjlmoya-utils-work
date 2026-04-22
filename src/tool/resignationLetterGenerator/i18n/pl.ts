@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ResignationLetterGeneratorUI } from '../ui';
@@ -51,17 +52,6 @@ const howToData = [
   {
     name: 'Skopiuj lub pobierz pismo',
     text: 'Kliknij przycisk, aby skopiować treść wypowiedzenia lub zapisać je jako gotowy plik PDF.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Państwowa Inspekcja Pracy - Rozwiązanie umowy',
-    url: 'https://www.pip.gov.pl',
-  },
-  {
-    name: 'Kodeks Pracy (Internetowy System Aktów Prawnych)',
-    url: 'https://isap.sejm.gov.pl',
   },
 ];
 
@@ -156,8 +146,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
       'Niniejszym wypowiadam umowę o pracę. Stosunek pracy zostanie rozwiązany z zachowaniem przewidzianego okresu wypowiedzenia w dniu [DATE].',
   },
   faqTitle: 'Często zadawane pytania',
-  faq: faqData,
-  bibliographyTitle: 'Źródła',
+  faq: faqData: 'Źródła',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
