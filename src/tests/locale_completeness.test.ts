@@ -19,7 +19,6 @@ describe('Locale Completeness Validation', () => {
             }
           });
         });
-        });
       });
     });
   });
