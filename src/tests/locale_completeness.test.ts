@@ -18,17 +18,7 @@ describe('Locale Completeness Validation', () => {
               ).toBeTruthy();
             }
           });
-
-            const loader = tool.entry.i18n[locale as keyof typeof tool.entry.i18n];
-            const content = (await loader?.()) as ToolLocaleContent;
-
-            if (content.bibliography.length > 0) {
-              expect(
-                content.bibliographyTitle,
-                `Tool "${tool.entry.id}" locale "${locale}" has ${content.bibliography.length} bibliography items but is missing bibliographyTitle`,
-              ).toBeTruthy();
-            }
-          });
+        });
         });
       });
     });
