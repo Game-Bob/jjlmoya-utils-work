@@ -12,4 +12,4 @@ const content = await autonomosCalculator.i18n[locale]?.();
 if (!content) return null;
 ---
 
-<SEORenderer content={{ locale: locale as string, sections: content.seo }} />
+{content.seo?.length > 0 && <SEORenderer content={{ locale, sections: content.seo }} />}
