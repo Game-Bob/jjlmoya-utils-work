@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-kuota-freelance-spanyol';
 const title = 'Kalkulator Kuota Freelance 2026: Sistem Nyata RETA Spanyol';
@@ -110,23 +111,8 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     infoText:
       'Sistem RETA 2026: Perhitungan mencakup pendapatan bersih bulanan dengan potongan biaya umum (7% atau 3%). Kontribusi yang ditampilkan mencakup kontigensi umum, kontigensi profesional, penghentian aktivitas, pelatihan, dan Mekanisme Kesetaraan Antargenerasi (MEI) yang diperbarui menjadi 0,9% untuk tahun 2026.',
   },
-  faqTitle: 'Pertanyaan yang Sering Diajukan',
   faq: faqData,
-  bibliographyTitle: 'Sumber',
-  bibliography: [
-    {
-      name: 'Jaminan Sosial: Sistem kontribusi baru',
-      url: 'https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/Trabajo+Autonomo/guia',
-    },
-    {
-      name: 'Kantor Pajak: Pendapatan dari aktivitas ekonomi',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/rendimientos-actividades-economicas.html',
-    },
-    {
-      name: 'BOE: Keputusan-Undang-undang Kerajaan 13/2022 tentang reformasi RETA',
-      url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

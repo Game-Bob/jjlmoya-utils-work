@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MeetingCostCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'moteskostnadskalkylator';
 const title = 'Möteskostnadskalkylator i Realtid';
@@ -101,13 +102,8 @@ export const content: ToolLocaleContent<MeetingCostCalculatorUI> = {
     defaultSalary: '500000',
     numberLocale: 'sv-SE',
   },
-  faqTitle: 'Vanliga frågor',
   faq: faqData,
-  bibliographyTitle: 'Källor',
-  bibliography: [
-    { name: 'Stop the Meeting Madness (Harvard Business Review)', url: 'https://hbr.org/2017/07/stop-the-meeting-madness' },
-    { name: 'Time Wasting at Work (Atlassian)', url: 'https://www.atlassian.com/time-wasting-at-work-infographic' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

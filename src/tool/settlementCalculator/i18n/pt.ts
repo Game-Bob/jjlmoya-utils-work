@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calculadora-acerto-contas-espanha';
 const title = 'Calculadora de Acerto de Contas Espanha 2026: Calcular Finiquito';
@@ -112,10 +113,8 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     copySummaryTitle: 'Resumo Estimativo do Acerto',
     defaultSalary: '24000',
   },
-  faqTitle: 'Perguntas Frequentes',
   faq: faqData,
-  bibliographyTitle: 'Fontes',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ReverseVatCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'scorporo-iva-spagna';
 const title = 'Calcolo Scorporo IVA: Calcola Imponibile Spagna';
@@ -97,10 +98,8 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
     labelBase: 'Base Imponibile',
     labelVat: 'Importo IVA',
   },
-  faqTitle: 'Domande Frequenti',
   faq: faqData,
-  bibliographyTitle: 'Fonti',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

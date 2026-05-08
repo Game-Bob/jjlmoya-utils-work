@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'severance-pay-calculator-spain';
 const title = '2026 西班牙遣散费与离职金计算器';
@@ -112,10 +113,8 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     copySummaryTitle: '预估离职金明细摘要',
     defaultSalary: '24000',
   },
-  faqTitle: '常见问题',
   faq: faqData,
-  bibliographyTitle: '参考资料',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

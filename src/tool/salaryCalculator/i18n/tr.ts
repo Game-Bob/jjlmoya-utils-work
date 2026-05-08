@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'maas-hesaplama-ispanya';
 const title = 'Maaş Hesaplayıcı İspanya: Net Maaş Simülatörü IRPF ve Sosyal Güvenlik';
@@ -111,10 +112,8 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     disclaimer:
       '*Bekar, çocuksuz ve 65 yaş altı çalışanlar için basitleştirilmiş hesaplama.',
   },
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Kaynaklar',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

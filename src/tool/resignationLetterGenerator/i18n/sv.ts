@@ -140,8 +140,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
     reasonDirect:
       'Härmed meddelar jag mitt beslut att avsluta min anställning. Min sista arbetsdag är [DATE].',
   },
-  faqTitle: 'Vanliga frågor',
-  faq: faqData: 'Källor',
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

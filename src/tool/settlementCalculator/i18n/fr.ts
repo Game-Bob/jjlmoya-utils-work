@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calculateur-indemnite-licenciement-espagne';
 const title = 'Calculateur Indemnite Licenciement Espagne 2026';
@@ -51,21 +52,6 @@ const howToData = [
   {
     name: 'Choisir le motif de depart',
     text: 'Selectionnez le motif de depart pour que le simulateur applique le bon taux d\'indemnite.',
-  },
-];
-
-const bibliography = [
-  {
-    name: 'Statut des Travailleurs (BOE): Extinction du contrat',
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430',
-  },
-  {
-    name: 'Guide du Travail en Espagne: Le Finiquito',
-    url: 'https://espanalaboral.es/guias-y-recursos/trabajadores/finiquito/',
-  },
-  {
-    name: 'Pouvoir Judiciaire espagnol: Calcul des indemnites de rupture',
-    url: 'https://www.poderjudicial.es/cgpj/es/Servicios/Utilidades/Calculo-de-indemnizaciones-por-extincion-de-contrato-de-trabajo/',
   },
 ];
 
@@ -132,9 +118,7 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     copySummaryTitle: 'Resume du Solde de Tout Compte Estime',
     defaultSalary: '24000',
   },
-  faqTitle: 'Questions Frequemment Posees',
   faq: faqData,
-  bibliographyTitle: 'Sources',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

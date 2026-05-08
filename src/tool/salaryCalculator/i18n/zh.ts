@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'salary-calculator-spain';
 const title = '西班牙薪资计算器：IRPF 与社会保障净薪资模拟器';
@@ -111,10 +112,8 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     disclaimer:
       '*针对 65 岁以下、单身且无子女工作的简化计算。',
   },
-  faqTitle: '常见问题',
   faq: faqData,
-  bibliographyTitle: '来源',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'fatura-olusturucu';
 const title = 'Freelancerlar ve Küçük İşletmeler için Ücretsiz Fatura Oluşturucu';
@@ -116,13 +117,8 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
     defaultTaxRate: '20',
     defaultRetRate: '0',
   },
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Kaynaklar',
-  bibliography: [
-    { name: 'Gib - Fatura Düzenleme Esasları', url: 'https://www.gib.gov.tr/' },
-    { name: 'Freelancerlar için Vergi Rehberi', url: 'https://www.gib.gov.tr/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

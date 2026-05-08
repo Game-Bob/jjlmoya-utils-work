@@ -140,8 +140,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
     reasonDirect:
       'Şirketteki görevimi sonlandırma kararımı bilgilerinize sunarım. Son iş günüm [DATE] olacaktır.',
   },
-  faqTitle: 'Sıkça Sorulan Sorular',
-  faq: faqData: 'Kaynaklar',
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

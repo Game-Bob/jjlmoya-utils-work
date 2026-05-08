@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'rechnung-generator';
 const title = 'Kostenloser Rechnung Generator für Freiberufler und Kleinunternehmen';
@@ -116,13 +117,8 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
     defaultTaxRate: '19',
     defaultRetRate: '0',
   },
-  faqTitle: 'Häufig gestellte Fragen',
   faq: faqData,
-  bibliographyTitle: 'Quellen',
-  bibliography: [
-    { name: 'Vorgaben für Rechnungen - IHK', url: 'https://www.ihk.de/' },
-    { name: 'Pflichtangaben in einer Rechnung - Buchhaltung', url: 'https://www.bmf.de/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

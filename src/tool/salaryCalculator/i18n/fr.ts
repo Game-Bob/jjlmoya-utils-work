@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calculatrice-salaire-espagne';
 const title = 'Calculatrice Salaire Espagne: Simulateur Salaire Net IRPF et Sécurité Sociale';
@@ -111,10 +112,8 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     disclaimer:
       '*Calcul simplifié pour un travailleur célibataire, sans enfants et âgé de moins de 65 ans.',
   },
-  faqTitle: 'Questions Fréquemment Posées',
   faq: faqData,
-  bibliographyTitle: 'Sources',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

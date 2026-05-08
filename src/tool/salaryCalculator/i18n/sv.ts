@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'lonekalkylator-spanien';
 const title = 'Lönekalkylator Spanien: Simulator för nettolön, IRPF och socialförsäkring';
@@ -111,10 +112,8 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     disclaimer:
       '*Förenklad beräkning för ensamstående arbetstagare, utan barn och under 65 år.',
   },
-  faqTitle: 'Vanliga frågor',
   faq: faqData,
-  bibliographyTitle: 'Källor',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

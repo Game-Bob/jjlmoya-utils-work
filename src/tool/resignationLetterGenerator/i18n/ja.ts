@@ -140,8 +140,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
     reasonDirect:
       '[DATE]をもちまして、本件職務を辞任させていただきます。',
   },
-  faqTitle: 'よくある質問',
-  faq: faqData: '出典・参考資料',
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

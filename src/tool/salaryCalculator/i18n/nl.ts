@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'salaris-calculator-spanje';
 const title = 'Salaris Calculator Spanje: Netto Salaris Simulator IRPF en Sociale Zekerheid';
@@ -111,10 +112,8 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     disclaimer:
       '*Vereenvoudigde berekening voor een alleenstaande werknemer, zonder kinderen en jonger dan 65 jaar.',
   },
-  faqTitle: 'Veelgestelde Vragen',
   faq: faqData,
-  bibliographyTitle: 'Bronnen',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

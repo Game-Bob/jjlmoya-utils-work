@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calcolo-irpf-spagna';
 const title = 'Calcolatore IRPF 2026: Simulatore Stipendio Netto Spagna';
@@ -128,15 +129,8 @@ export const content: ToolLocaleContent<IrpfCalculatorUI> = {
     infoText:
       "Algoritmo AEAT (Imposta Lorda - Minimo Esente) validato per il 2026. Include il contributo MEI al 6,47% e le riduzioni per redditi da lavoro. jjlmoya.es.",
   },
-  faqTitle: 'Domande Frequenti',
   faq: faqData,
-  bibliographyTitle: 'Fonti',
-  bibliography: [
-    {
-      name: 'Agenzia delle Entrate: IRPF',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

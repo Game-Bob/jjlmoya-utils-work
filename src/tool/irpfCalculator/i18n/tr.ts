@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'irpf-hesaplama-ispanya';
 const title = 'IRPF Hesaplama 2026: İspanya Net Maaş Simülatörü';
@@ -128,15 +129,8 @@ export const content: ToolLocaleContent<IrpfCalculatorUI> = {
     infoText:
       '2026 yılı için doğrulanmış AEAT Algoritması (Brüt Vergi - Minimum Vergi). %6,47 oranında MEI katkısını ve iş geliri indirimlerini içerir. jjlmoya.es.',
   },
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Kaynaklar',
-  bibliography: [
-    {
-      name: 'Vergi Dairesi: IRPF',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

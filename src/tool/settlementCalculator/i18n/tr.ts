@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'ispanya-tazminat-ve-is-sonu-hesaplama';
 const title = 'İspanya İş Sonu Tazminatı Hesaplama 2026: Finiquito Hesapla';
@@ -112,10 +113,8 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     copySummaryTitle: 'Tahmini İş Sonu Alacak Özeti',
     defaultSalary: '24000',
   },
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Kaynaklar',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

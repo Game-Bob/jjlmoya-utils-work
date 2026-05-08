@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'gerador-faturas';
 const title = 'Gerador de Faturas Grátis para Freelancers e Pequenas Empresas';
@@ -116,13 +117,8 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
     defaultTaxRate: '23',
     defaultRetRate: '0',
   },
-  faqTitle: 'Perguntas Frequentes',
   faq: faqData,
-  bibliographyTitle: 'Fontes',
-  bibliography: [
-    { name: 'Guia de Faturação - Autoridade Tributária', url: 'https://portaldasfinancas.gov.pt/' },
-    { name: 'Regras para emissão de faturas - Portugal', url: 'https://portaldasfinancas.gov.pt/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

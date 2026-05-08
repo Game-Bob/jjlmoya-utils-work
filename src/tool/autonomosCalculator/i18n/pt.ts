@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calculadora-quota-trabalhador-independente-espanha';
 const title = 'Calculadora de Quota de Autônomo 2026: Sistema Real RETA Espanha';
@@ -110,23 +111,8 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     infoText:
       'Sistema RETA 2026: O cálculo inclui o rendimento líquido mensal com a dedução de despesas gerais (7% ou 3%). A quota apresentada inclui contingências comuns, contingências profissionais, cessação de atividade, formação e o Mecanismo de Equidade Intergeracional (MEI) atualizado para 0,9% para 2026.',
   },
-  faqTitle: 'Perguntas Frequentes',
   faq: faqData,
-  bibliographyTitle: 'Fontes',
-  bibliography: [
-    {
-      name: 'Segurança Social: Novo sistema de contribuição',
-      url: 'https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/Trabajo+Autonomo/guia',
-    },
-    {
-      name: 'Fisco: Rendimentos de atividades económicas',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/rendimientos-actividades-economicas.html',
-    },
-    {
-      name: 'BOE: Real Decreto-Lei 13/2022 sobre reforma RETA',
-      url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

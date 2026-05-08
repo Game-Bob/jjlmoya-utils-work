@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'generador-facturas-pdf';
 const title = 'Generador de Facturas Gratis para Freelancers';
@@ -116,13 +117,8 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
     defaultTaxRate: '0',
     defaultRetRate: '0',
   },
-  faqTitle: 'Preguntas Frecuentes',
   faq: faqData,
-  bibliographyTitle: 'Fuentes',
-  bibliography: [
-    { name: 'IRS Publication 583 Starting a Business and Keeping Records', url: 'https://www.irs.gov/pub/irs-pdf/p583.pdf' },
-    { name: 'IRS Self-Employed Individuals Tax Center', url: 'https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

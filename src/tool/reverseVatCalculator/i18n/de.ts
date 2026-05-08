@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ReverseVatCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'netto-rechner-umsatzsteuer-spanien';
 const title = 'Netto Rechner Umsatzsteuer: MwSt. aus Brutto herausrechnen';
@@ -97,10 +98,8 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
     labelBase: 'Nettobetrag (Basis)',
     labelVat: 'MwSt. Anteil',
   },
-  faqTitle: 'Häufig gestellte Fragen',
   faq: faqData,
-  bibliographyTitle: 'Quellen',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

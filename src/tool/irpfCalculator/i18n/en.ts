@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'irpf-calculator-spain';
 const title = 'IRPF Calculator: Net Salary Simulator Spain';
@@ -128,15 +129,8 @@ export const content: ToolLocaleContent<IrpfCalculatorUI> = {
     infoText:
       'AEAT Algorithm (Gross Tax - Minimum Tax) validated for 2026. Includes MEI contribution at 6.47% and employment income reductions. jjlmoya.es.',
   },
-  faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'Sources',
-  bibliography: [
-    {
-      name: 'Tax Agency: IRPF',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

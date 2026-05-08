@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ReverseVatCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'reverse-vat-calculator-spain';
 const title = '增值税逆算计算器：计算西班牙税前金额';
@@ -97,10 +98,8 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
     labelBase: '计税基数 (税前)',
     labelVat: '增值税额',
   },
-  faqTitle: '常见问题',
   faq: faqData,
-  bibliographyTitle: '参考资料',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

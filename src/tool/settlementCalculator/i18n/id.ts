@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-pesangon-spanyol';
 const title = 'Kalkulator Pesangon Spanyol 2026: Hitung Finiquito';
@@ -112,10 +113,8 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     copySummaryTitle: 'Ringkasan Estimasi Penyelesaian',
     defaultSalary: '24000',
   },
-  faqTitle: 'Pertanyaan yang Sering Diajukan',
   faq: faqData,
-  bibliographyTitle: 'Sumber',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulyator-irpf-ispaniya';
 const title = 'Калькулятор IRPF 2026: Симулятор чистого дохода в Испании';
@@ -128,15 +129,8 @@ export const content: ToolLocaleContent<IrpfCalculatorUI> = {
     infoText:
       'Алгоритм AEAT (брутто-налог - минимальный налог), подтвержденный на 2026 год. Включает взнос MEI 6,47% и вычеты из доходов от трудовой деятельности. jjlmoya.es.',
   },
-  faqTitle: 'Часто задаваемые вопросы',
   faq: faqData,
-   bibliographyTitle: 'Источники',
-  bibliography: [
-    {
-      name: 'Налоговое агентство: IRPF',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

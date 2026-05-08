@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calculadora-sueldo-neto';
 const title = 'Calculadora Sueldo Neto España: Simulador IRPF y Seguridad Social';
@@ -111,10 +112,8 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     disclaimer:
       '*Cálculo simplificado para trabajador soltero, sin hijos y menor de 65 años.',
   },
-  faqTitle: 'Preguntas Frecuentes',
   faq: faqData,
-  bibliographyTitle: 'Fuentes',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

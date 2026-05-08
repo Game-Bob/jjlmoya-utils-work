@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-skladek-samozatrudnieni-hiszpania';
 const title = 'Kalkulator Składek Autonomo 2026: System Realny RETA Hiszpania';
@@ -110,23 +111,8 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     infoText:
       'System RETA 2026: Obliczenie obejmuje miesięczny dochód netto z odliczeniem kosztów ogólnych (7% lub 3%). Wyświetlana składka zawiera ubezpieczenie ogólne, ubezpieczenie wypadkowe, zawieszenie działalności, szkolenia oraz Mechanizm Sprawiedliwości Międzypokoleniowej (MEI) zaktualizowany do 0,9% na rok 2026.',
   },
-  faqTitle: 'Często zadawane pytania',
   faq: faqData,
-  bibliographyTitle: 'Źródła',
-  bibliography: [
-    {
-      name: 'Seguridad Social: Nowy system składek',
-      url: 'https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/Trabajo+Autonomo/guia',
-    },
-    {
-      name: 'Agencia Tributaria: Dochody z działalności gospodarczej',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/rendimientos-actividades-economicas.html',
-    },
-    {
-      name: 'BOE: Dekret z mocą ustawy 13/2022 o reformie RETA',
-      url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -140,8 +140,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
     reasonDirect:
       'Melalui surat ini saya informasikan keputusan saya untuk mengakhiri hubungan kerja dengan perusahaan. Hari terakhir kerja saya adalah [DATE].',
   },
-  faqTitle: 'Pertanyaan yang Sering Diajukan',
-  faq: faqData: 'Sumber',
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'freelancer-quota-calculator-spain';
 const title = '2026 年西班牙自雇人士（Autónomo）缴费计算器：RETA 实际收入系统';
@@ -110,23 +111,8 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     infoText:
       'RETA 2026 系统：计算包含应用了通用支出扣除（7% 或 3%）后的每月净收入。显示的缴费包含一般保险、职业保险、停止活动、培训以及针对 2026 年更新为 0.9% 的代际公平机制（MEI）。',
   },
-  faqTitle: '常见问题',
   faq: faqData,
-  bibliographyTitle: '来源',
-  bibliography: [
-    {
-      name: '社会保障局：新缴费系统',
-      url: 'https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/Trabajo+Autonomo/guia',
-    },
-    {
-      name: '税务局：经济活动收入',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/rendimientos-actividades-economicas.html',
-    },
-    {
-      name: 'BOE：关于 RETA 改革的第 13/2022 号皇家法令',
-      url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'bagimsiz-calisan-aidat-hesaplama-ispanya';
 const title = 'Bağkur (Autónomo) Prim Hesaplama 2026: İspanya RETA Gerçek Gelir Sistemi';
@@ -110,23 +111,8 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     infoText:
       "RETA 2026 Sistemi: Hesaplama, genel gider indirimi (%7 veya %3) ile aylık net geliri içerir. Gösterilen prim; genel durumlar, mesleki durumlar, faaliyetin durdurulması, eğitim ve 2026 için %0,9'a güncellenen Nesiller Arası Hakkaniyet Mekanizmasını (MEI) kapsar.",
   },
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Kaynaklar',
-  bibliography: [
-    {
-      name: 'Sosyal Güvenlik: Yeni prim sistemi',
-      url: 'https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/Trabajo+Autonomo/guia',
-    },
-    {
-      name: 'Vergi Dairesi: Ekonomik faaliyetlerden elde edilen gelirler',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/rendimientos-actividades-economicas.html',
-    },
-    {
-      name: 'BOE: RETA reformuna ilişkin 13/2022 sayılı Kraliyet Kararnamesi',
-      url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

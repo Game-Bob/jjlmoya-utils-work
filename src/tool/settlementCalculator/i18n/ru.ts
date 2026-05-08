@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'raschet-pri-uvolnenii-ispaniya';
 const title = 'Калькулятор расчета при увольнении в Испании 2026';
@@ -112,10 +113,8 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     copySummaryTitle: 'Сводка оценки расчета',
     defaultSalary: '24000',
   },
-  faqTitle: 'Часто задаваемые вопросы',
   faq: faqData,
-  bibliographyTitle: 'Источники',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'freelancer-quota-calculator-spain';
 const title = '2026년 자영업자(Autónomos) 분담금 계산기: 스페인 RETA 실질 소득 시스템';
@@ -110,23 +111,8 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     infoText:
       'RETA 2026 시스템: 계산에는 일반 비용 공제(7% 또는 3%)가 적용된 월간 순소득이 포함됩니다. 표시된 기여금에는 일반 우발 상황, 직업적 우발 상황, 활동 중단, 교육 및 2026년에 0.9%로 업데이트된 세대 간 공평성 매커니즘(MEI)이 포함됩니다.',
   },
-  faqTitle: '자주 묻는 질문',
   faq: faqData,
-  bibliographyTitle: '출처',
-  bibliography: [
-    {
-      name: '사회보장청: 새로운 기여금 시스템',
-      url: 'https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/Trabajo+Autonomo/guia',
-    },
-    {
-      name: '국세청: 경제 활동 소득',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/rendimientos-actividades-economicas.html',
-    },
-    {
-      name: 'BOE: RETA 개혁에 관한 왕립 법령 13/2022',
-      url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

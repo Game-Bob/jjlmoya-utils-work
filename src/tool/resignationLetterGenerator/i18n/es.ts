@@ -150,8 +150,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
     reasonDirect:
       'Por la presente, le comunico mi decisión de extinguir mi relación laboral con la empresa. Mi último día de actividad profesional en el centro de trabajo será el [DATE].',
   },
-  faqTitle: 'Preguntas Frecuentes',
-  faq: faqData: 'Fuentes',
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

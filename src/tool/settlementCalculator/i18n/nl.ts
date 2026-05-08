@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'transitievergoeding-berekenen-spanje';
 const title = 'Ontslagvergoeding Calculator Spanje 2026: Finiquito berekenen';
@@ -112,10 +113,8 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     copySummaryTitle: 'Samenvatting Geschatte Afrekening',
     defaultSalary: '24000',
   },
-  faqTitle: 'Veelgestelde Vragen',
   faq: faqData,
-  bibliographyTitle: 'Bronnen',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

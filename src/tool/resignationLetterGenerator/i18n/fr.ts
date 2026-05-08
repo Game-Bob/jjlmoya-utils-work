@@ -150,8 +150,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
     reasonDirect:
       "Par la presente, je vous communique ma decision de mettre fin a ma relation de travail avec l'entreprise. Mon dernier jour d'activite professionnelle sera le [DATE].",
   },
-  faqTitle: 'Questions Frequemment Posees',
-  faq: faqData: 'Sources',
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

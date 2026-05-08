@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-irpf-spanyol';
 const title = 'Kalkulator IRPF 2026: Simulator Gaji Bersih Spanyol';
@@ -128,15 +129,8 @@ export const content: ToolLocaleContent<IrpfCalculatorUI> = {
     infoText:
       'Algoritma AEAT (Pajak Kotor - Pajak Minimum) divalidasi untuk 2026. Termasuk kontribusi MEI sebesar 6,47% dan pengurangan pendapatan pekerjaan. jjlmoya.es.',
   },
-  faqTitle: 'Pertanyaan yang Sering Diajukan',
   faq: faqData,
-  bibliographyTitle: 'Sumber',
-  bibliography: [
-    {
-      name: 'Kantor Pajak: IRPF',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

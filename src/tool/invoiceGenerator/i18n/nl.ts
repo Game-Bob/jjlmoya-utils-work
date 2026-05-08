@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'factuur-generator';
 const title = 'Gratis Factuur Generator voor Freelancers en Kleine Bedrijven';
@@ -116,13 +117,8 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
     defaultTaxRate: '21',
     defaultRetRate: '0',
   },
-  faqTitle: 'Veelgestelde Vragen',
   faq: faqData,
-  bibliographyTitle: 'Bronnen',
-  bibliography: [
-    { name: 'Eisen aan een factuur - Belastingdienst', url: 'https://www.belastingdienst.nl/' },
-    { name: 'Factureren voor ondernemers - KvK', url: 'https://www.kvk.nl/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'severance-pay-calculator-spain';
 const title = 'Spain Severance Pay Calculator 2026';
@@ -51,21 +52,6 @@ const howToData = [
   {
     name: 'Choose the reason for leaving',
     text: 'Select the reason for leaving so the simulator applies the correct severance ratio.',
-  },
-];
-
-const bibliography = [
-  {
-    name: "Workers' Statute (BOE): Contract termination",
-    url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430',
-  },
-  {
-    name: 'Spain Labour Guide: Severance Pay (Finiquito)',
-    url: 'https://espanalaboral.es/guias-y-recursos/trabajadores/finiquito/',
-  },
-  {
-    name: 'Spanish Judiciary: Calculation of termination indemnities',
-    url: 'https://www.poderjudicial.es/cgpj/es/Servicios/Utilidades/Calculo-de-indemnizaciones-por-extincion-de-contrato-de-trabajo/',
   },
 ];
 
@@ -132,9 +118,7 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     copySummaryTitle: 'Estimated Settlement Summary',
     defaultSalary: '24000',
   },
-  faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'Sources',
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calcolatore-stipendio-spagna';
 const title = 'Calcolatore Stipendio Spagna: Simulatore Stipendio Netto IRPF e Previdenza Sociale';
@@ -111,10 +112,8 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     disclaimer:
       '*Calcolo semplificato per lavoratore celibe/nubile, senza figli e di età inferiore a 65 anni.',
   },
-  faqTitle: 'Domande Frequenti',
   faq: faqData,
-  bibliographyTitle: 'Fonti',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

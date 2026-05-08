@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'irpf-kalkylator-spanien';
 const title = 'IRPF kalkylator 2026: Simulator för nettolön i Spanien';
@@ -128,15 +129,8 @@ export const content: ToolLocaleContent<IrpfCalculatorUI> = {
     infoText:
       'AEAT-algoritm (Bruttoskatt - Minimiskatt) validerad för 2026. Inkluderar MEI-bidrag på 6,47 % och avdrag för arbetsinkomst. jjlmoya.es.',
   },
-  faqTitle: 'Vanliga frågor',
   faq: faqData,
-  bibliographyTitle: 'Källor',
-  bibliography: [
-    {
-      name: 'Skatteverket (AEAT): IRPF',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

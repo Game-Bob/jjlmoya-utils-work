@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-wynagrodzenia-hiszpania';
 const title = 'Kalkulator Wynagrodzenia Hiszpania: Symulator Wynagrodzenia Netto IRPF i Ubezpieczenie Społeczne';
@@ -111,10 +112,8 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     disclaimer:
       '*Uproszczone obliczenia dla pracownika stanu wolnego, bez dzieci i poniżej 65 roku życia.',
   },
-  faqTitle: 'Często Zadawane Pytania',
   faq: faqData,
-  bibliographyTitle: 'Źródła',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

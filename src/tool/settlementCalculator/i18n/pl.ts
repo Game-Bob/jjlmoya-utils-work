@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-odprawy-hiszpania';
 const title = 'Kalkulator Odprawy i Rozliczenia Hiszpania 2026';
@@ -112,10 +113,8 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     copySummaryTitle: 'Podsumowanie Szacowanego Rozliczenia',
     defaultSalary: '24000',
   },
-  faqTitle: 'Często zadawane pytania',
   faq: faqData,
-  bibliographyTitle: 'Źródła',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

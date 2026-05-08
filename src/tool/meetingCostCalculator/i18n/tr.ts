@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MeetingCostCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'toplanti-maliyeti-hesaplayici';
 const title = 'Gerçek Zamanlı Toplantı Maliyeti Sayacı';
@@ -101,13 +102,8 @@ export const content: ToolLocaleContent<MeetingCostCalculatorUI> = {
     defaultSalary: '250000',
     numberLocale: 'tr-TR',
   },
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Kaynaklar',
-  bibliography: [
-    { name: "Meeting Madness'ı Durdurun (HBR)", url: 'https://hbr.org/2017/07/stop-the-meeting-madness' },
-    { name: 'İş Yerinde Zaman Kaybı (Atlassian)', url: 'https://www.atlassian.com/time-wasting-at-work-infographic' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

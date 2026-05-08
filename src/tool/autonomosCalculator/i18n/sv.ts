@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'avgiftskalkylator-spanien';
 const title = 'Avgiftskalkylator för Egenföretagare 2026: Spaniens RETA system för verklig inkomst';
@@ -110,23 +111,8 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     infoText:
       'RETA 2026-systemet: Beräkningen inkluderar månatlig nettoinkomst med schablonavdrag (7 % eller 3 %). Den visade avgiften inkluderar allmänna förmåner, yrkesmässiga förmåner, verksamhetsupphörande, utbildning och mekanismen för generationsövergripande rättvisa (MEI) uppdaterad till 0,9 % för 2026.',
   },
-  faqTitle: 'Vanliga frågor',
   faq: faqData,
-  bibliographyTitle: 'Källor',
-  bibliography: [
-    {
-      name: 'Seguridad Social: Nytt avgiftssystem',
-      url: 'https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/Trabajo+Autonomo/guia',
-    },
-    {
-      name: 'Skatteverket: Inkomster från ekonomisk verksamhet',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/rendimientos-actividades-economicas.html',
-    },
-    {
-      name: 'BOE: Kungligt förordnande 13/2022 om RETA-reformen',
-      url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

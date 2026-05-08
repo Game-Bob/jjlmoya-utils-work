@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'irpf-calculator-spain';
 const title = 'IRPF 计算器 2026：西班牙净工资模拟器';
@@ -128,15 +129,8 @@ export const content: ToolLocaleContent<IrpfCalculatorUI> = {
     infoText:
       '经过 2026 年验证的 AEAT 算法（总税额 - 最低税额）。包含 6.47% 的 MEI 缴费及就业收入扣除。jjlmoya.es。',
   },
-  faqTitle: '常见问题',
   faq: faqData,
-  bibliographyTitle: '来源',
-  bibliography: [
-    {
-      name: '税务局：IRPF',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

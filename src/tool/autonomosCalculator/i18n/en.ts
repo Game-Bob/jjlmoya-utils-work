@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'freelancer-quota-calculator-spain';
 const title = 'Freelancer Quota Calculator 2026: Spain RETA Real System';
@@ -110,23 +111,8 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     infoText:
       'RETA 2026 System: The calculation includes the monthly net income with the general expenses deduction (7% or 3%). The contribution shown includes common contingencies, professional contingencies, cessation of activity, training and the Intergenerational Equity Mechanism (MEI) updated to 0.9% for 2026.',
   },
-  faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'Sources',
-  bibliography: [
-    {
-      name: 'Social Security: New contribution system',
-      url: 'https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/Trabajo+Autonomo/guia',
-    },
-    {
-      name: 'Tax Agency: Income from economic activities',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/rendimientos-actividades-economicas.html',
-    },
-    {
-      name: 'BOE: Royal Decree-Law 13/2022 on RETA reform',
-      url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

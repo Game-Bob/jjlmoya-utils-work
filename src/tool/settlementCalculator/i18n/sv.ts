@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'berakna-slutlon-spanien';
 const title = 'Beräkna Slutlön Spanien 2026: Finiquito kalkylator';
@@ -112,10 +113,8 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     copySummaryTitle: 'Sammanfattning av beräknad slutlön',
     defaultSalary: '24000',
   },
-  faqTitle: 'Vanliga frågor',
   faq: faqData,
-  bibliographyTitle: 'Källor',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

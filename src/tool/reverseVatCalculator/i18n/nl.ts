@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ReverseVatCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'btw-terugrekenen-spanje';
 const title = 'BTW Terugrekenen: Bereken de Belastbare Grondslag Spanje';
@@ -97,10 +98,8 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
     labelBase: 'Belastbare Grondslag',
     labelVat: 'BTW-bedrag',
   },
-  faqTitle: 'Veelgestelde Vragen',
   faq: faqData,
-  bibliographyTitle: 'Bronnen',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

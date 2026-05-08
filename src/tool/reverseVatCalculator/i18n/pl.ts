@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ReverseVatCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-vat-od-brutto-hiszpania';
 const title = 'Kalkulator VAT od Brutto: Oblicz Podstawę Opodatkowania';
@@ -97,10 +98,8 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
     labelBase: 'Podstawa (Netto)',
     labelVat: 'Kwota VAT',
   },
-  faqTitle: 'Często zadawane pytania',
   faq: faqData,
-  bibliographyTitle: 'Źródła',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

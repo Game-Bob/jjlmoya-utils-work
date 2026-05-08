@@ -145,8 +145,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
     reasonDirect:
       'Niniejszym wypowiadam umowę o pracę. Stosunek pracy zostanie rozwiązany z zachowaniem przewidzianego okresu wypowiedzenia w dniu [DATE].',
   },
-  faqTitle: 'Często zadawane pytania',
-  faq: faqData: 'Źródła',
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulyator-zarplaty-ispaniya';
 const title = 'Калькулятор зарплаты в Испании: Симулятор чистой зарплаты, IRPF и социального страхования';
@@ -111,10 +112,8 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     disclaimer:
       '*Упрощенный расчет для одинокого работника без детей младше 65 лет.',
   },
-  faqTitle: 'Часто задаваемые вопросы',
   faq: faqData,
-  bibliographyTitle: 'Источники',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

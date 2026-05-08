@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'freiberufler-quotenrechner-spanien';
 const title = 'Freiberufler Quotenrechner 2026: Spanien RETA Realsystem';
@@ -110,23 +111,8 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     infoText:
       'RETA 2026 System: Die Berechnung umfasst das monatliche Nettoeinkommen mit dem allgemeinen Ausgabenabzug (7 % oder 3 %). Der angezeigte Beitrag umfasst allgemeine Eventualitäten, berufliche Eventualitäten, Einstellung der Tätigkeit, Ausbildung und den für 2026 auf 0,9 % aktualisierten Generationengerechtigkeitsmechanismus (MEI).',
   },
-  faqTitle: 'Häufig gestellte Fragen',
   faq: faqData,
-  bibliographyTitle: 'Quellen',
-  bibliography: [
-    {
-      name: 'Sozialversicherung: Neues Beitragssystem',
-      url: 'https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/Trabajo+Autonomo/guia',
-    },
-    {
-      name: 'Steuerbehörde: Einkünfte aus wirtschaftlichen Tätigkeiten',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/rendimientos-actividades-economicas.html',
-    },
-    {
-      name: 'BOE: Königliches Dekret-Gesetz 13/2022 zur RETA-Reform',
-      url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

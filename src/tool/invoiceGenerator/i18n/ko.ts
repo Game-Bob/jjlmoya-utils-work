@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'invoice-generator';
 const title = '프리랜서 및 소규모 비즈니스를 위한 무료 인보이스 생성기';
@@ -116,13 +117,8 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
     defaultTaxRate: '10',
     defaultRetRate: '0',
   },
-  faqTitle: '자주 묻는 질문',
   faq: faqData,
-  bibliographyTitle: '출처',
-  bibliography: [
-    { name: '홈택스 사업자 인보이스 가이드', url: 'https://www.hometax.go.kr/' },
-    { name: '국세청 부가가치세 안내', url: 'https://www.nts.go.kr/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

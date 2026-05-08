@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ReverseVatCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-ppn-terbalik-spanyol';
 const title = 'Kalkulator PPN Terbalik: Hitung Dasar Pengenaan Pajak';
@@ -97,10 +98,8 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
     labelBase: 'Dasar Pengenaan Pajak',
     labelVat: 'Jumlah PPN',
   },
-  faqTitle: 'Pertanyaan yang Sering Diajukan',
   faq: faqData,
-  bibliographyTitle: 'Sumber',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

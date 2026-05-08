@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'irpf-calculator-spain';
 const title = 'IRPF計算機 2026: スペイン純給与シミュレーター';
@@ -128,15 +129,8 @@ export const content: ToolLocaleContent<IrpfCalculatorUI> = {
     infoText:
       '2026年に向けて検証されたAEATアルゴリズム（総税額 - 最低税額）を使用。6.47%のMEI拠出と就業所得控除を含みます。jjlmoya.es',
   },
-  faqTitle: 'よくある質問',
   faq: faqData,
-  bibliographyTitle: '出典',
-  bibliography: [
-    {
-      name: '税務署: IRPF',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

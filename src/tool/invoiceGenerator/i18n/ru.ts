@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'generator-schetov-na-oplatu';
 const title = 'Бесплатный генератор счетов (инвойсов) для фрилансеров и бизнеса';
@@ -116,13 +117,8 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
     defaultTaxRate: '0',
     defaultRetRate: '0',
   },
-  faqTitle: 'Часто задаваемые вопросы',
   faq: faqData,
-  bibliographyTitle: 'Источники',
-  bibliography: [
-    { name: 'Требования к оформлению счетов - налоговая служба', url: 'https://www.nalog.gov.ru/' },
-    { name: 'Налоги для фрилансеров и ИП', url: 'https://www.nalog.gov.ru/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

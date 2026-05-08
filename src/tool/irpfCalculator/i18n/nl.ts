@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'irpf-calculator-spanje';
 const title = 'IRPF calculator 2026: Netto Salaris Simulator Spanje';
@@ -128,15 +129,8 @@ export const content: ToolLocaleContent<IrpfCalculatorUI> = {
     infoText:
       'AEAT-algoritme (Brutobelasting - Minimumbelasting) gevalideerd voor 2026. Inclusief MEI-bijdrage van 6,47% en verminderingen voor inkomsten uit arbeid. jjlmoya.es.',
   },
-  faqTitle: 'Veelgestelde Vragen',
   faq: faqData,
-  bibliographyTitle: 'Bronnen',
-  bibliography: [
-    {
-      name: 'Belastingdienst: IRPF',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

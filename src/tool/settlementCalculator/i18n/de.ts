@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'abfindungsrechner-spanien';
 const title = 'Abfindungsrechner Spanien 2026: Finiquito berechnen';
@@ -112,10 +113,8 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     copySummaryTitle: 'Zusammenfassung der Endabrechnung',
     defaultSalary: '24000',
   },
-  faqTitle: 'Häufig gestellte Fragen',
   faq: faqData,
-  bibliographyTitle: 'Quellen',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

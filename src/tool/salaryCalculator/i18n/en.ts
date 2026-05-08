@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SalaryCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'salary-calculator-spain';
 const title = 'Salary Calculator Spain: Net Salary Simulator IRPF and Social Security';
@@ -111,10 +112,8 @@ export const content: ToolLocaleContent<SalaryCalculatorUI> = {
     disclaimer:
       '*Simplified calculation for single worker, no children and under 65 years old.',
   },
-  faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'Sources',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

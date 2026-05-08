@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulyator-vznosov-samozanyatyh-ispaniya';
 const title = 'Калькулятор взносов самозанятых 2026: Реальная система RETA в Испании';
@@ -110,23 +111,8 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     infoText:
       'Система RETA 2026: Расчет включает ежемесячный чистый доход с вычетом общих расходов (7% или 3%). Отображаемая квота включает общие страховые случаи, профессиональные риски, прекращение деятельности, обучение и Механизм межпоколенческой справедливости (MEI), обновленный до 0,9% на 2026 год.',
   },
-  faqTitle: 'Часто задаваемые вопросы',
   faq: faqData,
-  bibliographyTitle: 'Источники',
-  bibliography: [
-    {
-      name: 'Соцстрах: Новая система взносов',
-      url: 'https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/Trabajo+Autonomo/guia',
-    },
-    {
-      name: 'Налоговая служба: Доходы от экономической деятельности',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/rendimientos-actividades-economicas.html',
-    },
-    {
-      name: 'BOE: Королевский декрет-закон 13/2022 о реформе RETA',
-      url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

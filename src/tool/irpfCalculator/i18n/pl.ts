@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-irpf-hiszpania';
 const title = 'Kalkulator IRPF 2026: Symulator Wynagrodzenia Netto Hiszpania';
@@ -128,15 +129,8 @@ export const content: ToolLocaleContent<IrpfCalculatorUI> = {
     infoText:
       'Algorytm AEAT (Podatek Brutto - Kwota Wolna) zweryfikowany na rok 2026. Zawiera składkę MEI na poziomie 6,47% oraz pomniejszenia z tytułu dochodów z pracy. jjlmoya.es.',
   },
-  faqTitle: 'Często Zadawane Pytania',
   faq: faqData,
-  bibliographyTitle: 'Źródła',
-  bibliography: [
-    {
-      name: 'Agencja Podatkowa: IRPF',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

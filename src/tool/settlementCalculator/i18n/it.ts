@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calcolo-liquidazione-spagna';
 const title = 'Calcolo Liquidazione Spagna 2026: Calcola il Finiquito';
@@ -112,10 +113,8 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     copySummaryTitle: 'Riepilogo Liquidazione Stimata',
     defaultSalary: '24000',
   },
-  faqTitle: 'Domande Frequenti',
   faq: faqData,
-  bibliographyTitle: 'Fonti',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

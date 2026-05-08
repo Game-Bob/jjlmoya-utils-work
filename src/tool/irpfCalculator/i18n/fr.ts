@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calculatrice-irpf-espagne';
 const title = 'Calculatrice IRPF: Simulateur Salaire Net Espagne';
@@ -128,15 +129,8 @@ export const content: ToolLocaleContent<IrpfCalculatorUI> = {
     infoText:
       'Algorithme AEAT (Quota intégrale brute - Quota minimum) validé pour 2026. Inclut la cotisation MEI à 6,47% et les réductions de revenus du travail. jjlmoya.es.',
   },
-  faqTitle: 'Questions fréquemment posées',
   faq: faqData,
-  bibliographyTitle: 'Sources',
-  bibliography: [
-    {
-      name: 'Agence fiscale : IRPF',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

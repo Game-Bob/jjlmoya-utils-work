@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calculadora-irpf-espanha';
 const title = 'Calculadora IRPF 2026: Simulador de Salário Líquido Espanha';
@@ -128,15 +129,8 @@ export const content: ToolLocaleContent<IrpfCalculatorUI> = {
     infoText:
       'Algoritmo AEAT (Imposto Bruto - Mínimo Isento) validado para 2026. Inclui contribuição MEI a 6,47% e reduções de rendimentos do trabalho. jjlmoya.es.',
   },
-  faqTitle: 'Perguntas Frequentes',
   faq: faqData,
-  bibliographyTitle: 'Fontes',
-  bibliography: [
-    {
-      name: 'Agência Tributária: IRPF',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

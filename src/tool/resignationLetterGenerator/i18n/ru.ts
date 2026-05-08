@@ -140,8 +140,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
     reasonDirect:
       'Уведомляю вас об окончании моей трудовой деятельности в компании. Последний рабочий день — [DATE].',
   },
-  faqTitle: 'Часто задаваемые вопросы',
-  faq: faqData: 'Источники',
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

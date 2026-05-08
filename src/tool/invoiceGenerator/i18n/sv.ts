@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'faktura-generator';
 const title = 'Gratis Fakturagenerator för Frilansare och Småföretag';
@@ -116,13 +117,8 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
     defaultTaxRate: '25',
     defaultRetRate: '0',
   },
-  faqTitle: 'Vanliga frågor',
   faq: faqData,
-  bibliographyTitle: 'Källor',
-  bibliography: [
-    { name: 'Krav på fakturans innehåll - Skatteverket', url: 'https://www.skatteverket.se/' },
-    { name: 'Fakturering för företagare - Verksamt', url: 'https://www.verksamt.se/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

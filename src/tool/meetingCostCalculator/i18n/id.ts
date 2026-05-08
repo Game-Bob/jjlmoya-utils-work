@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MeetingCostCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-biaya-rapat';
 const title = 'Kalkulator Biaya Rapat Ticker Real Time';
@@ -101,13 +102,8 @@ export const content: ToolLocaleContent<MeetingCostCalculatorUI> = {
     defaultSalary: '150000000',
     numberLocale: 'id-ID',
   },
-  faqTitle: 'Pertanyaan yang Sering Diajukan',
   faq: faqData,
-  bibliographyTitle: 'Sumber',
-  bibliography: [
-    { name: 'Hentikan Kegilaan Rapat (Harvard Business Review)', url: 'https://hbr.org/2017/07/stop-the-meeting-madness' },
-    { name: 'Pembuangan Waktu di Tempat Kerja (Atlassian)', url: 'https://www.atlassian.com/time-wasting-at-work-infographic' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

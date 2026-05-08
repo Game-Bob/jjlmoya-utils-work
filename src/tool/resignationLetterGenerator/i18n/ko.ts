@@ -140,8 +140,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
     reasonDirect:
       '본인은 [DATE]자를 기해 현 회사와의 근로 관계를 종료하고자 사직서를 제출합니다.',
   },
-  faqTitle: '자주 묻는 질문',
-  faq: faqData: '출처 및 참고',
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

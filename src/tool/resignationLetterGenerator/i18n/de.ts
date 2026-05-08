@@ -150,8 +150,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
     reasonDirect:
       'hiermit kündige ich meinen Arbeitsvertrag fristgerecht zum [DATE].',
   },
-  faqTitle: 'Häufig gestellte Fragen',
-  faq: faqData: 'Quellen',
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ReverseVatCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'reverse-vat-calculator-spain';
 const title = '内税逆算シミュレーター：スペインのIVAを差し引く';
@@ -97,10 +98,8 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
     labelBase: '課税標準額（税抜価格）',
     labelVat: 'IVA（付加価値税）額',
   },
-  faqTitle: 'よくある質問',
   faq: faqData,
-  bibliographyTitle: '出典',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

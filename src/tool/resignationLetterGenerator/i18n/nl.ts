@@ -145,8 +145,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
     reasonDirect:
       'Hierbij informeer ik u over mijn besluit om mijn dienstverband te beëindigen. Mijn laatste werkdag is [DATE].',
   },
-  faqTitle: 'Veelgestelde Vragen',
-  faq: faqData: 'Bronnen',
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

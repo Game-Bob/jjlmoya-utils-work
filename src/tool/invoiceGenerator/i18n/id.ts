@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'pembuat-faktur';
 const title = 'Pembuat Faktur Gratis untuk Freelancer dan Bisnis Kecil';
@@ -116,13 +117,8 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
     defaultTaxRate: '11',
     defaultRetRate: '0',
   },
-  faqTitle: 'Pertanyaan yang Sering Diajukan',
   faq: faqData,
-  bibliographyTitle: 'Sumber',
-  bibliography: [
-    { name: 'Pedoman Perpajakan Wajib Pajak Orang Pribadi - DJP', url: 'https://www.pajak.go.id/' },
-    { name: 'Aturan Faktur Pajak - Indonesia', url: 'https://www.pajak.go.id/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

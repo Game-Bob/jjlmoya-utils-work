@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'generatore-fatture';
 const title = 'Generatore di Fatture Gratuito per Freelance e Piccole Imprese';
@@ -116,13 +117,8 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
     defaultTaxRate: '22',
     defaultRetRate: '0',
   },
-  faqTitle: 'Domande Frequenti',
   faq: faqData,
-  bibliographyTitle: 'Fonti',
-  bibliography: [
-    { name: 'Guida alla Fatturazione - Agenzia delle Entrate', url: 'https://www.agenziaentrate.gov.it/' },
-    { name: 'Informazioni Partita IVA Freelance', url: 'https://www.agenziaentrate.gov.it/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

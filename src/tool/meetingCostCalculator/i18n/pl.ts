@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MeetingCostCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'kalkulator-kosztow-spotkania';
 const title = 'Licznik Kosztów Spotkania w Czasie Rzeczywistym';
@@ -101,13 +102,8 @@ export const content: ToolLocaleContent<MeetingCostCalculatorUI> = {
     defaultSalary: '100000',
     numberLocale: 'pl-PL',
   },
-  faqTitle: 'Często Zadawane Pytania',
   faq: faqData,
-  bibliographyTitle: 'Źródła',
-  bibliography: [
-    { name: 'Skończ z szaleństwem spotkań (Harvard Business Review)', url: 'https://hbr.org/2017/07/stop-the-meeting-madness' },
-    { name: 'Marnowanie czasu w pracy (Atlassian)', url: 'https://www.atlassian.com/time-wasting-at-work-infographic' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

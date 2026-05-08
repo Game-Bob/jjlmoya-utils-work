@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { IrpfCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'irpf-calculator-spain';
 const title = 'IRPF 계산기 2026: 스페인 순급여 시뮬레이터';
@@ -128,15 +129,8 @@ export const content: ToolLocaleContent<IrpfCalculatorUI> = {
     infoText:
       '2026년 검증된 AEAT 알고리즘(총 세액 - 최소 세액) 사용. 6.47%의 MEI 기여금 및 근로 소득 공제를 포함합니다. jjlmoya.es',
   },
-  faqTitle: '자주 묻는 질문',
   faq: faqData,
-  bibliographyTitle: '출처',
-  bibliography: [
-    {
-      name: '세무청: IRPF',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf.html',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

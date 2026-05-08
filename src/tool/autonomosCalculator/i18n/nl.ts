@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'zzp-premie-calculator-spanje';
 const title = 'ZZP premie Calculator 2026: Spanje RETA Systeem op basis van Werkelijk Inkomen';
@@ -110,23 +111,8 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     infoText:
       'RETA 2026 Systeem: De berekening omvat het maandelijkse netto-inkomen met de algemene kostenaftrek (7% of 3%). De getoonde bijdrage omvat algemene onvoorziene omstandigheden, beroepsgebonden onvoorziene omstandigheden, beëindiging van de activiteit, opleiding en het voor 2026 op 0,9% bijgewerkte Mechanisme voor Intergenerationele Gelijkheid (MEI).',
   },
-  faqTitle: 'Veelgestelde Vragen',
   faq: faqData,
-  bibliographyTitle: 'Bronnen',
-  bibliography: [
-    {
-      name: 'Sociale Zekerheid: Nieuw contributiesysteem',
-      url: 'https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/Trabajo+Autonomo/guia',
-    },
-    {
-      name: 'Belastingdienst: Inkomsten uit economische activiteiten',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/rendimientos-actividades-economicas.html',
-    },
-    {
-      name: 'BOE: Koninklijk Besluit-Wet 13/2022 over de RETA-hervorming',
-      url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

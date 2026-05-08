@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calculatrice-cotisation-independant';
 const title = 'Calculatrice Cotisation Travailleur Indépendant 2026: Système RETA Espagne';
@@ -110,23 +111,8 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     infoText:
       'Système RETA 2026: Le calcul inclut le revenu net mensuel avec la déduction des dépenses génériques (7% ou 3%). La cotisation affichée inclut les contingences communes, professionnelles, cessation d\'activité, formation et le Mécanisme d\'Équité Intergénérationnelle (MEI) mis à jour à 0,9% pour 2026.',
   },
-  faqTitle: 'Questions Fréquemment Posées',
   faq: faqData,
-  bibliographyTitle: 'Sources',
-  bibliography: [
-    {
-      name: 'Sécurité Sociale: Nouveau système de cotisation',
-      url: 'https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/Trabajo+Autonomo/guia',
-    },
-    {
-      name: 'Agence Fiscale: Revenus d\'activités économiques',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/rendimientos-actividades-economicas.html',
-    },
-    {
-      name: 'BOE: Décret-loi Royal 13/2022 sur la réforme du RETA',
-      url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

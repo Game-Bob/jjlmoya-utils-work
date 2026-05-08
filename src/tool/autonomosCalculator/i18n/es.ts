@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calculadora-cuota-autonomos-2026';
 const title = 'Calculadora Cuota de Autónomos 2026: Sistema RETA Real';
@@ -110,23 +111,8 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     infoText:
       'Sistema RETA 2026: El cálculo incluye el rendimiento neto mensual con la deducción de gastos genéricos (7% o 3%). La cuota mostrada incluye la cotización por contingencias comunes, profesionales, cese de actividad, formación y el Mecanismo de Equidad Intergeneracional (MEI) actualizado al 0.9% para 2026.',
   },
-  faqTitle: 'Preguntas Frecuentes',
   faq: faqData,
-  bibliographyTitle: 'Fuentes',
-  bibliography: [
-    {
-      name: 'Seguridad Social: Nuevo sistema de cotización',
-      url: 'https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/Trabajo+Autonomo/guia',
-    },
-    {
-      name: 'Agencia Tributaria: Rendimientos de actividades económicas',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/rendimientos-actividades-economicas.html',
-    },
-    {
-      name: 'BOE: Real Decreto-ley 13/2022 de reforma del RETA',
-      url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

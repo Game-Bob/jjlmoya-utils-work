@@ -140,8 +140,7 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
     reasonDirect:
       '本人现决定终止劳动合同关系，离职日期定于 [DATE]。',
   },
-  faqTitle: '常见问题',
-  faq: faqData: '参考资料',
+  faq: faqData,
   bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],

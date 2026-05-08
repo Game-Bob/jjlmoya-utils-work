@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'invoice-generator';
 const title = '面向自由职业者和小微企业的免费在线发票生成器';
@@ -116,13 +117,8 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
     defaultTaxRate: '1',
     defaultRetRate: '0',
   },
-  faqTitle: '常见问题',
   faq: faqData,
-  bibliographyTitle: '来源',
-  bibliography: [
-    { name: '税务机关：发票开具指南', url: 'https://www.chinatax.gov.cn/' },
-    { name: '自由职业者纳税中心', url: 'https://www.chinatax.gov.cn/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

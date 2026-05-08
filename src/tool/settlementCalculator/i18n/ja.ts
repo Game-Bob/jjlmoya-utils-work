@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { SettlementCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'severance-pay-calculator-spain';
 const title = 'スペイン退職金・清算額計算シミュレーター 2026';
@@ -112,10 +113,8 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     copySummaryTitle: '推定清算額の概要',
     defaultSalary: '24000',
   },
-  faqTitle: 'よくある質問',
   faq: faqData,
-  bibliographyTitle: '出典',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

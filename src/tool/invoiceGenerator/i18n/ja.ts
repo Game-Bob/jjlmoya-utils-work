@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'invoice-generator';
 const title = 'フリーランス・小規模ビジネス向け無料請求書作成ツール';
@@ -116,13 +117,8 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
     defaultTaxRate: '10',
     defaultRetRate: '0',
   },
-  faqTitle: 'よくある質問',
   faq: faqData,
-  bibliographyTitle: '出典',
-  bibliography: [
-    { name: '国税庁：インボイス制度の概要', url: 'https://www.nta.go.jp/' },
-    { name: '請求書の書き方ガイド', url: 'https://www.nta.go.jp/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

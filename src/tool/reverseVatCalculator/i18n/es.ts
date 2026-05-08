@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { ReverseVatCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'calculadora-iva-inverso';
 const title = 'Calculadora IVA Inverso: Desglosar IVA España';
@@ -97,10 +98,8 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
     labelBase: 'Base Imponible',
     labelVat: 'IVA',
   },
-  faqTitle: 'Preguntas Frecuentes',
   faq: faqData,
-  bibliographyTitle: 'Fuentes',
-  bibliography: [],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

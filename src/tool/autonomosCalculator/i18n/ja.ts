@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AutonomosCalculatorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'freelancer-quota-calculator-spain';
 const title = '2026年個人事業主（Autónomos）費用計算機: スペイン RETA 実績ベースシステム';
@@ -110,23 +111,8 @@ export const content: ToolLocaleContent<AutonomosCalculatorUI> = {
     infoText:
       'RETA 2026システム：計算には、一般経費控除（7%または3%）を適用した月間純所得が含まれます。表示される拠出金には、一般事由、職業事由、活動停止、教育、および2026年に0.9%に更新された世代間公平メカニズム（MEI）が含まれます。',
   },
-  faqTitle: 'よくある質問',
   faq: faqData,
-  bibliographyTitle: '出典',
-  bibliography: [
-    {
-      name: '社会保障庁：新しい拠出システム',
-      url: 'https://portal.seg-social.gob.es/wps/portal/importass/importass/Colectivos/Trabajo+Autonomo/guia',
-    },
-    {
-      name: '税務署：経済活動からの所得',
-      url: 'https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/rendimientos-actividades-economicas.html',
-    },
-    {
-      name: 'BOE：RETA改革に関する王立政令第13/2022号',
-      url: 'https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

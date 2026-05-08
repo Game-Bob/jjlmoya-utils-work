@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { InvoiceGeneratorUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'generator-faktur';
 const title = 'Darmowy Generator Faktur dla Freelancerów i Małych Firm';
@@ -116,13 +117,8 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
     defaultTaxRate: '23',
     defaultRetRate: '0',
   },
-  faqTitle: 'Często zadawane pytania',
   faq: faqData,
-  bibliographyTitle: 'Źródła',
-  bibliography: [
-    { name: 'Elementy faktury - Portal Podatkowy', url: 'https://www.podatki.gov.pl/' },
-    { name: 'Fakturowanie dla przedsiębiorców - Biznes.gov.pl', url: 'https://www.biznes.gov.pl/' },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
