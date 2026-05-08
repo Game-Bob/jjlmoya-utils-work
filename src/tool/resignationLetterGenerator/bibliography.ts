@@ -2,11 +2,11 @@ import type { BibliographyEntry } from '../../types';
 
 export const bibliography: BibliographyEntry[] = [
   {
-    name: 'Bundesministerium für Arbeit und Soziales - Kündigungsschutz',
-    url: 'https://www.bmas.de',
+    name: 'Build community Advance your career Stay ahead of global trends',
+    url: 'https://www.iabc.com/',
   },
   {
-    name: 'Bürgerliches Gesetzbuch (BGB) - § 623 Schriftform',
-    url: 'https://www.gesetze-im-internet.de/bgb/__623.html',
+    name: 'NATLEX - Database of national labour, social security and related human rights legislation',
+    url: 'https://natlex.ilo.org/dyn/natlex2/r/natlex/fe/home',
   },
 ];
