@@ -4,49 +4,49 @@ import type { MeetingCostCalculatorUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'calculateur-cout-reunion';
-const title = 'Calculateur Cout Reunion Temps Reel Ticker';
+const title = 'Calculateur Coût Réunion Temps Réel Ticker';
 const description =
-  'Visualisez en temps reel combien coutent vos reunions. Entrez le nombre de participants et le salaire moyen pour voir le compteur s\'incrementer a chaque seconde.';
+  'Visualisez en temps réel combien coûtent vos réunions. Entrez le nombre de participants et le salaire moyen pour voir le compteur s\'incrémenter à chaque seconde.';
 
 const faqData = [
   {
-    question: 'Pourquoi mesurer le cout d\'une reunion ?',
+    question: 'Pourquoi mesurer le coût d\'une réunion ?',
     answer:
-      'Mettre un chiffre sur le cout d\'une reunion cree une prise de conscience productive. Cela aide a reduire les reunions inutiles, encourage la ponctualite et s\'assure que les sujets traites justifient l\'investissement economique de l\'equipe.',
+      'Mettre un chiffre sur le coût d\'une réunion crée une prise de conscience productive. Cela aide à réduire les réunions inutiles, encourage la ponctualité et s\'assure que les sujets traités justifient l\'investissement économique de l\'équipe.',
   },
   {
-    question: 'Comment le cout est-il calcule en temps reel ?',
+    question: 'Comment le coût est-il calculé en temps réel ?',
     answer:
-      'Le systeme additionne les salaires bruts estimes de tous les participants et calcule un taux de depense par seconde. Le ticker se met a jour a chaque image pour afficher le cout cumule en direct.',
+      'Le système additionne les salaires bruts estimés de tous les participants et calcule un taux de dépense par seconde. Le ticker se met à jour à chaque image pour afficher le coût cumulé en direct.',
   },
   {
-    question: 'Quels couts indirects cet outil n\'inclut-il pas ?',
+    question: 'Quels coûts indirects cet outil n\'inclut-il pas ?',
     answer:
-      'Cette calculatrice se concentre sur le cout salarial direct. Elle n\'inclut pas le cout d\'opportunite (ce que les employes auraient pu produire), ni les charges fixes comme le loyer, les licences logicielles ou les services publics.',
+      'Cette calculatrice se concentre sur le coût salarial direct. Elle n\'inclut pas le coût d\'opportunité (ce que les employés auraient pu produire), ni les charges fixes comme le loyer, les licences logicielles ou les services publics.',
   },
   {
-    question: 'Comment reduire le cout de mes reunions ?',
+    question: 'Comment réduire le coût de mes réunions ?',
     answer:
-      'Definissez un ordre du jour clair, limitez les participants aux personnes indispensables, fixez une duree maximale et evaluez si l\'objectif peut etre atteint par un message asynchrone ou un e-mail.',
+      'Définissez un ordre du jour clair, limitez les participants aux personnes indispensables, fixez une durée maximale et évaluez si l\'objectif peut être atteint par un message asynchrone ou un e-mail.',
   },
 ];
 
 const howToData = [
   {
     name: 'Indiquer le nombre de participants',
-    text: 'Saisissez combien de personnes participent actuellement a la reunion.',
+    text: 'Saisissez combien de personnes participent actuellement à la réunion.',
   },
   {
     name: 'Ajuster le salaire moyen',
-    text: 'Entrez une estimation du salaire brut annuel moyen ou du taux horaire des participants pour un calcul realiste.',
+    text: 'Entrez une estimation du salaire brut annuel moyen ou du taux horaire des participants pour un calcul réaliste.',
   },
   {
-    name: 'Demarrer le chronometre',
-    text: 'Appuyez sur le bouton Demarrer des le debut de la reunion pour voir le compteur de cout s\'incrementer.',
+    name: 'Démarrer le chronomètre',
+    text: 'Appuyez sur le bouton Démarrer dès le début de la réunion pour voir le compteur de coût s\'incrémenter.',
   },
   {
-    name: 'Arreter et reflechir',
-    text: 'A la fin, mettez le ticker en pause. Observez le cout total et evaluez si les resultats obtenus valaient l\'investissement.',
+    name: 'Arrêter et réfléchir',
+    text: 'À la fin, mettez le ticker en pause. Observez le coût total et évaluez si les résultats obtenus valaient l\'investissement.',
   },
 ];
 
@@ -89,15 +89,15 @@ export const content: ToolLocaleContent<MeetingCostCalculatorUI> = {
   title,
   description,
   ui: {
-    labelAccumulated: 'Cout Accumule',
+    labelAccumulated: 'Coût Accumulé',
     labelAttendees: 'Participants',
     labelSalary: 'Salaire Moyen',
     optAnnual: 'Annuel Brut',
     optHourly: 'Taux Horaire',
-    btnStart: 'Demarrer',
+    btnStart: 'Démarrer',
     btnPause: 'Pause',
     btnResume: 'Reprendre',
-    btnReset: 'Reinitialiser',
+    btnReset: 'Réinitialiser',
     currencySymbol: '€',
     defaultSalary: '45000',
     numberLocale: 'fr-FR',
@@ -109,39 +109,39 @@ export const content: ToolLocaleContent<MeetingCostCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Pourquoi visualiser le cout d\'une reunion ?',
+      text: 'Pourquoi visualiser le coût d\'une réunion ?',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Le temps est la ressource la plus chere et la moins renouvelable dans toute organisation. Cet outil ne vise pas a decourager la collaboration, mais a favoriser une <strong>prise de conscience productive</strong>. Quand on voit l\'argent bruler en temps reel, on devient plus ponctuel, plus concis et plus intentionnel.',
+      html: 'Le temps est la ressource la plus chère et la moins renouvelable dans toute organisation. Cet outil ne vise pas à décourager la collaboration, mais à favoriser une <strong>prise de conscience productive</strong>. Quand on voit l\'argent brûler en temps réel, on devient plus ponctuel, plus concis et plus intentionnel.',
     },
     {
       type: 'card',
-      title: 'Le Calcul du Cout Cache',
-      html: '<p>Nous calculons le cout sur la base du salaire brut annuel ou du taux horaire. Pour le calcul annuel, nous utilisons un standard de <strong>1 750 heures travaillees par an</strong> (vacances et jours feries deduits) pour convertir le salaire en taux horaire.</p><p>La formule du burn rate est :<br><code>(Taux Horaire x Participants) / 3600</code><br>Cela donne le cout exact par seconde affiche dans le compteur.</p>',
+      title: 'Le Calcul du Coût Caché',
+      html: '<p>Nous calculons le coût sur la base du salaire brut annuel ou du taux horaire. Pour le calcul annuel, nous utilisons un standard de <strong>1 750 heures travaillées par an</strong> (vacances et jours fériés déduits) pour convertir le salaire en taux horaire.</p><p>La formule du burn rate est :<br><code>(Taux Horaire x Participants) / 3600</code><br>Cela donne le coût exact par seconde affiché dans le compteur.</p>',
     },
     {
       type: 'code',
-      code: 'Salaire annuel : 45 000 €\nTaux horaire : 45 000 / 1 750 = 25,71 €/h\nBurn rate (4 personnes) : (25,71 x 4) / 3600 = 0,029 €/sec\nCout d\'une reunion d\'1h : 102,86 €',
+      code: 'Salaire annuel: 45 000 €\nTaux horaire: 45 000 / 1 750 = 25,71 €/h\nBurn rate (4 personnes): (25,71 x 4) / 3600 = 0,029 €/sec\nCoût d\'une réunion d\'1h: 102,86 €',
     },
     {
       type: 'title',
-      text: 'Conseils pour des Reunions plus Efficaces',
+      text: 'Conseils pour des Réunions plus Efficaces',
       level: 2,
     },
     {
       type: 'list',
       items: [
-        '<strong>La regle des 2 pizzas :</strong> Popularisee par Jeff Bezos : si deux pizzas ne suffisent pas a nourrir tout le groupe, il y a trop de monde dans la reunion.',
-        '<strong>Pas d\'ordre du jour, pas de reunion :</strong> N\'acceptez jamais une reunion sans un ordre du jour clair et des objectifs definis.',
-        '<strong>Reunions debout :</strong> Maintenez les points quotidiens debout. L\'inconfort physique favorise la concision.',
-        '<strong>Loi de Parkinson :</strong> Le travail se dilate pour occuper le temps disponible. Fixez des creneaux de 25 ou 50 minutes plutot que l\'heure entiere.',
+        '<strong>La règle des 2 pizzas :</strong> Popularisée par Jeff Bezos: si deux pizzas ne suffisent pas à nourrir tout le groupe, il y a trop de monde dans la réunion.',
+        '<strong>Pas d\'ordre du jour, pas de réunion :</strong> N\'acceptez jamais une réunion sans un ordre du jour clair et des objectifs définis.',
+        '<strong>Réunions debout :</strong> Maintenez les points quotidiens debout. L\'inconfort physique favorise la concision.',
+        '<strong>Loi de Parkinson :</strong> Le travail se dilate pour occuper le temps disponible. Fixez des créneaux de 25 ou 50 minutes plutôt que l\'heure entière.',
       ],
     },
     {
       type: 'tip',
-      html: '<strong>Utilisez le ticker comme rappel visuel :</strong> Partagez votre ecran avec le compteur de cout visible pendant les reunions d\'equipe. Le montant affiche cree une incitation naturelle a rester dans le sujet et a terminer a l\'heure.',
+      html: '<strong>Utilisez le ticker comme rappel visuel :</strong> Partagez votre écran avec le compteur de coût visible pendant les réunions d\'équipe. Le montant affiché crée une incitation naturelle à rester dans le sujet et à terminer à l\'heure.',
     },
   ],
 };
