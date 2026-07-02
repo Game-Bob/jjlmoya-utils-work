@@ -90,11 +90,11 @@
 
   .ig-document-frame {
     --ig-preview-scale: 1;
+    --ig-preview-width: 794px;
 
+    aspect-ratio: 794 / 1123;
     position: relative;
-    width: calc(794px * var(--ig-preview-scale));
-    min-width: calc(794px * var(--ig-preview-scale));
-    height: calc(1123px * var(--ig-preview-scale));
+    width: var(--ig-preview-width);
   }
 
   .ig-add-row-wrap {
@@ -158,7 +158,8 @@
     }
 
     .ig-document-frame {
-      --ig-preview-scale: min(0.8, calc((100vw - 3rem) / 794));
+      --ig-preview-scale: 0.8;
+      --ig-preview-width: 635.2px;
     }
 
     .ig-a4-wrapper {
@@ -173,11 +174,26 @@
     }
 
     .ig-document-frame {
-      --ig-preview-scale: calc((100vw - 2rem) / 794);
+      --ig-preview-scale: 0.58;
+      --ig-preview-width: 460.52px;
     }
 
     .ig-a4-wrapper {
       padding: 0.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ig-document-frame {
+      --ig-preview-scale: 0.44;
+      --ig-preview-width: 349.36px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .ig-document-frame {
+      --ig-preview-scale: 0.42;
+      --ig-preview-width: 333.48px;
     }
   }
 
