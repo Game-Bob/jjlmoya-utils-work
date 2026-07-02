@@ -91,8 +91,9 @@
   .ig-document-frame {
     --ig-preview-scale: 1;
     --ig-preview-width: 794px;
+    --ig-preview-height: 1123px;
 
-    aspect-ratio: 794 / 1123;
+    height: var(--ig-preview-height);
     position: relative;
     width: var(--ig-preview-width);
   }
@@ -160,6 +161,7 @@
     .ig-document-frame {
       --ig-preview-scale: 0.8;
       --ig-preview-width: 635.2px;
+      --ig-preview-height: 898.4px;
     }
 
     .ig-a4-wrapper {
@@ -176,6 +178,7 @@
     .ig-document-frame {
       --ig-preview-scale: 0.58;
       --ig-preview-width: 460.52px;
+      --ig-preview-height: 651.34px;
     }
 
     .ig-a4-wrapper {
@@ -187,6 +190,7 @@
     .ig-document-frame {
       --ig-preview-scale: 0.44;
       --ig-preview-width: 349.36px;
+      --ig-preview-height: 494.12px;
     }
   }
 
@@ -194,6 +198,7 @@
     .ig-document-frame {
       --ig-preview-scale: 0.42;
       --ig-preview-width: 333.48px;
+      --ig-preview-height: 471.66px;
     }
   }
 
