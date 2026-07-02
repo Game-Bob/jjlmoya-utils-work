@@ -6,16 +6,21 @@ async function generatePDF() {
   const element = document.getElementById('invoice-document');
   if (!element) return;
   const noPrintEls = element.querySelectorAll<HTMLElement>('.no-print');
+  element.classList.add('ig-pdf-render');
   noPrintEls.forEach((el) => { el.style.display = 'none'; });
   const html2pdf = (await import('html2pdf.js')).default;
-  await html2pdf().set({
-    margin: 0,
-    filename: 'invoice.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
-    jsPDF: { unit: 'px', format: [794, 1123], orientation: 'portrait' },
-  }).from(element).save();
-  noPrintEls.forEach((el) => { el.style.removeProperty('display'); });
+  try {
+    await html2pdf().set({
+      margin: 0,
+      filename: 'invoice.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: 'px', format: [794, 1123], orientation: 'portrait' },
+    }).from(element).save();
+  } finally {
+    element.classList.remove('ig-pdf-render');
+    noPrintEls.forEach((el) => { el.style.removeProperty('display'); });
+  }
 }
 
 type InvoiceEls = {

@@ -26,7 +26,8 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
   </div>
 
   <div class="ig-a4-wrapper">
-    <div class="invoice-document" id="invoice-document">
+    <div class="ig-document-frame">
+      <div class="invoice-document" id="invoice-document">
       <div class="inv-header">
         <div class="inv-header-left">
           <p class="inv-title editable" contenteditable="true" spellcheck="false">{t.defaultInvoiceTitle}</p>
@@ -114,7 +115,8 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
         </div>
       </div>
 
-      <div class="inv-brand-stripe"></div>
+        <div class="inv-brand-stripe"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -125,4 +127,3 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
   document.addEventListener('astro:page-load', () => { initInvoiceGenerator(); }, { once: false });
   setTimeout(initInvoiceGenerator, 50);
 </script>
-

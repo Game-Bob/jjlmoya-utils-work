@@ -88,6 +88,15 @@
     border-color: #334155;
   }
 
+  .ig-document-frame {
+    --ig-preview-scale: 1;
+
+    position: relative;
+    width: calc(794px * var(--ig-preview-scale));
+    min-width: calc(794px * var(--ig-preview-scale));
+    height: calc(1123px * var(--ig-preview-scale));
+  }
+
   .ig-add-row-wrap {
     display: flex;
     justify-content: flex-end;
@@ -121,8 +130,16 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     color: #1e293b;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(var(--ig-preview-scale));
+    transform-origin: top left;
+  }
+
+  .invoice-document.ig-pdf-render {
     position: relative;
-    transform-origin: top center;
+    transform: none;
   }
 
   @media (max-width: 900px) {
@@ -140,21 +157,27 @@
       width: 100%;
     }
 
+    .ig-document-frame {
+      --ig-preview-scale: min(0.8, calc((100vw - 3rem) / 794));
+    }
+
     .ig-a4-wrapper {
       align-items: flex-start;
       padding: 0.75rem;
     }
-
-    .invoice-document {
-      transform: scale(min(0.8, calc((100vw - 3rem) / 794)));
-      margin-bottom: calc((1123px * (min(0.8, calc((100vw - 3rem) / 794)) - 1)) + 1rem);
-    }
   }
 
   @media (max-width: 600px) {
-    .invoice-document {
-      transform: scale(calc((100vw - 2.5rem) / 794));
-      margin-bottom: calc((1123px * (calc((100vw - 2.5rem) / 794) - 1)) + 1rem);
+    .ig-root {
+      padding-inline: 0;
+    }
+
+    .ig-document-frame {
+      --ig-preview-scale: calc((100vw - 2rem) / 794);
+    }
+
+    .ig-a4-wrapper {
+      padding: 0.5rem;
     }
   }
 
