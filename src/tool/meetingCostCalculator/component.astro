@@ -41,7 +41,7 @@ const t = (ui ?? {}) as MeetingCostCalculatorUI;
       <div class="mc-field">
         <div class="mc-label-row">
           <label class="mc-label" for="mc-salary">{t.labelSalary}</label>
-          <select id="mc-salary-type" class="mc-type-select">
+          <select id="mc-salary-type" class="mc-type-select" aria-label="Salary type">
             <option value="annual">{t.optAnnual}</option>
             <option value="hourly">{t.optHourly}</option>
           </select>

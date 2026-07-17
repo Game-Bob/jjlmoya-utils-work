@@ -20,12 +20,12 @@ const t = (ui ?? {}) as IrpfCalculatorUI;
 
       <div class="form-grid">
         <div class="input-block full-width">
-          <label class="input-label">{t.labelBruto}</label>
+          <label for="bruto-anual" class="input-label">{t.labelBruto}</label>
           <input type="number" id="bruto-anual" class="irpf-input" placeholder="32.000" value="30000" min="0" />
         </div>
 
         <div class="input-block">
-          <label class="input-label">{t.labelPagas}</label>
+          <label for="numero-pagas" class="input-label">{t.labelPagas}</label>
           <select id="numero-pagas" class="irpf-select">
             <option value="12">{t.opt12pagas}</option>
             <option value="14" selected>{t.opt14pagas}</option>
@@ -33,7 +33,7 @@ const t = (ui ?? {}) as IrpfCalculatorUI;
         </div>
 
         <div class="input-block">
-          <label class="input-label">{t.labelComunidad}</label>
+          <label for="comunidad" class="input-label">{t.labelComunidad}</label>
           <select id="comunidad" class="irpf-select">
             <option value="GEN">{t.optGen}</option>
             <option value="MAD">{t.optMad}</option>
@@ -46,12 +46,12 @@ const t = (ui ?? {}) as IrpfCalculatorUI;
         </div>
 
         <div class="input-block">
-          <label class="input-label">{t.labelHijos}</label>
+          <label for="hijos" class="input-label">{t.labelHijos}</label>
           <input type="number" id="hijos" class="irpf-input" value="0" min="0" />
         </div>
 
         <div class="input-block">
-          <label class="input-label">{t.labelDiscapacidad}</label>
+          <label for="discapacidad" class="input-label">{t.labelDiscapacidad}</label>
           <select id="discapacidad" class="irpf-select">
             <option value="0">{t.optNinguna}</option>
             <option value="33">{t.opt33}</option>
@@ -60,7 +60,7 @@ const t = (ui ?? {}) as IrpfCalculatorUI;
         </div>
 
         <div class="input-block full-width">
-          <label class="input-label">{t.labelUnidad}</label>
+          <label for="estado-unid" class="input-label">{t.labelUnidad}</label>
           <select id="estado-unid" class="irpf-select">
             <option value="soltero" selected>{t.optSoltero}</option>
             <option value="casado-low">{t.optCasadoLow}</option>

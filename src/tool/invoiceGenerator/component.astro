@@ -33,11 +33,11 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
           <p class="inv-title editable" contenteditable="true" spellcheck="false">{t.defaultInvoiceTitle}</p>
           <div class="inv-meta">
             <p><strong>No.:</strong> <span class="editable" contenteditable="true" spellcheck="false">{t.defaultInvoiceNum}</span></p>
-            <p><strong>Date:</strong> <input type="date" id="inv-date-input" class="seamless-input date-picker" /></p>
+            <p><strong>Date:</strong> <input type="date" id="inv-date-input" class="seamless-input date-picker" aria-label="Invoice Date" /></p>
           </div>
         </div>
         <div class="inv-header-right">
-          <select id="inv-currency" class="seamless-input currency-picker no-print" title="Select currency">
+          <select id="inv-currency" class="seamless-input currency-picker no-print" title="Select currency" aria-label="Currency">
             <option value="$" selected>USD ($)</option>
             <option value="€">EUR (€)</option>
             <option value="£">GBP (£)</option>
@@ -98,13 +98,13 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
           </div>
           <div class="tot-row tot-row-sep">
             <span class="ig-muted ig-row-flex">
-              {t.labelTax} (<input type="number" id="tax-input" class="seamless-number" style="width:2.2ch" value={t.defaultTaxRate} min="0" max="100" /> %):
+              {t.labelTax} (<input type="number" id="tax-input" class="seamless-number" style="width:2.2ch" value={t.defaultTaxRate} min="0" max="100" aria-label={t.labelTax} /> %):
             </span>
             <span><span id="out-tax-val">0.00</span> <span class="out-currency">{t.currencySymbol}</span></span>
           </div>
           <div class="tot-row tot-row-sep">
             <span class="ig-muted ig-row-flex">
-              {t.labelWithholding} (<input type="number" id="ret-input" class="seamless-number" style="width:2.2ch" value={t.defaultRetRate} min="0" max="100" /> %):
+              {t.labelWithholding} (<input type="number" id="ret-input" class="seamless-number" style="width:2.2ch" value={t.defaultRetRate} min="0" max="100" aria-label={t.labelWithholding} /> %):
             </span>
             <span class="ig-negative">-<span id="out-ret-val">0.00</span> <span class="out-currency">{t.currencySymbol}</span></span>
           </div>

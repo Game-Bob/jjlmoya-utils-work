@@ -16,7 +16,7 @@ const t = (ui ?? {}) as SalaryCalculatorUI;
     <div class="sn-form-card">
       <div class="sn-form-section">
         <div class="sn-input-block sn-full-width">
-          <label class="sn-label">{t.labelGross}</label>
+          <label for="gross-salary" class="sn-label">{t.labelGross}</label>
           <div class="sn-input-wrapper">
             <span class="sn-currency">€</span>
             <input
@@ -43,7 +43,7 @@ const t = (ui ?? {}) as SalaryCalculatorUI;
 
         <div class="sn-secondary-inputs">
           <div class="sn-input-row">
-            <label class="sn-label-inline">{t.labelAge}</label>
+            <label for="age" class="sn-label-inline">{t.labelAge}</label>
             <input
               type="number"
               id="age"
@@ -52,7 +52,7 @@ const t = (ui ?? {}) as SalaryCalculatorUI;
             />
           </div>
           <div class="sn-input-row">
-            <label class="sn-label-inline">{t.labelContract}</label>
+            <label for="contract-type" class="sn-label-inline">{t.labelContract}</label>
             <select id="contract-type" class="sn-select-small">
               <option value="general">{t.optIndefinite}</option>
               <option value="temporal">{t.optTemporal}</option>
