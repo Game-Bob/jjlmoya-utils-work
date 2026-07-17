@@ -1,14 +1,14 @@
 import type { WorkCategoryEntry } from '../types';
-import { irpfCalculator } from '../tool/irpfCalculator/index';
-import { salaryCalculator } from '../tool/salaryCalculator/index';
-import { autonomosCalculator } from '../tool/autonomosCalculator/index';
-import { reverseVatCalculator } from '../tool/reverseVatCalculator/index';
-import { invoiceGenerator } from '../tool/invoiceGenerator/index';
-import { meetingCostCalculator } from '../tool/meetingCostCalculator/index';
-import { settlementCalculator } from '../tool/settlementCalculator/index';
-import { resignationLetterGenerator } from '../tool/resignationLetterGenerator/index';
-import { earlyRetirementSimulator } from '../tool/earlyRetirementSimulator/index';
-import { nieNifVerifier } from '../tool/nieNifVerifier/index';
+import { irpfCalculator } from '../tool/irpfCalculator/entry';
+import { salaryCalculator } from '../tool/salaryCalculator/entry';
+import { autonomosCalculator } from '../tool/autonomosCalculator/entry';
+import { reverseVatCalculator } from '../tool/reverseVatCalculator/entry';
+import { invoiceGenerator } from '../tool/invoiceGenerator/entry';
+import { meetingCostCalculator } from '../tool/meetingCostCalculator/entry';
+import { settlementCalculator } from '../tool/settlementCalculator/entry';
+import { resignationLetterGenerator } from '../tool/resignationLetterGenerator/entry';
+import { earlyRetirementSimulator } from '../tool/earlyRetirementSimulator/entry';
+import { nieNifVerifier } from '../tool/nieNifVerifier/entry';
 
 export const workCategory: WorkCategoryEntry = {
   icon: 'mdi:briefcase',
