@@ -29,7 +29,9 @@ const faqData = [
   answer:
   'Perusahaan mungkin tidak memberikan surat keterangan kerja (Paklaring) atau menahan sisa gaji/tunjangan tertentu sebagai penalti jika hal tersebut diatur dalam kontrak kerja Anda.',
   },
-];
+
+  { question: "Apa yang harus diperiksa sebelum memakai hasil?", answer: "Periksa input, satuan, asumsi, dan batasan; hasil ini adalah panduan, bukan keputusan resmi." },
+  { question: "Apa yang harus diperiksa sebelum memakai hasil?", answer: "Periksa input, satuan, asumsi, dan batasan; hasil ini adalah panduan, bukan keputusan resmi." },];
 
 const howToData = [
   {
@@ -178,5 +180,13 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
   type: 'code',
   code: '[Kota, Tanggal]\n\nYth: [Nama Manajer]\n[Nama Perusahaan]\n\nDengan hormat,\n\nSaya bermaksud mengajukan pengunduran diri saya. Hari terakhir kerja saya adalah [Tanggal].\n\nTerima kasih atas kepercayaan yang diberikan selama ini.\n\nHormat saya,\n[Tanda Tangan]',
   },
-  ],
+
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },],
 };

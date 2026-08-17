@@ -29,7 +29,8 @@ const faqData = [
   answer:
   'Wenn Sie für nicht genutzten Urlaub bezahlt werden, muss das Unternehmen für diese Tage weiterhin Sozialversicherungsbeiträge für Sie abführen. In diesem Zeitraum können Sie noch kein Arbeitslosengeld beziehen.',
   },
-];
+
+  { question: "Was sollte ich vor der Verwendung prüfen?", answer: "Prüfen Sie Eingaben, Einheiten, Annahmen und Grenzen; das Ergebnis ist eine Orientierung, keine offizielle Entscheidung." },];
 
 const howToData = [
   {
@@ -139,5 +140,9 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     '<strong>Indemnización:</strong> Die eigentliche Abfindung als Entschädigung für den Verlust des Arbeitsplatzes.',
   ],
   },
-  ],
+
+  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
+  { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
+  { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
+  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },],
 };

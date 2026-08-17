@@ -29,7 +29,8 @@ const faqData = [
   answer:
   'Wanneer u uitbetaald krijgt voor ongebruikte vakantiedagen, moet het bedrijf voor die dagen sociale premies blijven afdragen. Gedurende die periode kunt u nog niet starten met een WW-uitkering.',
   },
-];
+
+  { question: "Wat moet ik controleren voordat ik het resultaat gebruik?", answer: "Controleer invoer, eenheden, aannames en beperkingen; het resultaat is een richtlijn, geen officiële beslissing." },];
 
 const howToData = [
   {
@@ -127,5 +128,11 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
   type: 'paragraph',
   html: 'Het einde van een arbeidsovereenkomst in Spanje kan financieel onzeker zijn. Of het nu gaat om <strong>ontslag</strong> of <strong>rezygnatie</strong>, het is essentieel om te weten waar je recht op hebt.',
   },
-  ],
+
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
+  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
+  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },],
 };

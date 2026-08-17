@@ -29,7 +29,8 @@ const faqData = [
   answer:
   '미사용 연차를 수당으로 지급할 때, 회사는 해당 일수만큼 근로자를 대신해 사회보장국(Social Security)에 기여금을 계속 납부해야 합니다. 이 기간 동안은 실업 급여를 신청하거나 타사에 입사할 수 없습니다.',
   },
-];
+
+  { question: "결과를 사용하기 전에 무엇을 확인해야 하나요?", answer: "입력, 단위, 가정과 제한사항을 확인하세요. 결과는 참고용이며 공식 판단이 아닙니다." },];
 
 const howToData = [
   {
@@ -139,5 +140,9 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     '<strong>Indemnización（인뎀니사시온/위로금）:</strong> 특정 사유의 해고 시 회사가 지급해야 하는 경제적 보상금입니다. 자발적 퇴사 시에는 원칙적으로 지급되지 않습니다.',
   ],
   },
-  ],
+
+  { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다." },
+  { type: 'paragraph', html: "결과는 계획과 시나리오 비교에 사용할 수 있지만 공식 계산이나 전문가 조언을 대신하지 않습니다." },
+  { type: 'paragraph', html: "사용하기 전에 계산기가 표시한 가정과 결과를 함께 확인하세요." },
+  { type: 'paragraph', html: "입력값, 단위, 반올림, 날짜와 관할을 확인하세요. 모두 추정값을 바꿀 수 있습니다." },],
 };

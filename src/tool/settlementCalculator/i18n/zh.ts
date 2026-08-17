@@ -29,7 +29,8 @@ const faqData = [
   answer:
   '当您结算未休年假工资时，公司必须在这些天数内继续为您缴纳社保。在此期间，您不能开始领取失业金，也不能在其他公司入职。',
   },
-];
+
+  { question: "使用结果前应检查什么？", answer: "请检查输入、单位、假设和限制；结果仅供参考，不是正式决定。" },];
 
 const howToData = [
   {
@@ -139,5 +140,9 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     '<strong>Indemnización:</strong> 某些解雇情况下法律规定公司必须支付的补偿金。主动辞职通常没有这一项。',
   ],
   },
-  ],
+
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },],
 };

@@ -29,7 +29,8 @@ const faqData = [
   answer:
   'När du får ersättning för outtagen semester måste företaget fortsätta betala sociala avgifter för dig under dessa dagar. Under den perioden kan du inte börja ta ut a-kassa.',
   },
-];
+
+  { question: "Vad bör jag kontrollera innan resultatet används?", answer: "Kontrollera indata, enheter, antaganden och begränsningar; resultatet är vägledning, inte ett officiellt beslut." },];
 
 const howToData = [
   {
@@ -127,5 +128,11 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
   type: 'paragraph',
   html: 'Att förstå vad du har rätt till när ett anställningsavtal upphör i Spanien är viktigt för att skydda dina rättigheter.',
   },
-  ],
+
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },],
 };

@@ -153,5 +153,7 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
   type: 'tip',
   html: '<strong>Guarda cada factura como PDF:</strong> El IRS recomienda conservar los registros de negocio durante al menos 3 años (hasta 7 para impuestos de empleo). Usa el botón "Generate PDF" tras cada factura y guárdalas en una carpeta organizada por año y cliente.',
   },
-  ],
+
+  { type: 'paragraph', html: "Comprueba los datos, las unidades, el redondeo, la fecha y la jurisdicción, porque todos pueden cambiar la estimación." },
+  { type: 'paragraph', html: "Usa el resultado para planificar y comparar escenarios; no sustituye un cálculo oficial ni el asesoramiento profesional." },],
 };

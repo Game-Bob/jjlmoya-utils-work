@@ -125,5 +125,10 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
   type: 'code',
   code: '課税標準額 = 税込総額 / (1 + IVA税率)\nIVA金額 = 税込総額 - 課税標準額',
   },
-  ],
+
+  { type: 'paragraph', html: "結果は計画や条件比較に使えますが、公式計算や専門家の助言の代わりにはなりません。" },
+  { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。" },
+  { type: 'paragraph', html: "入力値、単位、丸め、日付、地域を確認してください。どれも推定結果を変える可能性があります。" },
+  { type: 'paragraph', html: "結果は計画や条件比較に使えますが、公式計算や専門家の助言の代わりにはなりません。" },
+  { type: 'paragraph', html: "利用する前に、計算機が示す前提条件と結果を一緒に確認してください。" },],
 };

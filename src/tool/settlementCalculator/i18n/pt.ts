@@ -29,7 +29,8 @@ const faqData = [
   answer:
   'Ao receber o pagamento de férias não gozadas, a empresa deve continuar a descontar para a Segurança Social por esses dias. Durante esse período, não pode começar a receber o subsídio de desemprego.',
   },
-];
+
+  { question: "O que devo verificar antes de usar o resultado?", answer: "Verifique dados, unidades, premissas e limitações; é uma orientação, não uma decisão oficial." },];
 
 const howToData = [
   {
@@ -139,5 +140,9 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     '<strong>Indemnização:</strong> Compensação económica no caso de certos tipos de despedimento.',
   ],
   },
-  ],
+
+  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
+  { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
+  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
+  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },],
 };

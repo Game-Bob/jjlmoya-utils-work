@@ -29,7 +29,8 @@ const faqData = [
   answer:
   'W przypadku wypłaty ekwiwalentu za niewykorzystany urlop, firma musi kontynuować opłacanie składek na ubezpieczenie społeczne za te dni. W tym okresie nie można zacząć pobierać zasiłku dla bezrobotnych.',
   },
-];
+
+  { question: "Co sprawdzić przed użyciem wyniku?", answer: "Sprawdź dane, jednostki, założenia i ograniczenia; wynik jest wskazówką, a nie decyzją urzędową." },];
 
 const howToData = [
   {
@@ -139,5 +140,9 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
     '<strong>Indemnización:</strong> Odszkodowanie płacone przez firmę w przypadku zwolnienia. Nie przysługuje przy rezygnacji pracownika.',
   ],
   },
-  ],
+
+  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
+  { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
+  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },],
 };

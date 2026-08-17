@@ -159,5 +159,7 @@ export const content: ToolLocaleContent<NieNifVerifierUI> = {
   type: 'tip',
   html: "<strong>Confidentialité garantie :</strong> La validation s'effectue entièrement dans votre navigateur. Les numéros saisis ne sont jamais envoyés à un serveur ni stockés dans une base de données.",
   },
-  ],
+
+  { type: 'paragraph', html: "Interprétez le résultat avec les hypothèses affichées par le calculateur avant de l'utiliser." },
+  { type: 'paragraph', html: "Vérifiez les données, unités, arrondi, date et juridiction, car chacun de ces éléments peut modifier l'estimation." },],
 };

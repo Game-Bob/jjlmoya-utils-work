@@ -29,7 +29,8 @@ const faqData = [
   answer:
   'Ketika Anda menerima pembayaran untuk cuti yang tidak digunakan, perusahaan harus terus memberikan kontribusi ke Jaminan Sosial atas nama Anda untuk hari-hari tersebut.',
   },
-];
+
+  { question: "Apa yang harus diperiksa sebelum memakai hasil?", answer: "Periksa input, satuan, asumsi, dan batasan; hasil ini adalah panduan, bukan keputusan resmi." },];
 
 const howToData = [
   {
@@ -127,5 +128,11 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
   type: 'paragraph',
   html: 'Memahami hak-hak keuangan Anda saat masa kontrak berakhir di Spanyol sangatlah penting. Apakah itu melalui <strong>pemecatan</strong> atau <strong>pengunduran diri</strong>.',
   },
-  ],
+
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
+  { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },],
 };

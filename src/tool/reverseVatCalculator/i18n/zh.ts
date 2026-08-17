@@ -125,5 +125,10 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
   type: 'code',
   code: '计税基数 = 含税总额 / (1 + 增值税率)\n增值税额 = 含税总额 - 计税基数',
   },
-  ],
+
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },],
 };

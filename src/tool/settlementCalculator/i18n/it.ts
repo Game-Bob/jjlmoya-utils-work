@@ -29,7 +29,8 @@ const faqData = [
   answer:
   'Quando vengono pagate le ferie non godute, l\'azienda deve continuare a versare i contributi previdenziali per quei giorni. In quel periodo non è possibile iniziare a percepire la disoccupazione.',
   },
-];
+
+  { question: "Cosa devo verificare prima di usare il risultato?", answer: "Controlla dati, unità, ipotesi e limiti; è un'indicazione, non una decisione ufficiale." },];
 
 const howToData = [
   {
@@ -127,5 +128,11 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
   type: 'paragraph',
   html: 'Comprendere quanto ti spetta alla fine di un rapporto di lavoro in Spagna è fondamentale per tutelare i tuoi diritti, che si tratti di <strong>licenziamento</strong> o <strong>dimissioni</strong>.',
   },
-  ],
+
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
+  { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },],
 };

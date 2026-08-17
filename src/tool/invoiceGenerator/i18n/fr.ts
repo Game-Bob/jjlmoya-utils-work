@@ -153,5 +153,7 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
       type: 'tip',
       html: '<strong>Conservez chaque facture en PDF :</strong> L\'IRS recommande de garder les documents comptables pendant au moins 3 ans (jusqu\'à 7 ans pour les impôts sur les salaires). Utilisez le bouton "Generate PDF" après chaque facture et classez-les dans un dossier organisé par année et par client.',
     },
-  ],
+
+  { type: 'paragraph', html: "Vérifiez les données, unités, arrondi, date et juridiction, car chacun de ces éléments peut modifier l'estimation." },
+  { type: 'paragraph', html: "Utilisez le résultat pour planifier et comparer des scénarios ; il ne remplace ni un calcul officiel ni un avis professionnel." },],
 };

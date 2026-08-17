@@ -158,5 +158,7 @@ export const content: ToolLocaleContent<NieNifVerifierUI> = {
   type: 'tip',
   html: '<strong>Privacidade garantida:</strong> A validação corre inteiramente no seu navegador. Os números introduzidos nunca são enviados para um servidor.',
   },
-  ],
+
+  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
+  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },],
 };

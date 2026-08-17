@@ -125,5 +125,10 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
   type: 'code',
   code: 'Belastbare Grondslag = Totaalbedrag / (1 + BTW-tarief)\nBTW-bedrag = Totaalbedrag - Belastbare Grondslag',
   },
-  ],
+
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
+  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },
+  { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
+  { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },],
 };

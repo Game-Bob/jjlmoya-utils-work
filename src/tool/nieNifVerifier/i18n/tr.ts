@@ -149,5 +149,9 @@ export const content: ToolLocaleContent<NieNifVerifierUI> = {
   type: 'tip',
   html: '<strong>Gizlilik garantili:</strong> Doğrulama tamamen tarayıcınızda çalışır. Girdiğiniz numaralar asla bir sunucuya gönderilmez.',
   },
-  ],
+
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },],
 };

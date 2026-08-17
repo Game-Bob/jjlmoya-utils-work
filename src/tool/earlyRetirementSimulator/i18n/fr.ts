@@ -182,5 +182,7 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
   title: "Exemple pratique",
   html: "<p>Un travailleur avec une base de 2 000 € qui part volontairement 2 ans avant l'âge légal avec 36 ans de cotisations. Sa réduction sera d'environ 21 %, laissant sa pension à environ <strong>1 580 € par mois</strong> pour le reste de sa vie.</p>",
   },
-  ],
+
+  { type: 'paragraph', html: "Utilisez le résultat pour planifier et comparer des scénarios ; il ne remplace ni un calcul officiel ni un avis professionnel." },
+  { type: 'paragraph', html: "Interprétez le résultat avec les hypothèses affichées par le calculateur avant de l'utiliser." },],
 };

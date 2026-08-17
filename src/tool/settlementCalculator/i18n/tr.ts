@@ -29,7 +29,8 @@ const faqData = [
   answer:
   "Kullanılmayan izinler ödendiğinde, şirket o günler için sizin adınıza Sosyal Güvenlik primlerini ödemeye devam etmelidir. Bu süre bitmeden işsizlik maaşına başvuramazsınız.",
   },
-];
+
+  { question: "Sonucu kullanmadan önce neyi kontrol etmeliyim?", answer: "Girdileri, birimleri, varsayımları ve sınırlamaları kontrol edin; bu bir rehber tahmindir, resmî karar değildir." },];
 
 const howToData = [
   {
@@ -127,5 +128,11 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
   type: 'paragraph',
   html: "İspanya'da iş sözleşmesi sona erdiğinde haklarınızı bilmek önemlidir. İster <strong>istifa</strong> ister <strong>işten çıkarılma</strong> olsun.",
   },
-  ],
+
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
+  { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },],
 };

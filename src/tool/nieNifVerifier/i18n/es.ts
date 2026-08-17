@@ -156,20 +156,6 @@ export const content: ToolLocaleContent<NieNifVerifierUI> = {
   },
   {
   type: 'title',
-  text: 'Glosario de términos',
-  level: 2,
-  },
-  {
-  type: 'list',
-  items: [
-    '<strong>Dígito de Control:</strong> Carácter al final del código que valida la integridad de los datos mediante un algoritmo matemático.',
-    '<strong>Módulo 23:</strong> Operación que calcula la letra del NIF y NIE a partir del resto de dividir el número entre 23.',
-    '<strong>Persona Jurídica:</strong> Entidad abstracta (empresa, sociedad, fundación) con su propio NIF.',
-    '<strong>Residencia Fiscal:</strong> Situación que obliga a tributar en España, vinculada a la posesión de un NIF o NIE válido.',
-  ],
-  },
-  {
-  type: 'title',
   text: 'Consejos para una verificación correcta',
   level: 2,
   },

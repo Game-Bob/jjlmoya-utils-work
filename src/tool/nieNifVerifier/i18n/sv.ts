@@ -149,5 +149,9 @@ export const content: ToolLocaleContent<NieNifVerifierUI> = {
   type: 'tip',
   html: '<strong>Sekretess garanterad:</strong> Valideringen sker helt i din webbläsare. Numren du anger skickas aldrig till någon server.',
   },
-  ],
+
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
+  { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },],
 };

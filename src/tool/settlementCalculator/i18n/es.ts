@@ -159,23 +159,9 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
   ],
   },
   {
-  type: 'title',
-  text: 'Cómo calcular la Indemnización por Despido',
-  level: 3,
-  },
-  {
   type: 'card',
   title: 'Ejemplo práctico de cálculo',
   html: '<p>Trabajador con salario bruto de 30.000 € anuales y 2 años de antigüedad:</p><ul><li>Salario diario: 30.000 / 365 = 82,19 €</li><li>Despido improcedente (33 días): 33 x 2 x 82,19 = <strong>5.424,54 €</strong></li><li>Despido objetivo (20 días): 20 x 2 x 82,19 = <strong>3.287,60 €</strong></li></ul>',
-  },
-  {
-  type: 'list',
-  items: [
-    '<strong>Despido Improcedente:</strong> 33 días por año trabajado, máximo 24 mensualidades (contratos desde feb. 2012).',
-    '<strong>Despido Objetivo:</strong> 20 días por año trabajado, máximo 12 mensualidades.',
-    '<strong>Fin de Contrato Temporal:</strong> 12 días por año de servicio.',
-    '<strong>Baja Voluntaria:</strong> Sin indemnización, pero sí finiquito completo.',
-  ],
   },
   {
   type: 'tip',

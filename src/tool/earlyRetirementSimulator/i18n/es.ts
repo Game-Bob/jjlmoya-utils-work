@@ -155,10 +155,6 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
   level: 2,
   },
   {
-  type: 'paragraph',
-  html: 'Esta modalidad permite adelantar el retiro hasta 24 meses (2 años) respecto a la edad ordinaria. Es la opción preferida por profesionales que desean disfrutar del descanso tras décadas de trabajo, pero tiene condiciones estrictas.',
-  },
-  {
   type: 'card',
   title: 'Requisitos para la Voluntaria',
   html: '<ul><li>Tener cumplida una edad que sea inferior en dos años a la ordinaria.</li><li>Acreditar un período mínimo de cotización efectiva de 35 años.</li><li>Que el importe de la pensión a percibir sea superior a la pensión mínima.</li></ul>',
@@ -167,10 +163,6 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
   type: 'title',
   text: 'Coeficientes Reductores: El Precio del Adelanto',
   level: 2,
-  },
-  {
-  type: 'paragraph',
-  html: 'Desde la reforma del sistema de pensiones, los recortes ya no se aplican por trimestres, sino de forma <strong>mensual</strong>. El recorte depende de cuántos años haya cotizado en total:',
   },
   {
   type: 'list',
@@ -198,11 +190,6 @@ export const content: ToolLocaleContent<EarlyRetirementSimulatorUI> = {
     '<strong>Condición:</strong> Debe estar inscrito como demandante de empleo al menos 6 meses antes.',
     '<strong>Coeficientes:</strong> Son más favorables que en la voluntaria, pero el impacto de 4 años de adelanto sigue siendo severo.',
   ],
-  },
-  {
-  type: 'title',
-  text: '¿Cómo calcular mi pensión estimada?',
-  level: 2,
   },
   {
   type: 'card',
