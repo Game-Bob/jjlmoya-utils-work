@@ -178,5 +178,6 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
   { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
   { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
   { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
-  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },],
+  { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
+  { type: 'paragraph', html: "Przed wysłaniem dokładnie przeczytaj pismo. Sprawdź odbiorcę, ostatni dzień pracy, powód, podpis i sposób doręczenia w odniesieniu do umowy oraz obowiązujących przepisów. Zachowaj kopię pisma i potwierdzenie odbioru, aby cały proces był udokumentowany. Pisz krótko, rzeczowo i uprzejmie, podając tylko potrzebne informacje. Ponownie sprawdź datę rozwiązania umowy i zachowaj całą korespondencję dotyczącą złożenia pisma. W razie wątpliwości dotyczących okresu wypowiedzenia sprawdź umowę lub skonsultuj się ze specjalistą. Przed podpisaniem potwierdź również dane kontaktowe." },],
 };

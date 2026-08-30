@@ -134,5 +134,7 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
   { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
   { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
   { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
-  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },],
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
+  { type: 'paragraph', html: "Masukkan tanggal kontrak, hari cuti yang tersisa, pembayaran yang belum diterima, dan hukum yang berlaku dengan hati-hati. Bandingkan hasil dengan dokumen kerja Anda sebelum mengambil keputusan atau mengirim dokumen." },
+  { type: 'paragraph', html: "Simpan rincian input dan asumsi yang digunakan agar perhitungan dapat ditinjau kembali ketika tanggal atau aturan berubah. Bandingkan hasil dengan dokumen perusahaan sebelum mengambil keputusan." },],
 };

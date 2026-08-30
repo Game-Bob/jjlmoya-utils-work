@@ -144,5 +144,6 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
   { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
   { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
   { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
-  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },],
+  { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
+  { type: 'paragraph', html: "请仔细填写合同日期、剩余假期、未支付款项和适用法规。保存计算所用的假设，以便日期或规则变化后重新核对结果。" },],
 };

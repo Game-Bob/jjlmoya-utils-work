@@ -174,5 +174,6 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
   { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
   { type: 'paragraph', html: "Usa il risultato per pianificare e confrontare scenari; non sostituisce un calcolo ufficiale o una consulenza professionale." },
   { type: 'paragraph', html: "Interpreta il risultato insieme alle ipotesi mostrate dal calcolatore prima di utilizzarlo." },
-  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },],
+  { type: 'paragraph', html: "Controlla dati, unità, arrotondamento, data e giurisdizione, perché ciascun elemento può cambiare la stima." },
+  { type: 'paragraph', html: "Rileggi la lettera prima di inviarla. Verifica destinatario, ultimo giorno di lavoro, motivazione, firma e modalità di consegna rispetto al contratto e alle regole applicabili. Conserva una copia e la prova di ricezione per mantenere una documentazione completa. Usa un tono chiaro e rispettoso e inserisci solo le informazioni necessarie. Ricontrolla la data effettiva e conserva le comunicazioni relative per riferimento." },],
 };

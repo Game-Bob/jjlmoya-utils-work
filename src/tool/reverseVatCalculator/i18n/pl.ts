@@ -130,5 +130,6 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
   { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
   { type: 'paragraph', html: "Sprawdź dane, jednostki, zaokrąglenie, datę i jurysdykcję, ponieważ każdy element może zmienić szacunek." },
   { type: 'paragraph', html: "Używaj wyniku do planowania i porównywania scenariuszy; nie zastępuje obliczeń urzędowych ani porady specjalisty." },
-  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },],
+  { type: 'paragraph', html: "Przed użyciem zinterpretuj wynik razem z założeniami pokazanymi przez kalkulator." },
+  { type: 'paragraph', html: "Wpisz poprawną kwotę brutto i stawkę podatku, a następnie sprawdź zaokrąglenie podstawy oraz podatku. Stawki zależą od kraju i rodzaju transakcji, dlatego wynik służy do porównywania scenariuszy." },],
 };

@@ -130,5 +130,6 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
   { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
   { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
   { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
-  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },],
+  { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
+  { type: 'paragraph', html: "Antes de usar o valor, confirme a taxa de IVA, a unidade e o arredondamento aplicados. Registe a base tributável e o imposto apresentado para comparar cenários e guardar uma referência clara." },],
 };

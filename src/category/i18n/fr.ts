@@ -4,7 +4,7 @@ export const content: CategoryLocaleContent = {
   slug: 'travail',
   title: 'Outils pour les Travailleurs Indépendants et Gestion du Travail',
   description:
-  'Optimisez votre activité professionnelle avec des outils en ligne gratuits. Calculatrices de salaire net, cotisations travailleurs indépendants 2026, générateurs de factures PDF et documents de rupture légale.',
+  'Outils gratuits pour salaire net, cotisations des indépendants 2026, factures PDF et documents de fin de contrat.',
   seo: [
   {
   type: 'title',
@@ -92,4 +92,3 @@ export const content: CategoryLocaleContent = {
   },
   ],
 };
-

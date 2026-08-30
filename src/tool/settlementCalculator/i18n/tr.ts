@@ -134,5 +134,6 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
   { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
   { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
   { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
-  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },],
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
+  { type: 'paragraph', html: "Sözleşme tarihini, kalan izin günlerini, ödenmemiş tutarları ve geçerli mevzuatı dikkatle girin. Tarih veya kurallar değişirse sonucu yeniden kontrol etmek için kullanılan varsayımları saklayın. Karar vermeden önce hesabı işveren belgeleriyle karşılaştırın. Gerekirse yeni tarihle ve güncel kurallarla tekrar hesaplayın." },],
 };

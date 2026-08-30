@@ -203,8 +203,11 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
 
   { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
   { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
+  { type: 'paragraph', html: "Prüfen Sie Namen, Vertragsdaten, Kündigungsfrist und gewünschten Beendigungstermin. Das Muster hilft bei der Vorbereitung, ersetzt aber keine Prüfung Ihres Arbeitsvertrags oder eine rechtliche Beratung." },
   { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
   { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
   { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
-  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },],
+  { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
+  { type: 'paragraph', html: "Prüfen Sie Namen, Vertragsdaten, Kündigungsfrist und den gewünschten Beendigungstermin. Das Muster unterstützt die Vorbereitung, ersetzt aber keine Prüfung Ihres Arbeitsvertrags oder eine rechtliche Beratung." },
+  { type: 'paragraph', html: "Lesen Sie das fertige Schreiben vor dem Versand sorgfältig Korrektur. Stimmen Sie Datum, Empfänger, Betreff und Unterschrift mit dem Arbeitsvertrag und den geltenden Fristen ab. Bewahren Sie eine Kopie sowie den Nachweis der Übergabe auf, damit der Vorgang nachvollziehbar bleibt. Formulieren Sie sachlich und vermeiden Sie Angaben, die nicht erforderlich sind." },],
 };

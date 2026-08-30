@@ -174,5 +174,6 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
   { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
   { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
   { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
-  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },],
+  { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
+  { type: 'paragraph', html: "Mektubu göndermeden önce dikkatle okuyun. Alıcıyı, son çalışma gününü, nedeni, imzayı ve teslim yöntemini sözleşme ile geçerli kurallara göre kontrol edin. Belgenin bir kopyasını ve teslim alındı kaydını saklayarak süreci belgeleyin. Metni kısa, açık ve saygılı tutun; yalnızca gerekli bilgileri yazın. Geçerli ayrılış tarihini tekrar kontrol edin ve teslimle ilgili tüm yazışmaları saklayın. Bildirim süresi konusunda şüpheniz varsa sözleşmeyi inceleyin veya uygun danışmanlık alın. İmzadan önce iletişim bilgilerini de doğrulayın. Tarihi ayrıca teyit edin. Göndermeden önce son bir yazım kontrolü yapın. Belgeyi teslim ettikten sonra kaydını saklayın." },],
 };

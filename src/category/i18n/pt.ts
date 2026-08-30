@@ -4,7 +4,7 @@ export const content: CategoryLocaleContent = {
   slug: 'trabalho',
   title: 'Ferramentas de Gestão de Trabalho para Freelancers',
   description:
-  'Otimize sua atividade profissional com ferramentas online gratuitas. Calculadoras de salário líquido, cotas para freelancers 2026, geradores de faturas PDF e documentos de liquidação legal.',
+  'Ferramentas gratuitas para salário líquido, contribuições de freelancers 2026, faturas PDF e documentos de acerto laboral.',
   seo: [
   {
   type: 'title',

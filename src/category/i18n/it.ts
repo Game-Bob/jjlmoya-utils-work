@@ -4,7 +4,7 @@ export const content: CategoryLocaleContent = {
   slug: 'lavoro',
   title: 'Strumenti di Gestione del Lavoro per Freelance',
   description:
-  'Ottimizza la tua attività professionale con strumenti online gratuiti. Calcolatori di stipendio netto, quote per freelance 2026, generatori di fatture PDF e documenti di liquidazione legale.',
+  'Strumenti gratuiti per stipendio netto, contributi freelance 2026, fatture PDF e documenti di liquidazione del lavoro.',
   seo: [
   {
   type: 'title',

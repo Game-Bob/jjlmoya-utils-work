@@ -4,7 +4,7 @@ export const content: CategoryLocaleContent = {
   slug: 'trabajo',
   title: 'Herramientas para Autónomos y Gestión Laboral',
   description:
-  'Optimiza tu actividad profesional con herramientas gratuitas online. Calculadoras de sueldo neto, cuotas de autónomos 2026, generadores de facturas PDF y finiquitos legales.',
+  'Herramientas gratuitas para sueldo neto, cuotas de autónomos 2026, facturas PDF y documentos de liquidación laboral.',
   seo: [
   {
   type: 'title',
@@ -26,7 +26,7 @@ export const content: CategoryLocaleContent = {
   },
   {
   type: 'paragraph',
-  html: 'El sistema de cotización para autónomos ha evolucionado hacia un modelo basado en rendimientos netos. Nuestra calculadora de <strong>cuota de autónomos 2026</strong> desglosa los tramos de cotización actualizados, permitiéndote prever tu gasto mensual en Seguridad Social según tus beneficios proyectados.',
+  html: 'El sistema de cotización para autónomos usa un modelo basado en rendimientos netos. Nuestra calculadora de <strong>cuota de autónomos 2026</strong> organiza los tramos disponibles para estimar el gasto mensual según tus beneficios proyectados.',
   },
   {
   type: 'paragraph',
@@ -66,7 +66,7 @@ export const content: CategoryLocaleContent = {
   {
   type: 'list',
   items: [
-    '<strong>Cumplimiento Normativo:</strong> Algoritmos actualizados con los nuevos tramos de autónomos y tablas de IRPF para el ejercicio 2026.',
+    '<strong>Cumplimiento Normativo:</strong> Algoritmos basados en los tramos de autónomos y tablas de IRPF del ejercicio 2026.',
     '<strong>Generación Automática de Documentos:</strong> Crea facturas y cartas legales en formato PDF listas para su uso profesional inmediato.',
     '<strong>Privacidad de Datos Laborales:</strong> Procesamiento 100% en el navegador; tus datos salariales y personales nunca tocan el servidor.',
     '<strong>Planificación de Futuro:</strong> Simuladores de jubilación anticipada para proyectar tu salida del mundo laboral con control financiero.',
@@ -92,4 +92,3 @@ export const content: CategoryLocaleContent = {
   },
   ],
 };
-

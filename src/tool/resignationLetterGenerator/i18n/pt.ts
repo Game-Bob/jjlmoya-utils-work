@@ -182,5 +182,6 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
   { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
   { type: 'paragraph', html: "Use o resultado para planear e comparar cenários; não substitui um cálculo oficial nem aconselhamento profissional." },
   { type: 'paragraph', html: "Interprete o resultado juntamente com as premissas apresentadas pela calculadora antes de o utilizar." },
-  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },],
+  { type: 'paragraph', html: "Confirme dados, unidades, arredondamento, data e jurisdição, pois cada elemento pode alterar a estimativa." },
+  { type: 'paragraph', html: "Releia a carta antes de a enviar. Confirme destinatário, último dia de trabalho, motivo, assinatura e forma de entrega de acordo com o contrato e as regras aplicáveis. Guarde uma cópia e o comprovativo de receção para manter todo o processo documentado. Escreva de forma breve, respeitosa e inclua apenas a informação necessária. Confirme novamente a data efetiva e guarde toda a comunicação relacionada com a entrega. Em caso de dúvida sobre o prazo, consulte o contrato ou aconselhamento adequado." },],
 };

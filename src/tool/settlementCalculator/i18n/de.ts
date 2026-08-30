@@ -144,5 +144,6 @@ export const content: ToolLocaleContent<SettlementCalculatorUI> = {
   { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },
   { type: 'paragraph', html: "Nutzen Sie das Ergebnis zur Planung und zum Szenarienvergleich; es ersetzt keine offizielle Berechnung oder Fachberatung." },
   { type: 'paragraph', html: "Deuten Sie das Ergebnis gemeinsam mit den angezeigten Annahmen, bevor Sie es verwenden." },
+  { type: 'paragraph', html: "Geben Sie Vertragsdaten, offene Urlaubstage, Zahlungen und das anwendbare Recht sorgfältig ein. Prüfen Sie das Ergebnis mit den Unterlagen Ihres Arbeitsverhältnisses, bevor Sie eine Entscheidung treffen oder ein Dokument versenden." },
   { type: 'paragraph', html: "Prüfen Sie Eingaben, Einheiten, Rundung, Datum und Recht, weil jedes Element die Schätzung verändern kann." },],
 };

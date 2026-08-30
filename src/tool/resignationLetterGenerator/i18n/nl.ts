@@ -178,5 +178,6 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
   { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },
   { type: 'paragraph', html: "Gebruik het resultaat voor planning en scenariokeuze; het vervangt geen officiële berekening of professioneel advies." },
   { type: 'paragraph', html: "Interpreteer het resultaat samen met de aannames van de calculator voordat u het gebruikt." },
-  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },],
+  { type: 'paragraph', html: "Controleer invoer, eenheden, afronding, datum en jurisdictie, want elk onderdeel kan de schatting wijzigen." },
+  { type: 'paragraph', html: "Lees de brief zorgvuldig na voordat je hem verstuurt. Controleer ontvanger, laatste werkdag, reden, handtekening en wijze van afgifte aan de hand van je contract en de geldende regels. Bewaar een kopie en het bewijs van ontvangst zodat alles goed gedocumenteerd blijft. Schrijf kort, beleefd en vermeld alleen wat voor de beëindiging nodig is. Controleer de effectieve datum opnieuw en bewaar alle bijbehorende communicatie. Raadpleeg bij twijfel over de opzegtermijn je contract of een passende deskundige." },],
 };

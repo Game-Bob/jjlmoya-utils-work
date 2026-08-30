@@ -130,5 +130,6 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
   { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
   { type: 'paragraph', html: "Girdileri, birimleri, yuvarlamayı, tarihi ve yargı alanını kontrol edin; her biri tahmini değiştirebilir." },
   { type: 'paragraph', html: "Sonucu planlama ve senaryo karşılaştırması için kullanın; resmî hesabın veya uzman görüşünün yerine geçmez." },
-  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },],
+  { type: 'paragraph', html: "Kullanmadan önce sonucu hesaplayıcının gösterdiği varsayımlarla birlikte yorumlayın." },
+  { type: 'paragraph', html: "Sonucu kullanmadan önce KDV oranını, birimi ve uygulanan yuvarlamayı kontrol edin. Hesaplanan matrahı ve vergi tutarını kaydederek senaryoları karşılaştırın ve hesabın açık bir kaydını saklayın." },],
 };

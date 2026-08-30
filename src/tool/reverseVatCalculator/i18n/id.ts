@@ -130,5 +130,6 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
   { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
   { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
   { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
-  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },],
+  { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
+  { type: 'paragraph', html: "Masukkan jumlah total dan tarif pajak yang benar, lalu periksa pembulatan pada hasil dasar dan pajak. Tarif berbeda menurut negara, jenis transaksi, dan waktu sehingga hasil kalkulator hanya membantu membandingkan skenario." },],
 };

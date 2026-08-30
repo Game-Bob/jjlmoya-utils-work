@@ -130,5 +130,6 @@ export const content: ToolLocaleContent<ReverseVatCalculatorUI> = {
   { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
   { type: 'paragraph', html: "请检查输入值、单位、四舍五入方式、日期和司法辖区，因为每项都可能改变估算。" },
   { type: 'paragraph', html: "结果可用于规划和比较方案，但不能替代官方计算或专业建议。" },
-  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },],
+  { type: 'paragraph', html: "使用前请结合计算器显示的假设一起解读结果。" },
+  { type: 'paragraph', html: "使用结果前，请确认增值税税率、单位和舍入方式。保存计算出的计税基础与税额，便于比较不同方案并保留清晰的计算记录。请在提交发票或申报前再次核对税率和舍入结果。" },],
 };

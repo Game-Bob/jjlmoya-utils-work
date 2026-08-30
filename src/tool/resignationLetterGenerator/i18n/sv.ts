@@ -174,5 +174,6 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
   { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
   { type: 'paragraph', html: "Använd resultatet för planering och scenariejämförelser; det ersätter inte en officiell beräkning eller professionell rådgivning." },
   { type: 'paragraph', html: "Tolka resultatet tillsammans med kalkylatorns antaganden innan du använder det." },
-  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },],
+  { type: 'paragraph', html: "Kontrollera indata, enheter, avrundning, datum och rättsområde eftersom varje del kan ändra uppskattningen." },
+  { type: 'paragraph', html: "Läs igenom brevet noggrant innan du skickar det. Kontrollera mottagare, sista arbetsdag, skäl, underskrift och leveranssätt mot avtalet och gällande regler. Spara en kopia och ett mottagningsbevis så att hela processen är dokumenterad. Skriv kort, sakligt och respektfullt och ta bara med nödvändiga uppgifter. Kontrollera slutdatumet en gång till och spara all kommunikation om överlämnandet. Om uppsägningstiden är oklar, kontrollera avtalet eller sök lämplig rådgivning. Kontrollera kontaktuppgifterna före underskrift. Bekräfta även datumet." },],
 };

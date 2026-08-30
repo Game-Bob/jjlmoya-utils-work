@@ -4,7 +4,7 @@ export const content: CategoryLocaleContent = {
   slug: 'praca',
   title: 'Narzędzia do Zarządzania Pracą Freelancera',
   description:
-  'Optymalizuj swoją działalność zawodową za pomocą bezpłatnych narzędzi online. Kalkulatory wynagrodzenia netto, kwoty dla freelancerów 2026, generatory faktur PDF i prawne dokumenty rozliczeniowe.',
+  'Bezpłatne narzędzia do wynagrodzenia netto, składek freelancerów 2026, faktur PDF i dokumentów rozliczeniowych.',
   seo: [
   {
   type: 'title',

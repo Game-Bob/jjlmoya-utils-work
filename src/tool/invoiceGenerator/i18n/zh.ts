@@ -162,5 +162,9 @@ export const content: ToolLocaleContent<InvoiceGeneratorUI> = {
   type: 'tip',
   html: '<strong>将每份发票保存为 PDF：</strong> 税务相关记录通常建议保存至少 5 年。在创建每份发票后使用"生成 PDF"按钮，并将其保存到按年度和客户组织的专门文件夹中。',
   },
+  {
+  type: 'paragraph',
+  html: '创建发票前请核对客户名称、税号、日期、项目描述、税率和付款期限。不同地区和业务类型可能有不同的开票要求，计算器生成的内容应作为整理信息的起点，并在提交前按照适用规则检查。',
+  },
   ],
 };

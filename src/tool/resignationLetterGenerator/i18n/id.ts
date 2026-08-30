@@ -188,5 +188,6 @@ export const content: ToolLocaleContent<ResignationLetterGeneratorUI> = {
   { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
   { type: 'paragraph', html: "Gunakan hasil untuk perencanaan dan perbandingan skenario; hasil ini bukan pengganti perhitungan resmi atau nasihat ahli." },
   { type: 'paragraph', html: "Tafsirkan hasil bersama asumsi yang ditampilkan kalkulator sebelum menggunakannya." },
-  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },],
+  { type: 'paragraph', html: "Periksa input, satuan, pembulatan, tanggal, dan yurisdiksi karena semuanya dapat mengubah estimasi." },
+  { type: 'paragraph', html: "Baca kembali surat sebelum dikirim. Pastikan nama penerima, tanggal terakhir bekerja, alasan, tanda tangan, dan cara penyerahan sesuai dengan kontrak serta aturan yang berlaku. Simpan salinan surat dan bukti penerimaan agar proses tetap terdokumentasi. Gunakan bahasa yang jelas, sopan, dan hanya cantumkan informasi yang diperlukan. Periksa kembali tanggal efektif dan simpan semua komunikasi terkait untuk referensi. Jika ragu tentang masa pemberitahuan, periksa kontrak dan mintalah nasihat yang sesuai." },],
 };
