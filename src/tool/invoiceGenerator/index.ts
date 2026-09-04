@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { invoiceGenerator } from './entry';
 export * from './entry';
 export const INVOICE_GENERATOR_TOOL: ToolDefinition = {

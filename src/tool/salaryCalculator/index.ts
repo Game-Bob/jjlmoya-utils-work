@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { salaryCalculator } from './entry';
 export * from './entry';
 export const SALARY_CALCULATOR_TOOL: ToolDefinition = {

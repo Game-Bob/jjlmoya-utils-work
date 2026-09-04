@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { resignationLetterGenerator } from './entry';
 export * from './entry';
 export const RESIGNATION_LETTER_GENERATOR_TOOL: ToolDefinition = {

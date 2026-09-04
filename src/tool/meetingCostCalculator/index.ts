@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { meetingCostCalculator } from './entry';
 export * from './entry';
 export const MEETING_COST_CALCULATOR_TOOL: ToolDefinition = {
