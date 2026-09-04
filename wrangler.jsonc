@@ -207,66 +207,6 @@
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.jjlmoya.es/_utilities/es/work/sitemap.xml",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.gamebob.dev/_utilities/en/work/sitemap.xml",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/_utilities/fr/work/sitemap.xml",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/_utilities/de/work/sitemap.xml",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/_utilities/it/work/sitemap.xml",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/_utilities/pt/work/sitemap.xml",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/_utilities/nl/work/sitemap.xml",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/_utilities/sv/work/sitemap.xml",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/_utilities/pl/work/sitemap.xml",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/_utilities/id/work/sitemap.xml",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/_utilities/tr/work/sitemap.xml",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/_utilities/ru/work/sitemap.xml",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/_utilities/ja/work/sitemap.xml",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/_utilities/ko/work/sitemap.xml",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/_utilities/zh/work/sitemap.xml",
-            "zone_name": "gamebob.dev"
-        },
-        {
             "pattern": "www.gamebob.dev/_utilities/work/*",
             "zone_name": "gamebob.dev"
         },
