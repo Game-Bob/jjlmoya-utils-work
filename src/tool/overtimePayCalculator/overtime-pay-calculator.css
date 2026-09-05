@@ -12,16 +12,16 @@
 .op-shell {
   max-width: 62rem;
   margin: 0 auto;
-  color: var(--op-ink);
-}
-.op-workbench {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   overflow: hidden;
+  color: var(--op-ink);
   border: 1px solid var(--op-line);
   border-radius: 1.6rem;
   background: var(--op-paper);
   box-shadow: 0 1.25rem 3rem var(--op-shadow);
+}
+.op-workbench {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 .op-input-panel,
 .op-result-panel {
@@ -164,12 +164,9 @@
   font-size: 1.05rem;
 }
 .op-scenarios {
-  margin-top: 1.5rem;
+  margin: 0;
   padding: clamp(1.25rem, 3vw, 2rem);
-  border: 1px solid var(--op-line);
-  border-radius: 1.4rem;
-  background: var(--op-paper);
-  box-shadow: 0 0.7rem 2rem var(--op-shadow);
+  background: transparent;
 }
 .op-section-heading {
   display: flex;
@@ -224,12 +221,24 @@
   font-size: 0.8rem;
   line-height: 1.55;
 }
-.theme-dark .op-workbench,
-.theme-dark .op-scenarios {
-  background: #101f2b;
+.theme-dark .op-shell {
+  --op-ink: #f3fbfa;
+  --op-muted: #b5c8cf;
+  --op-paper: #101f2b;
+  --op-line: #345060;
+  --op-shadow: rgba(0, 0, 0, 0.32);
+
+  color: var(--op-ink);
 }
 .theme-dark .op-input-panel {
   background: linear-gradient(145deg, #172c3a, #102735);
+  color: #f3fbfa;
+}
+.theme-dark .op-scenarios {
+  color: #f3fbfa;
+}
+.theme-dark .op-scenarios h2,
+.theme-dark .op-scenarios td {
   color: #f3fbfa;
 }
 .theme-dark .op-field input,
