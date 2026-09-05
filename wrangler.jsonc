@@ -23,6 +23,10 @@
             "zone_name": "jjlmoya.es"
         },
         {
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-horas-extra*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
             "pattern": "www.jjlmoya.es/utilidades/calculadora-irpf*",
             "zone_name": "jjlmoya.es"
         },
