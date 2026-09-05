@@ -1,7 +1,9 @@
 import { invoiceItems } from './invoiceStore';
+import { formatCurrency, type CurrencyCode } from '../../currency';
 
 export function formatMoney(num: number): string {
-  return num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const currency = (document.getElementById('inv-currency') as HTMLSelectElement | null)?.value as CurrencyCode | undefined;
+  return formatCurrency(num, currency ?? 'EUR', document.documentElement.lang, 2);
 }
 
 export function parseNumber(str: string): number {

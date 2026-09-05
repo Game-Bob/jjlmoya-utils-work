@@ -1,14 +1,21 @@
 ---
 import type { KnownLocale } from '../../types';
 import type { InvoiceGeneratorUI } from './ui';
+import {
+  SUPPORTED_CURRENCIES,
+  getCurrencyLabel,
+  getCurrencySymbol,
+  getDefaultCurrency,
+} from '../../currency';
 
 interface Props {
   locale?: KnownLocale;
   ui?: Record<string, unknown>;
 }
 
-const { ui } = Astro.props;
+const { locale = 'en', ui } = Astro.props;
 const t = (ui ?? {}) as InvoiceGeneratorUI;
+const defaultCurrency = getDefaultCurrency(locale);
 ---
 
 <div class="ig-root">
@@ -37,10 +44,13 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
           </div>
         </div>
         <div class="inv-header-right">
-          <select id="inv-currency" class="seamless-input currency-picker no-print" title="Select currency" aria-label="Currency">
-            <option value="$" selected>USD ($)</option>
-            <option value="€">EUR (€)</option>
-            <option value="£">GBP (£)</option>
+          <label class="no-print" for="inv-currency">{getCurrencyLabel(locale)}</label>
+          <select id="inv-currency" class="seamless-input currency-picker no-print" title={getCurrencyLabel(locale)} aria-label={getCurrencyLabel(locale)}>
+            {SUPPORTED_CURRENCIES.map((item) => (
+              <option value={item.code} selected={item.code === defaultCurrency}>
+                {item.code} ({item.symbol})
+              </option>
+            ))}
           </select>
         </div>
       </div>
@@ -69,7 +79,7 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
           <tr>
             <th class="inv-th-left">{t.labelDesc}</th>
             <th class="inv-th-right">{t.labelQty}</th>
-            <th class="inv-th-right">{t.labelPrice} (<span class="out-currency">{t.currencySymbol}</span>)</th>
+            <th class="inv-th-right">{t.labelPrice} (<span class="out-currency">{getCurrencySymbol(defaultCurrency)}</span>)</th>
             <th class="inv-th-right">{t.labelAmount}</th>
             <th class="no-print inv-th-del"></th>
           </tr>
@@ -94,23 +104,23 @@ const t = (ui ?? {}) as InvoiceGeneratorUI;
         <div class="inv-totals">
           <div class="tot-row">
             <span class="ig-muted">{t.labelSubtotal}</span>
-            <span><span id="out-subtotal">0.00</span> <span class="out-currency">{t.currencySymbol}</span></span>
+            <span><span id="out-subtotal">0.00</span> <span class="out-currency">{getCurrencySymbol(defaultCurrency)}</span></span>
           </div>
           <div class="tot-row tot-row-sep">
             <span class="ig-muted ig-row-flex">
               {t.labelTax} (<input type="number" id="tax-input" class="seamless-number" style="width:2.2ch" value={t.defaultTaxRate} min="0" max="100" aria-label={t.labelTax} /> %):
             </span>
-            <span><span id="out-tax-val">0.00</span> <span class="out-currency">{t.currencySymbol}</span></span>
+            <span><span id="out-tax-val">0.00</span> <span class="out-currency">{getCurrencySymbol(defaultCurrency)}</span></span>
           </div>
           <div class="tot-row tot-row-sep">
             <span class="ig-muted ig-row-flex">
               {t.labelWithholding} (<input type="number" id="ret-input" class="seamless-number" style="width:2.2ch" value={t.defaultRetRate} min="0" max="100" aria-label={t.labelWithholding} /> %):
             </span>
-            <span class="ig-negative">-<span id="out-ret-val">0.00</span> <span class="out-currency">{t.currencySymbol}</span></span>
+            <span class="ig-negative">-<span id="out-ret-val">0.00</span> <span class="out-currency">{getCurrencySymbol(defaultCurrency)}</span></span>
           </div>
           <div class="tot-row tot-final">
             <span>{t.labelTotal}</span>
-            <span class="ig-total-color"><span id="out-total">0.00</span> <span class="out-currency">{t.currencySymbol}</span></span>
+            <span class="ig-total-color"><span id="out-total">0.00</span> <span class="out-currency">{getCurrencySymbol(defaultCurrency)}</span></span>
           </div>
         </div>
       </div>

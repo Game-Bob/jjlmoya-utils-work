@@ -1,0 +1,29 @@
+export interface OvertimePayCalculatorUI extends Record<string, string> {
+  eyebrow: string;
+  intro: string;
+  labelBasis: string;
+  optionHourly: string;
+  optionPeriod: string;
+  labelBaseAmount: string;
+  labelRegularHours: string;
+  labelOvertimeHours: string;
+  labelMultiplier: string;
+  multiplierHint: string;
+  labelRegularPay: string;
+  labelOvertimePay: string;
+  labelTotalGross: string;
+  labelPremium: string;
+  labelEffectiveRate: string;
+  labelScenarios: string;
+  labelScenarioMultiplier: string;
+  labelScenarioOvertime: string;
+  labelScenarioTotal: string;
+  labelDecision: string;
+  decisionPositive: string;
+  decisionNeutral: string;
+  disclaimer: string;
+  hourlyUnit: string;
+  periodUnit: string;
+  hoursUnit: string;
+  currencyUnit: string;
+}

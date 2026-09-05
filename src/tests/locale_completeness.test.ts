@@ -1,10 +1,8 @@
-import { describe, it, expect } from 'vitest';
-import { ALL_TOOLS } from '../tools';
+import { describe, it, expect } from "vitest";
+import { ALL_TOOLS } from "../tools";
 
-
-describe('Locale Completeness Validation', () => {
-  it('all 10 tools registered', () => {
-    expect(ALL_TOOLS.length).toBe(10);
+describe("Locale Completeness Validation", () => {
+  it("all 10 tools registered", () => {
+    expect(ALL_TOOLS.length).toBe(11);
   });
 });
-

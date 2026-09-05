@@ -51,6 +51,17 @@
     text-align: right;
   }
 
+  .er-currency-select {
+    width: 100%;
+    margin: 0.25rem 0 0.75rem;
+    border: 1px solid var(--er-border, #d8dee9);
+    border-radius: 0.45rem;
+    padding: 0.35rem 0.5rem;
+    background: var(--er-paper, #fff);
+    color: inherit;
+    font: inherit;
+  }
+
   .er-pill-row {
     display: flex;
     justify-content: flex-end;

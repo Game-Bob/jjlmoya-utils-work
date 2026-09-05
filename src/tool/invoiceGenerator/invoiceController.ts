@@ -1,6 +1,7 @@
 import { loadInvoiceState, saveInvoiceState, addInvoiceItem, invoiceItems } from './invoiceStore';
 import { calculateTotalsUI } from './invoiceMath';
 import { renderInvoiceRows } from './invoiceRenderer';
+import { convertCurrencyValue, getDefaultCurrency, getCurrencySymbol, type CurrencyCode } from '../../currency';
 
 async function generatePDF() {
   const element = document.getElementById('invoice-document');
@@ -85,10 +86,17 @@ function setupTaxControls(taxInput: HTMLInputElement, retInput: HTMLInputElement
 }
 
 function setupCurrencyControl(currSelect: HTMLSelectElement) {
+  let currentCurrency = (currSelect.value as CurrencyCode) || getDefaultCurrency(document.documentElement.lang);
   currSelect.addEventListener('change', () => {
-    document.querySelectorAll('.out-currency').forEach((el) => {
-      el.textContent = currSelect.value;
+    const nextCurrency = currSelect.value as CurrencyCode;
+    invoiceItems.forEach((item) => {
+      item.price = convertCurrencyValue(item.price, currentCurrency, nextCurrency);
     });
+    currentCurrency = nextCurrency;
+    document.querySelectorAll('.out-currency').forEach((el) => {
+      el.textContent = getCurrencySymbol(currentCurrency);
+    });
+    renderInvoiceRows();
     saveInvoiceState();
   });
 }

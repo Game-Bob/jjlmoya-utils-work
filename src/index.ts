@@ -1,5 +1,6 @@
-export { workCategory } from './category';
-export const workCategorySEO = () => import('./category/seo.astro').then((m) => m.default);
+export { workCategory } from "./category";
+export const workCategorySEO = () =>
+  import("./category/seo.astro").then((m) => m.default);
 
 export type {
   KnownLocale,
@@ -13,18 +14,18 @@ export type {
   WorkToolEntry,
   WorkCategoryEntry,
   ToolDefinition,
-} from './types';
+} from "./types";
 
-export { ALL_ENTRIES, ALL_TOOLS } from './tools';
+export { ALL_ENTRIES, ALL_TOOLS } from "./tools";
 
-export { IRPF_CALCULATOR_TOOL } from './tool/irpfCalculator/index';
-export { SALARY_CALCULATOR_TOOL } from './tool/salaryCalculator/index';
-export { AUTONOMOS_CALCULATOR_TOOL } from './tool/autonomosCalculator/index';
-export { REVERSE_VAT_CALCULATOR_TOOL } from './tool/reverseVatCalculator/index';
-export { INVOICE_GENERATOR_TOOL } from './tool/invoiceGenerator/index';
-export { MEETING_COST_CALCULATOR_TOOL } from './tool/meetingCostCalculator/index';
-export { SETTLEMENT_CALCULATOR_TOOL } from './tool/settlementCalculator/index';
-export { RESIGNATION_LETTER_GENERATOR_TOOL } from './tool/resignationLetterGenerator/index';
-export { EARLY_RETIREMENT_SIMULATOR_TOOL } from './tool/earlyRetirementSimulator/index';
-export { NIE_NIF_VERIFIER_TOOL } from './tool/nieNifVerifier/index';
-
+export { IRPF_CALCULATOR_TOOL } from "./tool/irpfCalculator/index";
+export { SALARY_CALCULATOR_TOOL } from "./tool/salaryCalculator/index";
+export { AUTONOMOS_CALCULATOR_TOOL } from "./tool/autonomosCalculator/index";
+export { REVERSE_VAT_CALCULATOR_TOOL } from "./tool/reverseVatCalculator/index";
+export { INVOICE_GENERATOR_TOOL } from "./tool/invoiceGenerator/index";
+export { MEETING_COST_CALCULATOR_TOOL } from "./tool/meetingCostCalculator/index";
+export { SETTLEMENT_CALCULATOR_TOOL } from "./tool/settlementCalculator/index";
+export { RESIGNATION_LETTER_GENERATOR_TOOL } from "./tool/resignationLetterGenerator/index";
+export { EARLY_RETIREMENT_SIMULATOR_TOOL } from "./tool/earlyRetirementSimulator/index";
+export { NIE_NIF_VERIFIER_TOOL } from "./tool/nieNifVerifier/index";
+export { OVERTIME_PAY_CALCULATOR_TOOL } from "./tool/overtimePayCalculator/index";

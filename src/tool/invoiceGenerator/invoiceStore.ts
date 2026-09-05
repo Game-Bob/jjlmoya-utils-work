@@ -1,3 +1,5 @@
+import { getCurrencySymbol, parseCurrencyCode } from '../../currency';
+
 export interface InvoiceItem {
   id: number;
   desc: string;
@@ -38,9 +40,10 @@ function applyTaxInputs(config: StoredConfig) {
 function applyCurrency(config: StoredConfig) {
   const currSelect = document.getElementById('inv-currency') as HTMLSelectElement;
   if (config.currency === undefined || !currSelect) return;
-  currSelect.value = config.currency;
+  const currency = parseCurrencyCode(config.currency);
+  currSelect.value = currency;
   document.querySelectorAll('.out-currency').forEach((el) => {
-    el.textContent = config.currency ?? '$';
+    el.textContent = getCurrencySymbol(currency);
   });
 }
 

@@ -2,19 +2,38 @@
 import { Icon } from 'astro-icon/components';
 import type { KnownLocale } from '../../types';
 import type { AutonomosCalculatorUI } from './ui';
+import {
+  SUPPORTED_CURRENCIES,
+  getCurrencyLabel,
+  getCurrencySymbol,
+  getDefaultCurrency,
+} from '../../currency';
 
 interface Props {
   locale?: KnownLocale;
   ui?: Record<string, unknown>;
 }
 
-const { ui } = Astro.props;
+const { locale = 'en', ui } = Astro.props;
 const t = (ui ?? {}) as AutonomosCalculatorUI;
+const defaultCurrency = getDefaultCurrency(locale);
 ---
 
 <div class="ac-container">
   <div class="ac-card">
     <div class="ac-input-grid">
+      <div class="ac-input-group">
+        <label for="autonomos-currency">{getCurrencyLabel(locale)}</label>
+        <div class="ac-input-wrapper">
+          <select id="autonomos-currency">
+            {SUPPORTED_CURRENCIES.map((item) => (
+              <option value={item.code} selected={item.code === defaultCurrency}>
+                {item.code} ({item.symbol})
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
       <div class="ac-input-group">
         <label for="monthly-income">{t.labelIncome}</label>
         <div class="ac-input-wrapper">
@@ -25,7 +44,7 @@ const t = (ui ?? {}) as AutonomosCalculatorUI;
             min="0"
             value="3000"
           />
-          <span class="ac-input-unit">€</span>
+          <span class="ac-input-unit" data-currency-symbol>{getCurrencySymbol(defaultCurrency)}</span>
         </div>
       </div>
 
@@ -39,7 +58,7 @@ const t = (ui ?? {}) as AutonomosCalculatorUI;
             min="0"
             value="500"
           />
-          <span class="ac-input-unit">€</span>
+          <span class="ac-input-unit" data-currency-symbol>{getCurrencySymbol(defaultCurrency)}</span>
         </div>
       </div>
 
@@ -80,7 +99,7 @@ const t = (ui ?? {}) as AutonomosCalculatorUI;
           aria-label={t.labelIncome}
         />
         <p class="ac-net-display-text">
-          {t.labelNetDisplay}: <strong id="net-display">0 €</strong>
+          {t.labelNetDisplay}: <strong id="net-display">0 {getCurrencySymbol(defaultCurrency)}</strong>
         </p>
       </div>
     </div>
@@ -88,16 +107,16 @@ const t = (ui ?? {}) as AutonomosCalculatorUI;
     <div class="ac-results-grid">
       <div class="ac-result-card ac-highlight">
         <span class="ac-result-label">{t.labelCuota}</span>
-        <span class="ac-result-value ac-primary" id="val-cuota">0,00 €</span>
+        <span class="ac-result-value ac-primary" id="val-cuota">0,00 {getCurrencySymbol(defaultCurrency)}</span>
         <span class="ac-projection-label">{t.labelProjection}</span>
       </div>
       <div class="ac-result-card">
         <span class="ac-result-label">{t.labelBase}</span>
-        <span class="ac-result-value" id="val-base">0,00 €</span>
+        <span class="ac-result-value" id="val-base">0,00 {getCurrencySymbol(defaultCurrency)}</span>
       </div>
       <div class="ac-result-card">
         <span class="ac-result-label">{t.labelNetAfter}</span>
-        <span class="ac-result-value" id="val-net-after">0,00 €</span>
+        <span class="ac-result-value" id="val-net-after">0,00 {getCurrencySymbol(defaultCurrency)}</span>
       </div>
     </div>
 
@@ -110,12 +129,23 @@ const t = (ui ?? {}) as AutonomosCalculatorUI;
 
 <script>
   import { AutonomosCalculator } from './logic';
+  import {
+    formatCurrency,
+    convertCurrencyValue,
+    fromInternalCurrency,
+    getDefaultCurrency,
+    getCurrencySymbol,
+    toInternalCurrency,
+    type CurrencyCode,
+  } from '../../currency';
 
   const incomeInput = document.getElementById('monthly-income') as HTMLInputElement | null;
   const expenseInput = document.getElementById('monthly-expenses') as HTMLInputElement | null;
   const typeSelect = document.getElementById('autonomo-type') as HTMLSelectElement | null;
   const flatRateSelect = document.getElementById('flat-rate') as HTMLSelectElement | null;
   const incomeSlider = document.getElementById('income-slider') as HTMLInputElement | null;
+  const currencySelect = document.getElementById('autonomos-currency') as HTMLSelectElement | null;
+  let currentCurrency: CurrencyCode = getDefaultCurrency(document.documentElement.lang);
 
   const cuotaDisplay = document.getElementById('val-cuota');
   const baseDisplay = document.getElementById('val-base');
@@ -123,11 +153,8 @@ const t = (ui ?? {}) as AutonomosCalculatorUI;
   const netDisplay = document.getElementById('net-display');
   const bracketLabel = document.getElementById('bracket-label');
 
-  function formatCurrency(val: number): string {
-    return new Intl.NumberFormat('es-ES', {
-      style: 'currency',
-      currency: 'EUR',
-    }).format(val);
+  function formatMoney(val: number): string {
+    return formatCurrency(fromInternalCurrency(val, currentCurrency), currentCurrency, document.documentElement.lang);
   }
 
   function getNumericValue(el: HTMLInputElement | null): number {
@@ -140,18 +167,18 @@ const t = (ui ?? {}) as AutonomosCalculatorUI;
 
   function getParams() {
     return {
-      income: getNumericValue(incomeInput),
-      expenses: getNumericValue(expenseInput),
+      income: toInternalCurrency(getNumericValue(incomeInput), currentCurrency),
+      expenses: toInternalCurrency(getNumericValue(expenseInput), currentCurrency),
       isSocietario: getSelectValue(typeSelect) === 'societario',
       isFlatRate: getSelectValue(flatRateSelect) === 'yes',
     };
   }
 
   function updateUI(results: ReturnType<typeof AutonomosCalculator.calculate>) {
-    if (netDisplay) netDisplay.textContent = formatCurrency(results.rendimientoNeto);
-    if (cuotaDisplay) cuotaDisplay.textContent = formatCurrency(results.cuota);
-    if (baseDisplay) baseDisplay.textContent = formatCurrency(results.baseCotizacion);
-    if (netAfterDisplay) netAfterDisplay.textContent = formatCurrency(results.netAfter);
+    if (netDisplay) netDisplay.textContent = formatMoney(results.rendimientoNeto);
+    if (cuotaDisplay) cuotaDisplay.textContent = formatMoney(results.cuota);
+    if (baseDisplay) baseDisplay.textContent = formatMoney(results.baseCotizacion);
+    if (netAfterDisplay) netAfterDisplay.textContent = formatMoney(results.netAfter);
     if (bracketLabel) bracketLabel.textContent = results.bracketLabel;
   }
 
@@ -175,7 +202,17 @@ const t = (ui ?? {}) as AutonomosCalculatorUI;
     el?.addEventListener('input', calculate);
   });
   incomeSlider?.addEventListener('input', handleSlider);
+  currencySelect?.addEventListener('change', () => {
+    const next = currencySelect.value as CurrencyCode;
+    if (incomeInput) incomeInput.value = convertCurrencyValue(getNumericValue(incomeInput), currentCurrency, next).toFixed(2);
+    if (expenseInput) expenseInput.value = convertCurrencyValue(getNumericValue(expenseInput), currentCurrency, next).toFixed(2);
+    if (incomeSlider && incomeInput) incomeSlider.value = Math.min(Number(incomeInput.value) || 0, 8000).toString();
+    currentCurrency = next;
+    document.querySelectorAll<HTMLElement>('[data-currency-symbol]').forEach((el) => {
+      el.textContent = getCurrencySymbol(currentCurrency);
+    });
+    calculate();
+  });
 
   calculate();
 </script>
-

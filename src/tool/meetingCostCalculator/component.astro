@@ -1,14 +1,21 @@
 ---
 import type { KnownLocale } from '../../types';
 import type { MeetingCostCalculatorUI } from './ui';
+import {
+  SUPPORTED_CURRENCIES,
+  getCurrencyLabel,
+  getCurrencySymbol,
+  getDefaultCurrency,
+} from '../../currency';
 
 interface Props {
   locale?: KnownLocale;
   ui?: Record<string, unknown>;
 }
 
-const { ui } = Astro.props;
+const { locale = 'en', ui } = Astro.props;
 const t = (ui ?? {}) as MeetingCostCalculatorUI;
+const defaultCurrency = getDefaultCurrency(locale);
 ---
 
 <div class="mc-wrapper">
@@ -21,13 +28,23 @@ const t = (ui ?? {}) as MeetingCostCalculatorUI;
           id="mc-cost-display"
           data-number-locale={t.numberLocale}
         >0.00</span>
-        <span class="mc-currency">{t.currencySymbol}</span>
+        <span class="mc-currency" data-currency-symbol>{getCurrencySymbol(defaultCurrency)}</span>
       </div>
     </div>
 
     <div class="mc-divider"></div>
 
-    <div class="mc-fields">
+      <div class="mc-fields">
+      <div class="mc-field">
+        <label class="mc-label" for="mc-currency">{getCurrencyLabel(locale)}</label>
+        <select id="mc-currency" class="mc-input">
+          {SUPPORTED_CURRENCIES.map((item) => (
+            <option value={item.code} selected={item.code === defaultCurrency}>
+              {item.code} ({item.symbol})
+            </option>
+          ))}
+        </select>
+      </div>
       <div class="mc-field">
         <label class="mc-label" for="mc-attendees">{t.labelAttendees}</label>
         <input
@@ -76,6 +93,15 @@ const t = (ui ?? {}) as MeetingCostCalculatorUI;
 <script>
   import { MeetingCostService } from './logic';
   import type { MeetingConfig } from './logic';
+  import {
+    convertCurrencyValue,
+    formatCurrency,
+    fromInternalCurrency,
+    getDefaultCurrency,
+    getCurrencySymbol,
+    toInternalCurrency,
+    type CurrencyCode,
+  } from '../../currency';
 
   class MeetingTickerApp {
     private isRunning = false;
@@ -90,6 +116,8 @@ const t = (ui ?? {}) as MeetingCostCalculatorUI;
     private salaryTypeSelect: HTMLSelectElement;
     private btnToggle: HTMLButtonElement;
     private btnReset: HTMLButtonElement;
+    private currencySelect: HTMLSelectElement;
+    private currency: CurrencyCode;
 
     constructor() {
       this.displayEl = document.getElementById('mc-cost-display')!;
@@ -98,6 +126,8 @@ const t = (ui ?? {}) as MeetingCostCalculatorUI;
       this.salaryTypeSelect = document.getElementById('mc-salary-type') as HTMLSelectElement;
       this.btnToggle = document.getElementById('mc-btn-toggle') as HTMLButtonElement;
       this.btnReset = document.getElementById('mc-btn-reset') as HTMLButtonElement;
+      this.currencySelect = document.getElementById('mc-currency') as HTMLSelectElement;
+      this.currency = getDefaultCurrency(document.documentElement.lang);
       this.locale = this.displayEl.dataset.numberLocale ?? 'en-US';
       this.bindEvents();
     }
@@ -108,12 +138,13 @@ const t = (ui ?? {}) as MeetingCostCalculatorUI;
       [this.attendeesInput, this.salaryInput, this.salaryTypeSelect].forEach((el) => {
         el.addEventListener('input', () => this.handleConfigChange());
       });
+      this.currencySelect.addEventListener('change', () => this.handleCurrencyChange());
     }
 
     private getConfig(): MeetingConfig {
       return {
         attendees: parseInt(this.attendeesInput.value) || 1,
-        salary: parseFloat(this.salaryInput.value) || 0,
+        salary: toInternalCurrency(parseFloat(this.salaryInput.value) || 0, this.currency),
         salaryType: this.salaryTypeSelect.value as 'annual' | 'hourly',
       };
     }
@@ -141,7 +172,7 @@ const t = (ui ?? {}) as MeetingCostCalculatorUI;
       this.pause();
       this.accumulatedCost = 0;
       this.startTime = 0;
-      this.displayEl.textContent = MeetingCostService.formatCurrency(0, this.locale);
+      this.displayEl.textContent = this.formatMoney(0);
       this.setResetState();
     }
 
@@ -161,7 +192,7 @@ const t = (ui ?? {}) as MeetingCostCalculatorUI;
     private tick(): void {
       if (!this.isRunning) return;
       const total = this.getCurrentTotalCost();
-      this.displayEl.textContent = MeetingCostService.formatCurrency(total, this.locale);
+      this.displayEl.textContent = this.formatMoney(total);
       this.animationFrameId = requestAnimationFrame(() => this.tick());
     }
 
@@ -179,8 +210,22 @@ const t = (ui ?? {}) as MeetingCostCalculatorUI;
       this.btnReset.disabled = true;
       this.btnToggle.textContent = this.btnToggle.dataset.start ?? '';
     }
+
+    private formatMoney(value: number): string {
+      return formatCurrency(fromInternalCurrency(value, this.currency), this.currency, this.locale);
+    }
+
+    private handleCurrencyChange(): void {
+      const next = this.currencySelect.value as CurrencyCode;
+      this.salaryInput.value = convertCurrencyValue(Number(this.salaryInput.value) || 0, this.currency, next).toFixed(2);
+      this.currency = next;
+      document.querySelectorAll<HTMLElement>('[data-currency-symbol]').forEach((el) => {
+        el.textContent = getCurrencySymbol(this.currency);
+      });
+      this.handleConfigChange();
+      if (!this.isRunning) this.displayEl.textContent = this.formatMoney(this.accumulatedCost);
+    }
   }
 
   new MeetingTickerApp();
 </script>
-

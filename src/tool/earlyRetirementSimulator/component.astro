@@ -1,12 +1,20 @@
 ---
 import type { EarlyRetirementSimulatorUI } from './ui';
+import {
+  SUPPORTED_CURRENCIES,
+  getCurrencyLabel,
+  getCurrencySymbol,
+  getDefaultCurrency,
+} from '../../currency';
 
 interface Props {
+  locale?: string;
   ui?: Record<string, unknown>;
 }
 
-const { ui = {} } = Astro.props;
+const { locale = 'en', ui = {} } = Astro.props;
 const t = ui as EarlyRetirementSimulatorUI;
+const defaultCurrency = getDefaultCurrency(locale);
 ---
 
 <div
@@ -41,6 +49,14 @@ const t = ui as EarlyRetirementSimulatorUI;
       />
     </div>
     <div class="er-pill er-pill-right">
+      <label class="er-pill-label" for="er-currency">{getCurrencyLabel(locale)}</label>
+      <select id="er-currency" class="er-currency-select">
+        {SUPPORTED_CURRENCIES.map((item) => (
+          <option value={item.code} selected={item.code === defaultCurrency}>
+            {item.code} ({item.symbol})
+          </option>
+        ))}
+      </select>
       <label class="er-pill-label" for="er-base">{t.labelBasePension}</label>
       <div class="er-pill-row">
         <input
@@ -49,7 +65,7 @@ const t = ui as EarlyRetirementSimulatorUI;
           class="er-pill-input er-pill-input-narrow"
           value={t.defaultBasePension}
         />
-        <span class="er-currency">€</span>
+        <span class="er-currency" data-currency-symbol>{getCurrencySymbol(defaultCurrency)}</span>
       </div>
     </div>
   </header>
@@ -105,7 +121,7 @@ const t = ui as EarlyRetirementSimulatorUI;
       <div class="er-stats-footer">
         <div class="er-stat-box">
           <span class="er-pill-label">{t.labelEstimatedPension}</span>
-          <div class="er-stat-val" id="er-val-pension">1.975,00 €</div>
+          <div class="er-stat-val" id="er-val-pension">1.975,00 {getCurrencySymbol(defaultCurrency)}</div>
         </div>
         <div class="er-stat-box er-stat-box-right">
           <span class="er-pill-label">{t.labelPermanentReduction}</span>
@@ -129,8 +145,19 @@ const t = ui as EarlyRetirementSimulatorUI;
     getLegalAge,
     calcPenalty,
   } from './logic';
+  import {
+    formatCurrency as formatCurrencyValue,
+    convertCurrencyValue,
+    fromInternalCurrency,
+    getDefaultCurrency,
+    getCurrencySymbol,
+    toInternalCurrency,
+    type CurrencyCode,
+  } from '../../currency';
 
   let currentMode = 'voluntaria';
+  const currencySelect = document.getElementById('er-currency') as HTMLSelectElement | null;
+  let currentCurrency: CurrencyCode = getDefaultCurrency(document.documentElement.lang);
 
   function getEl(id: string): HTMLElement | null {
     return document.getElementById(id);
@@ -140,8 +167,8 @@ const t = ui as EarlyRetirementSimulatorUI;
     return root.dataset[key] || '';
   }
 
-  function formatCurrency(val: number): string {
-    return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(val);
+  function formatMoney(val: number): string {
+    return formatCurrencyValue(fromInternalCurrency(val, currentCurrency), currentCurrency, document.documentElement.lang);
   }
 
   function parseNum(s: string, fallback: number): number {
@@ -172,7 +199,7 @@ const t = ui as EarlyRetirementSimulatorUI;
       root,
       birthYear: parseNum(birthIn.value, 1975),
       curCont: parseNum(curContIn.value, 0),
-      base: parseNum(baseIn.value, 0),
+      base: toInternalCurrency(parseNum(baseIn.value, 0), currentCurrency),
       selectedAge: parseNum(ageSlider.value, 65),
     };
   }
@@ -196,7 +223,7 @@ const t = ui as EarlyRetirementSimulatorUI;
       penaltyOut.style.color = getPenaltyColor(penalty);
     }
     if (dateOut) dateOut.textContent = String(birthYear + selectedAge);
-    if (pensionOut) pensionOut.textContent = formatCurrency(finalPension);
+    if (pensionOut) pensionOut.textContent = formatMoney(finalPension);
   }
 
   function updateAdvice(penalty: number, base: number, selectedAge: number, root: HTMLElement) {
@@ -207,7 +234,8 @@ const t = ui as EarlyRetirementSimulatorUI;
       const template = ds(root, 'adviceDelay');
       adviceOut.innerHTML = template
         .replace('[AGE]', String(selectedAge + 1))
-        .replace('[GAIN]', String(gain));
+        .replace('[GAIN]', formatMoney(gain))
+        .replace(/€|\$|£|¥|₩|₽|₺|₹|zł|kr|Rp|CHF|C\$|A\$|R\$/g, getCurrencySymbol(currentCurrency));
       return;
     }
     if (penalty < 0) {
@@ -249,9 +277,20 @@ const t = ui as EarlyRetirementSimulatorUI;
     navBtns.forEach((btn) => {
       btn.addEventListener('click', () => handleNavClick(btn, navBtns));
     });
+    currencySelect?.addEventListener('change', () => {
+      const next = currencySelect.value as CurrencyCode;
+      const baseInput = getEl('er-base') as HTMLInputElement | null;
+      if (baseInput) {
+        baseInput.value = convertCurrencyValue(Number(baseInput.value) || 0, currentCurrency, next).toFixed(2);
+      }
+      currentCurrency = next;
+      document.querySelectorAll<HTMLElement>('[data-currency-symbol]').forEach((el) => {
+        el.textContent = getCurrencySymbol(currentCurrency);
+      });
+      updateDesk();
+    });
   }
 
   setupListeners();
   updateDesk();
 </script>
-

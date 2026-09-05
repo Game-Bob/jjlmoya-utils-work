@@ -1,14 +1,21 @@
 ---
 import type { KnownLocale } from '../../types';
 import type { IrpfCalculatorUI } from './ui';
+import {
+  SUPPORTED_CURRENCIES,
+  getCurrencyLabel,
+  getCurrencySymbol,
+  getDefaultCurrency,
+} from '../../currency';
 
 interface Props {
   locale?: KnownLocale;
   ui?: Record<string, unknown>;
 }
 
-const { ui } = Astro.props;
+const { locale = 'en', ui } = Astro.props;
 const t = (ui ?? {}) as IrpfCalculatorUI;
+const defaultCurrency = getDefaultCurrency(locale);
 ---
 
 <div class="irpf-container">
@@ -19,6 +26,16 @@ const t = (ui ?? {}) as IrpfCalculatorUI;
       </div>
 
       <div class="form-grid">
+        <div class="input-block full-width">
+          <label for="irpf-currency" class="input-label">{getCurrencyLabel(locale)}</label>
+          <select id="irpf-currency" class="irpf-select">
+            {SUPPORTED_CURRENCIES.map((item) => (
+              <option value={item.code} selected={item.code === defaultCurrency}>
+                {item.code} ({item.symbol})
+              </option>
+            ))}
+          </select>
+        </div>
         <div class="input-block full-width">
           <label for="bruto-anual" class="input-label">{t.labelBruto}</label>
           <input type="number" id="bruto-anual" class="irpf-input" placeholder="32.000" value="30000" min="0" />
@@ -78,32 +95,32 @@ const t = (ui ?? {}) as IrpfCalculatorUI;
       <div class="breakdown-card">
         <div class="breakdown-item">
           <span class="breakdown-label">{t.labelSalarioBruto}</span>
-          <span id="b-bruto-fmt" class="breakdown-value">---</span>
+          <span id="b-bruto-fmt" class="breakdown-value">--- {getCurrencySymbol(defaultCurrency)}</span>
         </div>
         <div class="breakdown-item">
           <span class="breakdown-label">{t.labelSS}</span>
-          <span id="b-ss-fmt" class="breakdown-value negative">---</span>
+          <span id="b-ss-fmt" class="breakdown-value negative">--- {getCurrencySymbol(defaultCurrency)}</span>
         </div>
         <div class="breakdown-item">
           <span class="breakdown-label">{t.labelGastos}</span>
-          <span id="b-deduct-fmt" class="breakdown-value negative">---</span>
+          <span id="b-deduct-fmt" class="breakdown-value negative">--- {getCurrencySymbol(defaultCurrency)}</span>
         </div>
         <div class="breakdown-item net-highlight">
           <span class="breakdown-label net-label">{t.labelNetoAnual}</span>
-          <span id="b-neto-fmt" class="breakdown-value net-value">---</span>
+          <span id="b-neto-fmt" class="breakdown-value net-value">--- {getCurrencySymbol(defaultCurrency)}</span>
         </div>
       </div>
 
       <div class="protagonist-card">
         <div class="protagonista-label">{t.labelRetencionIRPF}</div>
         <div id="p-perc" class="protagonista-value">---</div>
-        <div id="p-anual" class="protagonista-sub">---</div>
+          <div id="p-anual" class="protagonista-sub">--- {getCurrencySymbol(defaultCurrency)}</div>
       </div>
 
       <div class="breakdown-card">
         <div class="breakdown-item monthly-highlight">
           <span class="breakdown-label">{t.labelNetoMensual}</span>
-          <span id="res-mensual-euro" class="breakdown-value monthly-value">---</span>
+          <span id="res-mensual-euro" class="breakdown-value monthly-value">--- {getCurrencySymbol(defaultCurrency)}</span>
         </div>
         <div class="breakdown-item marginal-highlight">
           <span class="breakdown-label">{t.labelMarginal}</span>
@@ -125,6 +142,15 @@ const t = (ui ?? {}) as IrpfCalculatorUI;
 
 <script>
   import { TaxCalculator } from './logic';
+  import {
+    formatCurrency,
+    convertCurrencyValue,
+    fromInternalCurrency,
+    getDefaultCurrency,
+    getCurrencySymbol,
+    toInternalCurrency,
+    type CurrencyCode,
+  } from '../../currency';
 
   const IDs = ['bruto-anual', 'numero-pagas', 'comunidad', 'estado-unid', 'hijos', 'discapacidad'];
   const UI = {
@@ -137,10 +163,12 @@ const t = (ui ?? {}) as IrpfCalculatorUI;
     resM: document.getElementById('res-mensual-euro'),
     marg: document.getElementById('m-marginal'),
   };
+  const currencySelect = document.getElementById('irpf-currency') as HTMLSelectElement | null;
+  let currentCurrency: CurrencyCode = getDefaultCurrency(document.documentElement.lang);
 
   function getParams() {
     return {
-      salary: parseFloat((document.getElementById('bruto-anual') as HTMLInputElement).value) || 0,
+      salary: toInternalCurrency(parseFloat((document.getElementById('bruto-anual') as HTMLInputElement).value) || 0, currentCurrency),
       pagas: parseInt((document.getElementById('numero-pagas') as HTMLSelectElement).value),
       comunidad: (document.getElementById('comunidad') as HTMLSelectElement).value,
       estado: (document.getElementById('estado-unid') as HTMLSelectElement).value,
@@ -149,26 +177,21 @@ const t = (ui ?? {}) as IrpfCalculatorUI;
     };
   }
 
-  function formatEuro(v: number): string {
-    const fmtEuro = new Intl.NumberFormat('es-ES', {
-      useGrouping: true,
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    });
-    return fmtEuro.format(Math.round(v)) + ' €';
+  function formatMoney(v: number): string {
+    return formatCurrency(fromInternalCurrency(v, currentCurrency), currentCurrency, document.documentElement.lang, 0);
   }
 
   function updateBreakdownUI(salaryVal: number, res: ReturnType<typeof TaxCalculator.calculate>) {
-    if (UI.bBruto) UI.bBruto.textContent = formatEuro(salaryVal);
-    if (UI.bSs) UI.bSs.textContent = `- ${formatEuro(res.ssAnual)} (6,47%)`;
-    if (UI.bDeduct) UI.bDeduct.textContent = `- ${formatEuro(res.totalDeducible)}`;
-    if (UI.bNeto) UI.bNeto.textContent = formatEuro(res.netAnual);
+    if (UI.bBruto) UI.bBruto.textContent = formatMoney(salaryVal);
+    if (UI.bSs) UI.bSs.textContent = `- ${formatMoney(res.ssAnual)} (6,47%)`;
+    if (UI.bDeduct) UI.bDeduct.textContent = `- ${formatMoney(res.totalDeducible)}`;
+    if (UI.bNeto) UI.bNeto.textContent = formatMoney(res.netAnual);
   }
 
   function updateResultsUI(res: ReturnType<typeof TaxCalculator.calculate>) {
     if (UI.pPerc) UI.pPerc.textContent = res.irpfPerc.toFixed(2).replace('.', ',') + ' %';
-    if (UI.pAnual) UI.pAnual.textContent = formatEuro(res.totalTax) + ' / año';
-    if (UI.resM) UI.resM.textContent = formatEuro(res.netMensual);
+    if (UI.pAnual) UI.pAnual.textContent = formatMoney(res.totalTax) + ' / año';
+    if (UI.resM) UI.resM.textContent = formatMoney(res.netMensual);
     if (UI.marg) UI.marg.textContent = `${res.marginal.toFixed(1)} %`;
   }
 
@@ -188,6 +211,16 @@ const t = (ui ?? {}) as IrpfCalculatorUI;
     el?.addEventListener('change', update);
   });
 
+  currencySelect?.addEventListener('change', () => {
+    const next = currencySelect.value as CurrencyCode;
+    const salaryInput = document.getElementById('bruto-anual') as HTMLInputElement | null;
+    if (salaryInput) salaryInput.value = convertCurrencyValue(Number(salaryInput.value) || 0, currentCurrency, next).toFixed(2);
+    currentCurrency = next;
+    document.querySelectorAll<HTMLElement>('[data-currency-symbol]').forEach((el) => {
+      el.textContent = getCurrencySymbol(currentCurrency);
+    });
+    update();
+  });
+
   update();
 </script>
-

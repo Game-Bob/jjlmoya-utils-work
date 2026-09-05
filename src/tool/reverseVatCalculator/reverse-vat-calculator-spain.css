@@ -63,6 +63,16 @@
     position: relative;
   }
 
+  .rv-currency-select {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--border-base, #dbe3ef);
+    border-radius: 0.65rem;
+    background: var(--bg-surface, #fff);
+    color: var(--text-main, #1f2937);
+    font: inherit;
+  }
+
   .rv-currency {
     position: absolute;
     left: 1rem;

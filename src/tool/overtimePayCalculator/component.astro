@@ -1,0 +1,168 @@
+---
+import type { OvertimePayCalculatorUI } from './ui';
+import {
+  SUPPORTED_CURRENCIES,
+  getCurrencyLabel,
+  getCurrencySymbol,
+  getDefaultCurrency,
+} from '../../currency';
+
+interface Props {
+  locale?: string;
+  ui?: Record<string, unknown>;
+}
+
+const { locale = 'en', ui = {} } = Astro.props;
+const t = ui as OvertimePayCalculatorUI;
+const defaultCurrency = getDefaultCurrency(locale);
+---
+
+<div class="op-shell" id="op-tool" data-locale={locale} data-basis-hourly={t.optionHourly} data-basis-period={t.optionPeriod} data-currency={defaultCurrency} data-hourly-unit={t.hourlyUnit} data-period-unit={t.periodUnit} data-hours-unit={t.hoursUnit} data-label-regular-pay={t.labelRegularPay} data-label-overtime-pay={t.labelOvertimePay} data-label-total-gross={t.labelTotalGross} data-label-premium={t.labelPremium} data-label-effective-rate={t.labelEffectiveRate} data-label-scenario-multiplier={t.labelScenarioMultiplier} data-label-scenario-overtime={t.labelScenarioOvertime} data-label-scenario-total={t.labelScenarioTotal} data-decision-positive={t.decisionPositive} data-decision-neutral={t.decisionNeutral}>
+  <div class="op-workbench">
+    <section class="op-input-panel" aria-labelledby="op-input-title">
+      <div class="op-panel-kicker">{t.eyebrow}</div>
+      <h2 id="op-input-title">{t.intro}</h2>
+
+      <div class="op-fields">
+        <div class="op-field op-field-wide">
+          <label for="op-basis">{t.labelBasis}</label>
+          <select id="op-basis">
+            <option value="hourly">{t.optionHourly}</option>
+            <option value="period">{t.optionPeriod}</option>
+          </select>
+        </div>
+        <div class="op-field op-field-wide">
+          <label for="op-currency">{getCurrencyLabel(locale)}</label>
+          <select id="op-currency" data-currency-picker>
+            {SUPPORTED_CURRENCIES.map((item) => (
+              <option value={item.code} selected={item.code === defaultCurrency}>
+                {item.code} ({item.symbol})
+              </option>
+            ))}
+          </select>
+        </div>
+        <div class="op-field op-field-wide">
+          <label for="op-base-amount">{t.labelBaseAmount}</label>
+          <div class="op-input-with-unit"><input id="op-base-amount" type="number" min="0" step="0.01" value="20" inputmode="decimal" /><span aria-hidden="true" data-currency-symbol>{getCurrencySymbol(defaultCurrency)}</span></div>
+        </div>
+        <div class="op-field">
+          <label for="op-regular-hours">{t.labelRegularHours}</label>
+          <div class="op-input-with-unit"><input id="op-regular-hours" type="number" min="0.01" step="0.25" value="160" inputmode="decimal" /><span aria-hidden="true">{t.hoursUnit}</span></div>
+        </div>
+        <div class="op-field">
+          <label for="op-overtime-hours">{t.labelOvertimeHours}</label>
+          <div class="op-input-with-unit"><input id="op-overtime-hours" type="number" min="0" step="0.25" value="10" inputmode="decimal" /><span aria-hidden="true">{t.hoursUnit}</span></div>
+        </div>
+        <div class="op-field op-field-wide">
+          <label for="op-multiplier">{t.labelMultiplier}</label>
+          <div class="op-input-with-unit"><input id="op-multiplier" type="number" min="0.01" step="0.05" value="1.5" inputmode="decimal" /><span aria-hidden="true">x</span></div>
+          <small>{t.multiplierHint}</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="op-result-panel" aria-labelledby="op-result-title">
+      <div class="op-result-orbit" aria-hidden="true"><span>+</span><span>h</span><span data-currency-symbol>{getCurrencySymbol(defaultCurrency)}</span></div>
+      <p class="op-panel-kicker">{t.labelOvertimePay}</p>
+      <h2 id="op-result-title" class="op-hero-value" data-result="overtimePay">0,00 {getCurrencySymbol(defaultCurrency)}</h2>
+      <p class="op-result-caption" data-result="decision">{t.decisionNeutral}</p>
+
+      <div class="op-summary-grid">
+        <div><span>{t.labelRegularPay}</span><strong data-result="regularPay">0,00 {getCurrencySymbol(defaultCurrency)}</strong></div>
+        <div><span>{t.labelPremium}</span><strong data-result="premium">0,00 {getCurrencySymbol(defaultCurrency)}</strong></div>
+        <div><span>{t.labelTotalGross}</span><strong data-result="totalGross">0,00 {getCurrencySymbol(defaultCurrency)}</strong></div>
+        <div><span>{t.labelEffectiveRate}</span><strong data-result="effectiveRate">0,00 {getCurrencySymbol(defaultCurrency)}</strong></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="op-scenarios" aria-labelledby="op-scenarios-title">
+    <div class="op-section-heading"><div><p class="op-panel-kicker">{t.labelScenarios}</p><h2 id="op-scenarios-title">{t.labelScenarioTotal}</h2></div><div class="op-scenario-marker" aria-hidden="true"></div></div>
+    <div class="op-table-wrap">
+      <table>
+        <thead><tr><th>{t.labelScenarioMultiplier}</th><th>{t.labelScenarioOvertime}</th><th>{t.labelScenarioTotal}</th></tr></thead>
+        <tbody>
+          <tr data-scenario="1"><th scope="row">1x</th><td>0,00 {getCurrencySymbol(defaultCurrency)}</td><td>0,00 {getCurrencySymbol(defaultCurrency)}</td></tr>
+          <tr data-scenario="1.25"><th scope="row">1.25x</th><td>0,00 {getCurrencySymbol(defaultCurrency)}</td><td>0,00 {getCurrencySymbol(defaultCurrency)}</td></tr>
+          <tr data-scenario="1.5"><th scope="row">1.5x</th><td>0,00 {getCurrencySymbol(defaultCurrency)}</td><td>0,00 {getCurrencySymbol(defaultCurrency)}</td></tr>
+          <tr data-scenario="2"><th scope="row">2x</th><td>0,00 {getCurrencySymbol(defaultCurrency)}</td><td>0,00 {getCurrencySymbol(defaultCurrency)}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="op-disclaimer">{t.disclaimer}</p>
+  </section>
+</div>
+
+<script>
+  import { calculateOvertimePay, type OvertimeBasis, type OvertimePayInput } from './logic';
+  import {
+    formatCurrency,
+    fromInternalCurrency,
+    getDefaultCurrency,
+    getCurrencySymbol,
+    toInternalCurrency,
+    type CurrencyCode,
+  } from '../../currency';
+
+  const root = document.getElementById('op-tool');
+  if (root) {
+    const getInput = (id: string) => root.querySelector<HTMLInputElement | HTMLSelectElement>(`#${id}`);
+    const basis = getInput('op-basis') as HTMLSelectElement | null;
+    const baseAmount = getInput('op-base-amount') as HTMLInputElement | null;
+    const regularHours = getInput('op-regular-hours') as HTMLInputElement | null;
+    const overtimeHours = getInput('op-overtime-hours') as HTMLInputElement | null;
+    const multiplier = getInput('op-multiplier') as HTMLInputElement | null;
+    const currencyPicker = getInput('op-currency') as HTMLSelectElement | null;
+    let currentCurrency = getDefaultCurrency(root.dataset.locale);
+    const formatMoney = (value: number) => formatCurrency(fromInternalCurrency(value, currentCurrency), currentCurrency, root.dataset.locale);
+    const formatRate = (value: number) => `${formatMoney(value)} / ${root.dataset.hoursUnit ?? 'h'}`;
+    const updateText = (name: string, value: string) => root.querySelector<HTMLElement>(`[data-result="${name}"]`)?.replaceChildren(document.createTextNode(value));
+    const valueOf = (input: HTMLInputElement | HTMLSelectElement | null) => input ? input.value : '0';
+    const readForm = (): OvertimePayInput => ({
+      basis: valueOf(basis) as OvertimeBasis,
+      baseAmount: toInternalCurrency(Number(valueOf(baseAmount)), currentCurrency),
+      regularHours: Number(valueOf(regularHours)),
+      overtimeHours: Number(valueOf(overtimeHours)),
+      multiplier: Number(valueOf(multiplier)),
+    });
+
+    const renderInvalid = () => {
+      ['overtimePay', 'regularPay', 'premium', 'totalGross', 'effectiveRate'].forEach((name) => updateText(name, `0,00 ${getCurrencySymbol(currentCurrency)}`));
+      updateText('decision', root.dataset.decisionNeutral ?? 'Enter positive values');
+    };
+    const renderScenarios = (result: ReturnType<typeof calculateOvertimePay>) => {
+      result.scenarios.forEach((scenario) => {
+        const row = root.querySelector<HTMLTableRowElement>(`[data-scenario="${scenario.multiplier}"]`);
+        const cells = row?.querySelectorAll('td');
+        if (!cells) return;
+        cells[0]!.textContent = formatMoney(scenario.overtimePay);
+        cells[1]!.textContent = formatMoney(scenario.totalGross);
+      });
+    };
+    const renderValid = (result: ReturnType<typeof calculateOvertimePay>) => {
+      updateText('overtimePay', formatMoney(result.overtimePay));
+      updateText('regularPay', formatMoney(result.regularPay));
+      updateText('premium', formatMoney(result.premium));
+      updateText('totalGross', formatMoney(result.totalGross));
+      updateText('effectiveRate', formatRate(result.effectiveRate));
+      updateText('decision', root.dataset.decisionPositive ?? 'Your overtime adds to gross pay');
+      renderScenarios(result);
+    };
+    const recalculate = () => {
+      const result = calculateOvertimePay(readForm());
+      if (result.valid) renderValid(result);
+      else renderInvalid();
+    };
+
+    [basis, baseAmount, regularHours, overtimeHours, multiplier].forEach((input) => input?.addEventListener('input', recalculate));
+    basis?.addEventListener('change', recalculate);
+    currencyPicker?.addEventListener('change', () => {
+      currentCurrency = currencyPicker.value as CurrencyCode;
+      root.querySelectorAll<HTMLElement>('[data-currency-symbol]').forEach((el) => {
+        el.textContent = getCurrencySymbol(currentCurrency);
+      });
+      recalculate();
+    });
+    recalculate();
+  }
+</script>

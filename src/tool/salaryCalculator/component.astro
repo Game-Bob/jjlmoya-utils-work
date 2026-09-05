@@ -1,14 +1,21 @@
 ---
 import type { KnownLocale } from '../../types';
 import type { SalaryCalculatorUI } from './ui';
+import {
+  SUPPORTED_CURRENCIES,
+  getCurrencyLabel,
+  getCurrencySymbol,
+  getDefaultCurrency,
+} from '../../currency';
 
 interface Props {
   locale?: KnownLocale;
   ui?: Record<string, unknown>;
 }
 
-const { ui } = Astro.props;
+const { locale = 'en', ui } = Astro.props;
 const t = (ui ?? {}) as SalaryCalculatorUI;
+const defaultCurrency = getDefaultCurrency(locale);
 ---
 
 <div class="sn-container">
@@ -16,9 +23,19 @@ const t = (ui ?? {}) as SalaryCalculatorUI;
     <div class="sn-form-card">
       <div class="sn-form-section">
         <div class="sn-input-block sn-full-width">
+          <label for="salary-currency" class="sn-label">{getCurrencyLabel(locale)}</label>
+          <select id="salary-currency" class="sn-input">
+            {SUPPORTED_CURRENCIES.map((item) => (
+              <option value={item.code} selected={item.code === defaultCurrency}>
+                {item.code} ({item.symbol})
+              </option>
+            ))}
+          </select>
+        </div>
+        <div class="sn-input-block sn-full-width">
           <label for="gross-salary" class="sn-label">{t.labelGross}</label>
           <div class="sn-input-wrapper">
-            <span class="sn-currency">€</span>
+            <span class="sn-currency" data-currency-symbol>{getCurrencySymbol(defaultCurrency)}</span>
             <input
               type="number"
               id="gross-salary"
@@ -69,12 +86,12 @@ const t = (ui ?? {}) as SalaryCalculatorUI;
     <div class="sn-results-column">
       <div class="sn-result-card sn-gradient">
         <p class="sn-result-label">{t.labelNetMonthly}</p>
-        <div id="net-monthly" class="sn-result-value">0 €</div>
+        <div id="net-monthly" class="sn-result-value">0 {getCurrencySymbol(defaultCurrency)}</div>
 
         <div class="sn-result-footer">
           <div>
             <p class="sn-result-label-small">{t.labelNetAnnual}</p>
-            <p id="net-annual" class="sn-result-value-small">0 €</p>
+            <p id="net-annual" class="sn-result-value-small">0 {getCurrencySymbol(defaultCurrency)}</p>
           </div>
           <div class="sn-result-right">
             <p class="sn-result-label-small">{t.labelPaysDisplay}</p>
@@ -92,7 +109,7 @@ const t = (ui ?? {}) as SalaryCalculatorUI;
               {t.labelIRPF} (<span id="irpf-percent">0</span>%)
             </span>
             <span id="irpf-amount" class="sn-breakdown-value sn-negative">
-              - 0 €
+              - 0 {getCurrencySymbol(defaultCurrency)}
             </span>
           </div>
           <div class="sn-breakdown-row">
@@ -100,7 +117,7 @@ const t = (ui ?? {}) as SalaryCalculatorUI;
               {t.labelSS} (<span id="ss-percent">6.35</span>%)
             </span>
             <span id="ss-amount" class="sn-breakdown-value sn-negative">
-              - 0 €
+              - 0 {getCurrencySymbol(defaultCurrency)}
             </span>
           </div>
         </div>
@@ -115,8 +132,18 @@ const t = (ui ?? {}) as SalaryCalculatorUI;
 
 <script>
   import { SalaryCalculator } from './logic';
+  import {
+    formatCurrency,
+    convertCurrencyValue,
+    fromInternalCurrency,
+    getDefaultCurrency,
+    getCurrencySymbol,
+    toInternalCurrency,
+    type CurrencyCode,
+  } from '../../currency';
 
   const grossInput = document.getElementById('gross-salary') as HTMLInputElement;
+  const currencySelect = document.getElementById('salary-currency') as HTMLSelectElement | null;
   const calculateBtn = document.getElementById('calculate-btn');
   const payBtns = document.querySelectorAll('.sn-pay-btn');
   const payDisplay = document.getElementById('pay-input-display');
@@ -128,27 +155,24 @@ const t = (ui ?? {}) as SalaryCalculatorUI;
   const ssAmountEl = document.getElementById('ss-amount');
 
   let pays = 12;
+  let currentCurrency: CurrencyCode = getDefaultCurrency(document.documentElement.lang);
 
-  function formatEuro(value: number): string {
-    return new Intl.NumberFormat('es-ES', {
-      style: 'currency',
-      currency: 'EUR',
-      maximumFractionDigits: 0,
-    }).format(value);
+  function formatMoney(value: number): string {
+    return formatCurrency(fromInternalCurrency(value, currentCurrency), currentCurrency, document.documentElement.lang, 0);
   }
 
   function updateResults() {
-    const gross = parseFloat(grossInput.value) || 0;
+    const gross = toInternalCurrency(parseFloat(grossInput.value) || 0, currentCurrency);
     if (gross < 0) return;
 
     const results = SalaryCalculator.calculate(gross, pays);
 
-    if (netMonthlyEl) netMonthlyEl.textContent = formatEuro(results.netMonthly);
-    if (netAnnualEl) netAnnualEl.textContent = formatEuro(results.net);
+    if (netMonthlyEl) netMonthlyEl.textContent = formatMoney(results.netMonthly);
+    if (netAnnualEl) netAnnualEl.textContent = formatMoney(results.net);
     if (irpfPercentEl)
       irpfPercentEl.textContent = results.irpfPercent.toFixed(1);
-    if (irpfAmountEl) irpfAmountEl.textContent = `- ${formatEuro(results.irpfTotal)}`;
-    if (ssAmountEl) ssAmountEl.textContent = `- ${formatEuro(results.ssTotal)}`;
+    if (irpfAmountEl) irpfAmountEl.textContent = `- ${formatMoney(results.irpfTotal)}`;
+    if (ssAmountEl) ssAmountEl.textContent = `- ${formatMoney(results.ssTotal)}`;
   }
 
   function handlePayClick(e: Event) {
@@ -163,7 +187,15 @@ const t = (ui ?? {}) as SalaryCalculatorUI;
   grossInput.addEventListener('input', updateResults);
   calculateBtn?.addEventListener('click', updateResults);
   payBtns.forEach((btn) => btn.addEventListener('click', handlePayClick));
+  currencySelect?.addEventListener('change', () => {
+    const next = currencySelect.value as CurrencyCode;
+    grossInput.value = convertCurrencyValue(Number(grossInput.value) || 0, currentCurrency, next).toFixed(2);
+    currentCurrency = next;
+    document.querySelectorAll<HTMLElement>('[data-currency-symbol]').forEach((el) => {
+      el.textContent = getCurrencySymbol(currentCurrency);
+    });
+    updateResults();
+  });
 
   updateResults();
 </script>
-

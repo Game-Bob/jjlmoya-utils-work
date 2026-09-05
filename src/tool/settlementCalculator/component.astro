@@ -1,12 +1,20 @@
 ---
 import type { SettlementCalculatorUI } from './ui';
+import {
+  SUPPORTED_CURRENCIES,
+  getCurrencyLabel,
+  getCurrencySymbol,
+  getDefaultCurrency,
+} from '../../currency';
 
 interface Props {
+  locale?: string;
   ui?: Record<string, unknown>;
 }
 
-const { ui = {} } = Astro.props;
+const { locale = 'en', ui = {} } = Astro.props;
 const t = ui as SettlementCalculatorUI;
+const defaultCurrency = getDefaultCurrency(locale);
 ---
 
 <div
@@ -23,6 +31,18 @@ const t = ui as SettlementCalculatorUI;
   <div class="sc-card">
     <div class="sc-input-grid">
       <div class="sc-input-group">
+        <label for="sc-currency">{getCurrencyLabel(locale)}</label>
+        <div class="sc-input-wrap">
+          <select id="sc-currency">
+            {SUPPORTED_CURRENCIES.map((item) => (
+              <option value={item.code} selected={item.code === defaultCurrency}>
+                {item.code} ({item.symbol})
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+      <div class="sc-input-group">
         <label for="sc-salary">{t.labelSalary}</label>
         <div class="sc-input-wrap">
           <input
@@ -31,7 +51,7 @@ const t = ui as SettlementCalculatorUI;
             min="0"
             value={t.defaultSalary}
           />
-          <span class="sc-unit">€</span>
+          <span class="sc-unit" data-currency-symbol>{getCurrencySymbol(defaultCurrency)}</span>
         </div>
       </div>
 
@@ -88,25 +108,25 @@ const t = ui as SettlementCalculatorUI;
     <div class="sc-results">
       <div class="sc-total-header">
         <span class="sc-total-label">{t.labelTotal}</span>
-        <span class="sc-total-value" id="sc-total">0,00 €</span>
+        <span class="sc-total-value" id="sc-total">0,00 {getCurrencySymbol(defaultCurrency)}</span>
       </div>
 
       <div class="sc-breakdown-grid">
         <div class="sc-breakdown-item">
           <span class="sc-breakdown-label">{t.labelSeverance}</span>
-          <span class="sc-breakdown-value" id="sc-val-severance">0,00 €</span>
+          <span class="sc-breakdown-value" id="sc-val-severance">0,00 {getCurrencySymbol(defaultCurrency)}</span>
         </div>
         <div class="sc-breakdown-item">
           <span class="sc-breakdown-label">{t.labelVacation}</span>
-          <span class="sc-breakdown-value" id="sc-val-vacation">0,00 €</span>
+          <span class="sc-breakdown-value" id="sc-val-vacation">0,00 {getCurrencySymbol(defaultCurrency)}</span>
         </div>
         <div class="sc-breakdown-item">
           <span class="sc-breakdown-label">{t.labelExtras}</span>
-          <span class="sc-breakdown-value" id="sc-val-extras">0,00 €</span>
+          <span class="sc-breakdown-value" id="sc-val-extras">0,00 {getCurrencySymbol(defaultCurrency)}</span>
         </div>
         <div class="sc-breakdown-item">
           <span class="sc-breakdown-label">{t.labelMonthSalary}</span>
-          <span class="sc-breakdown-value" id="sc-val-month">0,00 €</span>
+          <span class="sc-breakdown-value" id="sc-val-month">0,00 {getCurrencySymbol(defaultCurrency)}</span>
         </div>
       </div>
 
@@ -154,13 +174,25 @@ const t = ui as SettlementCalculatorUI;
 <script>
   import { calculateSettlement } from './logic';
   import type { SettlementResult } from './logic';
+  import {
+    convertCurrencyValue,
+    formatCurrency,
+    fromInternalCurrency,
+    getDefaultCurrency,
+    getCurrencySymbol,
+    toInternalCurrency,
+    type CurrencyCode,
+  } from '../../currency';
+
+  const currencySelect = document.getElementById('sc-currency') as HTMLSelectElement | null;
+  let currentCurrency: CurrencyCode = getDefaultCurrency(document.documentElement.lang);
 
   function getEl(id: string): HTMLElement | null {
     return document.getElementById(id);
   }
 
   function fmt(val: number): string {
-    return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(val);
+    return formatCurrency(fromInternalCurrency(val, currentCurrency), currentCurrency, document.documentElement.lang);
   }
 
   function getInputs() {
@@ -195,7 +227,7 @@ const t = ui as SettlementCalculatorUI;
     const inputs = getInputs();
     if (!inputs) return;
     const result = calculateSettlement({
-      salaryAnual: parseFloat(inputs.salary.value) || 0,
+      salaryAnual: toInternalCurrency(parseFloat(inputs.salary.value) || 0, currentCurrency),
       extraPagas: parseInt(inputs.extraPays.value) || 12,
       vacationDays: parseFloat(inputs.vacation.value) || 0,
       reason: inputs.reason.value,
@@ -237,10 +269,19 @@ const t = ui as SettlementCalculatorUI;
     if (!inputs) return;
     const elems = [inputs.salary, inputs.extraPays, inputs.startDate, inputs.endDate, inputs.vacation, inputs.reason];
     elems.forEach((el) => el.addEventListener('input', recalculate));
+    currencySelect?.addEventListener('change', () => {
+      const next = currencySelect.value as CurrencyCode;
+      const salary = inputs.salary.value;
+      inputs.salary.value = convertCurrencyValue(Number(salary) || 0, currentCurrency, next).toFixed(2);
+      currentCurrency = next;
+      document.querySelectorAll<HTMLElement>('[data-currency-symbol]').forEach((el) => {
+        el.textContent = getCurrencySymbol(currentCurrency);
+      });
+      recalculate();
+    });
   }
 
   setupListeners();
   setupCopy();
   recalculate();
 </script>
-

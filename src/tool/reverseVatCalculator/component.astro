@@ -1,14 +1,21 @@
 ---
 import type { KnownLocale } from '../../types';
 import type { ReverseVatCalculatorUI } from './ui';
+import {
+  SUPPORTED_CURRENCIES,
+  getCurrencyLabel,
+  getCurrencySymbol,
+  getDefaultCurrency,
+} from '../../currency';
 
 interface Props {
   locale?: KnownLocale;
   ui?: Record<string, unknown>;
 }
 
-const { ui } = Astro.props;
+const { locale = 'en', ui } = Astro.props;
 const t = (ui ?? {}) as ReverseVatCalculatorUI;
+const defaultCurrency = getDefaultCurrency(locale);
 ---
 
 <div class="rv-wrapper">
@@ -21,9 +28,19 @@ const t = (ui ?? {}) as ReverseVatCalculatorUI;
 
     <div class="rv-content">
       <div class="rv-field">
+        <label for="rv-currency" class="rv-label">{getCurrencyLabel(locale)}</label>
+        <select id="rv-currency" class="rv-currency-select">
+          {SUPPORTED_CURRENCIES.map((item) => (
+            <option value={item.code} selected={item.code === defaultCurrency}>
+              {item.code} ({item.symbol})
+            </option>
+          ))}
+        </select>
+      </div>
+      <div class="rv-field">
         <label for="total-amount" class="rv-label">{t.labelTotal}</label>
         <div class="rv-input-wrapper">
-          <span class="rv-currency">€</span>
+          <span class="rv-currency" data-currency-symbol>{getCurrencySymbol(defaultCurrency)}</span>
           <input
             type="number"
             id="total-amount"
@@ -46,13 +63,13 @@ const t = (ui ?? {}) as ReverseVatCalculatorUI;
       <div class="rv-results">
         <div class="rv-result-row rv-result-base">
           <span class="rv-result-label">{t.labelBase}</span>
-          <span id="base-amount" class="rv-result-value">0.00 €</span>
+          <span id="base-amount" class="rv-result-value">0.00 {getCurrencySymbol(defaultCurrency)}</span>
         </div>
         <div class="rv-result-row">
           <span class="rv-result-label">
             {t.labelVat} (<span id="vat-rate-display">21</span> %)
           </span>
-          <span id="vat-amount" class="rv-result-value rv-vat-value">0.00 €</span>
+          <span id="vat-amount" class="rv-result-value rv-vat-value">0.00 {getCurrencySymbol(defaultCurrency)}</span>
         </div>
       </div>
     </div>
@@ -61,23 +78,32 @@ const t = (ui ?? {}) as ReverseVatCalculatorUI;
 
 <script>
   import { ReverseVatCalculator } from './logic';
+  import {
+    formatCurrency,
+    convertCurrencyValue,
+    fromInternalCurrency,
+    getDefaultCurrency,
+    getCurrencySymbol,
+    toInternalCurrency,
+    type CurrencyCode,
+  } from '../../currency';
 
   const totalInput = document.getElementById('total-amount') as HTMLInputElement;
   const baseOutput = document.getElementById('base-amount');
   const vatOutput = document.getElementById('vat-amount');
   const vatRateDisplay = document.getElementById('vat-rate-display');
   const vatBtns = document.querySelectorAll('.rv-btn');
+  const currencySelect = document.getElementById('rv-currency') as HTMLSelectElement;
 
   let currentRate = 21;
-
-  const fmt = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
+  let currentCurrency: CurrencyCode = getDefaultCurrency(document.documentElement.lang);
 
   function formatAmount(val: number): string {
-    return fmt.format(val).replace(/\u00A0/g, ' ');
+    return formatCurrency(fromInternalCurrency(val, currentCurrency), currentCurrency, document.documentElement.lang).replace(/\u00A0/g, ' ');
   }
 
   function calculate() {
-    const total = parseFloat(totalInput.value);
+    const total = toInternalCurrency(parseFloat(totalInput.value) || 0, currentCurrency);
     const { base, vat } = ReverseVatCalculator.calculate(total, currentRate);
     if (baseOutput) baseOutput.textContent = formatAmount(base);
     if (vatOutput) vatOutput.textContent = formatAmount(vat);
@@ -94,5 +120,13 @@ const t = (ui ?? {}) as ReverseVatCalculatorUI;
 
   totalInput.addEventListener('input', calculate);
   vatBtns.forEach((btn) => btn.addEventListener('click', handleVatBtn));
+  currencySelect?.addEventListener('change', () => {
+    const next = currencySelect.value as CurrencyCode;
+    totalInput.value = convertCurrencyValue(Number(totalInput.value) || 0, currentCurrency, next).toFixed(2);
+    currentCurrency = next;
+    document.querySelectorAll<HTMLElement>('[data-currency-symbol]').forEach((el) => {
+      el.textContent = getCurrencySymbol(currentCurrency);
+    });
+    calculate();
+  });
 </script>
-
