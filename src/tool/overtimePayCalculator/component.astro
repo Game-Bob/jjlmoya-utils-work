@@ -96,6 +96,7 @@ const defaultCurrency = getDefaultCurrency(locale);
 <script>
   import { calculateOvertimePay, type OvertimeBasis, type OvertimePayInput } from './logic';
   import {
+    convertCurrencyValue,
     formatCurrency,
     fromInternalCurrency,
     getDefaultCurrency,
@@ -157,7 +158,12 @@ const defaultCurrency = getDefaultCurrency(locale);
     [basis, baseAmount, regularHours, overtimeHours, multiplier].forEach((input) => input?.addEventListener('input', recalculate));
     basis?.addEventListener('change', recalculate);
     currencyPicker?.addEventListener('change', () => {
-      currentCurrency = currencyPicker.value as CurrencyCode;
+      const nextCurrency = currencyPicker.value as CurrencyCode;
+      const displayedBaseAmount = Number(valueOf(baseAmount));
+      if (Number.isFinite(displayedBaseAmount)) {
+        baseAmount!.value = convertCurrencyValue(displayedBaseAmount, currentCurrency, nextCurrency).toFixed(2);
+      }
+      currentCurrency = nextCurrency;
       root.querySelectorAll<HTMLElement>('[data-currency-symbol]').forEach((el) => {
         el.textContent = getCurrencySymbol(currentCurrency);
       });

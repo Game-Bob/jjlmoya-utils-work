@@ -46,5 +46,6 @@ describe('currency preferences', () => {
     expect(toInternalCurrency(100, 'USD')).toBeCloseTo(92);
     expect(convertCurrencyValue(100, 'USD', 'EUR')).toBeCloseTo(92);
     expect(convertCurrencyValue(100, 'EUR', 'USD')).toBeCloseTo(108.6956, 3);
+    expect(convertCurrencyValue(300, 'EUR', 'RUB')).toBeCloseTo(29411.7647, 2);
   });
 });
