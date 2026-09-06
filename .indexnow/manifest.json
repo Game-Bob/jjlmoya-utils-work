@@ -1,785 +1,845 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T10:51:54.126Z",
+  "generatedAt": "2026-09-06T14:57:33.012Z",
   "pages": {
     "https://www.gamebob.dev/de/werkzeuge/kategorien/arbeit/abfindungsrechner-spanien/": {
-      "hash": "5b30e7c15d51c708d7af9514613e620986c42e8ea38abb7ef8e47846c6da7379",
+      "hash": "b330feb4c0420fede2ad86aa9f57afe05cb6365f463b47f6d1d6e0c90c3b1acf",
       "route": "/de/werkzeuge/kategorien/arbeit/abfindungsrechner-spanien/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/arbeit/besprechungskosten-rechner/": {
-      "hash": "b8f829225c9e3490b3189a6037151894d3d8d7bcac49cd144131391c2559b1f6",
+      "hash": "11359d73b7c2319cea18481e026dbe300eb82d2953636e492f8d2c2de1762cc5",
       "route": "/de/werkzeuge/kategorien/arbeit/besprechungskosten-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/arbeit/freiberufler-quotenrechner-spanien/": {
-      "hash": "ab82c77509612ee5c11a0201fd922810d84528e7722debef855a8985ce24c70a",
+      "hash": "a9e99d73238609ea385eba9ad2dc7abb0613e4f5fc3881351a8c5f4359927048",
       "route": "/de/werkzeuge/kategorien/arbeit/freiberufler-quotenrechner-spanien/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/arbeit/fruehrentensimulator-spanien/": {
-      "hash": "0892e029d5c5ec24734ead3422bb9400a6bfc37ba1ab564c4577de07164d24db",
+      "hash": "35659aadc851e40199aac71d0e32dff94a8a67c35670bcb1b6c583d203abdc92",
       "route": "/de/werkzeuge/kategorien/arbeit/fruehrentensimulator-spanien/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/arbeit/gehaltsrechner-spanien/": {
-      "hash": "0ad675bc17768e4f98b4c1f80240b73d35e86e22c1a8e0cbf52d4431f405fca3",
+      "hash": "19d54ad0b49e828bec346c61c0f7552306b48ae38159c82085a2bc250e1a5112",
       "route": "/de/werkzeuge/kategorien/arbeit/gehaltsrechner-spanien/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/arbeit/": {
-      "hash": "2dbbc21c790b57f10c4582d3e008860ff87fdf71fea78525426c0c1d1b64ef12",
+      "hash": "5c4881cc929c5ead12c930fba6139378965b7768b1dc11d72fda700d4ff778cf",
       "route": "/de/werkzeuge/kategorien/arbeit/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/arbeit/irpf-rechner-spanien/": {
-      "hash": "55ebd75f92bc09ee91d9feb34835c4ff7b1169609d04e6bec5e48021a81de223",
+      "hash": "32a5cf542af7c888e0998a0564aaed6bf6847684f94d6b34897278e58706644a",
       "route": "/de/werkzeuge/kategorien/arbeit/irpf-rechner-spanien/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/arbeit/kundigungsschreiben-generator/": {
-      "hash": "685f9c9587deddcabec039f5aac38cb944118dc7b2a0c014182e67dc6d4da057",
+      "hash": "bb4e33771f83a513bd6a91f01883b3a65331df618e45818032ffe035dc961f87",
       "route": "/de/werkzeuge/kategorien/arbeit/kundigungsschreiben-generator/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/arbeit/netto-rechner-umsatzsteuer-spanien/": {
-      "hash": "9670b6f42faca18d92b69858fa06ab2bd3c8c0bb60741a352254c42ce8cb2507",
+      "hash": "6b4b08afb9a47edfeec0f714a506dce7547cf1a3044c5dca23b35ca0e4c06cb7",
       "route": "/de/werkzeuge/kategorien/arbeit/netto-rechner-umsatzsteuer-spanien/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/arbeit/nie-nif-prufer-spanien/": {
-      "hash": "e6507cf211a8d84eb4da965b5cc05f9bfe0d067965b89b3e2d49d20a8d45cef6",
+      "hash": "c7591c69407b754acf6164c88f7da3dc56cf4280da965a54012c8297620b82c3",
       "route": "/de/werkzeuge/kategorien/arbeit/nie-nif-prufer-spanien/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/arbeit/projektgebuehr-zu-stundensatz-rechner/": {
-      "hash": "1db8c4e0503878b7bbb3bb030cc7dc7147b22fe616f10b78cf9beba4d1cb7d6d",
+      "hash": "4d76687c5498e2338f7699a2791aa01297aac1591e265c65648b4be20fbaa463",
       "route": "/de/werkzeuge/kategorien/arbeit/projektgebuehr-zu-stundensatz-rechner/"
     },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/arbeit/rechner-nettogehalt-gehaltsumwandlung/": {
+      "hash": "f5652de62d07510f137e156f99530f5ffe613b3508bce1854f2f9de85b2f3ca3",
+      "route": "/de/werkzeuge/kategorien/arbeit/rechner-nettogehalt-gehaltsumwandlung/"
+    },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/arbeit/rechnung-generator/": {
-      "hash": "840a31dd7e7716824ccff7a2d215205bd6a7f87f0bcbc296dc2f44dd6eb754d4",
+      "hash": "8ffc8baeedf6077f4563ed0471fd1f61ca3bcd0f1faec9520e5e8dfe4afc9beb",
       "route": "/de/werkzeuge/kategorien/arbeit/rechnung-generator/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/arbeit/uberstundenlohn-rechner/": {
-      "hash": "e2953b6dbbd6165edb0604195f82cd925933cb9ae0b2638f5c49b80c6cb25506",
+      "hash": "1a93ae870aafd333b494295e43c104613f8b86b536d523e5d1acbf3860b95578",
       "route": "/de/werkzeuge/kategorien/arbeit/uberstundenlohn-rechner/"
     },
     "https://www.gamebob.dev/en/utilities/categories/work/early-retirement-simulator-spain/": {
-      "hash": "26c90b817fd42a65b5482afaef2cced74c6b806755873d34354c96866b2304de",
+      "hash": "e36945d4d5fd4be8cb4201e3ea25c5251b9273c4230fecbc43b3dddf5cdb6184",
       "route": "/en/utilities/categories/work/early-retirement-simulator-spain/"
     },
     "https://www.gamebob.dev/en/utilities/categories/work/freelancer-quota-calculator-spain/": {
-      "hash": "ccb98b76b2fc4926af015731986963efb18f23add959465b3dd6dbcb9158e41c",
+      "hash": "dc75d56461fef51f93614f6e742fc394deaf6d2a0e60668babc25133603d4651",
       "route": "/en/utilities/categories/work/freelancer-quota-calculator-spain/"
     },
     "https://www.gamebob.dev/en/utilities/categories/work/": {
-      "hash": "107aedddb8d7d4c2be79b7917b320e66398b149967fb97b6533c511419cc2d47",
+      "hash": "704f155a35fd4f2958890ce1a2299017b79459ad2304908888ede41d66c4a526",
       "route": "/en/utilities/categories/work/"
     },
     "https://www.gamebob.dev/en/utilities/categories/work/invoice-generator/": {
-      "hash": "ac179cd7bebc29e8dd5baac0b06f895a88d2b8f366dfe64b3bb4362ef6e1e1ca",
+      "hash": "3aa57aac785a28d6b9de9152f4c6b9242642669bdf8f9e5333a41c19893c4e6d",
       "route": "/en/utilities/categories/work/invoice-generator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/work/irpf-calculator-spain/": {
-      "hash": "3c5e683b3df11dca10e81dde5c8cfbb29d36ed2045f6b6e886caa8a4bf148469",
+      "hash": "23ffcb4c281beab6aac4ad0bc786954cf324fd17ca42a4eddc72f2aa4b9969c3",
       "route": "/en/utilities/categories/work/irpf-calculator-spain/"
     },
     "https://www.gamebob.dev/en/utilities/categories/work/meeting-cost-calculator/": {
-      "hash": "f6c9593e278d1df7d4989abb36440172610ff208eba3e14bfac7eaf3017e08c7",
+      "hash": "bde5accdb65e5b0fb1845df889f6417a567bae13fe3c5b3474da2fa77a6d435b",
       "route": "/en/utilities/categories/work/meeting-cost-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/work/nie-nif-verifier-spain/": {
-      "hash": "8511d511b1fc8b02de7b4e4002032948c4cccab1bf2dd3e85b81eb37bde9a1c5",
+      "hash": "854d020bda3bbf8b5dd69d7e5965726f00fd2123809b0cd96d01bd6b14c0dd09",
       "route": "/en/utilities/categories/work/nie-nif-verifier-spain/"
     },
     "https://www.gamebob.dev/en/utilities/categories/work/overtime-pay-calculator/": {
-      "hash": "982a244e3130e54253b054d09fb20c903a932b2fd58db53cb9a51f1e299a1073",
+      "hash": "9081c63034ebd8a4698379fdf3178dd7b7b2efa6864181cf5b73932307a35bad",
       "route": "/en/utilities/categories/work/overtime-pay-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/work/project-fee-to-hourly-rate-calculator/": {
-      "hash": "61904177ac6571fbebcae26d68e050f8fbec0c096be2a3eb5ddc119b37c9fecd",
+      "hash": "3f3b631c9662b597bdff8bbed8d9eb30c0bec9d32afa96d80e68acdee85000fc",
       "route": "/en/utilities/categories/work/project-fee-to-hourly-rate-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/work/resignation-letter-generator/": {
-      "hash": "63df1cd345ede728295698ceb4851003c78c715e0aeea1d8533bfbc679625c73",
+      "hash": "466b21eddbcee63e0d8e03643ae0d9a1ec07ed352f507e8bc76f42fe5ed8dd27",
       "route": "/en/utilities/categories/work/resignation-letter-generator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/work/reverse-vat-calculator-spain/": {
-      "hash": "5d017a1ccc647b794a60e8e7e8b5eb68aee02df84bec69c44bf74d6a7db8f65f",
+      "hash": "ecaec12a6022faf6edee6b225c72c6a51b70919b7fc529a1b349d6b9f5228d3f",
       "route": "/en/utilities/categories/work/reverse-vat-calculator-spain/"
     },
     "https://www.gamebob.dev/en/utilities/categories/work/salary-calculator-spain/": {
-      "hash": "a95cdc07f07c71df2b6b086c284cfb4c692a891d2bfe1c1f83df0ed92ba3cefb",
+      "hash": "7bb6da3ff68101aefecb1db17913966fd4aa48a4cb18c1b64a42a12716cee8d0",
       "route": "/en/utilities/categories/work/salary-calculator-spain/"
     },
+    "https://www.gamebob.dev/en/utilities/categories/work/salary-sacrifice-take-home-calculator/": {
+      "hash": "b241d0684a915603678e03c5f9ec47f5fecd3795b2fb45259f6304e035e46be2",
+      "route": "/en/utilities/categories/work/salary-sacrifice-take-home-calculator/"
+    },
     "https://www.gamebob.dev/en/utilities/categories/work/severance-pay-calculator-spain/": {
-      "hash": "aa7c5b9bae834720af223429c5fbce7324d375fcbb1722e81e7517e7597e8dad",
+      "hash": "724b54f219649ff6a9fae6fc242e9f1331fa075ec17854e1a612b73934f88ca2",
       "route": "/en/utilities/categories/work/severance-pay-calculator-spain/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/travail/calculateur-cout-reunion/": {
-      "hash": "b39ab7a3aec8380172843d5b21be3cc4a166183065af532b51b508fdb5e27f89",
+      "hash": "a8f29648ec607e373aafa8b382eda3fab07fc15fe535711a080e0592a084723e",
       "route": "/fr/utilitaires/categories/travail/calculateur-cout-reunion/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/travail/calculateur-heures-supplementaires/": {
-      "hash": "a67f8c58663c0a854bc5e26dee6cc67b7cf7ce67cf9a4f54e4301bc10a34301b",
+      "hash": "be9f877551f3f146213f0d5d8afb31ed5746b942556c752af34ecd4da1b0d01a",
       "route": "/fr/utilitaires/categories/travail/calculateur-heures-supplementaires/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/travail/calculateur-indemnite-licenciement-espagne/": {
-      "hash": "769f7ab52a67957c3ac92f9c8a8d793c14a834e1e633292a919c3fac68dcdd81",
+      "hash": "b71174c29f6e0ef2f26d18f845313f6ba45c2bb25635f7638b94b9dfa41a2241",
       "route": "/fr/utilitaires/categories/travail/calculateur-indemnite-licenciement-espagne/"
     },
+    "https://www.gamebob.dev/fr/utilitaires/categories/travail/calculateur-salaire-net-conversion-salariale/": {
+      "hash": "dffa8e30b3ce5040a6f983a8ba4d8ee940624f53e233517ab75d0aea0a1892f6",
+      "route": "/fr/utilitaires/categories/travail/calculateur-salaire-net-conversion-salariale/"
+    },
     "https://www.gamebob.dev/fr/utilitaires/categories/travail/calculateur-tarif-horaire-projet/": {
-      "hash": "561e4f28e4b0d4b7d72bcaa38a208c4a3536a2499be198a35a38062a300fff4b",
+      "hash": "bd39239690ceb119c4801522cb2c439cbce9c0ae8a0e95da737dece1b2862663",
       "route": "/fr/utilitaires/categories/travail/calculateur-tarif-horaire-projet/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/travail/calculatrice-cotisation-independant/": {
-      "hash": "0fbde1ec5c6b8c6994aa5d6308ae37559ec135dd6a4398a9c020bcaf45036911",
+      "hash": "56464262648a8e288d67206038ea3aad1a4468239281a54216dc894ee641c0fc",
       "route": "/fr/utilitaires/categories/travail/calculatrice-cotisation-independant/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/travail/calculatrice-irpf-espagne/": {
-      "hash": "dacd17a987cb5dbc6f107d27199617c708024f09e49da1d5675b4f3fa9db45a6",
+      "hash": "ee4755a80f70fc89c198794c6d71100c65343f337165ab9e555072d6ae75caf2",
       "route": "/fr/utilitaires/categories/travail/calculatrice-irpf-espagne/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/travail/calculatrice-salaire-espagne/": {
-      "hash": "d34c2efab8c67180a55a753e7e8bba1eef27b0d2beb663086cf54b7c566647a7",
+      "hash": "d7cceed06b8af15ec026cd8174ffc0143c6ee690ad93704a23907094150146da",
       "route": "/fr/utilitaires/categories/travail/calculatrice-salaire-espagne/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/travail/calculatrice-tva-inverse-espagne/": {
-      "hash": "c6f4f20dafeb79535fcdc653cdb88a7ea6750771144c92c03ef7bf40e8389046",
+      "hash": "0c46e026264e4bfd965b5cd2fc105769b900ba3474e4863e6cc95c914e2f29b8",
       "route": "/fr/utilitaires/categories/travail/calculatrice-tva-inverse-espagne/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/travail/generateur-factures-gratuit/": {
-      "hash": "d99f68ff2c61ac89a6f4bfa2344aeb345202ecc9293946253157dae37b0e2418",
+      "hash": "765ef741c412da96fc4434cf4fbfd58817b042aa26bab1ceca6aa84ca21939b2",
       "route": "/fr/utilitaires/categories/travail/generateur-factures-gratuit/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/travail/generateur-lettre-demission/": {
-      "hash": "60bc6b385aa9110636c1b8a1accf68d8d63bfb78170f6ff9b29d028c9fce9d01",
+      "hash": "040a9ce5158c88d8e0342e43b61b8a07d6138ce4844d357ef0a88ce2456fc874",
       "route": "/fr/utilitaires/categories/travail/generateur-lettre-demission/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/travail/": {
-      "hash": "b230c2eb618e16820f4401eb11731878a69089c14dab5e65ad58701904b535d6",
+      "hash": "343ae10d5e45711a765c30fc4779768384b22591d02759a2e8f88abf5d472fae",
       "route": "/fr/utilitaires/categories/travail/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/travail/simulateur-retraite-anticipee-espagne/": {
-      "hash": "4b16d5a441c72a14691e8d7d68bc0be97eac1192bca5cee13e8818dee92f691c",
+      "hash": "99205d8a06d695a4d1be03b55e71a2d5fb6ef13f1a5462946db79f4e5155b096",
       "route": "/fr/utilitaires/categories/travail/simulateur-retraite-anticipee-espagne/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/travail/verificateur-nie-nif-espagne/": {
-      "hash": "a74fd569bddece7b5d2e3703118b0e889ab4bd3deccd736781f4cf286de5dd65",
+      "hash": "13b72754e317b7003b77b87483cfbd8f2da8448da7a336ed0d50e0669d3cf973",
       "route": "/fr/utilitaires/categories/travail/verificateur-nie-nif-espagne/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kerja/": {
-      "hash": "2c3f699658fc2346636c3576cd54a1844a8c6be9593b3dd594f8a0502dd428a9",
+      "hash": "cd11b8c05e4ecc60edec6c0f83ee081048e15d9a06e254c3d670ed813569aede",
       "route": "/id/utilitas/kategori/kerja/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kerja/kalkulator-biaya-proyek-per-jam/": {
-      "hash": "4e59d5ba11ea0a0d139a1608f042cc8899de625080abbc3fffcdc51feaf00c05",
+      "hash": "de21aaeed3d006608ec35ff7dc27c30dcf87414601c607bf5317a8efe1b61550",
       "route": "/id/utilitas/kategori/kerja/kalkulator-biaya-proyek-per-jam/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kerja/kalkulator-biaya-rapat/": {
-      "hash": "5d79cde4c51409a4f2f5c1001cf4a668e774e9c51ed035faf2af80dbbb30e434",
+      "hash": "fc665fd544a5be2200a64ebabd7651749f4058e4cc233dc1bb8a1979624db3b0",
       "route": "/id/utilitas/kategori/kerja/kalkulator-biaya-rapat/"
     },
+    "https://www.gamebob.dev/id/utilitas/kategori/kerja/kalkulator-gaji-bersih-pengorbanan-gaji/": {
+      "hash": "745e644027073d15154460c7547dbf9fa65c5bb83a22a4f851267a615464880a",
+      "route": "/id/utilitas/kategori/kerja/kalkulator-gaji-bersih-pengorbanan-gaji/"
+    },
     "https://www.gamebob.dev/id/utilitas/kategori/kerja/kalkulator-gaji-spanyol/": {
-      "hash": "5362ecbd86341c5171b8c3977f48ca2413750f7780565b605ba9052e072a87b1",
+      "hash": "e650acad62527fa4338a22d48beca7cf1fdcc0b105de3cc1c027020d3cd27d1f",
       "route": "/id/utilitas/kategori/kerja/kalkulator-gaji-spanyol/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kerja/kalkulator-irpf-spanyol/": {
-      "hash": "8e0bb2eb3017abab018be0d27fb2186ea2f21fc215129a6abf767332b654e3b8",
+      "hash": "674bccf0f21b53d5403436f975057f33fb9d9d4d2562b6e4844dcaabfab9fa93",
       "route": "/id/utilitas/kategori/kerja/kalkulator-irpf-spanyol/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kerja/kalkulator-kuota-freelance-spanyol/": {
-      "hash": "51dbbfa7754c611f53b72d3efaaa2ac0bd772834f3be6824c9156b3d3821cf3b",
+      "hash": "64da88ec1c57b6a0b09ce4ac3877ef8d4441e540cbf4b178da581164934f2b63",
       "route": "/id/utilitas/kategori/kerja/kalkulator-kuota-freelance-spanyol/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kerja/kalkulator-pesangon-spanyol/": {
-      "hash": "f155842c53876af0bcefe2b7b741c95e5adbe00d61646e69dc326292e9f810ef",
+      "hash": "67b784d13e74c7d9a74d58f86e420edadfafc1ec3ef9e45023894b43694109a4",
       "route": "/id/utilitas/kategori/kerja/kalkulator-pesangon-spanyol/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kerja/kalkulator-ppn-terbalik-spanyol/": {
-      "hash": "0f52133141d0ff8fe0e10953b419c8f79e943426ac5c3bb4662ead8b232c4698",
+      "hash": "407cc5337d65b2f369b10a3a365230544f7f5d51f9815c4a687aafb30fc7a2cc",
       "route": "/id/utilitas/kategori/kerja/kalkulator-ppn-terbalik-spanyol/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kerja/kalkulator-upah-lembur/": {
-      "hash": "284dfbcbe512815ba3a29e94b829acdaf973e3b659f21a4d60a74d52b262a6da",
+      "hash": "cfbaceeef9109efdbdd863b30b26c44390366c93ec71dbc4e9852c3907b370c0",
       "route": "/id/utilitas/kategori/kerja/kalkulator-upah-lembur/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kerja/pembuat-faktur/": {
-      "hash": "fba74e9d796ab33ab403a53ca237f5c1571ba6576d24c8c0e9497874d8cca8a7",
+      "hash": "77b9941b92cf54ec75bb924576bd1968d880c73b96cdeea1c22f468e47b893de",
       "route": "/id/utilitas/kategori/kerja/pembuat-faktur/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kerja/pembuat-surat-pengunduran-diri/": {
-      "hash": "00445b705714635ec09f71e735dcaced956ff8481cbfa56fd0214337cb7be2fc",
+      "hash": "fc58108a6b5af1f9aa1699956ee48b4bf18fd7f0c1a2a8dcb578cffba7683471",
       "route": "/id/utilitas/kategori/kerja/pembuat-surat-pengunduran-diri/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kerja/simulator-pensiun-dini-spanyol/": {
-      "hash": "dd5629af29bf97522d24c91b0b2c4f9b3404d89cd52f260ac340277f8838938e",
+      "hash": "06f57853447d86516ea8835ef61aceb83f2002a8f0e4219634a2c241c32822af",
       "route": "/id/utilitas/kategori/kerja/simulator-pensiun-dini-spanyol/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/kerja/verifikator-nie-nif-spanyol/": {
-      "hash": "5c96059a2e85c9868667339cebf9e4d0bc84d10196cce4c6790e528df2517f27",
+      "hash": "461c678f97d148c966e1dbb5be4110991039832115f6b611c8020783b09e1f25",
       "route": "/id/utilitas/kategori/kerja/verifikator-nie-nif-spanyol/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/lavoro/calcolatore-compenso-progetto-tariffa-oraria/": {
-      "hash": "272ca5f06ec1ac6c7138a6f134be15c35b0f5b9ea5d6bc959324bfca50799bfa",
+      "hash": "cd0d7cd2b1bb716177914788bf93e5fb616a9abff55ddff3deaf5a4ded58f838",
       "route": "/it/utilita/categorie/lavoro/calcolatore-compenso-progetto-tariffa-oraria/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/lavoro/calcolatore-costo-riunione/": {
-      "hash": "53b04f8c811249e03d83fe599c123a7ba338c5a0a99fce5d5737d9bdc3cc5a12",
+      "hash": "24d5a259e6ce2a3efff2a3b61fe2546b9ceaca4f47ceb5b97c813d8b7df629af",
       "route": "/it/utilita/categorie/lavoro/calcolatore-costo-riunione/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/lavoro/calcolatore-paga-straordinari/": {
-      "hash": "31011ad8bf2a68e1d669e2b9f55dfa5293ece2e6b40a44952f8ceb9b74c339a7",
+      "hash": "8f51bd7916bdf7cfe086287a5100357343252d4c31cca40e2c5a4de6e8fdd3e8",
       "route": "/it/utilita/categorie/lavoro/calcolatore-paga-straordinari/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/lavoro/calcolatore-quota-autonomi-spagna/": {
-      "hash": "3ac4399f9252a46f132219af5e1fcd195f082c68272f2abe4685c4595a4776ca",
+      "hash": "c8be28f996bb9014c095b39af174a90a857e4ec6ab4634ba546d616a27885a54",
       "route": "/it/utilita/categorie/lavoro/calcolatore-quota-autonomi-spagna/"
     },
+    "https://www.gamebob.dev/it/utilita/categorie/lavoro/calcolatore-stipendio-netto-conversione-salariale/": {
+      "hash": "8613f3406dd328a6d9b914b92156fc9547fa8497544d613c1d1512997a7cf99e",
+      "route": "/it/utilita/categorie/lavoro/calcolatore-stipendio-netto-conversione-salariale/"
+    },
     "https://www.gamebob.dev/it/utilita/categorie/lavoro/calcolatore-stipendio-spagna/": {
-      "hash": "1f882d751f70f967af33b26ffd21d5af1d86a09b3e1f240d0dcce3fd375b29c1",
+      "hash": "2eae3d0c206dfdb8a40378b08b17eae94c374b6d198d1116e49b39cabc6ba5f6",
       "route": "/it/utilita/categorie/lavoro/calcolatore-stipendio-spagna/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/lavoro/calcolo-irpf-spagna/": {
-      "hash": "05ec55d4f6fdda94f1d39c68011fec1459e59d40eb5e5ee4d599a28931ecd379",
+      "hash": "c17fe895468d68b9da87d827b0085ba69e771d773d2c30d9b843c7204f924512",
       "route": "/it/utilita/categorie/lavoro/calcolo-irpf-spagna/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/lavoro/calcolo-liquidazione-spagna/": {
-      "hash": "54685d6830dcd52d299773afa88792b32696a088a9354a1e9c59ca6d7292f960",
+      "hash": "28b5411a37ea1cc4fc5b3dad90c895f069fbe2615a65a2d5192db7cf79c68b4a",
       "route": "/it/utilita/categorie/lavoro/calcolo-liquidazione-spagna/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/lavoro/generatore-fatture/": {
-      "hash": "a09f47fbaa08dd5efbd31e2355a9ac67dae442021b7b71f6357711cac2cce7e0",
+      "hash": "171134e721e8e398971d0a0a7c852a32e898897f60747e4de3dd69e0c7119f81",
       "route": "/it/utilita/categorie/lavoro/generatore-fatture/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/lavoro/generatore-lettera-dimissioni/": {
-      "hash": "8eba41e28f8cfa4eb531aaeca7fab715287da979e93cae7384d62add72fd258e",
+      "hash": "4eac291a4b86abacdcfd868c3c0a16295ce4934f199c5d2fc2d34cfbc3fd087c",
       "route": "/it/utilita/categorie/lavoro/generatore-lettera-dimissioni/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/lavoro/": {
-      "hash": "ee72944c19366d6470f65b49faa0fe52f84804ec144fa660f859050bd0a8732c",
+      "hash": "dd6ee74e8de68cfed8c5b4bf6debdcc8a29d6691d875b7e355de977e2bc06e10",
       "route": "/it/utilita/categorie/lavoro/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/lavoro/scorporo-iva-spagna/": {
-      "hash": "b2bf2dd8ac84e294b01fd8476ed7184878cb3a15c6146ca64cf379cb9834ffd2",
+      "hash": "ccd7260a89e19ba49efe441eb4eed6d14da4b1feecaed89ce55210db8d03ad4d",
       "route": "/it/utilita/categorie/lavoro/scorporo-iva-spagna/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/lavoro/simulatore-pensione-anticipata-spagna/": {
-      "hash": "b7a23e6833783e25105f717da3d787f10745bf5d2ac29a414600503bd98801d4",
+      "hash": "45c492aa58cb6d57e1aff668c2869be81370c5d149edef3f8d9a39ac7dbba422",
       "route": "/it/utilita/categorie/lavoro/simulatore-pensione-anticipata-spagna/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/lavoro/verificatore-nie-nif-spagna/": {
-      "hash": "872d4bf71662c65768cd4b7ec3283d2a3bb8452f5c190130d457acee5e36e5df",
+      "hash": "e5f778524c8b1ad12e3f1639da30685e003b53ad9395d6ed564ceef8f6170b0a",
       "route": "/it/utilita/categorie/lavoro/verificatore-nie-nif-spagna/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/work/early-retirement-simulator-spain/": {
-      "hash": "7aea8bbdcf9cdee5a75cea0ee18e582a7919bc4605ec53314069c5f821f189c2",
+      "hash": "4c82cfa7d8a45bcf356d22d3b0d2c4b136ac91b39de0470ad4fbad8f672d511b",
       "route": "/ja/utilities/categories/work/early-retirement-simulator-spain/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/work/freelancer-quota-calculator-spain/": {
-      "hash": "4f1f62f2013c2632c99cf62d305d796b44adf1859c63f87c96fd867a34ab1167",
+      "hash": "c653539138cfaeb3bf08a2df74ccbc42f6e1d4a7d7c6694d43d9ae1708087cf1",
       "route": "/ja/utilities/categories/work/freelancer-quota-calculator-spain/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/work/": {
-      "hash": "ac42e39632580f612c7961103a5c5bdd39b3be69e7e124c8efdcdce583416325",
+      "hash": "269f582153ad613e2d376ae86d4cdfea4ca9e5dfdd4f85586a2397d3c3323900",
       "route": "/ja/utilities/categories/work/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/work/invoice-generator/": {
-      "hash": "a1bef3a3c3a5fcb292e242081b357320ceb88eb3dc6298308358b6fb7e49ceac",
+      "hash": "8788f2d802b6b9ed52c13c0a4aa352a2807fa55285009fe86d873af61fbeae39",
       "route": "/ja/utilities/categories/work/invoice-generator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/work/irpf-calculator-spain/": {
-      "hash": "c488dfde2d7de941d7cde5127039f6a201294f715a5a3190eadcc7f4eab7e344",
+      "hash": "4b403afb69f689577a780fcad6842390134e68a71233d95bc98bf9b062856d72",
       "route": "/ja/utilities/categories/work/irpf-calculator-spain/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/work/meeting-cost-calculator/": {
-      "hash": "f8e713fdcacc7eed07e93c08e6c7384a105fa388b9822c326f962e14842e503b",
+      "hash": "cf5c405bef401d42408f5a8029d4b3668f9fd28f141cfd964789be9e48faee81",
       "route": "/ja/utilities/categories/work/meeting-cost-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/work/nie-nif-verifier-spain/": {
-      "hash": "d08f1b3072d301023431252d15cdeb9b1ccfc6cb6fbc5a26b611c784c2a29029",
+      "hash": "0ac5ce7d8a46ee4cf7f57ec87926f400958139b77439d3cab3122911e5cc9fbb",
       "route": "/ja/utilities/categories/work/nie-nif-verifier-spain/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/work/overtime-pay-calculator/": {
-      "hash": "518808ce99551fb56c4bd596ae961864b01c58f85b66a379c6b4667b684d380c",
+      "hash": "bd8cf219c99c76a6f629bfe5959d6c0bea1ad8129bf607c51a4d4c66da5f3127",
       "route": "/ja/utilities/categories/work/overtime-pay-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/work/project-fee-to-hourly-rate-calculator/": {
-      "hash": "0b605c838ce6c459a2899af2d77b002e70da80c485f485c58131f7014da5e01f",
+      "hash": "1d329be54dd0afb87b9f05973d3154186ef1969523732a4cebcd7e8a2edca39f",
       "route": "/ja/utilities/categories/work/project-fee-to-hourly-rate-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/work/resignation-letter-generator/": {
-      "hash": "5c584336d9b90cfe5c7733688ed57a572e11c978ddd054c95b3c0a3faed9927d",
+      "hash": "57db2abd71fbf39e541476585f63f75ecc62ed6bd80d0b72d1f9af4d28bd75d9",
       "route": "/ja/utilities/categories/work/resignation-letter-generator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/work/reverse-vat-calculator-spain/": {
-      "hash": "d1e25d9ed0bd8a51b0830c24d6c1339ae204e7de839a8b1210041b0e830dd20c",
+      "hash": "d005285de6a4faae2c86db5bd5323585217ef69f7b0b2fcbc73b6ab0e667103e",
       "route": "/ja/utilities/categories/work/reverse-vat-calculator-spain/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/work/salary-calculator-spain/": {
-      "hash": "057159b2cc6fdb4a398145f90712be5a4cfa0a131fd5a89ca4d0bda5d2c6c331",
+      "hash": "cc5c61a51d9e95f96a2c0b71f0cf905378ddb8e74a23a14a8158fd65d57ce3db",
       "route": "/ja/utilities/categories/work/salary-calculator-spain/"
     },
+    "https://www.gamebob.dev/ja/utilities/categories/work/salary-sacrifice-take-home-calculator/": {
+      "hash": "7793c7595a61173965cd28f274ea783cb9f36273c8e57c6633b53c2c015889f9",
+      "route": "/ja/utilities/categories/work/salary-sacrifice-take-home-calculator/"
+    },
     "https://www.gamebob.dev/ja/utilities/categories/work/severance-pay-calculator-spain/": {
-      "hash": "d290c24f859b4b8c256cf06e6f10fd97a914437ff6c18bc93a60beac5841bf44",
+      "hash": "c1c7f98fc62e915380e0c672d737d8614b239474ea598cbcda74450b63eab544",
       "route": "/ja/utilities/categories/work/severance-pay-calculator-spain/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/work/early-retirement-simulator-spain/": {
-      "hash": "f0b3a4cc10d34944431341e6c80c15f0e9a044c9a13bea714099cc395e9f652f",
+      "hash": "081778090fed893848fd67a7b6e9811e86f6db9eecd034f24e9af76ee0c1d697",
       "route": "/ko/utilities/categories/work/early-retirement-simulator-spain/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/work/freelancer-quota-calculator-spain/": {
-      "hash": "dab5dbb97037452f8b2ae1d58d11134957e4784a4c80555b0b28f978a4f23735",
+      "hash": "3427c8153ec0b69f115fbcd0504fb61fa581b3c3c5cd7b045394eef01f256e9e",
       "route": "/ko/utilities/categories/work/freelancer-quota-calculator-spain/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/work/": {
-      "hash": "c60956a484de8f62f3d60a1d03e83b12a539852d88b1035fd7f028cd1fd1de21",
+      "hash": "9ae3212507589d85f9ca6b5ac22153345d1415665e5a8a5d02bbda70b88a1f56",
       "route": "/ko/utilities/categories/work/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/work/invoice-generator/": {
-      "hash": "c4a81a3d5f49d6d6587f0d52e811ac6fbc31824175334dc409e1488a824a4671",
+      "hash": "67bc7e03afd2533611787c64b556cf3a6f730655f4a54d837434eb850bd6349a",
       "route": "/ko/utilities/categories/work/invoice-generator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/work/irpf-calculator-spain/": {
-      "hash": "b9e01f9b9432741f2a47fa6853411092777172bd262ee8bddcf648a73442b000",
+      "hash": "6c8375714633c7537bb1f3f4433b4867d94343640f376e30f303744cf0bb2549",
       "route": "/ko/utilities/categories/work/irpf-calculator-spain/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/work/meeting-cost-calculator/": {
-      "hash": "fabae84536b23356f1a9b4a505079311c560763bce70048e0da57c797d7a2984",
+      "hash": "e108aa25a90c869e8767d5d77aa3ae617f64c494575e38c670b9ecf78a8b4c0d",
       "route": "/ko/utilities/categories/work/meeting-cost-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/work/nie-nif-verifier-spain/": {
-      "hash": "796655a229b789eaebb3d5829094b512d85e0ea52ce7ce24ce78ceda311db878",
+      "hash": "ae89935d4e702588b22d5f99a1826186534e282181872ecbf2a0b2dd51331444",
       "route": "/ko/utilities/categories/work/nie-nif-verifier-spain/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/work/overtime-pay-calculator/": {
-      "hash": "0f437a6ffb8a4e42dae04779c7879c854051eb49f23eab17f9443ba861f6e015",
+      "hash": "4932a6042a7414a8ab76f53cf7935d55daa242ade985daee77b1f1ccaf9e9165",
       "route": "/ko/utilities/categories/work/overtime-pay-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/work/project-fee-to-hourly-rate-calculator/": {
-      "hash": "6b70e35e4768be7de7a09df83d3486fe03097c43e98d938403a98dd32d0cd7e3",
+      "hash": "6c382c15456d4755a36ac220aa7d736965de87778e2a0b2c3aac6f341be97683",
       "route": "/ko/utilities/categories/work/project-fee-to-hourly-rate-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/work/resignation-letter-generator/": {
-      "hash": "7f0ab99f0a91b3512844363cf874ec834e8fea2936c6d6c9ee510d09bf6403e5",
+      "hash": "6d644fbf5dc7809c27c00a647e40207be2590b20bfdf519d9ee995bd614c342a",
       "route": "/ko/utilities/categories/work/resignation-letter-generator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/work/reverse-vat-calculator-spain/": {
-      "hash": "a1fa0adbc5f8737754f8911730653c1fb284a176c757f61ea5b3ab144186b52a",
+      "hash": "802eb4458f7a2f82bde4f69c4f172c645849c8f7029370c2a00874d4e0bb87f6",
       "route": "/ko/utilities/categories/work/reverse-vat-calculator-spain/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/work/salary-calculator-spain/": {
-      "hash": "d9c711427a67acd4a623c9596dbde3151a33b14159699cf0ee5a70cee718ce64",
+      "hash": "61fd0ce13d18a137ea8b45a570eca7a7e99150eca47a5eebb4456e8f3aff11ec",
       "route": "/ko/utilities/categories/work/salary-calculator-spain/"
     },
+    "https://www.gamebob.dev/ko/utilities/categories/work/salary-sacrifice-take-home-calculator/": {
+      "hash": "baa17d56c1dcffb90aa7dbbf624e80fc0b5e14577f27527a24785f5240fe4fcd",
+      "route": "/ko/utilities/categories/work/salary-sacrifice-take-home-calculator/"
+    },
     "https://www.gamebob.dev/ko/utilities/categories/work/severance-pay-calculator-spain/": {
-      "hash": "2a9d9b760a1c69a177bfd751307c702e3254f28d247260c0b2e2bc48c43807b6",
+      "hash": "a6583e8913658e00cf7cd14904a4c0a001423477f8104f706159f5773ecfd9c3",
       "route": "/ko/utilities/categories/work/severance-pay-calculator-spain/"
     },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/werk/berekenaar-nettoloon-salarisruil/": {
+      "hash": "7669b14492ad55becbaf115f647b3fc03dee669baccadcc6969e5dc1407cb71d",
+      "route": "/nl/hulpmiddelen/categorieen/werk/berekenaar-nettoloon-salarisruil/"
+    },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/werk/btw-terugrekenen-spanje/": {
-      "hash": "aacc044f8b891e28b1742fd88182fe8a9a7d44d2cfb08fb7c1a1813efc0af26f",
+      "hash": "4351f3c4a19314bf320c74d84c2afced657039c7abf13235d635799161f726be",
       "route": "/nl/hulpmiddelen/categorieen/werk/btw-terugrekenen-spanje/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/werk/calculator-overurenloon/": {
-      "hash": "84c000223e3a775bf709b67702973aed9b9429bd63982ca51d6e7c5a1aa32358",
+      "hash": "5bf247b09c48d7055996b749dc242a9e94d12337694051bc3ccaba1fc407d526",
       "route": "/nl/hulpmiddelen/categorieen/werk/calculator-overurenloon/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/werk/factuur-generator/": {
-      "hash": "26a2cd58ac455b8a3ced91335348c913bcb2c4ff869f3f5e67aab77d3e4875fa",
+      "hash": "d577ff70ec811c09dcb31e6e4f9edd838003acc486cde606288b041f444de633",
       "route": "/nl/hulpmiddelen/categorieen/werk/factuur-generator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/werk/": {
-      "hash": "ffe90e56d6c69be1678e1966e1e173b0131603a09a92672396c25bc9ab7562f1",
+      "hash": "0afd80b0c5afe392224caf6f49cd17fcaad3a907bad24c49f7afc543c854ef82",
       "route": "/nl/hulpmiddelen/categorieen/werk/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/werk/irpf-calculator-spanje/": {
-      "hash": "20e3cd173764cbb34db89bdb18e7fe80b475cf514842b743b3d265f006ca0af4",
+      "hash": "1177c87f596feb863dcf6407155d92da7770a6a8a98cd3d86d485c665b898231",
       "route": "/nl/hulpmiddelen/categorieen/werk/irpf-calculator-spanje/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/werk/nie-nif-verifier-spanje/": {
-      "hash": "5da11cea4f37e54115c7cc91ec2c50e2223aae2b623919c6caf3296d8b244d6c",
+      "hash": "aa4c2f334d6643553e949c966530a7848ffcd0d8b26e64aa1905be91fc8f6081",
       "route": "/nl/hulpmiddelen/categorieen/werk/nie-nif-verifier-spanje/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/werk/ontslagbrief-generator/": {
-      "hash": "0a81c4c72317fa40885601dffc88edca016b7ebc8e057aa3df9525f57875443c",
+      "hash": "038f6816d0009725cdc20426d4c3be96cb8562e46019236c58c269e0fe9a1ee4",
       "route": "/nl/hulpmiddelen/categorieen/werk/ontslagbrief-generator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/werk/projectprijs-naar-uurtarief-calculator/": {
-      "hash": "5fb8bcf67a58d152256486ca70a82bd9997c4f70a32289ea6bcd350527edf456",
+      "hash": "53518597e6568825911c8286b34a87ee331931eaaeb6db8b91cb05ec7c87dfdb",
       "route": "/nl/hulpmiddelen/categorieen/werk/projectprijs-naar-uurtarief-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/werk/salaris-calculator-spanje/": {
-      "hash": "bbb24f1a70d28f3a7eaa9dfad6d73dcd7c2762f2735c4af6b0d0bbb0ba7b9cc3",
+      "hash": "91e5c778d7b4fe992c63067db3d53bb8077a064d4539869d537dcade80810540",
       "route": "/nl/hulpmiddelen/categorieen/werk/salaris-calculator-spanje/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/werk/transitievergoeding-berekenen-spanje/": {
-      "hash": "6ddc7a9ac71880fa7e7f68d15507385c5c60af2dae4e38cad574e802489ebf75",
+      "hash": "2a8a41e82a038b0660562b94e05bf95427ca908e612515c646a75501994caa3d",
       "route": "/nl/hulpmiddelen/categorieen/werk/transitievergoeding-berekenen-spanje/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/werk/vergaderkosten-calculator/": {
-      "hash": "c878458a482be47c3ae5b3a1895120ccdd24ece9732e48eb741135d33e9b4bff",
+      "hash": "912bb0e0793e3eb89b65dd10dca396460e88e98c5f46bc6d960f9ad66cc88c63",
       "route": "/nl/hulpmiddelen/categorieen/werk/vergaderkosten-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/werk/vroegpensioen-simulator-spanje/": {
-      "hash": "ed750707d6e73fa474ca07d493d707fb37f9110e4ffb762e50c804f1dd63e879",
+      "hash": "6150fefcbcfb0956341c1f18ce74eceb9bb43ed5ff2e28850d02ed396572fcd8",
       "route": "/nl/hulpmiddelen/categorieen/werk/vroegpensioen-simulator-spanje/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/werk/zzp-premie-calculator-spanje/": {
-      "hash": "e6a71c09f4785df3047eceb3e8c8dd9e1cc3d89c22b43672183b1947e8255375",
+      "hash": "f652b69ab7227eb8f602ac752d26f51ce4321d4ac00a519c30ff9ef3a8de09d3",
       "route": "/nl/hulpmiddelen/categorieen/werk/zzp-premie-calculator-spanje/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/praca/generator-faktur/": {
-      "hash": "cf792b332768eea0450f6627c8b95dc361c60f460cdd4daed58e07813928d12a",
+      "hash": "1cdbb553a2e71057eb72b339245d2969486e413d4f1781fa3ec8ef7dd17122d5",
       "route": "/pl/narzedzia/kategorie/praca/generator-faktur/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/praca/generator-wypowiedzenia-umowy-o-prace/": {
-      "hash": "3832e67cfbc5339f7223735937dcf5bbb39166f889e5c052e4d7f1325b7f1bba",
+      "hash": "cb5e6f76a651561fd656c70ba6dec36d85ece0928b56f6e2d4381599544b29d8",
       "route": "/pl/narzedzia/kategorie/praca/generator-wypowiedzenia-umowy-o-prace/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/praca/": {
-      "hash": "98f9f73b510f29392bfac8080ecc5dfc154340090e7756d9f79afe6694db11bd",
+      "hash": "e935285392dd71b1c6ad455d5ed46a02257c7b3b6e1af3d3b08e351770714bcc",
       "route": "/pl/narzedzia/kategorie/praca/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/praca/kalkulator-irpf-hiszpania/": {
-      "hash": "151fe0dbf6f016cebc7e68cf48d4496946f142a8bf950957e91e33c4142c85ed",
+      "hash": "883c80a8220f96a1c3f57768457ad28487dc734cba1adf1d6e4bf8cfdb55a644",
       "route": "/pl/narzedzia/kategorie/praca/kalkulator-irpf-hiszpania/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/praca/kalkulator-kosztow-spotkania/": {
-      "hash": "ff93324f5ecde74f67bb0da51bd4e9a10a66023c084d8e3b80bd0a736816caff",
+      "hash": "284e77fb7e6fd5aae7ac8bd84437e48ca8a4b6ee5599c434109b200fd4f58ce0",
       "route": "/pl/narzedzia/kategorie/praca/kalkulator-kosztow-spotkania/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/praca/kalkulator-nadgodzin/": {
-      "hash": "0d0aa0fad694e6d1f8419a5241315fc6be58a67b7bc9f5c12ce1a8eb23d8ccd6",
+      "hash": "d2f561d4dd94dce6073f20bb551e709aed19fa9698981411138e7681ad9dcb80",
       "route": "/pl/narzedzia/kategorie/praca/kalkulator-nadgodzin/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/praca/kalkulator-odprawy-hiszpania/": {
-      "hash": "942f15bcb59efb093b3f53a3a5775dbc5b34b70652ae2de90c8e2427b86eb18e",
+      "hash": "bf2f3d00966cfb708b418634a5aef0dd12d6c11195dc00a1cfab8f39985a4737",
       "route": "/pl/narzedzia/kategorie/praca/kalkulator-odprawy-hiszpania/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/praca/kalkulator-skladek-samozatrudnieni-hiszpania/": {
-      "hash": "381025af07ed2878b573e93d03ee3005d2c26994dc6183e9cb76e3474ace4c9e",
+      "hash": "142ad256b0d5b9075b530a4bb0b6801eb281228bb1701f6eda726f030bd06f3e",
       "route": "/pl/narzedzia/kategorie/praca/kalkulator-skladek-samozatrudnieni-hiszpania/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/praca/kalkulator-stawki-godzinowej-projektu/": {
-      "hash": "a2509e04971d32c1e04602e3c043d2614b1c04c92fa8400adfbe2715eecaf7a0",
+      "hash": "14c81acee85cd6134574c327a52cb0824cc43a58980777f96546ed1f8cc121f0",
       "route": "/pl/narzedzia/kategorie/praca/kalkulator-stawki-godzinowej-projektu/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/praca/kalkulator-vat-od-brutto-hiszpania/": {
-      "hash": "9cdd1fb3ddf7583c8056e576aa9fe2269c902ffa5d8e2b26cbd81873e3bace03",
+      "hash": "010fb52a571a22a8a3dcfdb2b5ea648d6e8051b3870a6535ee7775609e29900f",
       "route": "/pl/narzedzia/kategorie/praca/kalkulator-vat-od-brutto-hiszpania/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/praca/kalkulator-wynagrodzenia-hiszpania/": {
-      "hash": "e89d21896df87c3067b8c9e2d689afdf2fda9996fa2428ff4f663c68f601fb1e",
+      "hash": "0923dea773cc75e8ed3fcf2767a859272296fdf9a5c83fd5a8967651e522a19b",
       "route": "/pl/narzedzia/kategorie/praca/kalkulator-wynagrodzenia-hiszpania/"
     },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/praca/kalkulator-wynagrodzenia-netto-zamiana-pensji/": {
+      "hash": "8deeb5eba67193da4d9dea4cec64e032e38eb4f18400e6897b40069c77da9f0a",
+      "route": "/pl/narzedzia/kategorie/praca/kalkulator-wynagrodzenia-netto-zamiana-pensji/"
+    },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/praca/symulator-wczesniejszej-emerytury-hiszpania/": {
-      "hash": "c32bac72bb9034c8f3c7a6928552e9fdd8003597b71c68f62444c5f699f97b91",
+      "hash": "2c47fd971eb88e83d989d92e46dfa49ad37ff390233848b7540259dca43db571",
       "route": "/pl/narzedzia/kategorie/praca/symulator-wczesniejszej-emerytury-hiszpania/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/praca/weryfikator-nie-nif-hiszpania/": {
-      "hash": "99a10876534865ef2e97f8e2bd520034b64e1441fab93e54af834153b4758228",
+      "hash": "7fbddbd3761092cc40e42d5e689a5dffbf1b54e491556cb83202226481816600",
       "route": "/pl/narzedzia/kategorie/praca/weryfikator-nie-nif-hiszpania/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/trabalho/calculadora-acerto-contas-espanha/": {
-      "hash": "6c330133c6fd3bb155b8d41d904424c2fab7c2a83ffc831c47f8393f09eeaa19",
+      "hash": "f35a38ee78281cc60169674f1c0378175df4f1e4ee14c1e9be01e1be1293eed4",
       "route": "/pt/utilidades/categorias/trabalho/calculadora-acerto-contas-espanha/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/trabalho/calculadora-custo-reuniao/": {
-      "hash": "f5e6e82e18496a40b4960b2c4aad5665a5c713b362804afb44062851292182f6",
+      "hash": "af265393f8030002b56d4c5cf41672d0158a8fa010b29dfc6d4ec87ab86c0d23",
       "route": "/pt/utilidades/categorias/trabalho/calculadora-custo-reuniao/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/trabalho/calculadora-irpf-espanha/": {
-      "hash": "3812e3d489b1ac44a70c5f88cd7c5ad52e547f25d1d6e3eb9ffc7f2dc6779e02",
+      "hash": "ee3931a1f51a3640722338882e0fa0d9546f8c2fa82acf8d80031768d96d4e7f",
       "route": "/pt/utilidades/categorias/trabalho/calculadora-irpf-espanha/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/trabalho/calculadora-iva-reverso-espanha/": {
-      "hash": "d06928cd307d51d5dc41d181463704f298914a2b448511d481eef17bc47620e6",
+      "hash": "1984621b6fa211152f67037698948e09f5d50c610052a31ce88510438d67a107",
       "route": "/pt/utilidades/categorias/trabalho/calculadora-iva-reverso-espanha/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/trabalho/calculadora-pagamento-horas-extra/": {
-      "hash": "a23f468451049f5ba514150028860d583528d117b11db27c8d8d66357deae5e8",
+      "hash": "43cf1088c3a645e0b2c6ea60c98b4c3ed526ec69694a37fc427f01ad3ea16bf6",
       "route": "/pt/utilidades/categorias/trabalho/calculadora-pagamento-horas-extra/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/trabalho/calculadora-quota-trabalhador-independente-espanha/": {
-      "hash": "1ce93288a8b1e53b7e34f40156ae66652e55d4b6c90a62732c5f52176df5f54c",
+      "hash": "88a345e16998da28490bd367b50484329c645b6c4eac91e0a17abe76ee4241fa",
       "route": "/pt/utilidades/categorias/trabalho/calculadora-quota-trabalhador-independente-espanha/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/trabalho/calculadora-salario-espanha/": {
-      "hash": "b2368305d8aaf7bf297eb2193d24e0e63c4b6e0f0ffa0138bdaf0f311a1121ad",
+      "hash": "716d0f1c1578af0a620eb0f57ad24caa9cd59aee51ebeba655d1b3110ffd6a68",
       "route": "/pt/utilidades/categorias/trabalho/calculadora-salario-espanha/"
     },
+    "https://www.gamebob.dev/pt/utilidades/categorias/trabalho/calculadora-salario-liquido-conversao-salarial/": {
+      "hash": "76174483a52425467900ff8571dd9ad7f22c1b863f2b614387fbd53692c7779a",
+      "route": "/pt/utilidades/categorias/trabalho/calculadora-salario-liquido-conversao-salarial/"
+    },
     "https://www.gamebob.dev/pt/utilidades/categorias/trabalho/calculadora-taxa-horaria-projeto/": {
-      "hash": "133da9a1846558bd9d45e4f1510475083346927eb71f98baba60b2c554e4ab95",
+      "hash": "07d208de183e801d46da0fa678597ca4fa3006081f403c07d58c842382f69caf",
       "route": "/pt/utilidades/categorias/trabalho/calculadora-taxa-horaria-projeto/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/trabalho/gerador-carta-demissao/": {
-      "hash": "d41054f3f134fc1123336d67ff89d1dc653e3a8813f89bf11ea91aa645023c87",
+      "hash": "42cf63a3318084c3210fdca925a4d45934cb3751482ea1c41ca3d6a1a33a061b",
       "route": "/pt/utilidades/categorias/trabalho/gerador-carta-demissao/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/trabalho/gerador-faturas/": {
-      "hash": "e9051f55a52bd25db372f1a85e065a85a1084318d05b8d126ef06eae078ee542",
+      "hash": "b0c4ad80dbfbb6f9db1435d808b62fb837043e4a42a99d141c812504b5239be6",
       "route": "/pt/utilidades/categorias/trabalho/gerador-faturas/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/trabalho/": {
-      "hash": "7a2b91910efc87e9c8565076dbd85d12517425d8a6a577866ff832d752b27842",
+      "hash": "ecd5ac9e6c79f66f13e62e51aa990ad450b22019aa844c7ded2fc1eb123d11c6",
       "route": "/pt/utilidades/categorias/trabalho/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/trabalho/simulador-reforma-antecipada-espanha/": {
-      "hash": "824249f5a1d631cf343f64f45dcc29f9ec4cb2c5dbfd647f52a6dc5eaef7fced",
+      "hash": "1d1bd513f64253ac794fa24f49e129d59b685061ce8b74b593122afbb3addb0d",
       "route": "/pt/utilidades/categorias/trabalho/simulador-reforma-antecipada-espanha/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/trabalho/verificador-nie-nif-espanha/": {
-      "hash": "a68d29c16480d5b3a39db87402b29a598d40671a79398a04349a6ef120fc53d1",
+      "hash": "54104491cd34d24e923cc4154735553f80a4efaca47b956c617ae7ad16d86257",
       "route": "/pt/utilidades/categorias/trabalho/verificador-nie-nif-espanha/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/rabota/generator-schetov-na-oplatu/": {
-      "hash": "d267ef34d0055f1aa95e0034740b952273c34bdc7a90c5c2ef6433b63add934f",
+      "hash": "6768813b7712c8308bd908950eda10afd64eb83453e26f38c0bd8549bc5db22c",
       "route": "/ru/instrumenty/kategorii/rabota/generator-schetov-na-oplatu/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/rabota/generator-zayavleniya-ob-uvolnenii/": {
-      "hash": "2c8941e8e2fa7b53b91f950422cdab3dca81b62d93f6fe123a6eb241cad5e3fe",
+      "hash": "f1116cabc0b518bd0c1431d6791de314da7e94eb0bdfe82e41b9ada3d3cb0f45",
       "route": "/ru/instrumenty/kategorii/rabota/generator-zayavleniya-ob-uvolnenii/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/rabota/": {
-      "hash": "a487ad202dfc3830d17c5aa3befe25a7039c5f1e577a8ea6d7ea8a35786ee0dc",
+      "hash": "52d1f1f835e747a0847fc56deebaeaf308d43afad24495b5adfe137ff5d8b5b1",
       "route": "/ru/instrumenty/kategorii/rabota/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/rabota/kalkulator-sverkhurochnykh/": {
-      "hash": "0181d95af187d720e91c1f133d8ac3b67c418a088092385f8e656a25adf7f414",
+      "hash": "3d19bc7be1036b151f87e8d3740b8e7e9bc89777ab7a6df999ee50ed542099e6",
       "route": "/ru/instrumenty/kategorii/rabota/kalkulator-sverkhurochnykh/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/rabota/kalkulyator-irpf-ispaniya/": {
-      "hash": "97d572fa1936a35a535b1b333e2ac4f46d50d740781c1e72a6289c29dbaf1b6a",
+      "hash": "a3f5d2ddb34b2123dbf8c020dbcb6ac4c5a5c8a43424601510480e4ff8341e47",
       "route": "/ru/instrumenty/kategorii/rabota/kalkulyator-irpf-ispaniya/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/rabota/kalkulyator-nds-obratno-ispaniya/": {
-      "hash": "1d99cb4f66fea0f7ecc75115b98a7a67908e76700fd1c3b182c81eda1012e3b8",
+      "hash": "684aba31e036a44302159b69e881e0b7d96176551f795df29dc638db8aacc20c",
       "route": "/ru/instrumenty/kategorii/rabota/kalkulyator-nds-obratno-ispaniya/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/rabota/kalkulyator-stavki-proekta/": {
-      "hash": "0c41b6593ca26989ffc67324fa67c343f06503e90ccc20e4eebbd674464ef59d",
+      "hash": "3aca504ca7f74d0c0b37583fa3fb82da958b5dd088c72acccca2ed1da38f92fc",
       "route": "/ru/instrumenty/kategorii/rabota/kalkulyator-stavki-proekta/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/rabota/kalkulyator-stoimosti-soveschaniya/": {
-      "hash": "6e946f1e1f4269d046cb6167a6266293fdf6eff90d89fedf14f6c3af56683fb4",
+      "hash": "eea7ca8956f0f493fecac64c94ea8a1d801a020853383cbd1250e29e7191a560",
       "route": "/ru/instrumenty/kategorii/rabota/kalkulyator-stoimosti-soveschaniya/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/rabota/kalkulyator-vznosov-samozanyatyh-ispaniya/": {
-      "hash": "66ab478abd8c8cc781b5ae4919daab47e6d6d8846f9cc2b5eb045c78df3f3d85",
+      "hash": "6230910704f2a33b8740dabe23a5b15249871b4a5f04148323ed0f744f7b0c76",
       "route": "/ru/instrumenty/kategorii/rabota/kalkulyator-vznosov-samozanyatyh-ispaniya/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/rabota/kalkulyator-zarplaty-ispaniya/": {
-      "hash": "49222a9968239ef00af363b9235900430e326d2846c0e07a7ae41f9cf4b88c62",
+      "hash": "c64f815a28b34abb535d8e3b17c3c2f4f3eb14c56fec01a9f3ae2e1f6371dd51",
       "route": "/ru/instrumenty/kategorii/rabota/kalkulyator-zarplaty-ispaniya/"
     },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/rabota/kalkulyator-zarplaty-na-ruki/": {
+      "hash": "2808a981ab89748a27ec840ce2baf7f2a3f6b6f2e642cb6d59d367facce0011b",
+      "route": "/ru/instrumenty/kategorii/rabota/kalkulyator-zarplaty-na-ruki/"
+    },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/rabota/proverka-nie-nif-ispaniya/": {
-      "hash": "39051eea7548162b46b9f541e68cf90dc61c94ceeb2be53e9b808806fa0a63d4",
+      "hash": "4cc1ef2848a37dcdd1671d142a28755b06690c70292ed5f5b567e07dfdc7a579",
       "route": "/ru/instrumenty/kategorii/rabota/proverka-nie-nif-ispaniya/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/rabota/raschet-pri-uvolnenii-ispaniya/": {
-      "hash": "3a1dbd91c5588d7badc5c7eafe96021dd64cf42d4325f2deba6431ae2b49f847",
+      "hash": "2f00ffb95eea9fd1142dcfdeb6f738d5f3894528b483654ed9688504c42cd376",
       "route": "/ru/instrumenty/kategorii/rabota/raschet-pri-uvolnenii-ispaniya/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/rabota/simulyator-dosrochnogo-vyhoda-na-pensiyu-ispaniya/": {
-      "hash": "453cfad46de1680e81fbe6cc7ed0afdc56f74b2174614297a04fabece8df6736",
+      "hash": "7d650ec9094c1e5e38d8ae8ae3b6f3200775e890210579061c3a81e2bb03223d",
       "route": "/ru/instrumenty/kategorii/rabota/simulyator-dosrochnogo-vyhoda-na-pensiyu-ispaniya/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/arbete/avgiftskalkylator-spanien/": {
-      "hash": "16531b23e04ff3e292912f36f0d18277740d604dab57e514e3117e0f409f85c2",
+      "hash": "b0f97698604bed48a2b493d9ed5be8b0209afb21205bd9e3d6ddc509d08258d2",
       "route": "/sv/verktyg/kategorier/arbete/avgiftskalkylator-spanien/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/arbete/berakna-moms-baklanges-spanien/": {
-      "hash": "0ca39b36d1ace035b9e4f0c7b8b6b644c59831598505b4863f4e4df81086ce84",
+      "hash": "d43dde0009542e7df80ceaa17163bc69aac5304d0438b8aad0fbbb630fff13f6",
       "route": "/sv/verktyg/kategorier/arbete/berakna-moms-baklanges-spanien/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/arbete/berakna-slutlon-spanien/": {
-      "hash": "110a9918705a2ee261f8860b8d4ab1651f1dc6dc1f8dc539aac0a39f66797985",
+      "hash": "3fee214fb73b79813f8bffec41193aabf3c9d875765d9d65773cc807395dbd3e",
       "route": "/sv/verktyg/kategorier/arbete/berakna-slutlon-spanien/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/arbete/faktura-generator/": {
-      "hash": "22e02ad1479c31487528f801056936a484cdb6ac940c1501ea5e1121e57c5d68",
+      "hash": "222699b2db7e616af0ed9a9eb0e29e27a26d7489b649e9e43f94afd9338b1dca",
       "route": "/sv/verktyg/kategorier/arbete/faktura-generator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/arbete/fortids-pension-simulator-spanien/": {
-      "hash": "573103e7504102b4aefdd3fbcd731373e781ff2d24b0cf51e6a465667353e469",
+      "hash": "d9a4254d4f8926d78afda6dc1d39fdbf26707411dd8485d6fd3804adce659f70",
       "route": "/sv/verktyg/kategorier/arbete/fortids-pension-simulator-spanien/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/arbete/": {
-      "hash": "bed3764f72a0dc746e71eb2d7f53714a40f759a5b51c64883b9368c84f3b3c73",
+      "hash": "e35b1b6ac1ef92494c622f25c49087750fd9784c79ba717bda2e846c6fecdef9",
       "route": "/sv/verktyg/kategorier/arbete/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/arbete/irpf-kalkylator-spanien/": {
-      "hash": "0212212af8e99565f66fe3d85a6b2ce881a1f9b14954cf83da721020f32a776e",
+      "hash": "43c02cc42a1272d98bd4a38957a55f868a73715e323eb0f22eb28a9cb21c8777",
       "route": "/sv/verktyg/kategorier/arbete/irpf-kalkylator-spanien/"
     },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/arbete/kalkylator-nettolon-lonevaxling/": {
+      "hash": "8aad714c169bbbf94b9b73663bf1b74ab39ecf7ee97c93454c19c8d76bc393ec",
+      "route": "/sv/verktyg/kategorier/arbete/kalkylator-nettolon-lonevaxling/"
+    },
     "https://www.gamebob.dev/sv/verktyg/kategorier/arbete/kalkylator-overtidsersattning/": {
-      "hash": "b62a5d14e75b6ec28a807222661ef41796f3c7a721332708eb2b59e2d96a4f05",
+      "hash": "5091803ae06a139fb66f462585a89f8202ba7d59c4c92d33b5e11a05482e9199",
       "route": "/sv/verktyg/kategorier/arbete/kalkylator-overtidsersattning/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/arbete/kalkylator-projektavgift-timpris/": {
-      "hash": "db1f3c29c189cda1ee20d52e12b3e647cff594cf2a17ccb2c472d68aa17d9d45",
+      "hash": "24205d56e660683c54ca04ecf824274450604bd3fb9b0d8c7d339d0bff557e85",
       "route": "/sv/verktyg/kategorier/arbete/kalkylator-projektavgift-timpris/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/arbete/lonekalkylator-spanien/": {
-      "hash": "69eba5b0952845be39dda3f92ca5a9be538bc5b0a04af356fc8dba20afa3a561",
+      "hash": "c850968935e8d7c2c8f6688ba4bb57d7757acbf0dbf4771429d0054a16b60338",
       "route": "/sv/verktyg/kategorier/arbete/lonekalkylator-spanien/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/arbete/moteskostnadskalkylator/": {
-      "hash": "3fe0526cdc09f94e32e1816c1883732b1a30c962d3b24920fd740e4fe1c0049f",
+      "hash": "a29e1cd738de60e22cbc8b2dbcf552ae251a003c7ac9e9ee309fdceb6cbaf6bb",
       "route": "/sv/verktyg/kategorier/arbete/moteskostnadskalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/arbete/nie-nif-verifierare-spanien/": {
-      "hash": "cde7fc4bbec9248e61dd422e39fdfc77b66d948414aaef9b5407dcdfaf128dc6",
+      "hash": "b8417d29cec8e372f43885046076bd8f19d08b3b7187d9d5c656f0f715f75987",
       "route": "/sv/verktyg/kategorier/arbete/nie-nif-verifierare-spanien/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/arbete/uppsagningsbrev-generator/": {
-      "hash": "dc4794e04910c5de464013894747c708210ee3ce42d3cc73795c22acc6736f08",
+      "hash": "a04c3ec516e7558981afc69b8da1e80608cfa2d5bdf900c9b3e570fa4a516534",
       "route": "/sv/verktyg/kategorier/arbete/uppsagningsbrev-generator/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/is/bagimsiz-calisan-aidat-hesaplama-ispanya/": {
-      "hash": "fa6c08d5b7acfd8101556bc54a76faec1bb13a0698bb5c6e0b0c6983d8a7ce1b",
+      "hash": "8ce0bcd4d92e9b92d7b27d457c002fae84e814360b166548143a5d8ed270c20a",
       "route": "/tr/araclar/kategoriler/is/bagimsiz-calisan-aidat-hesaplama-ispanya/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/is/erken-emeklilik-simulatoru-ispanya/": {
-      "hash": "a891f7d82a858059183bacbcededd0a301f175d96a56cf5d8588835285e53d65",
+      "hash": "63f2f2150ddeeb1e5dbdd710e615f3e8873c4e58114c0b79a94fdf0ae8274d25",
       "route": "/tr/araclar/kategoriler/is/erken-emeklilik-simulatoru-ispanya/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/is/fatura-olusturucu/": {
-      "hash": "24f4aea6f39db5f20f66dc1dfe9c7064aef2a558ca2d29345eecfa74e3d34bd3",
+      "hash": "197a036f60cc4e05a7b4e6ae6a80586b9b9d3b722ffe5545a3bcd85a8d3ae005",
       "route": "/tr/araclar/kategoriler/is/fatura-olusturucu/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/is/fazla-mesai-ucreti-hesaplayici/": {
-      "hash": "418fb2a7b07df648060699bbc3bdc59e9f942f8013fa8a104309fe1ffcce2d7e",
+      "hash": "4494a9ad64470f1417bc8fe9b91d748be2a170e493e1731635d1de5b5406fd67",
       "route": "/tr/araclar/kategoriler/is/fazla-mesai-ucreti-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/is/": {
-      "hash": "4af2bd5aa903609d1247c312ecbdef77954c15b5ecea74699416ccd8c5a5d0d5",
+      "hash": "4e3a2ddaf44596e5d990a6a4cc114f4e7eabdb1455fdb2f62b23524b5c9693af",
       "route": "/tr/araclar/kategoriler/is/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/is/irpf-hesaplama-ispanya/": {
-      "hash": "5603b7927a51dd55c9180aac697293852e9dced41f0656c170fa2be0addf51c6",
+      "hash": "d597f6358c0cd33f87f9369ef4459a99ba2ffea2bc34b4295ec9fa1bf02b8b5f",
       "route": "/tr/araclar/kategoriler/is/irpf-hesaplama-ispanya/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/is/ispanya-nie-nif-dogrulayici/": {
-      "hash": "916335ecd1a642e82092c27001bc2d45c5aa645670eb45bf2625ad1c57226549",
+      "hash": "e4dedf1f27e086b333cbecb52b72cbec8baa5a046d9024cd494268fdeb81872b",
       "route": "/tr/araclar/kategoriler/is/ispanya-nie-nif-dogrulayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/is/ispanya-tazminat-ve-is-sonu-hesaplama/": {
-      "hash": "f203fddd33010973247cfc5f7f0f1a8c75478f37c888309ba0f94b4608c288e0",
+      "hash": "17e462fe0f31e3683de278e9e5de9abb629ff94bfa53b208436accb72de6dd6b",
       "route": "/tr/araclar/kategoriler/is/ispanya-tazminat-ve-is-sonu-hesaplama/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/is/istifa-dilekcesi-hazirlama/": {
-      "hash": "4301e3c2ccc22417995a82ed7c6c8bb78eef38053a1b4e6062c17cbbf53886b1",
+      "hash": "847a4745a51ee149f5d6cb5cdb1f91727d0af97a2dfa70f6dfe58cdbc134a538",
       "route": "/tr/araclar/kategoriler/is/istifa-dilekcesi-hazirlama/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/is/kdv-ayristirma-hesaplama-ispanya/": {
-      "hash": "949ac805af904a0c165a507dd247d32f2d77316ef0cec675918eb64bb115273c",
+      "hash": "8faa4836ea0576e77e3d11c0de230f5626cbe13530d93bf272c1460848112c03",
       "route": "/tr/araclar/kategoriler/is/kdv-ayristirma-hesaplama-ispanya/"
     },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/is/maas-fedakarligi-net-maas-hesaplayici/": {
+      "hash": "36d8e3ed8c376c03ca95bf4b6fe3109a4cdd4c01e631397654b2c6025d4357b2",
+      "route": "/tr/araclar/kategoriler/is/maas-fedakarligi-net-maas-hesaplayici/"
+    },
     "https://www.gamebob.dev/tr/araclar/kategoriler/is/maas-hesaplama-ispanya/": {
-      "hash": "6800351d13b3d718013e6ce151a566709c3a1fabd7f7d6ce3e465d3a5f9d706b",
+      "hash": "5a8928a8cce137406a58c959930956a4697c09997c556d6bdbec74a1b16f7b5a",
       "route": "/tr/araclar/kategoriler/is/maas-hesaplama-ispanya/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/is/proje-ucreti-saatlik-ucret-hesaplayici/": {
-      "hash": "599e1845abf3ea9ea9cc05ac7e53edc651cef17db5557d1ad095eae14c77c6f5",
+      "hash": "bfa3b749e405ed58372617059fe3d0ca47f2d9c43e2bb1d05ec51d6178c98599",
       "route": "/tr/araclar/kategoriler/is/proje-ucreti-saatlik-ucret-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/is/toplanti-maliyeti-hesaplayici/": {
-      "hash": "6506b1f2faf00cdfed5742a5e20101321824aa5b497b277399a08027bad39eab",
+      "hash": "7c2c518342cf64d8b9d1e0535bb0ace756acbe5b292ff2cee6b97a34ad712b28",
       "route": "/tr/araclar/kategoriler/is/toplanti-maliyeti-hesaplayici/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-coste-reunion/": {
-      "hash": "e5764860c1fc3286fe19ae127abe54970f57b12f24c795181f189fc87e9c12b5",
+      "hash": "fe4bcbfdd70f85cd04f9213adf1cf969617d4c3057f0707ffda176345c26f9eb",
       "route": "/utilidades/calculadora-coste-reunion/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-cuota-autonomos-2026/": {
-      "hash": "cbe170f22ba264877e9e9ab28c2be8085c260936eb7fbcc499c4f721db9ddf41",
+      "hash": "d1483ece403cb48fe29e12a6a0ea08f50e1f04f29b23f207c9193a9167d12dd2",
       "route": "/utilidades/calculadora-cuota-autonomos-2026/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-finiquito-indemnizacion/": {
-      "hash": "8cae20680fcb2a112a31a47323299ea2dd9266ff25b178b76883b7c2193a01d3",
+      "hash": "742980a41558cdc7ed12b571f896044236f3f92bbcf7473c9bea4f211b52cc28",
       "route": "/utilidades/calculadora-finiquito-indemnizacion/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-horas-extra/": {
-      "hash": "fc861c241c0107a644a0cadd153377a00fd52339eb31484fdefa5067534d73d9",
+      "hash": "e876006c17ae32a338548530b21711704ca5f4586d6e0a12df5e28d69070d593",
       "route": "/utilidades/calculadora-horas-extra/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-irpf/": {
-      "hash": "5b0893bbfb411ed2ef18c5eda4edb4849a4b4219c8dfd98f7330e01ec3b2f396",
+      "hash": "55a0bfc287785103745ef02c69c310e7f083f7e2f1dad210604300c27f9ffa06",
       "route": "/utilidades/calculadora-irpf/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-iva-inverso/": {
-      "hash": "50f5b905815dbd3f100ff8dd8ad73e256f3dc6767ae064986cc40ba1aaff0c0a",
+      "hash": "5eca7115bfd575d01a435eee52f3ca9a307561e910f452d047cf8aedadcb43ea",
       "route": "/utilidades/calculadora-iva-inverso/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-sueldo-neto/": {
-      "hash": "d2273d5eb820dd63465b1db31d92b5165e63acdf0547f83e48cd79a1b2c41531",
+      "hash": "5ab83c23f5f6b016b3c2db148227cf255b4868245d874d75f963ef1451b1fe9c",
       "route": "/utilidades/calculadora-sueldo-neto/"
     },
+    "https://www.jjlmoya.es/utilidades/calculadora-sueldo-neto-retribucion-flexible/": {
+      "hash": "822511174201e53b10435326cc4de986a77015399161c075ccb059676b87797a",
+      "route": "/utilidades/calculadora-sueldo-neto-retribucion-flexible/"
+    },
     "https://www.jjlmoya.es/utilidades/calculadora-tarifa-efectiva-proyecto/": {
-      "hash": "96ae7a7ede07bd67eac45b0e6dcb85491d9d8a9ac5eaed194c0be3c11b74bc41",
+      "hash": "90480004c0fa8cae3ddc3d90483e6251fa25e3c555ab7c62d780c3ac6ea8a942",
       "route": "/utilidades/calculadora-tarifa-efectiva-proyecto/"
     },
     "https://www.jjlmoya.es/utilidades/categorias/trabajo/": {
-      "hash": "2566a8fa7d023dc26fbb3184c1ac2686b8c0143c05485c53cab42ae7629d4f9f",
+      "hash": "d7067861dca7e79e5b37d83a746bdd5b188fd72748cf55365c33d150656b1e3c",
       "route": "/utilidades/categorias/trabajo/"
     },
     "https://www.jjlmoya.es/utilidades/generador-carta-renuncia/": {
-      "hash": "3a521e75894d46017357770cb28feed16e46cf07dad60d323c9205d521aa5e55",
+      "hash": "77b1556f4e4135e7b43351f9e1f6189fb81b57da0443941a1baf2e7d338b33cc",
       "route": "/utilidades/generador-carta-renuncia/"
     },
     "https://www.jjlmoya.es/utilidades/generador-facturas-pdf/": {
-      "hash": "e040fe0428db0eacf34ca164178257630b264d8d667714aec90325eba99f1035",
+      "hash": "80fd8e269e997968a305160279701bcc9d3a27d9ef1cc1888979d197c0f2264f",
       "route": "/utilidades/generador-facturas-pdf/"
     },
     "https://www.jjlmoya.es/utilidades/simulador-jubilacion-anticipada/": {
-      "hash": "8b9f9061ee7fc21c376b64a0de5d5d59c43dcfc65aa73faacd12b7bef0ae5327",
+      "hash": "db41cfbc9640d775d3c3aa6cd8a3f75fa8c0b5629e7f6b2f889bcb5b28b9e920",
       "route": "/utilidades/simulador-jubilacion-anticipada/"
     },
     "https://www.jjlmoya.es/utilidades/verificador-nie-nif/": {
-      "hash": "e462bbfe072b461d9a5791f1d80bd165f40ba1023533b3d8e18b58410d30efcc",
+      "hash": "91099cb9dc3a0c9eb5f05a44300a6060c675a9b13f7d0617ab0449f84ccb2646",
       "route": "/utilidades/verificador-nie-nif/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/work/early-retirement-simulator-spain/": {
-      "hash": "e026dc916a18d0df7124541acb472bb2b534020bb48e525c043f58233f5361f1",
+      "hash": "c1f6ca45e3898be3db9f9d29c4741a2caf5355c3c07f8fb683dd39af10b7db12",
       "route": "/zh/utilities/categories/work/early-retirement-simulator-spain/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/work/freelancer-quota-calculator-spain/": {
-      "hash": "8b0bd34def271189eb8b0961a3ff8a335d7a9356c9647c351e9364ae853004b0",
+      "hash": "e216811cff5a34c0773de8ed4c45c5a0418a34c0580d746b650e9244c050458d",
       "route": "/zh/utilities/categories/work/freelancer-quota-calculator-spain/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/work/": {
-      "hash": "67b8aa964abd37f78af6bdcb6d214cb4e517a6d86def2c88e644d98bc847cc6d",
+      "hash": "40e2212b4ea95af2fed4944248324346840a08be81e1006e7edc533f2a33a16a",
       "route": "/zh/utilities/categories/work/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/work/invoice-generator/": {
-      "hash": "f4d6eb045bc302f5f72f9b7261a193a0840a0e162f9788c3729ff1a293571060",
+      "hash": "ec1d927027e3448228b6c9fb92af454431ea34b004197a60ff919f18aae7c4ec",
       "route": "/zh/utilities/categories/work/invoice-generator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/work/irpf-calculator-spain/": {
-      "hash": "2ecede023f436659982f49ca3c8b8f12a72a37449c7ebefcb88d02cb8fdb4590",
+      "hash": "067052e21a01baae2d8c1375361917d0a3ba0f4d75e9c477c44688adcbf113ec",
       "route": "/zh/utilities/categories/work/irpf-calculator-spain/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/work/meeting-cost-calculator/": {
-      "hash": "6af3feaf74e24e6d6c7f2cd9fc5d1d08b5d8d2630e8a16ab973c9d2404dfc8db",
+      "hash": "13d93373e76a4a8e465c17d96c4c625a9e7191b927aba91894ca67694d14908f",
       "route": "/zh/utilities/categories/work/meeting-cost-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/work/nie-nif-verifier-spain/": {
-      "hash": "26f235936ef97d431661d3314ed0150d6e7859cf32bbfd8569a1212ec8bf8514",
+      "hash": "063757eeffd32c3a1c059298d7d2b681349528e9eed82cb4cb5618ed2574de8b",
       "route": "/zh/utilities/categories/work/nie-nif-verifier-spain/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/work/overtime-pay-calculator/": {
-      "hash": "717bf1ea22528677892c0146fbfd9d8c0f6023f5feee80c0f48bd14d984b8d96",
+      "hash": "84305cb3387b5a7190453d33c1921f898421f820e74c4556acaf2a59ba341899",
       "route": "/zh/utilities/categories/work/overtime-pay-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/work/project-fee-to-hourly-rate-calculator/": {
-      "hash": "d4dd37e63db29e811f4ab07222462a43e5a2fb29a793cfb3b74e2b4eec12b3fa",
+      "hash": "7173c6349b87f4ea466d05c0a8b446307e057779b62679a6eae5d589523c53df",
       "route": "/zh/utilities/categories/work/project-fee-to-hourly-rate-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/work/resignation-letter-generator/": {
-      "hash": "87f3d2b3ccae1c9945dfddd4534bc522abc7e5ad974611e17c787d73d723f421",
+      "hash": "c781c22964161b43362261acfbfb3891d9aaad3711b10f4e0d6071115236f667",
       "route": "/zh/utilities/categories/work/resignation-letter-generator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/work/reverse-vat-calculator-spain/": {
-      "hash": "d5f0ed4ae2b016ddf7cd8839ecf50dac7f45697c20eba8112786ff6b8d41c98b",
+      "hash": "66125f6105b2b655b2773af95ef24a383afabdf547a8beed37a3f388dcd349b5",
       "route": "/zh/utilities/categories/work/reverse-vat-calculator-spain/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/work/salary-calculator-spain/": {
-      "hash": "6e073c1bc2a10d5bfcf9c805e5f0936facf3ebf22e468a35a82c41a73ecb38be",
+      "hash": "4198855ebef274e0b921e1018fa36d9b559393f3dcfaee4dbcedc32ae2b836cf",
       "route": "/zh/utilities/categories/work/salary-calculator-spain/"
     },
+    "https://www.gamebob.dev/zh/utilities/categories/work/salary-sacrifice-take-home-calculator/": {
+      "hash": "fbc34d0aa1ea92ad16cfedac66c9d3d24c2f2412fe06b5d4e40bcd9f2eb5817d",
+      "route": "/zh/utilities/categories/work/salary-sacrifice-take-home-calculator/"
+    },
     "https://www.gamebob.dev/zh/utilities/categories/work/severance-pay-calculator-spain/": {
-      "hash": "bf9ab489d34d1d7172833b7fa45f176b9955913068bedddee52882127ba4c4e7",
+      "hash": "362c07eec5522f3ae60bdf8ad9030cabcb747f0de3ef4ae5d8dd4042b79bd4e4",
       "route": "/zh/utilities/categories/work/severance-pay-calculator-spain/"
     }
   }
