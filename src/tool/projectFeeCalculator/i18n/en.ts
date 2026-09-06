@@ -144,7 +144,7 @@ export const content: ToolLocaleContent<ProjectFeeCalculatorUI> = {
     },
     {
       type: 'card',
-      title: 'The project-specific formula',
+      title: 'The project specific formula',
       html: '<p><strong>Effective hourly rate</strong> = (fixed fee - direct costs) / (hands-on hours + revision hours + meeting hours).</p><p>The result describes this project only. It does not include taxes, a market rate, unpaid leave, or a promise that a project will finish on schedule.</p>',
     },
     {
