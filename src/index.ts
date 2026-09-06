@@ -30,3 +30,4 @@ export { EARLY_RETIREMENT_SIMULATOR_TOOL } from "./tool/earlyRetirementSimulator
 export { NIE_NIF_VERIFIER_TOOL } from "./tool/nieNifVerifier/index";
 export { OVERTIME_PAY_CALCULATOR_TOOL } from "./tool/overtimePayCalculator/index";
 export { PROJECT_FEE_CALCULATOR_TOOL } from "./tool/projectFeeCalculator/index";
+export { SALARY_SACRIFICE_TAKE_HOME_CALCULATOR_TOOL } from "./tool/salarySacrificeCalculator/index";

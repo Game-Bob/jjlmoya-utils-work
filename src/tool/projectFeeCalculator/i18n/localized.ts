@@ -158,7 +158,7 @@ export function getLocalizedProjectFeeContent(locale: string) {
     slug: copy.slug,
     title: copy.title,
     description: copy.description,
-    ui: { ...copy.ui, numberLocale: copy.numberLocale },
+    ui: { ...copy.ui, numberLocale: copy.numberLocale } as ProjectFeeCalculatorUI,
     faq: copy.faq,
     howTo: copy.howTo,
     seo: copy.seo,

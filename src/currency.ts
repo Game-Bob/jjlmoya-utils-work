@@ -1,20 +1,20 @@
 export type CurrencyCode =
-  | 'EUR'
-  | 'USD'
-  | 'GBP'
-  | 'JPY'
-  | 'CNY'
-  | 'IDR'
-  | 'KRW'
-  | 'PLN'
-  | 'RUB'
-  | 'SEK'
-  | 'TRY'
-  | 'CHF'
-  | 'INR'
-  | 'CAD'
-  | 'AUD'
-  | 'BRL';
+  | "EUR"
+  | "USD"
+  | "GBP"
+  | "JPY"
+  | "CNY"
+  | "IDR"
+  | "KRW"
+  | "PLN"
+  | "RUB"
+  | "SEK"
+  | "TRY"
+  | "CHF"
+  | "INR"
+  | "CAD"
+  | "AUD"
+  | "BRL";
 
 export interface CurrencyOption {
   code: CurrencyCode;
@@ -22,23 +22,45 @@ export interface CurrencyOption {
 }
 
 export const SUPPORTED_CURRENCIES: readonly CurrencyOption[] = [
-  { code: 'EUR', symbol: '€' },
-  { code: 'USD', symbol: '$' },
-  { code: 'GBP', symbol: '£' },
-  { code: 'JPY', symbol: '¥' },
-  { code: 'CNY', symbol: '¥' },
-  { code: 'IDR', symbol: 'Rp' },
-  { code: 'KRW', symbol: '₩' },
-  { code: 'PLN', symbol: 'zł' },
-  { code: 'RUB', symbol: '₽' },
-  { code: 'SEK', symbol: 'kr' },
-  { code: 'TRY', symbol: '₺' },
-  { code: 'CHF', symbol: 'CHF' },
-  { code: 'INR', symbol: '₹' },
-  { code: 'CAD', symbol: 'C$' },
-  { code: 'AUD', symbol: 'A$' },
-  { code: 'BRL', symbol: 'R$' },
+  { code: "EUR", symbol: "€" },
+  { code: "USD", symbol: "$" },
+  { code: "GBP", symbol: "£" },
+  { code: "JPY", symbol: "¥" },
+  { code: "CNY", symbol: "¥" },
+  { code: "IDR", symbol: "Rp" },
+  { code: "KRW", symbol: "₩" },
+  { code: "PLN", symbol: "zł" },
+  { code: "RUB", symbol: "₽" },
+  { code: "SEK", symbol: "kr" },
+  { code: "TRY", symbol: "₺" },
+  { code: "CHF", symbol: "CHF" },
+  { code: "INR", symbol: "₹" },
+  { code: "CAD", symbol: "C$" },
+  { code: "AUD", symbol: "A$" },
+  { code: "BRL", symbol: "R$" },
 ];
+
+export const SITE_LOCALE_CURRENCY_CODES: readonly CurrencyCode[] = [
+  "EUR",
+  "USD",
+  "IDR",
+  "JPY",
+  "KRW",
+  "PLN",
+  "RUB",
+  "SEK",
+  "TRY",
+  "CNY",
+];
+
+export const SITE_LOCALE_CURRENCIES: readonly CurrencyOption[] =
+  SITE_LOCALE_CURRENCY_CODES.map(
+    (code) => SUPPORTED_CURRENCIES.find((item) => item.code === code)!,
+  );
+
+export const CURRENCY_CONVERSION_UPDATED = "2026-09-06";
+export const CURRENCY_CONVERSION_REFERENCE =
+  "Fixed illustrative factors against EUR; not live exchange rates.";
 
 const INTERNAL_TO_EUR: Record<CurrencyCode, number> = {
   EUR: 1,
@@ -59,57 +81,67 @@ const INTERNAL_TO_EUR: Record<CurrencyCode, number> = {
   BRL: 0.17,
 };
 
+export function getCurrencyConversionFactor(currency: CurrencyCode): number {
+  return INTERNAL_TO_EUR[currency];
+}
+
 const LOCALE_DEFAULTS: Record<string, CurrencyCode> = {
-  de: 'EUR',
-  en: 'USD',
-  es: 'EUR',
-  fr: 'EUR',
-  id: 'IDR',
-  it: 'EUR',
-  ja: 'JPY',
-  ko: 'KRW',
-  nl: 'EUR',
-  pl: 'PLN',
-  pt: 'EUR',
-  ru: 'RUB',
-  sv: 'SEK',
-  tr: 'TRY',
-  zh: 'CNY',
+  de: "EUR",
+  en: "USD",
+  es: "EUR",
+  fr: "EUR",
+  id: "IDR",
+  it: "EUR",
+  ja: "JPY",
+  ko: "KRW",
+  nl: "EUR",
+  pl: "PLN",
+  pt: "EUR",
+  ru: "RUB",
+  sv: "SEK",
+  tr: "TRY",
+  zh: "CNY",
 };
 
 const CURRENCY_LABELS: Record<string, string> = {
-  de: 'Währung',
-  en: 'Currency',
-  es: 'Moneda',
-  fr: 'Devise',
-  id: 'Mata uang',
-  it: 'Valuta',
-  ja: '通貨',
-  ko: '통화',
-  nl: 'Valuta',
-  pl: 'Waluta',
-  pt: 'Moeda',
-  ru: 'Валюта',
-  sv: 'Valuta',
-  tr: 'Para birimi',
-  zh: '货币',
+  de: "Währung",
+  en: "Currency",
+  es: "Moneda",
+  fr: "Devise",
+  id: "Mata uang",
+  it: "Valuta",
+  ja: "通貨",
+  ko: "통화",
+  nl: "Valuta",
+  pl: "Waluta",
+  pt: "Moeda",
+  ru: "Валюта",
+  sv: "Valuta",
+  tr: "Para birimi",
+  zh: "货币",
 };
 
 export function getDefaultCurrency(locale?: string): CurrencyCode {
-  const language = (locale ?? 'en').toLowerCase().split('-')[0] ?? 'en';
-  return LOCALE_DEFAULTS[language] ?? 'EUR';
+  const language = (locale ?? "en").toLowerCase().split("-")[0] ?? "en";
+  return LOCALE_DEFAULTS[language] ?? "EUR";
 }
 
 export function getCurrencyLabel(locale?: string): string {
-  const language = (locale ?? 'en').toLowerCase().split('-')[0] ?? 'en';
-  return CURRENCY_LABELS[language] ?? 'Currency';
+  const language = (locale ?? "en").toLowerCase().split("-")[0] ?? "en";
+  return CURRENCY_LABELS[language] ?? "Currency";
 }
 
-export function toInternalCurrency(value: number, currency: CurrencyCode): number {
+export function toInternalCurrency(
+  value: number,
+  currency: CurrencyCode,
+): number {
   return value * INTERNAL_TO_EUR[currency];
 }
 
-export function fromInternalCurrency(value: number, currency: CurrencyCode): number {
+export function fromInternalCurrency(
+  value: number,
+  currency: CurrencyCode,
+): number {
   return value / INTERNAL_TO_EUR[currency];
 }
 
@@ -122,10 +154,15 @@ export function convertCurrencyValue(
 }
 
 export function getCurrencySymbol(currency: CurrencyCode): string {
-  return SUPPORTED_CURRENCIES.find((item) => item.code === currency)?.symbol ?? '€';
+  return (
+    SUPPORTED_CURRENCIES.find((item) => item.code === currency)?.symbol ?? "€"
+  );
 }
 
-export function parseCurrencyCode(value: string | undefined, fallback: CurrencyCode = 'EUR'): CurrencyCode {
+export function parseCurrencyCode(
+  value: string | undefined,
+  fallback: CurrencyCode = "EUR",
+): CurrencyCode {
   const byCode = SUPPORTED_CURRENCIES.find((item) => item.code === value);
   if (byCode) return byCode.code;
   const bySymbol = SUPPORTED_CURRENCIES.find((item) => item.symbol === value);
@@ -135,12 +172,25 @@ export function parseCurrencyCode(value: string | undefined, fallback: CurrencyC
 export function formatCurrency(
   value: number,
   currency: CurrencyCode,
-  locale = 'en',
+  locale = "en",
   maximumFractionDigits = 2,
 ): string {
   return new Intl.NumberFormat(locale, {
-    style: 'currency',
+    style: "currency",
     currency,
     maximumFractionDigits,
   }).format(value);
+}
+
+export function formatCurrencyWithSymbol(
+  value: number,
+  currency: CurrencyCode,
+  locale = "en",
+  fractionDigits = 2,
+): string {
+  const number = new Intl.NumberFormat(locale, {
+    minimumFractionDigits: fractionDigits,
+    maximumFractionDigits: fractionDigits,
+  }).format(value);
+  return `${getCurrencySymbol(currency)}${number}`;
 }

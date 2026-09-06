@@ -35,6 +35,7 @@ import { salaryCalculator } from "./tool/salaryCalculator/entry";
 import { settlementCalculator } from "./tool/settlementCalculator/entry";
 import { overtimePayCalculator } from "./tool/overtimePayCalculator/entry";
 import { projectFeeCalculator } from "./tool/projectFeeCalculator/entry";
+import { salarySacrificeCalculator } from "./tool/salarySacrificeCalculator/entry";
 export const ALL_ENTRIES = [
   autonomosCalculator,
   earlyRetirementSimulator,
@@ -48,4 +49,5 @@ export const ALL_ENTRIES = [
   settlementCalculator,
   overtimePayCalculator,
   projectFeeCalculator,
+  salarySacrificeCalculator,
 ];

@@ -1,0 +1,14 @@
+---
+import { SEORenderer } from "@jjlmoya/utils-shared";
+import { salarySacrificeCalculator } from "./index";
+import type { KnownLocale } from "../../types";
+
+interface Props {
+  locale?: KnownLocale;
+}
+
+const { locale = "en" } = Astro.props;
+const content = await salarySacrificeCalculator.i18n[locale]?.();
+---
+
+{content && content.seo.length > 0 && <SEORenderer content={{ locale, sections: content.seo }} />}

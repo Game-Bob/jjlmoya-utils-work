@@ -1,0 +1,317 @@
+---
+import type { KnownLocale } from "../../types";
+import type { SalarySacrificeCalculatorUI } from "./ui";
+import {
+  SITE_LOCALE_CURRENCIES,
+  getCurrencySymbol,
+  getDefaultCurrency,
+} from "../../currency";
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { locale = "en", ui = {} } = Astro.props;
+const t = ui as SalarySacrificeCalculatorUI;
+const currency = getDefaultCurrency(locale);
+const symbol = getCurrencySymbol(currency);
+---
+
+<div
+  class="ss-shell"
+  id="ss-tool"
+  data-locale={locale}
+  data-currency={currency}
+  data-decision={t.decision}
+  data-decision-zero={t.decisionZero}
+  data-error-gross={t.errorGross}
+  data-error-contribution={t.errorContribution}
+  data-error-rates={t.errorRates}
+  data-error-pay-periods={t.errorPayPeriods}
+  data-error-basis={t.errorBasis}
+  data-annual-unit={t.annualUnit}
+  data-per-pay-unit={t.perPayUnit}
+  data-currency-symbol={symbol}
+>
+  <form class="ss-card" id="ss-form">
+    <div class="ss-workbench">
+      <section class="ss-input-panel" aria-labelledby="ss-input-title">
+        <p class="ss-kicker">{t.eyebrow}</p>
+        <h2 id="ss-input-title">{t.intro}</h2>
+
+        <div class="ss-fields">
+          <div class="ss-field ss-field-wide ss-currency-field">
+            <span class="ss-label" id="ss-currency-label">{t.labelCurrency}</span>
+            <div class="ss-currency-control">
+              <button
+                class="ss-currency-trigger"
+                id="ss-currency-trigger"
+                type="button"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-labelledby="ss-currency-label ss-currency-current"
+              >
+                <span class="ss-currency-trigger-symbol" data-currency-symbol aria-hidden="true">{symbol}</span>
+                <span id="ss-currency-current">{currency}</span>
+                <span class="ss-currency-chevron" aria-hidden="true">⌄</span>
+              </button>
+              <div class="ss-currency-menu" role="listbox" aria-labelledby="ss-currency-label" hidden>
+                {SITE_LOCALE_CURRENCIES.map((item) => (
+                  <button
+                    class:list={["ss-currency-option", item.code === currency && "is-selected"]}
+                    type="button"
+                    role="option"
+                    data-currency-option={item.code}
+                    aria-selected={item.code === currency ? "true" : "false"}
+                  >
+                    <span class="ss-currency-option-symbol" aria-hidden="true">{item.symbol}</span>
+                    <span>{item.code}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <small id="ss-currency-hint">{t.currencyHint}</small>
+          </div>
+
+          <div class="ss-field ss-field-wide">
+            <label for="ss-gross">{t.labelGross}</label>
+            <div class="ss-input-wrap"><input id="ss-gross" type="number" min="0.01" step="0.01" value="60000" inputmode="decimal" aria-describedby="ss-gross-hint ss-error-gross" /><span aria-hidden="true" data-currency-symbol>{symbol}</span></div>
+            <small id="ss-gross-hint">{t.grossHint}</small>
+            <p class="ss-error" id="ss-error-gross" data-error-for="gross" hidden>{t.errorGross}</p>
+          </div>
+
+          <div class="ss-field ss-field-wide">
+            <label for="ss-contribution">{t.labelContribution}</label>
+            <div class="ss-input-wrap"><input id="ss-contribution" type="number" min="0" step="0.01" value="6000" inputmode="decimal" aria-describedby="ss-contribution-hint ss-error-contribution" /><span aria-hidden="true" data-currency-symbol>{symbol}</span></div>
+            <small id="ss-contribution-hint">{t.contributionHint}</small>
+            <p class="ss-error" id="ss-error-contribution" data-error-for="contribution" hidden>{t.errorContribution}</p>
+          </div>
+
+          <div class="ss-field">
+            <span class="ss-label">{t.labelBasis}</span>
+            <div class="ss-segmented" role="group" aria-label={t.labelBasis}>
+              <button type="button" class="ss-choice is-selected" data-basis="annual" aria-pressed="true">{t.basisAnnual}</button>
+              <button type="button" class="ss-choice" data-basis="perPay" aria-pressed="false">{t.basisPerPay}</button>
+            </div>
+          </div>
+
+          <div class="ss-field">
+            <span class="ss-label">{t.labelPayPeriods}</span>
+            <div class="ss-segmented" role="group" aria-label={t.labelPayPeriods}>
+              <button type="button" class="ss-choice is-selected" data-periods="12" aria-pressed="true">{t.pay12}</button>
+              <button type="button" class="ss-choice" data-periods="14" aria-pressed="false">{t.pay14}</button>
+            </div>
+          </div>
+
+          <div class="ss-field">
+            <label for="ss-tax-rate">{t.labelIncomeTax}</label>
+            <div class="ss-input-wrap"><input id="ss-tax-rate" type="number" min="0" max="100" step="0.1" value="30" inputmode="decimal" aria-describedby="ss-rate-hint ss-error-rates" /><span aria-hidden="true">%</span></div>
+          </div>
+
+          <div class="ss-field">
+            <label for="ss-payroll-rate">{t.labelPayrollDeduction}</label>
+            <div class="ss-input-wrap"><input id="ss-payroll-rate" type="number" min="0" max="100" step="0.1" value="6.5" inputmode="decimal" aria-describedby="ss-rate-hint ss-error-rates" /><span aria-hidden="true">%</span></div>
+          </div>
+        </div>
+
+        <p class="ss-rate-hint" id="ss-rate-hint">{t.ratesHint}</p>
+        <p class="ss-error ss-error-wide" id="ss-error-rates" data-error-for="rates" hidden>{t.errorRates}</p>
+        <p class="ss-error ss-error-wide" id="ss-error-pay-periods" data-error-for="payPeriods" hidden>{t.errorPayPeriods}</p>
+        <p class="ss-error ss-error-wide" id="ss-error-basis" data-error-for="basis" hidden>{t.errorBasis}</p>
+        <button class="ss-submit" type="submit">{t.btnCalculate}</button>
+      </section>
+
+      <section class="ss-result-panel" aria-labelledby="ss-result-title">
+        <div class="ss-result-orbit" aria-hidden="true"><span>−</span><span>+</span><span data-currency-symbol>{symbol}</span></div>
+        <p class="ss-kicker">{t.labelCashDropPerPay}</p>
+        <h2 id="ss-result-title" class="ss-hero-value" data-result="cashDropPerPay">{symbol}0.00</h2>
+        <p class="ss-result-caption" data-result="decision" role="status" aria-live="polite">{t.decisionZero}</p>
+
+        <div class="ss-summary-grid">
+          <div><span>{t.labelCashBefore}</span><strong data-result="cashBeforePerPay">{symbol}0.00</strong></div>
+          <div><span>{t.labelCashAfter}</span><strong data-result="cashAfterPerPay">{symbol}0.00</strong></div>
+          <div><span>{t.labelContributionPerPay}</span><strong data-result="contributionPerPay">{symbol}0.00</strong></div>
+          <div><span>{t.labelSavingsPerPay}</span><strong data-result="savingsPerPay">{symbol}0.00</strong></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="ss-flow-section" aria-labelledby="ss-flow-title">
+      <div class="ss-section-heading"><div><p class="ss-kicker">{t.labelFlow}</p><h2 id="ss-flow-title">{t.labelAnnualView}</h2></div><div class="ss-flow-arrow" aria-hidden="true">↗</div></div>
+      <div class="ss-flow-legend" aria-hidden="true"><span><i class="ss-dot ss-dot-before"></i>{t.flowBefore}</span><span><i class="ss-dot ss-dot-after"></i>{t.flowAfter}</span><span><i class="ss-dot ss-dot-benefit"></i>{t.flowBenefit}</span></div>
+      <div class="ss-bars" aria-hidden="true">
+        <div class="ss-bar-row"><span>{t.flowBefore}</span><div class="ss-bar-track"><i class="ss-bar ss-bar-before" data-bar="cashBefore"></i></div><strong data-visual-value="cashBefore">{symbol}0.00</strong></div>
+        <div class="ss-bar-row"><span>{t.flowAfter}</span><div class="ss-bar-track"><i class="ss-bar ss-bar-after" data-bar="cashAfter"></i></div><strong data-visual-value="cashAfter">{symbol}0.00</strong></div>
+        <div class="ss-bar-row"><span>{t.flowBenefit}</span><div class="ss-bar-track"><i class="ss-bar ss-bar-benefit" data-bar="benefit"></i></div><strong data-visual-value="benefit">{symbol}0.00</strong></div>
+      </div>
+
+      <div class="ss-annual-grid">
+        <div><span>{t.labelAnnualContribution}</span><strong data-result="annualContribution">{symbol}0.00</strong></div>
+        <div><span>{t.labelIncomeTaxSavings}</span><strong data-result="incomeTaxSavings">{symbol}0.00</strong></div>
+        <div><span>{t.labelPayrollSavings}</span><strong data-result="payrollSavings">{symbol}0.00</strong></div>
+        <div><span>{t.labelEffectiveCost}</span><strong data-result="effectiveCost">{symbol}0.00</strong></div>
+      </div>
+      <p class="ss-assumptions"><strong>{t.labelAssumptions}:</strong> <span>{t.disclaimer}</span></p>
+    </section>
+  </form>
+</div>
+
+<script>
+  import { convertCurrencyValue, formatCurrencyWithSymbol, getCurrencySymbol, getDefaultCurrency, type CurrencyCode } from "../../currency";
+  import { calculateSalarySacrifice, type ContributionBasis, type PayPeriods } from "./logic";
+
+  const root = document.getElementById("ss-tool");
+  const form = document.getElementById("ss-form");
+
+  if (root && form) {
+    const locale = root.dataset.locale ?? "en";
+    let currency = (root.dataset.currency ?? getDefaultCurrency(locale)) as CurrencyCode;
+    const input = (id: string) => root.querySelector<HTMLInputElement>(`#${id}`);
+    const gross = input("ss-gross");
+    const contribution = input("ss-contribution");
+    const taxRate = input("ss-tax-rate");
+    const payrollRate = input("ss-payroll-rate");
+    let basis: ContributionBasis = "annual";
+    let periods: PayPeriods = 12;
+    const currencyControl = root.querySelector<HTMLElement>(".ss-currency-control");
+    const currencyTrigger = root.querySelector<HTMLButtonElement>("#ss-currency-trigger");
+    const currencyMenu = root.querySelector<HTMLElement>(".ss-currency-menu");
+    const currencyOptions = Array.from(root.querySelectorAll<HTMLButtonElement>("[data-currency-option]"));
+    const readNumber = (field: HTMLInputElement | null) =>
+      field && field.value.trim() !== "" ? Number(field.value) : Number.NaN;
+
+    const formatMoney = (value: number) => formatCurrencyWithSymbol(value, currency, locale, 2);
+    const updateCurrencyVisuals = () => {
+      const symbol = getCurrencySymbol(currency);
+      root.dataset.currency = currency;
+      root.querySelectorAll<HTMLElement>("[data-currency-symbol]").forEach((element) => { element.textContent = symbol; });
+      root.querySelector<HTMLElement>("#ss-currency-current")!.textContent = currency;
+      currencyOptions.forEach((option) => {
+        const selected = option.dataset.currencyOption === currency;
+        option.classList.toggle("is-selected", selected);
+        option.setAttribute("aria-selected", String(selected));
+      });
+    };
+    const closeCurrencyMenu = () => {
+      if (!currencyMenu || !currencyTrigger) return;
+      currencyMenu.hidden = true;
+      currencyTrigger.setAttribute("aria-expanded", "false");
+    };
+    const openCurrencyMenu = () => {
+      if (!currencyMenu || !currencyTrigger) return;
+      currencyMenu.hidden = false;
+      currencyTrigger.setAttribute("aria-expanded", "true");
+    };
+    const convertMoneyInput = (field: HTMLInputElement | null, from: CurrencyCode, to: CurrencyCode) => {
+      if (!field || field.value.trim() === "") return;
+      const value = Number(field.value);
+      if (Number.isFinite(value)) field.value = convertCurrencyValue(value, from, to).toFixed(2);
+    };
+    const chooseCurrency = (next: CurrencyCode) => {
+      const previous = currency;
+      convertMoneyInput(gross, previous, next);
+      convertMoneyInput(contribution, previous, next);
+      currency = next;
+      updateCurrencyVisuals();
+      closeCurrencyMenu();
+      recalculate();
+      currencyTrigger?.focus();
+    };
+    const setResult = (name: string, value: string) => {
+      root.querySelectorAll<HTMLElement>(`[data-result="${name}"]`).forEach((element) => { element.textContent = value; });
+    };
+    const setVisual = (name: string, value: string) => {
+      root.querySelectorAll<HTMLElement>(`[data-visual-value="${name}"]`).forEach((element) => { element.textContent = value; });
+    };
+    const decisionText = (result: ReturnType<typeof calculateSalarySacrifice>) => {
+      if (result.annualContribution <= 0) return root.dataset.decisionZero ?? "Add a contribution to compare the two salary scenarios.";
+      return (root.dataset.decision ?? "Your contribution costs less than its face value in take-home cash.").replace("{cost}", formatMoney(result.effectiveCost)).replace("{benefit}", formatMoney(result.annualContribution));
+    };
+    const setSelected = (selector: string, attribute: string, value: string) => {
+      root.querySelectorAll<HTMLButtonElement>(selector).forEach((button) => {
+        const selected = button.dataset[attribute] === value;
+        button.classList.toggle("is-selected", selected);
+        button.setAttribute("aria-pressed", String(selected));
+      });
+    };
+    const setErrors = (errors: string[]) => {
+      const has = (name: string) => errors.includes(name);
+      root.querySelector<HTMLElement>('[data-error-for="gross"]')!.hidden = !has("gross");
+      root.querySelector<HTMLElement>('[data-error-for="contribution"]')!.hidden = !has("contribution");
+      root.querySelector<HTMLElement>('[data-error-for="rates"]')!.hidden = !(has("incomeTaxRate") || has("payrollDeductionRate") || has("combinedRate"));
+      root.querySelector<HTMLElement>('[data-error-for="payPeriods"]')!.hidden = !has("payPeriods");
+      root.querySelector<HTMLElement>('[data-error-for="basis"]')!.hidden = !has("basis");
+      const invalidInputs: Array<[HTMLInputElement | null, boolean]> = [
+        [gross, has("gross")],
+        [contribution, has("contribution")],
+        [taxRate, has("incomeTaxRate") || has("combinedRate")],
+        [payrollRate, has("payrollDeductionRate") || has("combinedRate")],
+      ];
+      invalidInputs.forEach(([element, invalid]) => element?.setAttribute("aria-invalid", String(invalid)));
+    };
+    const clearValues = () => {
+      const zero = `${getCurrencySymbol(currency)}0.00`;
+      ["cashDropPerPay", "cashBeforePerPay", "cashAfterPerPay", "contributionPerPay", "savingsPerPay", "annualContribution", "incomeTaxSavings", "payrollSavings", "effectiveCost"].forEach((name) => setResult(name, zero));
+      ["cashBefore", "cashAfter", "benefit"].forEach((name) => { setVisual(name, zero); root.querySelector<HTMLElement>(`[data-bar="${name}"]`)!.style.width = "0%"; });
+      setResult("decision", root.dataset.decisionZero ?? "Add a contribution to compare the two salary scenarios.");
+    };
+    const recalculate = () => {
+      const result = calculateSalarySacrifice({
+        annualGross: readNumber(gross),
+        contributionAmount: readNumber(contribution),
+        contributionBasis: basis,
+        payPeriods: periods,
+        incomeTaxRate: readNumber(taxRate),
+        payrollDeductionRate: readNumber(payrollRate),
+      });
+      setErrors(result.errors);
+      if (!result.valid) { clearValues(); return; }
+      setResult("cashDropPerPay", formatMoney(result.cashDropPerPay));
+      setResult("cashBeforePerPay", formatMoney(result.cashBeforePerPay));
+      setResult("cashAfterPerPay", formatMoney(result.cashAfterPerPay));
+      setResult("contributionPerPay", formatMoney(result.contributionPerPay));
+      setResult("savingsPerPay", formatMoney(result.totalSavings / periods));
+      setResult("annualContribution", formatMoney(result.annualContribution));
+      setResult("incomeTaxSavings", formatMoney(result.incomeTaxSavings));
+      setResult("payrollSavings", formatMoney(result.payrollDeductionSavings));
+      setResult("effectiveCost", formatMoney(result.effectiveCost));
+      setResult("decision", decisionText(result));
+      const scale = Math.max(result.cashBefore, result.annualContribution, 1);
+      setVisual("cashBefore", formatMoney(result.cashBefore));
+      setVisual("cashAfter", formatMoney(result.cashAfter));
+      setVisual("benefit", formatMoney(result.annualContribution));
+      root.querySelector<HTMLElement>('[data-bar="cashBefore"]')!.style.width = `${(result.cashBefore / scale) * 100}%`;
+      root.querySelector<HTMLElement>('[data-bar="cashAfter"]')!.style.width = `${(result.cashAfter / scale) * 100}%`;
+      root.querySelector<HTMLElement>('[data-bar="benefit"]')!.style.width = `${(result.annualContribution / scale) * 100}%`;
+    };
+
+    root.querySelectorAll<HTMLButtonElement>("[data-basis]").forEach((button) => button.addEventListener("click", () => { basis = button.dataset.basis as ContributionBasis; setSelected("[data-basis]", "basis", basis); recalculate(); }));
+    root.querySelectorAll<HTMLButtonElement>("[data-periods]").forEach((button) => button.addEventListener("click", () => { periods = Number(button.dataset.periods) as PayPeriods; setSelected("[data-periods]", "periods", String(periods)); recalculate(); }));
+    currencyTrigger?.addEventListener("click", () => {
+      if (currencyMenu?.hidden) openCurrencyMenu();
+      else closeCurrencyMenu();
+    });
+    currencyOptions.forEach((option, index) => {
+      option.addEventListener("click", () => chooseCurrency(option.dataset.currencyOption as CurrencyCode));
+      option.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowDown") { event.preventDefault(); currencyOptions[(index + 1) % currencyOptions.length]?.focus(); }
+        if (event.key === "ArrowUp") { event.preventDefault(); currencyOptions[(index - 1 + currencyOptions.length) % currencyOptions.length]?.focus(); }
+        if (event.key === "Escape") { event.preventDefault(); closeCurrencyMenu(); currencyTrigger?.focus(); }
+      });
+    });
+    currencyTrigger?.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowDown" || event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openCurrencyMenu();
+        currencyOptions.find((option) => option.dataset.currencyOption === currency)?.focus();
+      }
+      if (event.key === "Escape") closeCurrencyMenu();
+    });
+    document.addEventListener("click", (event) => { if (currencyControl && !currencyControl.contains(event.target as Node)) closeCurrencyMenu(); });
+    [gross, contribution, taxRate, payrollRate].forEach((field) => field?.addEventListener("input", recalculate));
+    updateCurrencyVisuals();
+    form.addEventListener("submit", (event) => { event.preventDefault(); recalculate(); });
+    recalculate();
+  }
+</script>
