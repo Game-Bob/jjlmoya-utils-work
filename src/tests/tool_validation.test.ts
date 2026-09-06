@@ -4,8 +4,8 @@ import { workCategory } from "../data";
 
 describe("Tool Validation Suite", () => {
   describe("Library Registration", () => {
-    it("should have 10 tools in ALL_TOOLS", () => {
-      expect(ALL_TOOLS.length).toBe(11);
+    it("should have 12 tools in ALL_TOOLS", () => {
+      expect(ALL_TOOLS.length).toBe(12);
     });
 
     it("workCategory should be defined", () => {

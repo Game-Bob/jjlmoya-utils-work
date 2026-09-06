@@ -11,6 +11,7 @@ import { RESIGNATION_LETTER_GENERATOR_TOOL } from "./tool/resignationLetterGener
 import { EARLY_RETIREMENT_SIMULATOR_TOOL } from "./tool/earlyRetirementSimulator/index";
 import { NIE_NIF_VERIFIER_TOOL } from "./tool/nieNifVerifier/index";
 import { OVERTIME_PAY_CALCULATOR_TOOL } from "./tool/overtimePayCalculator/index";
+import { PROJECT_FEE_CALCULATOR_TOOL } from "./tool/projectFeeCalculator/index";
 
 export const ALL_TOOLS: ToolDefinition[] = [
   IRPF_CALCULATOR_TOOL,
@@ -24,4 +25,5 @@ export const ALL_TOOLS: ToolDefinition[] = [
   EARLY_RETIREMENT_SIMULATOR_TOOL,
   NIE_NIF_VERIFIER_TOOL,
   OVERTIME_PAY_CALCULATOR_TOOL,
+  PROJECT_FEE_CALCULATOR_TOOL,
 ];

@@ -1,0 +1,237 @@
+---
+import type { KnownLocale } from '../../types';
+import type { ProjectFeeCalculatorUI } from './ui';
+import {
+  SUPPORTED_CURRENCIES,
+  getCurrencyLabel,
+  getCurrencySymbol,
+  getDefaultCurrency,
+} from '../../currency';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { locale = 'en', ui } = Astro.props;
+const t = (ui ?? {}) as ProjectFeeCalculatorUI;
+const defaultCurrency = getDefaultCurrency(locale);
+---
+
+<div
+  class="pf-shell"
+  data-project-fee-calculator
+  data-status-below={t.statusBelow}
+  data-status-at-or-above={t.statusAtOrAbove}
+  data-status-no-hours={t.statusNoHours}
+>
+  <div class="pf-layout">
+    <section class="pf-hero" aria-labelledby="pf-tool-heading">
+      <div class="pf-hero-copy">
+        <p class="pf-kicker">{t.labelEffectiveRate}</p>
+        <h2 id="pf-tool-heading"><span id="pf-rate">0.00 {getCurrencySymbol(defaultCurrency)}</span><span class="pf-unit"> / h</span></h2>
+        <p class="pf-status" id="pf-status" aria-live="polite">{t.statusBelow} <span id="pf-gap">0.00 {getCurrencySymbol(defaultCurrency)}</span></p>
+        <p class="pf-note">{t.noteBeforeTax}</p>
+      </div>
+      <div class="pf-workload-visual" aria-labelledby="pf-workload-title">
+        <div class="pf-workload-heading"><span id="pf-workload-title">{t.labelWorkloadLedger}</span><strong id="pf-visual-total">0.00 h</strong></div>
+        <div class="pf-ledger-row">
+          <span class="pf-ledger-label">{t.labelHandsOn}</span>
+          <span class="pf-ledger-track"><i id="pf-planned-bar"></i></span>
+          <strong id="pf-visual-planned">0.00 h</strong>
+        </div>
+        <div class="pf-ledger-row">
+          <span class="pf-ledger-label">{t.labelRevisionTime}</span>
+          <span class="pf-ledger-track"><i id="pf-revision-bar"></i></span>
+          <strong id="pf-visual-revisions">0.00 h</strong>
+        </div>
+        <div class="pf-ledger-row">
+          <span class="pf-ledger-label">{t.labelMeetingTime}</span>
+          <span class="pf-ledger-track"><i id="pf-meeting-bar"></i></span>
+          <strong id="pf-visual-meetings">0.00 h</strong>
+        </div>
+        <div class="pf-workload-scenario"><span>{t.labelScenarioTotal}</span><strong id="pf-visual-buffered">0.00 h</strong></div>
+      </div>
+    </section>
+
+    <section class="pf-form-card" aria-labelledby="pf-inputs-heading">
+      <div class="pf-section-heading">
+        <div>
+          <p class="pf-overline">01 / {t.labelProjectMath}</p>
+          <h3 id="pf-inputs-heading">{t.titleInputs}</h3>
+        </div>
+        <label class="pf-currency">
+          <span>{getCurrencyLabel(locale)}</span>
+          <select id="pf-currency" class="pf-select">
+            {SUPPORTED_CURRENCIES.map((item) => (
+              <option value={item.code} selected={item.code === defaultCurrency}>{item.code} ({item.symbol})</option>
+            ))}
+          </select>
+        </label>
+      </div>
+
+      <div class="pf-fields pf-fields-primary">
+        <label class="pf-field pf-field-wide" for="pf-fee">
+          <span>{t.labelFee}</span>
+          <span class="pf-money-input"><input id="pf-fee" type="number" inputmode="decimal" min="0" step="50" value="2400" /><span data-currency-symbol>{getCurrencySymbol(defaultCurrency)}</span></span>
+        </label>
+        <label class="pf-field" for="pf-planned-hours">
+          <span>{t.labelPlannedHours}</span>
+          <span class="pf-number-input"><input id="pf-planned-hours" type="number" inputmode="decimal" min="0" step="0.5" value="24" /><small>h</small></span>
+        </label>
+      </div>
+
+      <div class="pf-subsection">
+        <p class="pf-subsection-title">{t.titleHiddenWork}</p>
+        <div class="pf-fields">
+          <label class="pf-field" for="pf-revisions"><span>{t.labelRevisions}</span><input id="pf-revisions" type="number" inputmode="numeric" min="0" step="1" value="2" /></label>
+          <label class="pf-field" for="pf-revision-hours"><span>{t.labelRevisionHours}</span><span class="pf-number-input"><input id="pf-revision-hours" type="number" inputmode="decimal" min="0" step="0.25" value="2" /><small>h</small></span></label>
+          <label class="pf-field" for="pf-meetings"><span>{t.labelMeetings}</span><input id="pf-meetings" type="number" inputmode="numeric" min="0" step="1" value="3" /></label>
+          <label class="pf-field" for="pf-meeting-hours"><span>{t.labelMeetingHours}</span><span class="pf-number-input"><input id="pf-meeting-hours" type="number" inputmode="decimal" min="0" step="0.25" value="0.75" /><small>h</small></span></label>
+          <label class="pf-field" for="pf-direct-costs"><span>{t.labelDirectCosts}</span><span class="pf-money-input"><input id="pf-direct-costs" type="number" inputmode="decimal" min="0" step="10" value="120" /><span data-currency-symbol>{getCurrencySymbol(defaultCurrency)}</span></span></label>
+          <label class="pf-field" for="pf-target-rate"><span>{t.labelTargetRate}</span><span class="pf-money-input"><input id="pf-target-rate" type="number" inputmode="decimal" min="0" step="5" value="75" /><span data-currency-symbol>{getCurrencySymbol(defaultCurrency)}</span></span></label>
+        </div>
+      </div>
+
+      <div class="pf-buffer-block">
+        <div class="pf-buffer-heading"><span>{t.labelDelay}</span><strong id="pf-buffer-label">+25%</strong></div>
+        <div class="pf-buffer-buttons" role="group" aria-label={t.labelDelay}>
+          <button type="button" class="pf-buffer-button" data-buffer-value="0" aria-pressed="false">{t.btnBuffer0}</button>
+          <button type="button" class="pf-buffer-button" data-buffer-value="10" aria-pressed="false">{t.btnBuffer10}</button>
+          <button type="button" class="pf-buffer-button pf-buffer-active" data-buffer-value="25" aria-pressed="true">{t.btnBuffer25}</button>
+          <button type="button" class="pf-buffer-button" data-buffer-value="50" aria-pressed="false">{t.btnBuffer50}</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="pf-results-card" aria-labelledby="pf-results-heading">
+      <div class="pf-section-heading pf-results-heading">
+        <div>
+          <p class="pf-overline">02 / {t.labelEffectiveRate}</p>
+          <h3 id="pf-results-heading">{t.titleResults}</h3>
+        </div>
+        <span class="pf-result-mark">↗</span>
+      </div>
+      <div class="pf-result-grid">
+        <div class="pf-result-stat pf-result-stat-large"><span>{t.labelAfterCosts}</span><strong id="pf-after-costs">0.00 {getCurrencySymbol(defaultCurrency)}</strong><small>{t.noteBeforeTax}</small></div>
+        <div class="pf-result-stat"><span>{t.labelTotalHours}</span><strong id="pf-total-hours">0.00 h</strong><small><span id="pf-planned-hours-display">0.00</span> h + <span id="pf-hidden-hours">0.00</span> h {t.labelHidden.toLowerCase()}</small></div>
+        <div class="pf-result-stat"><span>{t.labelBufferedRate}</span><strong id="pf-buffered-rate">0.00 {getCurrencySymbol(defaultCurrency)}</strong><small>{t.labelBuffer}: <span id="pf-buffered-hours">0.00</span> h</small></div>
+        <div class="pf-result-stat pf-result-stat-recommendation"><span>{t.labelRecommendedFee}</span><strong id="pf-recommended-fee">0.00 {getCurrencySymbol(defaultCurrency)}</strong><small>{t.labelTargetRate}: <span id="pf-target-rate-display">0.00 {getCurrencySymbol(defaultCurrency)}</span></small></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  import { calculateProjectFee, type ProjectFeeResult } from './logic';
+  import {
+    convertCurrencyValue,
+    fromInternalCurrency,
+    getCurrencySymbol,
+    getDefaultCurrency,
+    toInternalCurrency,
+    type CurrencyCode,
+  } from '../../currency';
+
+  const root = document.querySelector<HTMLElement>('[data-project-fee-calculator]');
+  if (root) {
+    const getInput = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const feeInput = getInput('pf-fee');
+    const directCostsInput = getInput('pf-direct-costs');
+    const targetRateInput = getInput('pf-target-rate');
+    const currencySelect = document.getElementById('pf-currency') as HTMLSelectElement;
+    const monetaryInputs = [feeInput, directCostsInput, targetRateInput];
+    let currency: CurrencyCode = getDefaultCurrency(document.documentElement.lang);
+    let delayPercent = 25;
+    const statusBelow = root.dataset.statusBelow ?? 'Below your target by';
+    const statusAtOrAbove = root.dataset.statusAtOrAbove ?? 'At or above your target by';
+    const statusNoHours = root.dataset.statusNoHours ?? 'Add at least one project hour to see the rate.';
+
+    const formatMoney = (amount: number): string => {
+      const number = new Intl.NumberFormat(document.documentElement.lang, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }).format(fromInternalCurrency(amount, currency));
+      return `${number} ${getCurrencySymbol(currency)}`;
+    };
+    const read = (id: string): number => Number(getInput(id).value) || 0;
+    const setText = (id: string, value: string): void => {
+      const element = document.getElementById(id);
+      if (element) element.textContent = value;
+    };
+
+    const renderResults = (plannedHours: number, result: ProjectFeeResult): void => {
+      const plannedPercent = result.totalHours > 0 ? Math.round((plannedHours / result.totalHours) * 100) : 0;
+      const revisionPercent = result.totalHours > 0 ? Math.round((result.revisionHours / result.totalHours) * 100) : 0;
+      const meetingPercent = result.totalHours > 0 ? Math.round((result.meetingHours / result.totalHours) * 100) : 0;
+      const gapAmount = Math.abs(result.feeGap);
+
+      setText('pf-rate', formatMoney(result.effectiveHourlyRate));
+      setText('pf-gap', formatMoney(gapAmount));
+      setText('pf-after-costs', formatMoney(result.feeAfterCosts));
+      setText('pf-total-hours', `${result.totalHours.toFixed(2)} h`);
+      setText('pf-planned-hours-display', plannedHours.toFixed(2));
+      setText('pf-hidden-hours', result.hiddenHours.toFixed(2));
+      setText('pf-buffered-rate', formatMoney(result.bufferedHourlyRate));
+      setText('pf-buffered-hours', result.bufferedHours.toFixed(2));
+      setText('pf-recommended-fee', formatMoney(result.recommendedFee));
+      setText('pf-target-rate-display', formatMoney(toInternalCurrency(read('pf-target-rate'), currency)));
+      setText('pf-visual-total', `${result.totalHours.toFixed(2)} h`);
+      setText('pf-visual-planned', `${plannedHours.toFixed(2)} h`);
+      setText('pf-visual-revisions', `${result.revisionHours.toFixed(2)} h`);
+      setText('pf-visual-meetings', `${result.meetingHours.toFixed(2)} h`);
+      setText('pf-visual-buffered', `${result.bufferedHours.toFixed(2)} h`);
+      setText('pf-status', result.totalHours <= 0
+        ? statusNoHours
+        : `${result.feeGap > 0 ? statusBelow : statusAtOrAbove} ${formatMoney(gapAmount)}`);
+
+      root.style.setProperty('--pf-planned-share', `${plannedPercent}%`);
+      root.style.setProperty('--pf-revision-share', `${revisionPercent}%`);
+      root.style.setProperty('--pf-meeting-share', `${meetingPercent}%`);
+      root.dataset.pressure = result.feeGap > 0 ? 'below-target' : 'on-target';
+    };
+
+    const update = (): void => {
+      const plannedHours = read('pf-planned-hours');
+      const result = calculateProjectFee({
+        projectFee: toInternalCurrency(read('pf-fee'), currency),
+        estimatedHours: plannedHours,
+        revisions: read('pf-revisions'),
+        hoursPerRevision: read('pf-revision-hours'),
+        meetings: read('pf-meetings'),
+        hoursPerMeeting: read('pf-meeting-hours'),
+        directCosts: toInternalCurrency(read('pf-direct-costs'), currency),
+        delayPercent,
+        targetHourlyRate: toInternalCurrency(read('pf-target-rate'), currency),
+      });
+      renderResults(plannedHours, result);
+    };
+
+    root.querySelectorAll<HTMLInputElement>('input[type="number"]').forEach((input) => input.addEventListener('input', update));
+    root.querySelectorAll<HTMLButtonElement>('[data-buffer-value]').forEach((button) => {
+      button.addEventListener('click', () => {
+        delayPercent = Number(button.dataset.bufferValue) || 0;
+        root.querySelectorAll<HTMLButtonElement>('[data-buffer-value]').forEach((item) => {
+          const active = item === button;
+          item.classList.toggle('pf-buffer-active', active);
+          item.setAttribute('aria-pressed', String(active));
+        });
+        setText('pf-buffer-label', `+${delayPercent}%`);
+        update();
+      });
+    });
+    currencySelect.addEventListener('change', () => {
+      const next = currencySelect.value as CurrencyCode;
+      monetaryInputs.forEach((input) => {
+        input.value = convertCurrencyValue(Number(input.value) || 0, currency, next).toFixed(2);
+      });
+      currency = next;
+      document.querySelectorAll<HTMLElement>('[data-currency-symbol]').forEach((element) => {
+        element.textContent = getCurrencySymbol(currency);
+      });
+      update();
+    });
+
+    update();
+  }
+</script>

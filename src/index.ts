@@ -29,3 +29,4 @@ export { RESIGNATION_LETTER_GENERATOR_TOOL } from "./tool/resignationLetterGener
 export { EARLY_RETIREMENT_SIMULATOR_TOOL } from "./tool/earlyRetirementSimulator/index";
 export { NIE_NIF_VERIFIER_TOOL } from "./tool/nieNifVerifier/index";
 export { OVERTIME_PAY_CALCULATOR_TOOL } from "./tool/overtimePayCalculator/index";
+export { PROJECT_FEE_CALCULATOR_TOOL } from "./tool/projectFeeCalculator/index";

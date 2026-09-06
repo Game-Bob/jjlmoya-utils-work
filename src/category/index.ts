@@ -10,6 +10,7 @@ import { resignationLetterGenerator } from "../tool/resignationLetterGenerator/e
 import { earlyRetirementSimulator } from "../tool/earlyRetirementSimulator/entry";
 import { nieNifVerifier } from "../tool/nieNifVerifier/entry";
 import { overtimePayCalculator } from "../tool/overtimePayCalculator/entry";
+import { projectFeeCalculator } from "../tool/projectFeeCalculator/entry";
 
 export const workCategory: WorkCategoryEntry = {
   icon: "mdi:briefcase",
@@ -25,6 +26,7 @@ export const workCategory: WorkCategoryEntry = {
     earlyRetirementSimulator,
     nieNifVerifier,
     overtimePayCalculator,
+    projectFeeCalculator,
   ],
   i18n: {
     en: () => import("./i18n/en").then((m) => m.content),
