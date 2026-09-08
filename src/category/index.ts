@@ -12,6 +12,7 @@ import { nieNifVerifier } from "../tool/nieNifVerifier/entry";
 import { overtimePayCalculator } from "../tool/overtimePayCalculator/entry";
 import { projectFeeCalculator } from "../tool/projectFeeCalculator/entry";
 import { salarySacrificeCalculator } from "../tool/salarySacrificeCalculator/entry";
+import { invoiceLateFeeCalculator } from "../tool/invoiceLateFeeCalculator/entry";
 
 export const workCategory: WorkCategoryEntry = {
   icon: "mdi:briefcase",
@@ -29,6 +30,7 @@ export const workCategory: WorkCategoryEntry = {
     overtimePayCalculator,
     projectFeeCalculator,
     salarySacrificeCalculator,
+    invoiceLateFeeCalculator,
   ],
   i18n: {
     en: () => import("./i18n/en").then((m) => m.content),

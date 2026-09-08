@@ -22,6 +22,8 @@ export { overtimePayCalculator } from "./tool/overtimePayCalculator/entry";
 export type { OvertimePayCalculatorLocaleContent } from "./tool/overtimePayCalculator/entry";
 export { projectFeeCalculator } from "./tool/projectFeeCalculator/entry";
 export type { ProjectFeeCalculatorLocaleContent } from "./tool/projectFeeCalculator/entry";
+export { invoiceLateFeeCalculator } from "./tool/invoiceLateFeeCalculator/entry";
+export type { InvoiceLateFeeCalculatorLocaleContent } from "./tool/invoiceLateFeeCalculator/entry";
 export { workCategory } from "./category";
 import { autonomosCalculator } from "./tool/autonomosCalculator/entry";
 import { earlyRetirementSimulator } from "./tool/earlyRetirementSimulator/entry";
@@ -36,6 +38,7 @@ import { settlementCalculator } from "./tool/settlementCalculator/entry";
 import { overtimePayCalculator } from "./tool/overtimePayCalculator/entry";
 import { projectFeeCalculator } from "./tool/projectFeeCalculator/entry";
 import { salarySacrificeCalculator } from "./tool/salarySacrificeCalculator/entry";
+import { invoiceLateFeeCalculator } from "./tool/invoiceLateFeeCalculator/entry";
 export const ALL_ENTRIES = [
   autonomosCalculator,
   earlyRetirementSimulator,
@@ -50,4 +53,5 @@ export const ALL_ENTRIES = [
   overtimePayCalculator,
   projectFeeCalculator,
   salarySacrificeCalculator,
+  invoiceLateFeeCalculator,
 ];

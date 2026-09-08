@@ -1,0 +1,434 @@
+:root {
+  --n-ink: #17212b;
+  --n-muted: #66737d;
+  --n-paper: #fffdf8;
+  --n-paper-alt: #f5f0e7;
+  --n-line: #d8d0c4;
+  --n-accent: #bf4c35;
+  --n-accent-soft: #f2d8cf;
+  --n-warm: #bc7a2b;
+  --n-shadow: #17212b1a;
+}
+
+.theme-dark {
+  --n-ink: #f5f0e7;
+  --n-muted: #b5b2aa;
+  --n-paper: #202b31;
+  --n-paper-alt: #2a373d;
+  --n-line: #4a565a;
+  --n-accent: #ef836c;
+  --n-accent-soft: #56332c;
+  --n-warm: #e2a65a;
+  --n-shadow: #0008;
+}
+
+.invoice-late-fee {
+  width: 100%;
+  max-width: 64rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border: 1px solid var(--n-line);
+  border-radius: 1.5rem;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  background: var(--n-paper);
+  color: var(--n-ink);
+  box-shadow: 0 1.5rem 4rem var(--n-shadow);
+}
+
+.invoice-late-fee-masthead,
+.invoice-late-fee-section-heading,
+.invoice-late-fee-amounts,
+.invoice-late-fee-amount-row,
+.invoice-late-fee-metrics {
+  display: flex;
+  align-items: center;
+}
+.invoice-late-fee-masthead {
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.invoice-late-fee-eyebrow {
+  color: var(--n-accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.invoice-late-fee h2 {
+  max-width: 35rem;
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.55rem, 3vw, 2.45rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+.invoice-late-fee-stamp {
+  display: grid;
+  width: 4.6rem;
+  height: 4.6rem;
+  align-content: center;
+  justify-items: center;
+  transform: rotate(4deg);
+  border: 1px solid var(--n-accent);
+  border-radius: 50%;
+  color: var(--n-accent);
+}
+.invoice-late-fee-stamp span {
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+.invoice-late-fee-stamp strong {
+  font-size: 0.5rem;
+  letter-spacing: 0.13em;
+}
+.invoice-late-fee-layout {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 1rem;
+}
+.invoice-late-fee-terms,
+.invoice-late-fee-receipt {
+  min-width: 0;
+  border: 1px solid var(--n-line);
+  border-radius: 1rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
+}
+.invoice-late-fee-terms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  gap: 1rem;
+  background: var(--n-paper-alt);
+}
+.invoice-late-fee-receipt {
+  background: var(--n-paper);
+}
+.invoice-late-fee-section-heading {
+  grid-column: 1 / -1;
+  gap: 0.65rem;
+  margin-bottom: 0.25rem;
+}
+.invoice-late-fee-section-heading > span:first-child {
+  color: var(--n-accent);
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+.invoice-late-fee h3 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: -0.015em;
+}
+.invoice-late-fee-status {
+  margin-left: auto;
+  border-radius: 99rem;
+  padding: 0.3rem 0.55rem;
+  background: var(--n-paper-alt);
+  color: var(--n-muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+.invoice-late-fee-status[data-tone="warm"] {
+  background: color-mix(in srgb, var(--n-warm) 18%, var(--n-paper));
+  color: var(--n-warm);
+}
+.invoice-late-fee-status[data-tone="alert"] {
+  background: var(--n-accent-soft);
+  color: var(--n-accent);
+}
+.invoice-late-fee-field {
+  display: grid;
+  gap: 0.35rem;
+}
+.invoice-late-fee-field-wide {
+  grid-column: 1 / -1;
+}
+.invoice-late-fee label,
+.invoice-late-fee legend {
+  color: var(--n-muted);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+}
+.invoice-late-fee input {
+  width: 100%;
+  min-height: 2.7rem;
+  border: 1px solid var(--n-line);
+  border-radius: 0.55rem;
+  padding: 0.55rem 0.7rem;
+  background: var(--n-paper);
+  color: var(--n-ink);
+  font: inherit;
+}
+.invoice-late-fee input:focus-visible,
+.invoice-late-fee button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--n-accent) 35%, transparent);
+  outline-offset: 2px;
+}
+.invoice-late-fee-amount-row {
+  gap: 0.5rem;
+}
+.invoice-late-fee-amount-row > input {
+  min-width: 0;
+  flex: 1 1 12rem;
+}
+.invoice-late-fee-currency-control {
+  position: relative;
+  flex: 0 0 9rem;
+}
+.invoice-late-fee-currency-trigger,
+.invoice-late-fee-currency-option,
+.invoice-late-fee-periods button,
+.invoice-late-fee-reset {
+  border: 1px solid var(--n-line);
+  border-radius: 0.55rem;
+  background: var(--n-paper);
+  color: var(--n-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+.invoice-late-fee-currency-trigger {
+  display: flex;
+  width: 100%;
+  min-height: 2.7rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem;
+  padding: 0 0.65rem;
+}
+.invoice-late-fee-currency-symbol {
+  color: var(--n-accent);
+  font-size: 1rem;
+}
+.invoice-late-fee-currency-chevron {
+  color: var(--n-muted);
+  font-size: 1rem;
+}
+.invoice-late-fee-currency-menu {
+  position: absolute;
+  z-index: 4;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  display: grid;
+  width: min(20rem, calc(100vw - 2rem));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem;
+  border: 1px solid var(--n-line);
+  border-radius: 0.75rem;
+  padding: 0.45rem;
+  background: var(--n-paper);
+  box-shadow: 0 1rem 2rem var(--n-shadow);
+}
+.invoice-late-fee-currency-menu[hidden] {
+  display: none;
+}
+.invoice-late-fee-currency-option {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.45rem;
+  border-color: transparent;
+  border-radius: 0.45rem;
+  padding: 0.55rem 0.6rem;
+  text-align: left;
+}
+.invoice-late-fee-currency-option > span:first-child {
+  min-width: 1.5rem;
+  color: var(--n-accent);
+  font-size: 0.95rem;
+  text-align: center;
+}
+.invoice-late-fee-currency-option.is-selected,
+.invoice-late-fee-currency-option:hover {
+  border-color: var(--n-accent);
+  background: var(--n-accent-soft);
+  color: var(--n-accent);
+}
+.invoice-late-fee-currency-option:focus-visible {
+  position: relative;
+  z-index: 1;
+}
+.invoice-late-fee-currency-hint {
+  display: block;
+  grid-column: 1 / -1;
+  color: var(--n-muted);
+  font-size: 0.68rem;
+  line-height: 1.45;
+}
+.invoice-late-fee-periods button {
+  min-height: 2.5rem;
+  padding: 0.35rem 0.45rem;
+}
+.invoice-late-fee-periods button[aria-pressed="true"] {
+  border-color: var(--n-accent);
+  background: var(--n-accent-soft);
+  color: var(--n-accent);
+}
+.invoice-late-fee-suffix-input {
+  position: relative;
+}
+.invoice-late-fee-suffix-input input {
+  padding-right: 3.25rem;
+}
+.invoice-late-fee-suffix-input span {
+  position: absolute;
+  top: 50%;
+  right: 0.7rem;
+  transform: translateY(-50%);
+  color: var(--n-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.invoice-late-fee-rate-period {
+  grid-column: 1 / -1;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.invoice-late-fee-periods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+.invoice-late-fee-reset {
+  grid-column: 1 / -1;
+  justify-self: start;
+  border: 0;
+  padding: 0.35rem 0;
+  background: transparent;
+  color: var(--n-muted);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.invoice-late-fee-timeline {
+  position: relative;
+  height: 7.5rem;
+  margin: 1.2rem 0 0.2rem;
+}
+.invoice-late-fee-timeline-line {
+  position: absolute;
+  top: 2rem;
+  right: 0.75rem;
+  left: 0.75rem;
+  height: 0.5rem;
+  overflow: hidden;
+  border-radius: 99rem;
+  background: var(--n-paper-alt);
+}
+.invoice-late-fee-timeline-line::before {
+  display: block;
+  width: var(--n-progress, 45%);
+  height: 100%;
+  background: var(--n-accent);
+  content: "";
+}
+.invoice-late-fee-timeline-point {
+  position: absolute;
+  top: 1.15rem;
+  display: grid;
+  gap: 0.55rem;
+  color: var(--n-muted);
+  font-size: 0.7rem;
+  font-weight: 750;
+}
+.invoice-late-fee-timeline-point i {
+  display: block;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 0.5rem solid var(--n-paper);
+  border-radius: 50%;
+  background: var(--n-accent);
+  box-shadow: 0 0 0 1px var(--n-accent);
+}
+.invoice-late-fee-timeline-point-due {
+  left: 0;
+}
+.invoice-late-fee-timeline-point-today {
+  right: 0;
+  justify-items: end;
+  text-align: right;
+}
+.invoice-late-fee-timeline-point-today i {
+  background: var(--n-ink);
+  box-shadow: 0 0 0 1px var(--n-ink);
+}
+.invoice-late-fee-timeline-note {
+  min-height: 1.2rem;
+  margin: 0;
+  color: var(--n-muted);
+  font-size: 0.78rem;
+}
+.invoice-late-fee-metrics {
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  border-top: 1px solid var(--n-line);
+  border-bottom: 1px solid var(--n-line);
+  padding: 0.8rem 0;
+}
+.invoice-late-fee-metrics div,
+.invoice-late-fee-amounts > div {
+  display: grid;
+  min-width: 0;
+  gap: 0.25rem;
+}
+.invoice-late-fee-metrics span,
+.invoice-late-fee-amounts span {
+  color: var(--n-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.invoice-late-fee-metrics strong {
+  overflow-wrap: anywhere;
+  font-size: 1.05rem;
+}
+.invoice-late-fee-amounts {
+  min-width: 0;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.invoice-late-fee-amounts strong {
+  font-size: 1.15rem;
+}
+.invoice-late-fee-total strong {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  color: var(--n-accent);
+  font-size: clamp(1.7rem, 4vw, 2.7rem);
+  letter-spacing: -0.05em;
+}
+.invoice-late-fee-note {
+  margin: 1.3rem 0 0;
+  border-left: 3px solid var(--n-warm);
+  padding-left: 0.75rem;
+  color: var(--n-muted);
+  font-size: 0.74rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 680px) {
+  .invoice-late-fee-layout {
+    grid-template-columns: 1fr;
+  }
+  .invoice-late-fee-terms {
+    grid-template-columns: 1fr;
+  }
+  .invoice-late-fee-field-wide,
+  .invoice-late-fee-rate-period,
+  .invoice-late-fee-reset {
+    grid-column: auto;
+  }
+  .invoice-late-fee-amount-row {
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  .invoice-late-fee-amount-row > input {
+    flex: 1 1 10rem;
+  }
+  .invoice-late-fee-currency-control {
+    flex: 1 1 100%;
+  }
+}

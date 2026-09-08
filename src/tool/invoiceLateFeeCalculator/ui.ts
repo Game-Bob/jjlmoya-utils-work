@@ -1,0 +1,32 @@
+export interface InvoiceLateFeeCalculatorUI extends Record<string, string> {
+  eyebrow: string;
+  intro: string;
+  sectionTerms: string;
+  labelAmount: string;
+  labelCurrency: string;
+  currencyConversionHint: string;
+  currencyRateTemplate: string;
+  labelDueDate: string;
+  labelCalculationDate: string;
+  labelGraceDays: string;
+  labelRate: string;
+  labelRatePeriod: string;
+  rateAnnual: string;
+  rateMonthly: string;
+  rateOneTime: string;
+  sectionReceipt: string;
+  labelDaysSinceDue: string;
+  labelChargedDays: string;
+  labelAppliedRate: string;
+  labelLateFee: string;
+  labelTotalDue: string;
+  statusNotDue: string;
+  statusGrace: string;
+  statusOverdue: string;
+  timelineDue: string;
+  timelineToday: string;
+  timelineGrace: string;
+  noteDisclaimer: string;
+  buttonReset: string;
+  numberLocale: string;
+}

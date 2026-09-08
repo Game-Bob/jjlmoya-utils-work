@@ -13,6 +13,7 @@ import { NIE_NIF_VERIFIER_TOOL } from "./tool/nieNifVerifier/index";
 import { OVERTIME_PAY_CALCULATOR_TOOL } from "./tool/overtimePayCalculator/index";
 import { PROJECT_FEE_CALCULATOR_TOOL } from "./tool/projectFeeCalculator/index";
 import { SALARY_SACRIFICE_TAKE_HOME_CALCULATOR_TOOL } from "./tool/salarySacrificeCalculator/index";
+import { INVOICE_LATE_FEE_CALCULATOR_TOOL } from "./tool/invoiceLateFeeCalculator/index";
 
 export const ALL_TOOLS: ToolDefinition[] = [
   IRPF_CALCULATOR_TOOL,
@@ -28,4 +29,5 @@ export const ALL_TOOLS: ToolDefinition[] = [
   OVERTIME_PAY_CALCULATOR_TOOL,
   PROJECT_FEE_CALCULATOR_TOOL,
   SALARY_SACRIFICE_TAKE_HOME_CALCULATOR_TOOL,
+  INVOICE_LATE_FEE_CALCULATOR_TOOL,
 ];

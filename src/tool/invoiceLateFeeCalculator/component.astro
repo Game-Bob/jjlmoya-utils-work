@@ -1,0 +1,87 @@
+---
+import type { KnownLocale } from '../../types';
+import type { InvoiceLateFeeCalculatorUI } from './ui';
+import { convertCurrencyValue, SUPPORTED_CURRENCIES, getCurrencySymbol, getDefaultCurrency } from '../../currency';
+
+interface Props {
+  ui: InvoiceLateFeeCalculatorUI;
+  locale?: KnownLocale;
+}
+
+const { ui, locale = 'en' } = Astro.props;
+const defaultCurrency = getDefaultCurrency(locale);
+const defaultCurrencyRate = convertCurrencyValue(1, 'EUR', defaultCurrency).toLocaleString('en-US', { maximumFractionDigits: 4 });
+const initialState = {
+  amount: 1250,
+  dueDate: '2026-08-01',
+  calculationDate: '2026-09-08',
+  graceDays: 0,
+  rate: 10,
+  ratePeriod: 'annual',
+  currency: defaultCurrency,
+};
+---
+
+<section class="invoice-late-fee" data-late-fee-root data-locale={locale} data-ui={JSON.stringify(ui)} aria-labelledby="invoice-late-fee-title">
+  <div class="invoice-late-fee-masthead">
+    <div>
+      <span class="invoice-late-fee-eyebrow">{ui.eyebrow}</span>
+      <h2 id="invoice-late-fee-title">{ui.intro}</h2>
+    </div>
+    <div class="invoice-late-fee-stamp" aria-hidden="true"><span>01</span><strong>LEDGER</strong></div>
+  </div>
+
+  <div class="invoice-late-fee-layout">
+    <form class="invoice-late-fee-terms" data-late-fee="form">
+      <div class="invoice-late-fee-section-heading"><span>01</span><h3>{ui.sectionTerms}</h3></div>
+      <div class="invoice-late-fee-field invoice-late-fee-field-wide">
+          <label for="late-fee-amount">{ui.labelAmount}</label>
+          <div class="invoice-late-fee-amount-row">
+          <input id="late-fee-amount" data-late-fee-input="amount" type="number" min="0" step="0.01" inputmode="decimal" value={initialState.amount} />
+          <div class="invoice-late-fee-currency-control">
+            <button class="invoice-late-fee-currency-trigger" type="button" data-late-fee="currencyTrigger" aria-haspopup="listbox" aria-expanded="false" aria-label={ui.labelCurrency}>
+              <span class="invoice-late-fee-currency-symbol" aria-hidden="true">{getCurrencySymbol(defaultCurrency)}</span>
+              <span data-late-fee="currencyCurrent">{defaultCurrency}</span>
+              <span class="invoice-late-fee-currency-chevron" aria-hidden="true">⌄</span>
+            </button>
+            <div class="invoice-late-fee-currency-menu" data-late-fee="currencyMenu" role="listbox" aria-label={ui.labelCurrency} hidden>
+              {SUPPORTED_CURRENCIES.map((item) => (
+                <button class:list={['invoice-late-fee-currency-option', item.code === defaultCurrency && 'is-selected']} type="button" role="option" data-currency-option={item.code} aria-selected={item.code === defaultCurrency ? 'true' : 'false'}>
+                  <span aria-hidden="true">{item.symbol}</span>
+                  <span>{item.code}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+          <input data-late-fee-input="currency" type="hidden" value={initialState.currency} />
+        </div>
+        <small class="invoice-late-fee-currency-hint" data-late-fee="currencyHint">{ui.currencyConversionHint} {ui.currencyRateTemplate.replace('{value}', defaultCurrencyRate).replace('{currency}', defaultCurrency)}</small>
+      </div>
+      <div class="invoice-late-fee-field"><label for="late-fee-due-date">{ui.labelDueDate}</label><input id="late-fee-due-date" data-late-fee-input="dueDate" type="date" value={initialState.dueDate} /></div>
+      <div class="invoice-late-fee-field"><label for="late-fee-calculation-date">{ui.labelCalculationDate}</label><input id="late-fee-calculation-date" data-late-fee-input="calculationDate" type="date" value={initialState.calculationDate} /></div>
+      <div class="invoice-late-fee-field"><label for="late-fee-grace-days">{ui.labelGraceDays}</label><div class="invoice-late-fee-suffix-input"><input id="late-fee-grace-days" data-late-fee-input="graceDays" type="number" min="0" step="1" inputmode="numeric" value={initialState.graceDays} /><span>days</span></div></div>
+      <div class="invoice-late-fee-field"><label for="late-fee-rate">{ui.labelRate}</label><div class="invoice-late-fee-suffix-input"><input id="late-fee-rate" data-late-fee-input="rate" type="number" min="0" step="0.01" inputmode="decimal" value={initialState.rate} /><span>%</span></div></div>
+      <fieldset class="invoice-late-fee-rate-period"><legend>{ui.labelRatePeriod}</legend><div data-late-fee="ratePeriod" class="invoice-late-fee-periods"><button type="button" data-period="annual" aria-pressed="true">{ui.rateAnnual}</button><button type="button" data-period="monthly" aria-pressed="false">{ui.rateMonthly}</button><button type="button" data-period="one-time" aria-pressed="false">{ui.rateOneTime}</button></div></fieldset>
+      <button class="invoice-late-fee-reset" type="button" data-late-fee="reset">{ui.buttonReset}</button>
+    </form>
+
+    <section class="invoice-late-fee-receipt" aria-labelledby="invoice-late-fee-receipt-title">
+      <div class="invoice-late-fee-section-heading"><span>02</span><h3 id="invoice-late-fee-receipt-title">{ui.sectionReceipt}</h3><span class="invoice-late-fee-status" data-late-fee="status" data-tone="quiet"></span></div>
+      <div class="invoice-late-fee-timeline" data-late-fee="timeline" data-status="overdue" aria-hidden="true"><div class="invoice-late-fee-timeline-line"><span></span></div><div class="invoice-late-fee-timeline-point invoice-late-fee-timeline-point-due"><i></i><span>{ui.timelineDue}</span></div><div class="invoice-late-fee-timeline-point invoice-late-fee-timeline-point-today"><i></i><span>{ui.timelineToday}</span></div></div>
+      <p class="invoice-late-fee-timeline-note" data-late-fee="timelineNote"></p>
+      <div class="invoice-late-fee-metrics"><div><span>{ui.labelDaysSinceDue}</span><strong data-late-fee="daysSinceDue">0</strong></div><div><span>{ui.labelChargedDays}</span><strong data-late-fee="chargedDays">0</strong></div><div><span>{ui.labelAppliedRate}</span><strong data-late-fee="appliedRate">0%</strong></div></div>
+      <div class="invoice-late-fee-amounts"><div><span>{ui.labelLateFee}</span><strong data-late-fee="lateFee">€0.00</strong></div><div class="invoice-late-fee-total"><span>{ui.labelTotalDue}</span><strong data-late-fee="totalDue">€0.00</strong></div></div>
+      <p class="invoice-late-fee-note">{ui.noteDisclaimer}</p>
+    </section>
+  </div>
+  <script type="application/json" data-late-fee-state set:html={JSON.stringify(initialState)}></script>
+</section>
+
+<script>
+  import { mountInvoiceLateFeeCalculator } from './controller';
+  import type { InvoiceLateFeeCalculatorUI } from './ui';
+
+  const root = document.querySelector<HTMLElement>('[data-late-fee-root]');
+  const ui = JSON.parse(root?.dataset.ui ?? '{}') as InvoiceLateFeeCalculatorUI;
+  if (root) mountInvoiceLateFeeCalculator(root, ui);
+</script>
